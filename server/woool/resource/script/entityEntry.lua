@@ -31,7 +31,7 @@ local PlayerPropSet = {
 	[ROLE_MAX_MF] = {name="最大魔法防御力", type="LONG", default="0", range=1, saves=0},
 	[ROLE_ATTACK_PER] = {name="属性增加百分比", type="LONG", default="0", range=1, saves=0},
 	[ROLE_HIT] = {name="命中", type="LONG", default="0", range=1, saves=0},
-	[ROLE_DODGE] = {name="闪避", type="LONG", default="0", range=1, saves=0},	
+	[ROLE_DODGE] = {name="闪避", type="LONG", default="0", range=1, saves=0},
 
 	[ROLE_CRIT_RATE]	= {name="暴击率", type="LONG", default="0", range=0, saves=0},
 	[ROLE_MISS_RATE] = {name="闪避率", type="LONG", default="0", range=0, saves=0},
@@ -40,8 +40,8 @@ local PlayerPropSet = {
 	[ROLE_VAMPIRE] = {name="吸血", type="LONG", default="0", range=0, saves=0},
 	[ROLE_CRIT] = {name="暴击", type="LONG", default="0", range=1, saves=0},
 	[ROLE_TENACITY] = {name="坚韧", type="LONG", default="0", range=1, saves=0},
-	[ROLE_HURT_DODGE] = {name="伤害减免", type="LONG", default="0", range=0, saves=0},	
-	[ROLE_HURT_MISS] = {name="伤害减免", type="LONG", default="0", range=0, saves=0},	
+	[ROLE_HURT_DODGE] = {name="伤害减免", type="LONG", default="0", range=0, saves=0},
+	[ROLE_HURT_MISS] = {name="伤害减免", type="LONG", default="0", range=0, saves=0},
 	[ROLE_FACTIONID] = {name="帮会ID", type="LONG", default="0", range=16, saves=1},
 	[ROLE_CAMPID] = {name="阵营ID", type="LONG", default="0", range=16, saves=0},
 
@@ -52,9 +52,9 @@ local PlayerPropSet = {
 	[PLAYER_BINDMONEY] = {name="绑定游戏币", type="LONG", default="0", range=1, saves=0},
 	[PLAYER_INGOT] = {name="元宝", type="LONG", default="0", range=1, saves=10},
 	[PLAYER_BINDINGOT] = {name="绑定元宝", type="LONG", default="0", range=1, saves=1},
-	[PLAYER_LAST_LOGIN] = {name="上次登陆时间", type="LONG", default="0", range=0, saves=0},	
-	[PLAYER_AT_SPEED] = {name="攻击速度", type="BYTE", default="0", range=0, saves=0},	
-	[PLAYER_LUCK] = {name="幸运", type="CHAR", default="0", range=1, saves=0},	
+	[PLAYER_LAST_LOGIN] = {name="上次登陆时间", type="LONG", default="0", range=0, saves=0},
+	[PLAYER_AT_SPEED] = {name="攻击速度", type="BYTE", default="0", range=0, saves=0},
+	[PLAYER_LUCK] = {name="幸运", type="CHAR", default="0", range=1, saves=0},
 	[PLAYER_PK] = {name="PK值", type="LONG", default="0", range=16, saves=1},
 	[PLAYER_VITAL] = {name="真气", type="LONG", default="0", range=1, saves=1},
 	[PLAYER_FACTIONNAME] = {name="帮会名字", type="STRING", default="", range=16, saves=0},
@@ -64,31 +64,32 @@ local PlayerPropSet = {
 	[PLAYER_EQUIP_UPPERBODY] = {name="上衣", type="STRING", default="", range=16, saves=0},
 	[PLAYER_EQUIP_HEAD] = {name="头盔", type="STRING", default="", range=1, saves=0},
 	[PLAYER_EQUIP_NECKLACE] = {name="项链", type="STRING", default="", range=1, saves=0},
-	[PLAYER_EQUIP_WRISTLEFT] = {name="护腕左", type="STRING", default="", range=1, saves=0},	
-	[PLAYER_EQUIP_WRISTRIGHT] = {name="护腕右", type="STRING", default="", range=1, saves=0},	
-	[PLAYER_EQUIP_RINGLEFT] = {name="戒指左", type="STRING", default="", range=1, saves=0},	
-	[PLAYER_EQUIP_RINGRIGHT] = {name="护腕右", type="STRING", default="", range=1, saves=0},	
-	[PLAYER_EQUIP_SUIT] = {name="时装", type="STRING", default="", range=16, saves=0},	
-	[PLAYER_EQUIP_WAIST] = {name="腰带", type="STRING", default="", range=1, saves=0},	
-	[PLAYER_EQUIP_FOOT] = {name="鞋子", type="STRING", default="", range=1, saves=0},	
-	[PLAYER_EQUIP_MEDAL] = {name="勋章", type="STRING", default="", range=1, saves=0},	
-	[PLAYER_EQUIP_WING] = {name="飞翼", type="LONG", default=0, range=16, saves=0},	
-	[PLAYER_EQUIP_RIDE] = {name="坐骑", type="LONG", default=0, range=16, saves=0},		
+	[PLAYER_EQUIP_WRISTLEFT] = {name="护腕左", type="STRING", default="", range=1, saves=0},
+	[PLAYER_EQUIP_WRISTRIGHT] = {name="护腕右", type="STRING", default="", range=1, saves=0},
+	[PLAYER_EQUIP_RINGLEFT] = {name="戒指左", type="STRING", default="", range=1, saves=0},
+	[PLAYER_EQUIP_RINGRIGHT] = {name="护腕右", type="STRING", default="", range=1, saves=0},
+	[PLAYER_EQUIP_SUIT] = {name="时装", type="STRING", default="", range=1, saves=0},
+	[PLAYER_EQUIP_WAIST] = {name="腰带", type="STRING", default="", range=1, saves=0},
+	[PLAYER_EQUIP_FOOT] = {name="鞋子", type="STRING", default="", range=1, saves=0},
+	[PLAYER_EQUIP_MEDAL] = {name="勋章", type="STRING", default="", range=1, saves=0},
+	[PLAYER_EQUIP_WING] = {name="飞翼", type="LONG", default=0, range=16, saves=0},
+	[PLAYER_EQUIP_RIDE] = {name="坐骑", type="LONG", default=0, range=16, saves=0},
 
-	[PLAYER_PET_ID] = {name="宠物ID", type="LONG", default="0", range=1, saves=0},	
-	[PLAYER_GLAMOUR] = {name="魅力值", type="LONG", default="0", range=0, saves=1},	
-	[PLAYER_LINE] = {name="线", type="LONG", default="1", range=1, saves=0},	
+	[PLAYER_PET_ID] = {name="宠物ID", type="LONG", default="0", range=1, saves=0},
+
+	[PLAYER_GLAMOUR] = {name="魅力值", type="LONG", default="0", range=0, saves=1},
+	[PLAYER_LINE] = {name="线", type="LONG", default="1", range=1, saves=0},
 	[PLAYER_BANNER] = {name="旗帜", type="STRING", default="0", range=16, saves=0},
 	[PLAYER_BATTLE] = {name="战斗力", type="LONG", default="0", range=1, saves=0},
     [ROLE_MOVE_SPEED] = {name="移动速度", type="LONG", default="100", range=16, saves=0},
     [PLAYER_PATTERN] = {name="攻击模式", type="BYTE", default="10", range=1, saves=0},
-	[PLAYER_PROJECT] = {name="护身", type="LONG", default="0", range=1, saves=0},	
+	[PLAYER_PROJECT] = {name="护身", type="LONG", default="0", range=1, saves=0},
 	[PLAYER_PROJECT_DEF] = {name="护身穿透", type="LONG", default="0", range=1, saves=0},
     [PLAYER_BENUMB] = {name="麻痹", type="LONG", default="0", range=1, saves=0},
     [PLAYER_BENUMB_DEF] = {name="麻痹抵抗", type="LONG", default="0", range=1, saves=0},
 
     [PLAYER_HOLD_MAT] = {name="重装使者玩家持有物品", type="STRING", default="", range=16, saves=0},
-    [PLAYER_SERVER_ID] = {name="服务器ID", type="LONG", default="0", range=16, saves=0},	
+    [PLAYER_SERVER_ID] = {name="服务器ID", type="LONG", default="0", range=16, saves=0},
 	[PLAYER_HOLD_MINE] = {name="挖矿玩家持有物品", type="STRING", default="", range=16, saves=0},
 	[PLAYER_SOUL_SCORE] = {name="魂值", type="LONG", default="0", range=1, saves=1},
 	[PLAYER_SKILL_3004] = {name="3004技能额外等级", type="LONG", default="0", range=0, saves=0},
@@ -111,6 +112,16 @@ local PlayerPropSet = {
 	[PLAYER_PERCENT_MAX_DF] = {name="最大物防百分比", type="LONG", default="0", range=1, saves=0},
 	[PLAYER_PERCENT_MIN_MF] = {name="最小魔防百分比", type="LONG", default="0", range=1, saves=0},
 	[PLAYER_PERCENT_MAX_MF] = {name="最大魔防百分比", type="LONG", default="0", range=1, saves=0},
+
+	[PLAYER_EQUIP_FLAG] = {name="战旗", type="STRING", default="", range=1, saves=0},
+	[PLAYER_EQUIP_SHIELD] = {name="盾牌", type="STRING", default="", range=1, saves=0},
+	[SPECIAL_RING_BASE] = {name="特戒", type="STRING", default="", range=1, saves=0},
+	[SPECIAL_RING_WEDDING] = {name="婚戒", type="STRING", default="", range=1, saves=0},
+	[SPECIAL_RING_PROTECT] = {name="护戒", type="STRING", default="", range=1, saves=0},
+	[SPECIAL_RING_KILL] = {name="秒戒", type="STRING", default="", range=1, saves=0},
+	[SPECIAL_RING_KING] = {name="王戒", type="STRING", default="", range=1, saves=0},
+	[SPECIAL_RING_HOLY] = {name="圣戒", type="STRING", default="", range=1, saves=0},
+	[SPECIAL_RING_IMMORTAL] = {name="仙戒", type="STRING", default="", range=1, saves=0},
 }
 
 -----------------------------------------------------------------------------
@@ -153,12 +164,12 @@ local MonsterPropSet = {
 	[ROLE_REBOUND] = {name="反弹", type="LONG", default="0", range=0},
 	[ROLE_VAMPIRE] = {name="吸血", type="LONG", default="0", range=0},
 	[ROLE_CRIT] = {name="暴击", type="LONG", default="0", range=0},
-	[ROLE_HURT_DODGE] = {name="伤害减免", type="LONG", default="0", range=0},	
-	[ROLE_HURT_MISS] = {name="伤害减免", type="LONG", default="0", range=0},	
+	[ROLE_HURT_DODGE] = {name="伤害减免", type="LONG", default="0", range=0},
+	[ROLE_HURT_MISS] = {name="伤害减免", type="LONG", default="0", range=0},
 	[ROLE_TENACITY] = {name="坚韧", type="LONG", default="0", range=0},
 	[ROLE_STATUS_NAME] = {name="雕像名字", type="STRING", default="", range=16},
 
-	[PLAYER_PROJECT] = {name="护身", type="LONG", default="0", range=0, saves=0},	
+	[PLAYER_PROJECT] = {name="护身", type="LONG", default="0", range=0, saves=0},
 	[PLAYER_PROJECT_DEF] = {name="护身穿透", type="LONG", default="0", range=0, saves=0},
 
 	[PLAYER_PERCENT_MAXHP] = {name="最大血量百分比", type="LONG", default="0", range=0, saves=0},
@@ -191,7 +202,7 @@ local MountItemExp = {
 	[1555] = 12222,
 }
 
-function loadUnitConfig()	
+function loadUnitConfig()
 	--加载玩家属性同步定义
 	g_unitConfig:initPropSet(eClsTypePlayer, table.maxn(PlayerPropSet))
 	for propID, props in pairs(PlayerPropSet) do
@@ -213,16 +224,16 @@ function loadUnitConfig()
 	end
 end
 
-function loadMonsterConfigs()	
+function loadMonsterConfigs()
 	local monsterDatas = require "data.MonsterDB"
-	
+
 	local monsterdata = MONSTER_DATA:new()
 	for _, record in pairs(monsterDatas or {}) do
 		monsterdata.name = record.q_name
 		monsterdata.modelID = record.q_id
 		monsterdata.type = record.q_type or 0
-		monsterdata.attackType = record.q_attackType or 0	
-		monsterdata.attackMode = record.q_attackMode or 0	   
+		monsterdata.attackType = record.q_attackType or 0
+		monsterdata.attackMode = record.q_attackMode or 0
 		monsterdata.viewRange = record.q_viewrange or 4
 		monsterdata.level = record.q_lvl or 0
 		monsterdata.hpMax = record.q_maxhp or 0
@@ -230,7 +241,7 @@ function loadMonsterConfigs()
 
 		monsterdata.attackWait = record.q_attackWait or 0
 		monsterdata.hurtType = record.q_hurtType or 0
-		monsterdata.hurt = record.q_hurt or 0		
+		monsterdata.hurt = record.q_hurt or 0
 
 		monsterdata.atMin = record.q_attack_min or 0
 		monsterdata.atMax = record.q_attack_max or 0
@@ -245,10 +256,10 @@ function loadMonsterConfigs()
 
 		monsterdata.protect = record.q_project or 0
 		monsterdata.protectDef = record.q_project_def or 0
-		
+
 		monsterdata.gwjn = record.gwjn or 0
 		monsterdata.gwjnjl = record.gwjnjl or 0
-		
+
 		monsterdata.crit = record.q_crit or 0
 		monsterdata.tenacity = record.q_tenacity or 0
 		monsterdata.hit = record.q_hit or 0
@@ -260,8 +271,8 @@ function loadMonsterConfigs()
 		monsterdata.aiRuleId = record.aiRuleId or 0
 		monsterdata.shmy = record.shmy or 0
 		monsterdata.shjc = record.shjc or 0
-		monsterdata.shyx = record.shyx or 0		
-		
+		monsterdata.shyx = record.shyx or 0
+
 		monsterdata.Ehp = record.Ehp or 0
 		monsterdata.Eat = record.Eat or 0
 		monsterdata.Ihp = record.Ihp or 0
@@ -269,19 +280,19 @@ function loadMonsterConfigs()
 		monsterdata.MinHp = record.MinHp or 0
 		monsterdata.MinAtk = record.MinAtk or 0
 		monsterdata.speed = record.Speed or 0
-		
+
 		monsterdata.drop_share_rule = record.drop_share_rule or 0
 
 		monsterdata.teXiao = record.texiao or 0
-		
+
 		monsterdata.is_world_boss = 0
-		local WorldBossDatas = require "data.WorldBossDB"	
-		for _, _record in pairs(WorldBossDatas or {}) do		
+		local WorldBossDatas = require "data.WorldBossDB"
+		for _, _record in pairs(WorldBossDatas or {}) do
 			if _record.q_mon_id == record.q_id then
 				monsterdata.is_world_boss = 1
 			end
 		end
-		
+
 		monsterdata.ignore_hide = record.ignore_hide or 0
 		monsterdata.cannot_move = record.CantMove or 0
 		monsterdata.hurt_calc = record.hurt_calc or 0
@@ -295,9 +306,9 @@ function loadMonsterConfigs()
 		monsterdata.nMountMonsterId = record.NPCid or 0
 		monsterdata.nMountMonster = record.q_capture or 0
 
-		for _,val in pairs(unserialize(record.lingshouID) or {}) do 
+		for _,val in pairs(unserialize(record.lingshouID) or {}) do
 			monsterdata:AddMountItemProbability(val[1],val[2])
-		end	
+		end
 
 		g_configMgr:addMonsterConfig(record.q_id, monsterdata)
 	end
@@ -312,7 +323,7 @@ end
 function loadPlayerConfigs()
 	local roleDatas = require "data.RoleDB"
 
-	local playerdata = PLAYER_DATA:new()	
+	local playerdata = PLAYER_DATA:new()
 	for _, record in pairs(roleDatas or {}) do
 		playerdata.hpMax = record.q_hp or 0
 		playerdata.mpMax = record.q_mp or 0
@@ -328,7 +339,7 @@ function loadPlayerConfigs()
 		playerdata.dfMax = record.q_defense_max or 0
 		playerdata.mfMin = record.q_magic_defence_min or 0
 		playerdata.mfMax = record.q_magic_defence_max or 0
-		
+
 		playerdata.hit = record.q_hit or 0
 		playerdata.dodge = record.q_dodge or 0
 
@@ -404,7 +415,7 @@ function loadMountBaseConfig()
 		pBaseConfig:AddSkinProperty(record.mountId,tProperty)
 		tProperty:delete()
 	end
-	
+
 end
 
 
@@ -441,12 +452,12 @@ function loadMountConfig()
 	local mountGrowData = require "data.MountGrowProp"
 
 	local mountGrowTable = {}
-	for _, record in pairs(mountGrowData or {}) do	
+	for _, record in pairs(mountGrowData or {}) do
 		mountGrowTable[record.q_id] = record;
 	end
 
 	local mountConfig = MountConfig:new()
-	for _, record in pairs(mountData or {}) do		
+	for _, record in pairs(mountData or {}) do
 		mountConfig.dwMountId	= tonumber(record.mountId) or 0
 		mountConfig.dwGrade     = tonumber(record.grade) or 0
 		mountConfig.dwMaxLevel  = tonumber(record.max_level) or 0
@@ -480,17 +491,17 @@ end
 --灵兽随机属性
 function loadMountRandPropConfig()
 	local totalDatas = require "data.MountRandProp"
-	
+
 	local proto = EquipRandPropProto:new()
 	for _, record in pairs(totalDatas or {}) do
 		proto.maxFloor = tonumber(record.q_maxFloor) or 2
 		proto.attack = tonumber(record.q_attack) or 0
 		proto.magic_attack = tonumber(record.q_magic_attack) or 0
 		proto.sc_attack = tonumber(record.q_sc_attack) or 0
-		proto.defence = tonumber(record.q_defence) or 0		
+		proto.defence = tonumber(record.q_defence) or 0
 		proto.magic_defence = tonumber(record.q_magic_defence) or 0
 		proto.crit = tonumber(record.q_crit) or 0
-		proto.hit = tonumber(record.q_hit) or 0		
+		proto.hit = tonumber(record.q_hit) or 0
 		proto.dodge = tonumber(record.q_dodge) or 0
 		proto.max_hp = tonumber(record.q_max_hp) or 0
 		proto.luck = tonumber(record.q_luck) or 0
@@ -500,7 +511,7 @@ function loadMountRandPropConfig()
 		proto.benumb = tonumber(record.q_benumb) or 0
 		proto.benumbDef = tonumber(record.q_benumbDef) or 0
 		proto.nAttackPer = tonumber(record.q_attactper) or 0
-		
+
 		if tonumber(record.q_id) > 0 then
 			g_configMgr:addMountRandProp(tonumber(record.q_id), proto)
 		end
@@ -510,7 +521,7 @@ end
 
 
 function loadEntityConfig(entityConfig, unitConfig, spaceId)
-	g_configMgr = tolua.cast(entityConfig, "ConfigMgr")	
+	g_configMgr = tolua.cast(entityConfig, "ConfigMgr")
 	g_unitConfig = tolua.cast(unitConfig, "CUnitConfig")
 
 	g_spaceID = spaceId
@@ -519,10 +530,10 @@ function loadEntityConfig(entityConfig, unitConfig, spaceId)
 	loadMonsterConfigs()
 	loadPlayerConfigs()
 	loadAttrBattles()
-	
+
 	require "skillEntry"
 	loadBuffConfig()
-	loadSkillConfig()	
+	loadSkillConfig()
 	loadSkillEffect()
 	loadP3v3Config()
 	loadFightTeam3v3Config()

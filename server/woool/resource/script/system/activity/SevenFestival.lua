@@ -240,9 +240,19 @@ function SevenFestival:sendBoxInfo(player)
 		tmp.index = index
 		tmp.point = data.point
 		tmp.status = self._datas.status[index]
-		tmp.reward = g_ActivityMgr:filterReward(player, dropString(player:getSchool(), player:getSex(), data.dropID))
+		--dropString这个函数只返回了一个 
+		tmp.reward = g_ActivityMgr:filterReward(player, 
+		    dropString(player:getSchool(), player:getSex(), data.dropID))
+		
+		if index == -4 then
+		    --加个魔神雕像
+		    tmp.reward[2] = g_ActivityMgr:filterReward(player, dropString(player:getSchool(), player:getSex(), 22820))[1]
+		end
+		    
 		table.insert(info, tmp)
 	end
+	
+
 	local nowOpenDay = g_ActivityMgr:getNowOpenDay()
 	local ret = {}
 	ret.point = self:getPoint()

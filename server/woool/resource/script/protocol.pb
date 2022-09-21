@@ -1,5 +1,5 @@
 
-ɰ
+ձ
 protocol.proto"P
 LoginWorldUpdateRet
 rank (
@@ -3789,4 +3789,10 @@ eventState ("�
 MazeJumpOtherRet
 reCode ("
 MazeComplete"
-MazeUseQLYFSucess
+MazeUseQLYFSucess"
+LuckLotteryAwardsReq"7
+LuckLotteryAwardsRep
+awards (2.CopyRewardInfo"
+LuckLotteryGetReq"$
+LuckLotteryGetRep
+awardID (

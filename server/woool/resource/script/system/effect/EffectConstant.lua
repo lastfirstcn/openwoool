@@ -65,7 +65,7 @@ function __initConfig()
 end
 
 
-EffectType = 
+EffectType =
 {
 	ChangeAttribute = 0x01,	--改变玩家属性
 	Send = 0x02,	--传送
@@ -81,7 +81,9 @@ EffectType =
 	CommandBook = 21, --密令卷轴
 	EnvoyExpEffect = 22,	--炼狱体验
 	TreasureExpEffect = 23,	--宝地体验
+	PrivateSend = 30,
 	MarriageDrinkEffect = 91,	--婚礼会场喝酒
+	RideEffect = 99, --使用坐骑道具
 }
 
 
@@ -121,27 +123,27 @@ function initConstName()
 	local configMgr = g_entityMgr:getConfigMgr()
 	local proto = configMgr:getItemProto(ITEM_INGOT_ID)
 	if proto then
-		ITEM_STR.INGOT = proto.name 
+		ITEM_STR.INGOT = proto.name
 	end
 	proto = configMgr:getItemProto(ITEM_BIND_INGOT_ID)
 	if proto then
-		ITEM_STR.BINDINGOT = proto.name 
+		ITEM_STR.BINDINGOT = proto.name
 	end
 	proto = configMgr:getItemProto(ITEM_VITAL_ID)
 	if proto then
-		ITEM_STR.VITAL = proto.name 
+		ITEM_STR.VITAL = proto.name
 	end
 	proto = configMgr:getItemProto(ITEM_BIND_MONEY_ID)
 	if proto then
-		ITEM_STR.BINDMONEY = proto.name 
+		ITEM_STR.BINDMONEY = proto.name
 	end
 	proto = configMgr:getItemProto(ITEM_MONEY_ID)
 	if proto then
-		ITEM_STR.MONEY = proto.name 
+		ITEM_STR.MONEY = proto.name
 	end
 	proto = configMgr:getItemProto(ITEM_EXP_ID)
 	if proto then
-		ITEM_STR.EXP = proto.name 
+		ITEM_STR.EXP = proto.name
 	end
 end
 

@@ -29,15 +29,15 @@
 	<throw throwlevel = '12' throwqueuemaxsize = '32768'></throw>
 </database>
 <database databaseid = '1' configid = '5'>
-	<baseinfor servername = '127.0.0.1' port = '3306' databasename = 'longwen' databasenickname = 'longwen'></baseinfor>
-	<popedom username = 'root' password = '123456' charset = 'latin1'></popedom>
+	<baseinfor servername = '127.0.0.1' port = '53306' databasename = 'longwen' databasenickname = 'longwen'></baseinfor>
+	<popedom username = 'root' password = 'woool1234' charset = 'latin1'></popedom>
 	<asynqueue num = '4'></asynqueue>
 	<retry retrylevel = '30' retryinternal = '2' retrymaxnum = '3' retryqueuemaxsize = '128'></retry>
 	<throw throwlevel = '12' throwqueuemaxsize = '32768'></throw>
 </database>
 <!--tdlog addr -->
 <database databaseid = '2' configid = '1'>
-	<baseinfor servername = '119.147.15.140' port = '20026' databasename = 'db_cqsj_online' databasenickname = 'db_cqsj_online'></baseinfor>
+	<baseinfor servername = '127.0.0.1' port = '20026' databasename = 'db_cqsj_online' databasenickname = 'db_cqsj_online'></baseinfor>
 	<popedom username = 'user_cqsj' password = 'cqsj@2015' charset = 'utf8'></popedom>
 	<asynqueue num = '1'></asynqueue>
 	<retry retrylevel = '30' retryinternal = '2' retrymaxnum = '3' retryqueuemaxsize = '128'></retry>

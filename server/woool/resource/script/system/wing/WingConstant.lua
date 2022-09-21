@@ -8,13 +8,13 @@
 
 WING_PROMOTE_MATERIAL_ID = 1100 --光翼进阶材料ID
 WING_PROMOTE_MATERIAL_PRICE = 40 --光翼进阶材料价格
-WING_SKILL_MAX_NUM = 5 --光翼技能空最大个数
+WING_SKILL_MAX_NUM = 4 --光翼技能空最大个数
 ZHAN_FIRST_WING_ID = 4011	--战士初始光翼ID
 FA_FIRST_WING_ID = 5011		--法师初始光翼ID
 DAO_FIRST_WING_ID = 6011	--道士初始光翼ID
 
 
---穿戴和取下光翼
+--穿戴和取下光翼 亲  测 源 码网   w ww . q cy m w.com
 WINGOPTYPE = {
 	onWing			= 1,	--穿上光翼
 	offWing			= 0,	--取下光翼

@@ -74,7 +74,53 @@ local Items = {
 	{id = 77,text = '打开宝藏',type = 3,value = 'a229',param = 0,icon = 0,},
 	{id = 78,text = '迷仙阵',type = 3,value = 'a222',param = 0,icon = 0,},
 	{id = 79,text = '加入行会',type = 3,value = 'a169',param = 0,icon = 0,},
-	{id = 80,text = '战队管理员',type = 3,value = 'a192',param = 0,icon = 0,},
-	{id = 81,text = '抽   奖',type = 3,value = 'a96',param = 0,icon = 0,},		
+	-- {id = 80,text = '幸运抽奖',type = 3,value = 'a231',param = 0,icon = 0,},
+	{id = 80,text = '积分兑换',type = 3,value = 'a251',param = 0,icon = 0,},
+	--盾牌
+
+	{id = 82,text = 'VIP地图',type = 3,value = 'a232',param = 0,icon = 0,},
+	{id = 83,text = '下一层',type = 3,value = 'a233',param = 0,icon = 0,},
+	{id = 84,text = '下一层',type = 3,value = 'a234',param = 0,icon = 0,},
+	{id = 85,text = '下一层',type = 3,value = 'a235',param = 0,icon = 0,},
+	{id = 86,text = '下一层',type = 3,value = 'a236',param = 0,icon = 0,},
+	{id = 87,text = '下一层',type = 3,value = 'a237',param = 0,icon = 0,},
+	{id = 88,text = '下一层',type = 3,value = 'a238',param = 0,icon = 0,},
+	{id = 89,text = '下一层',type = 3,value = 'a239',param = 0,icon = 0,},
+	{id = 90,text = '下一层',type = 3,value = 'a240',param = 0,icon = 0,},
+	{id = 91,text = '下一层',type = 3,value = 'a241',param = 0,icon = 0,},
+	{id = 92,text = '下一层',type = 3,value = 'a242',param = 0,icon = 0,},
+	{id = 93,text = '下一层',type = 3,value = 'a243',param = 0,icon = 0,},
+	{id = 94,text = '下一层',type = 3,value = 'a244',param = 0,icon = 0,},
+	{id = 95,text = '下一层',type = 3,value = 'a245',param = 0,icon = 0,},
+	{id = 96,text = '下一层',type = 3,value = 'a246',param = 0,icon = 0,},
+	{id = 97,text = '下一层',type = 3,value = 'a247',param = 0,icon = 0,},
+	{id = 98,text = '下一层',type = 3,value = 'a248',param = 0,icon = 0,},
+	{id = 99,text = '下一层',type = 3,value = 'a249',param = 0,icon = 0,},
+
+	{id = 100,text = '开始抽奖',type = 3,value = 'a250',param = 0,icon = 0,},
+
+
+
+
+
+	{id = 102,text = '前往副本',type = 3,value = 'a252',param = 0,icon = 0,},
+	{id = 103,text = '前往副本',type = 3,value = 'a255',param = 0,icon = 0,},
+	{id = 104,text = '前往副本',type = 3,value = 'a257',param = 0,icon = 0,},
+	{id = 105,text = '前往副本',type = 3,value = 'a258',param = 0,icon = 0,},
+	{id = 106,text = '前往副本',type = 3,value = 'a259',param = 0,icon = 0,},
+	{id = 107,text = '前往副本',type = 3,value = 'a260',param = 0,icon = 0,},
+
+
+
+
+
+
+
+
+
+
+
+
+
 };
 return Items

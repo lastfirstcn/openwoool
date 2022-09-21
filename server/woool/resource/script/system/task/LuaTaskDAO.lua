@@ -112,7 +112,7 @@ function LuaTaskDAO:getChapterReward(sID)
 	end
 end
 
---根据章节ID取章节奖励数据
+--根据章节ID取章节奖励数据 九零  一 起 玩w w w. 9 01 7 5.com
 function LuaTaskDAO:getRewardByChapterID(sID)
 	for _, v in pairs(self._chapterRewardDBs) do
 		if v.q_chapter == sID then

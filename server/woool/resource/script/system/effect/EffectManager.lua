@@ -14,6 +14,7 @@ require ("system.effect.CommandBookEffect")
 require ("system.effect.EnvoyExpEffect")
 require ("system.effect.TreasureExpEffect")
 require ("system.effect.MarriageDrinkEffect")
+require ("system.effect.RideEffect")
 
 
 EffectTypeMap = {
@@ -30,7 +31,9 @@ EffectTypeMap = {
 	[EffectType.CommandBook] = CommandBookEffect,
 	[EffectType.EnvoyExpEffect] = EnvoyExpEffect,
 	[EffectType.TreasureExpEffect] = TreasureExpEffect,
+	[EffectType.PrivateSend] = SendEffect,
 	[EffectType.MarriageDrinkEffect] = MarriageDrinkEffect,
+	[EffectType.RideEffect] = RideEffect,
 }
 
 __initConfig()

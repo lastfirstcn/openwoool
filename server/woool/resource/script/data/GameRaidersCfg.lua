@@ -22,6 +22,6 @@ local Items=
   {q_id=5.0,q_Raiderssubtitle='冰冻戒指',q_Thestrategycontent='签到25天可激活冰冻戒指，获得被动技能—冰冻。',},
   {q_id=6.0,q_Raidersheading='赚钱秘籍',q_Raiderssubtitle='装备出售',q_Thestrategycontent='野怪掉落将会获得大量装备。卖商店吧，大兄弟！稳赚不赔好买卖，大量金币等着你。',},
   {q_id=6.0,q_Raiderssubtitle='副本获取金币',q_Thestrategycontent='战神试练→抓住偷金贼副本，将会产出大量金币。duang!一下就变土豪。',},
-};
+}
 
 return Items

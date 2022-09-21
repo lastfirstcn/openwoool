@@ -53,7 +53,7 @@ function TeamPublic:doActivePlayer(operata,NewMemInfo)
 				local teamID = OldMemInfo:getTeamID()
 				local team = self:getTeam(teamID)
 				if team then
-					--如果在离线表中  移动到在线表					
+					--如果在离线表中  移动到在线表	九  零 一 起玩  w w w. 9 01 75.com				
 					local onlineMem = team:getOnLineMems() or {}
 					if not table.contains(onlineMem,roleSID) then
 						team:addOnLineMem(roleSID)

@@ -162,7 +162,6 @@ local Items=
   {q_id=5130609.0,q_sc_attack_min='270',q_sc_attack_max='538',q_propNum=1.0,F23='真人皇护腕(道)',F24=80.0,},
   {q_id=5130709.0,q_sc_attack_min='270',q_sc_attack_max='538',q_propNum=1.0,F23='真人皇头盔(道)',F24=80.0,},
   {q_id=5130809.0,q_sc_attack_min='270',q_sc_attack_max='538',q_propNum=1.0,F23='真人皇腰带(道)',F24=80.0,},
-  {q_id=1931201.0,q_sc_attack_min='270',q_sc_attack_max='538',q_propNum=1.0,F23='真人皇腰带(道)',F24=80.0,},  
 }
 
 return Items

@@ -151,4 +151,4 @@ MYSTERYSHOP_BLACK 	= 4 		--黑市神秘商店
 MYSTERYSHOP_BOOK 	= 5 		--书店神秘商店
 
 
-ITEM_UNICOM_ID = 1510 			--炽焰麒麟
+ITEM_UNICOM_ID = 1614 			--炽焰麒麟

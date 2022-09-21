@@ -1,4 +1,4 @@
-﻿--SkillScript.lua
+--SkillScript.lua
 
 --技能属性全局变量
 SkillConfigScriptMap = {}
@@ -40,7 +40,12 @@ SkillScript.exec = function(host, scriptId, targetId)
 		local scene = host:getScene()
 		if scene then
 			if not scene:isTeamVisible() then
+			    
 				SkillScript.newCallPet(host, tonumber(skillLevelCfg.Pet_ID), skillCfg)
+				--if skillLevelCfg.Pet_ID2 then
+				    --SkillScript.newCallPet(host, tonumber(skillLevelCfg.Pet_ID2), skillCfg)
+				--end
+				
 			else
 				local skillMgr = host:getSkillMgr()
 				if skillMgr then
@@ -55,17 +60,33 @@ end
 
 --新的道士宝宝召唤机制
 SkillScript.newCallPet = function(host, monsterID, skillCfg)
-	print("SkillScript.newCallPet "..skillCfg.skillID.." "..monsterID)
+	print("SkillScript.newCallPet "..skillCfg.skillID.." ".. monsterID)
 
-	--如果有宝宝，先删掉
+    --当前宝宝的ID
 	local oldPetID = host:getPetID()
+	
+	--元神与骷髅不冲突的逻辑  add by 396196516
+	--如果有第二个宝宝，先删掉
+	local oldPet = g_entityMgr:getMonster(oldPetID)
+	if oldPet and oldPet:getPetID()> 0 then
+	    local oldPet2 = g_entityMgr:getMonster(oldPet:getPetID())
+	    if oldPet2 then
+	        g_entityMgr:destoryEntity(oldPet:getPetID())
+	        oldPet:setPetID(0)
+	    end
+	end
+	
+
 	--创建添加宝宝
 	local scene = host:getScene()
-	local monster = g_entityFct:createMonster(monsterID)
+	--createMonster包含id号相同或重加载
+
+    local monster = g_entityFct:createMonster(monsterID)
 	if monster and scene then
+	   
 		--设置宝宝增加的属性
 		--每点道术上限对宝宝的加成
-		local eHp = skillCfg.EHP or 0			--生命
+		local eHp = skillCfg.EHP or 0			    --生命
 		local eMinAtk = skillCfg.EMinAtk or 0		--攻击下限
 		local eMaxAtk = skillCfg.EMaxAtk or 0		--攻击上限
 		local eMinDef = skillCfg.EMinDef or 0		--防御下限
@@ -79,7 +100,7 @@ SkillScript.newCallPet = function(host, monsterID, skillCfg)
 		local dtMax = host:getMaxDT()
 		
 		--增加的属性值
-		local addHp = dtMax*eHp					--生命
+		local addHp = dtMax*eHp				     	--生命
 		local addMinAtk = dtMax*eMinAtk				--攻击下限
 		local addMaxAtk = dtMax*eMaxAtk				--攻击上限
 		local addMinDef = dtMax*eMinDef				--防御下限
@@ -98,17 +119,30 @@ SkillScript.newCallPet = function(host, monsterID, skillCfg)
 		monster:setCampID(host:getCampID())
 
 		monster:setHP(monster:getMaxHP())
-		monster:setHost(host:getID())
-		local pos = host:getPosition()
-		host:setPetID(monster:getID())
-		name = monster:getName()
-		monster:setName(host:getName()..'的'..name)
-		scene:attachEntity(monster:getID(), pos.x + 1, pos.y + 1)
 		
-		if oldPetID > 0 then
-			g_entityMgr:destoryEntity(oldPetID)
+		--主人
+		monster:setHost(host:getID())
+		
+		host:setPetID(monster:getID())
+		
+		--上一个宝宝ID
+		monster:setPetID(oldPetID)
+		
+		local pos = host:getPosition()
+	
+		monster:setName(host:getName()..'的'.. monster:getName())
+		
+		
+		scene:attachEntity(monster:getID(), pos.x, pos.y)
+		
+		if oldPet  then
+    		if oldPet:getName() ==  monster:getName() and string.find(monster:getName(),"元神")then
+    	        g_entityMgr:destoryEntity(oldPet:getID())
+    	    end
 		end
+
 	else
 		print("cannot create monster or get scene")
 	end
+	
 end

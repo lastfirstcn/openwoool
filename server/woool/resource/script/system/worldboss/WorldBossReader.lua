@@ -51,14 +51,15 @@ function loadFieldBossInfo()
 	local worldBossRefreshInfo = ""
 	local FieldBoss = require "data.MonsterInfoDB"
 	for i, v in pairs(FieldBoss or {}) do
-		
+--[[		
 		if 'Little Boss' == v.q_bossRelive then
 			if v.q_monster_model then
 				FieldBossInfo[v.q_monster_model] = {}
 				FieldBossInfo[v.q_monster_model].KillTime = 0												--野外boss击杀时间
 				FieldBossInfo[v.q_monster_model].refreshTime = v.q_reliveTime/1000 + FIELDBOSS_QUITTIME		--野外boss刷新间隔	单位秒
 			end			
-		end		
+		end
+]]		
 		--'*,*,*,*,10:35:00-10:35:05;*,*,*,*,12:35:00-12:35:05;*,*,*,*,15:30:00-15:30:05;*,*,*,*,18:05:00-18:05:05;*,*,*,*,21:05:00-21:05:05'
 		if v.q_monster_model and 6001 == v.q_monster_model then
 			worldBossRefreshInfo = v.q_bossRelive

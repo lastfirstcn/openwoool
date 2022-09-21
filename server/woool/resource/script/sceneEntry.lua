@@ -5,6 +5,7 @@ require "base.base"
 
 local sceneconfigs = {}
 local monsterMaps = {}
+-- local maxMonsterID = 0
 
 function loadHotAreas()
 	local hotArea = HotArea:new()
@@ -23,12 +24,20 @@ function loadHotAreas()
 		local pConfig = sceneconfigs[record.q_mapid]
 		if pConfig then
 			pConfig:pushHotArea(hotArea)
+
+			-- if pConfig.m_groupID > 0 and pConfig.m_groupMax > 0 then
+			-- 	for j=1,pConfig.m_groupMax-1 do
+			-- 		local pConfigCopy = sceneconfigs[record.q_mapid + j]
+			-- 		pConfigCopy:pushHotArea(hotArea)
+			-- 	end
+			-- end
+
 		end
 	end
 	hotArea:delete()
 end
 
---½âÎöÌØÊâ×Ö·û´®Èç  "1093_40_61004_139_95"
+--ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ö·ï¿½ï¿½ï¿½ï¿½ï¿½  "1093_40_61004_139_95"
 local function StrSplit(str, split)
 	local strTab={}
 	local sp=split or "&"
@@ -92,9 +101,13 @@ function fillMonsterData(monster, i, record)
 			monster:addBossRelive(bossRelive[i], bossRelive[i+1])
 		end
 	end
+	-- if maxMonsterID < monster.id then
+	-- 	maxMonsterID = monster.id
+	-- end
 end
 
 function loadMonsters(init)
+	-- maxMonsterID = 0;
 	local records = require "data.MonsterInfoDB"
 	for i, record in pairs(records or {}) do
 		local monster = MonsterInfo:new()
@@ -108,6 +121,23 @@ function loadMonsters(init)
 		end
 		monster:delete()
 	end
+	-- for i, record in pairs(records or {}) do
+	-- 	local pConfig = getConfigByMapID(record.q_mapid, init)
+	-- 	if pConfig and pConfig.m_groupID > 0 and pConfig.m_groupMax > 0 then
+	-- 		local monster = MonsterInfo:new()
+	-- 		fillMonsterData(monster, i, record)
+	-- 		for j=1,pConfig.m_groupMax-1 do
+	-- 			local pConfigCopy = getConfigByMapID(record.q_mapid + j, init)
+	-- 			maxMonsterID = maxMonsterID + 1 
+	-- 			monster.id = maxMonsterID
+	-- 			pConfigCopy:pushMonster(monster)
+	-- 			if not table.include(monsterMaps, record.q_mapid + j) then
+	-- 				table.insert(monsterMaps, record.q_mapid + j)
+	-- 			end
+	-- 		end
+	-- 		monster:delete()
+	-- 	end
+	-- end
 end
 function clearMonsters()
 	for _, v in pairs(monsterMaps) do
@@ -122,7 +152,7 @@ function reloadMonsters()
 	print("MonsterInfo reloaded")
 end
 
---¼ÓÔØµØÍ¼ÅäÖÃ
+--ï¿½ï¿½ï¿½Øµï¿½Í¼ï¿½ï¿½ï¿½ï¿½
 function loadSceneConfig()	
 	local records = require "data.MapDB"
 	for _, record in pairs(records) do
@@ -155,8 +185,57 @@ function loadSceneConfig()
 		pConfig.m_redY = record.q_red and unserialize('{'..record.q_red..'}')[2] or 0
 		pConfig.m_redRadius = record.q_red and unserialize('{'..record.q_red..'}')[3] or 0
 		pConfig.m_nonrentry = record.q_nonrentry or 0
-		
+		pConfig.m_needItemID = toNumber(record.q_need_item_id, 1001)
+		pConfig.m_needItemNum = toNumber(record.q_need_item_num, 1)
+		pConfig.m_refreshEnter = record.q_refresh_enter and (tonumber(record.q_refresh_enter) == 1) or false
+		pConfig.m_minTitleID = toNumber(record.q_min_title_id, 0)
+		pConfig.m_maxTitleID = toNumber(record.q_max_title_id, 0)
+		pConfig.m_groupID = toNumber(record.q_group, 0)
+		pConfig.m_groupMax = toNumber(record.q_group_max, 0)
+
 		sceneconfigs[record.q_map_id] = pConfig
+
+		-- if pConfig.m_groupID > 0 and pConfig.m_groupMax > 0 then
+		-- 	for i=1,pConfig.m_groupMax-1 do
+		-- 		local pConfigCopy = SceneConfig:new()
+		-- 		pConfigCopy.m_mapName = pConfig.m_mapName
+		-- 		pConfigCopy.m_areaId = pConfig.m_areaId	
+		-- 		pConfigCopy.m_dieMapID = pConfig.m_dieMapID			
+		-- 		pConfigCopy.m_dieX = pConfig.m_dieX
+		-- 		pConfigCopy.m_dieY = pConfig.m_dieY
+		-- 		pConfigCopy.m_safeX = pConfig.m_safeX
+		-- 		pConfigCopy.m_safeY = pConfig.m_safeY			
+		-- 		pConfigCopy.m_minLevel = pConfig.m_minLevel
+		-- 		pConfigCopy.m_maxLevel = pConfig.m_maxLevel
+		-- 		pConfigCopy.m_radius = pConfig.m_radius
+		-- 		pConfigCopy.m_allSafe = pConfig.m_allSafe 
+		-- 		pConfigCopy.m_mapRealName = pConfig.m_mapRealName
+		-- 		pConfigCopy.m_private = pConfig.m_private
+		-- 		pConfigCopy.m_teamVisible = pConfig.m_teamVisible
+		-- 		pConfigCopy.m_linecount = pConfig.m_linecount
+		-- 		pConfigCopy.m_bcopy = pConfig.m_bcopy
+		-- 		pConfigCopy.m_bjoin = pConfig.m_bjoin
+		-- 		pConfigCopy.m_itemLimitIn = pConfig.m_itemLimitIn
+		-- 		pConfigCopy.m_itemLimitOut = pConfig.m_itemLimitOut
+		-- 		pConfigCopy.m_switchLimitIn = pConfig.m_switchLimitIn
+		-- 		pConfigCopy.m_switchLimitOut = pConfig.m_switchLimitOut
+		-- 		pConfigCopy.m_mapPk = pConfig.m_mapPk
+		-- 		pConfigCopy.m_forbidyaoshui = pConfig.m_forbidyaoshui
+		-- 		pConfigCopy.m_redX = pConfig.m_redX
+		-- 		pConfigCopy.m_redY = pConfig.m_redY
+		-- 		pConfigCopy.m_redRadius = pConfig.m_redRadius
+		-- 		pConfigCopy.m_nonrentry = pConfig.m_nonrentry
+		-- 		pConfigCopy.m_needItemID = pConfig.m_needItemID
+		-- 		pConfigCopy.m_needItemNum = pConfig.m_needItemNum
+		-- 		pConfigCopy.m_refreshEnter = pConfig.m_refreshEnter
+		-- 		pConfigCopy.m_minTitleID = pConfig.m_minTitleID
+		-- 		pConfigCopy.m_maxTitleID = pConfig.m_maxTitleID
+		-- 		pConfigCopy.m_groupID = pConfig.m_groupID
+		-- 		pConfigCopy.m_groupMax =pConfig.m_groupMax
+
+		-- 		sceneconfigs[record.q_map_id + i] = pConfigCopy
+		-- 	end
+		-- end
 	end
 	
 	loadHotAreas()

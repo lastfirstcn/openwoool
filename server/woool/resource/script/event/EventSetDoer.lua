@@ -65,7 +65,7 @@ function EventSetDoer:action(evt)
 end
 
 --------------------------------------------------------
---EventSetDoer 监听的事件触发
+--EventSetDoer 监听的事件触发 九 零 一 起 玩  w w w. 9 0 175.com
 --------------------------------------------------------
 function EventSetDoer:getCurEventID()
 	return self._eventID or 0

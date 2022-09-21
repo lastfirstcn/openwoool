@@ -323,8 +323,7 @@ function TreasureManger:canJoin2(player)
 		return false
 	end
 
---	if g_normalMgr:getActivenessIntegral(player:getID()) < TREASURE_NEED_ACTIVITY then
-	if g_normalMgr:getActivenessIntegral(player:getID()) < TREASURE_NEED_ITEMID then	
+	if g_normalMgr:getActivenessIntegral(player:getID()) < TREASURE_NEED_ACTIVITY then
 		return false 
 	end
 

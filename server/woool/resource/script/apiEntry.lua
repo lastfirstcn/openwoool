@@ -68,7 +68,7 @@ function apiEntry.onPlayerLoaded(roleID)
 
 		player:setLoginCnt(player:getLoginCnt() + 1)
 		g_listHandler:notifyListener("onPlayerLoaded", player)
-		
+
 		--Tlog[PlayerLogin]其他模块需要准备登入Tlog需要记录的数据?
 		local friendNum = g_relationMgr:getFriendNum(roleID)
 		local factionlv = 0
@@ -85,7 +85,7 @@ function apiEntry.onPlayerInactive(roleID)
     local player = g_entityMgr:getPlayer(roleID)
 	if player then
 		g_listHandler:notifyListener("onPlayerInactive",player)
-	end 
+	end
 end
 
 --玩家离线的消息
@@ -112,7 +112,7 @@ function apiEntry.onPlayerOffLine(roleID)
 		--Tlog[PlayerLogout]其他模块需要准备登出Tlog需要记录的数据?
 		g_tlogMgr:TlogPlayerLogout(player,friendNum,factionlv)
 		print("onPlayerOffLine",player:getOnceOnlineTime())
-	end 
+	end
 end
 
 --头顶显示物品
@@ -120,7 +120,7 @@ function apiEntry.showDropItem(roleSID, itemID)
 	local player = g_entityMgr:getPlayerBySID(roleSID)
 	if player then
 		g_listHandler:notifyListener("onShowDropItem", player, itemID)
-	end 
+	end
 end
 
 --获得头顶物品
@@ -128,7 +128,7 @@ function apiEntry.gotDropItem(roleSID, itemID)
 	local player = g_entityMgr:getPlayerBySID(roleSID)
 	if player then
 		g_listHandler:notifyListener("onGotDropItem", player, itemID)
-	end 
+	end
 end
 
 --掉落头顶物品
@@ -136,14 +136,14 @@ function apiEntry.dropShowItems(roleSID,itemID)
 	local player = g_entityMgr:getPlayerBySID(roleSID)
 	if player then
 		g_listHandler:notifyListener("onDropShowItems", player, itemID)
-	end 
+	end
 end
 
 function apiEntry.onPlayerCast2DB(roleID)
 	local player = g_entityMgr:getPlayer(roleID)
 	if player then
 		g_listHandler:notifyListener("onPlayerCast2DB",player)
-	end 
+	end
 end
 
 function apiEntry.onMonsterStop(monsterID)
@@ -155,7 +155,7 @@ function apiEntry.onActivePlayer(roleID)	--掉线登陆
 	local player = g_entityMgr:getPlayer(roleID)
 	if player then
 		g_listHandler:notifyListener("onActivePlayer",player)
-	end 
+	end
 end
 
 --玩家战斗力改变
@@ -176,7 +176,7 @@ function apiEntry.upSkillLevel(roleSID, skillId, level)
 		if level == 4 then
 			g_RedBagMgr:skillLevelUp(player)
 		end
-		if level == 5 then			
+		if level == 5 then
 
 		end
 	end
@@ -190,7 +190,7 @@ function apiEntry.onExpChanged(roleID)
 		--经验频繁改变,跳过监听直接通知到系统
 		g_RankMgr:onExpChanged(player)
 		g_achieveMgr:onExpChanged(player)
-	end 
+	end
 end
 
 --玩家升级消息
@@ -198,7 +198,7 @@ function apiEntry.onLevelChanged(roleID, oldLevel, level)
 	local player = g_entityMgr:getPlayer(roleID)
 	if player then
 		g_listHandler:notifyListener("onLevelChanged", player, level, oldLevel)
-	end 
+	end
 end
 
 --怪物被杀死消息
@@ -237,7 +237,7 @@ function apiEntry.onPlayerDied(roleID, killerID, bAchieve)
 	if player then
 		if killerID > 0 and bAchieve then
 
-		end		
+		end
 		g_listHandler:notifyListener("onPlayerDied", player, killerID)
 		return g_shaWarMgr:isInShaWar(player)
 	end
@@ -245,12 +245,12 @@ function apiEntry.onPlayerDied(roleID, killerID, bAchieve)
 end
 
 --玩家充值
-function apiEntry.onRequestCharge(roleID, ctype, guid)	
+function apiEntry.onRequestCharge(roleID, ctype, guid)
 	local player = g_entityMgr:getPlayer(roleID)
 	if player then
 		--已经有月卡了
 		if ctype == 3 then
-			--月卡不能继续冲			
+			--月卡不能继续冲
 			fireProtoSysMessage(FRAME_SC_CHARGE_REQ, roleID, EVENT_FRAME_SETS, -1, 0)
 			return
 		end
@@ -264,12 +264,12 @@ function apiEntry.onRequestCharge(roleID, ctype, guid)
 end
 
 --玩家充值
-function apiEntry.onPlayerCharge(roleSID, sourceIngot, ctype)	
+function apiEntry.onPlayerCharge(roleSID, sourceIngot, ctype)
 	print("apiEntry.onPlayerCharge", roleSID, sourceIngot, ctype)
 	local player = g_entityMgr:getPlayerBySID(roleSID)
 	if player then
 		g_listHandler:notifyListener("onPlayerCharge", player, sourceIngot, ctype)
-	end 
+	end
 	return sourceIngot
 end
 
@@ -287,7 +287,7 @@ function apiEntry.equipDevelop(roleID, opType, equipId, level, param)
 	local player = g_entityMgr:getPlayer(roleID)
 	if player then
 		g_listHandler:notifyListener("onEquipDevelop", player, opType, equipId, level, param)
-	end 
+	end
 end
 
 --后台发送活动配置
@@ -384,10 +384,10 @@ function apiEntry.onDataPacketDeal(player, cmdId, data_body, ret_params)
 			--更新游戏币
 			local moneyRemain = player:getMoney() + data_body.Num
 			player:setMoney(moneyRemain > 0 and moneyRemain or 0)
-		elseif cmdId == 4215 then			
+		elseif cmdId == 4215 then
 			if data_body.Type == 1 then
 				--更新元宝
-			--	player:setIngot(data_body.Num)							
+			--	player:setIngot(data_body.Num)
 			elseif data_body.Type == 2 then
 				--更新绑元
 				local bindRemain = player:getBindIngot() + data_body.Num
@@ -406,30 +406,30 @@ function apiEntry.onDataPacketDeal(player, cmdId, data_body, ret_params)
 				local bagCnt = itemMgr:getItemCount(data_body.ItemId, Item_BagIndex_Bag)
 				local bankCnt = itemMgr:getItemCount(data_body.ItemId, Item_BagIndex_Bank)
 				if bagCnt >= data_body.ItemNum then
-					itemMgr:destoryItem(data_body.ItemId, data_body.ItemNum, errorCode)					
+					itemMgr:destoryItem(data_body.ItemId, data_body.ItemNum, errorCode)
 					deleteCnt = data_body.ItemNum
 				else
 					itemMgr:destoryItem(data_body.ItemId, bagCnt, errorCode)
 					local needDelete = data_body.ItemNum - bagCnt
 					if bankCnt >= needDelete then
 						itemMgr:destoryItem(data_body.ItemId, needDelete, errorCode, Item_BagIndex_Bank)
-						deleteCnt = data_body.ItemNum	
+						deleteCnt = data_body.ItemNum
 					else
 						itemMgr:destoryItem(data_body.ItemId, bankCnt, errorCode, Item_BagIndex_Bank)
 						deleteCnt = bagCnt + bankCnt
 					end
-				end	
+				end
 				remainCnt = bagCnt + bankCnt - deleteCnt
-			end			
+			end
 			result_code = result_code + remainCnt * 1000 + deleteCnt
-			return result_code 
+			return result_code
 		elseif cmdId == 4121 then
 			--封角
 			g_entityMgr:tickOutPlayer(data_body.RoleId, 3)
 		elseif cmdId == 4227 then
 			--封角
 			g_entityMgr:tickOutPlayer(data_body.RoleId, 3)
-		elseif cmdId == 4193 then 
+		elseif cmdId == 4193 then
 			--踢出玩家
 			g_entityMgr:tickOutPlayer(data_body.RoleId, 3)
 		elseif cmdId == 4189 then
@@ -446,7 +446,7 @@ function apiEntry.onDataPacketDeal(player, cmdId, data_body, ret_params)
 			g_entityMgr:transStall2Email(data_body.OutRoleId, data_body.InRoleId, data_body.ItemId, data_body.ItemNum)
 		end
 	else
-		if cmdId == 4125 then 
+		if cmdId == 4125 then
 			--封号
 			g_entityMgr:tickOutPlayerByOpenID(data_body.OpenId, 3)
 		else
@@ -455,7 +455,7 @@ function apiEntry.onDataPacketDeal(player, cmdId, data_body, ret_params)
 				g_entityMgr:deleteCache(data_body.RoleId or data_body.OutRoleId)
 			end
 			--返回参数
-			if cmdId == 4191 or cmdId == 4117 then				
+			if cmdId == 4191 or cmdId == 4117 then
 				return 1
 			end
 		end
@@ -464,32 +464,32 @@ function apiEntry.onDataPacketDeal(player, cmdId, data_body, ret_params)
 end
 
 function apiEntry.onDataPacketTlog(cmdId, body)
-	if cmdId == 4109 then	
+	if cmdId == 4109 then
 		--IDIP_DO_MAIL_SEND_BIND_GOLD_REQ
 		g_tlogMgr:TlogIDIPItemFlow(body.AreaId, body.OpenId, body.GoldId, body.GoldNum, body.Serial, body.Source, cmdId)
-		print(string.format([[TLOG IDIP: IDIPHandselItemFlow|%s|%s|%d|%d|%d|%s|%d|%d]], 
+		print(string.format([[TLOG IDIP: IDIPHandselItemFlow|%s|%s|%d|%d|%d|%s|%d|%d]],
 			time.tostring(os.time()), body.OpenId, body.AreaId, body.GoldId or 0, body.GoldNum, body.Serial, body.Source, cmdId))
-	elseif cmdId == 4111 then		
+	elseif cmdId == 4111 then
 		--IDIP_DO_MAIL_SEND_MONEY_REQ
 		g_tlogMgr:TlogIDIPItemFlow(body.AreaId, body.OpenId, body.GoldId, body.GoldNum, body.Serial, body.Source, cmdId)
-		print(string.format([[TLOG IDIP: IDIPHandselItemFlow|%s|%s|%d|%d|%d|%s|%d|%d]], 
+		print(string.format([[TLOG IDIP: IDIPHandselItemFlow|%s|%s|%d|%d|%d|%s|%d|%d]],
 			time.tostring(os.time()), body.OpenId, body.AreaId, body.GoldId or 0, body.GoldNum, body.Serial, body.Source, cmdId))
 	elseif cmdId == 4113 then
 		--IDIP_DO_MAIL_SEND_ITEM_REQ
 		g_tlogMgr:TlogIDIPItemFlow(body.AreaId, body.OpenId, body.ItemId, body.ItemNum, body.Serial, body.Source, cmdId)
-		print(string.format([[TLOG IDIP: IDIPHandselItemFlow|%s|%s|%d|%d|%d|%s|%d|%d]], 
+		print(string.format([[TLOG IDIP: IDIPHandselItemFlow|%s|%s|%d|%d|%d|%s|%d|%d]],
 			time.tostring(os.time()), body.OpenId, body.AreaId, body.ItemId, body.ItemNum, body.Serial, body.Source, cmdId))
 	elseif cmdId == 4115 then
 		--IDIP_DO_DEL_BIND_GOLD_REQ
-		g_tlogMgr:TlogIDIPItemFlow(body.AreaId, body.OpenId, body.GoldId, body.GoldNum, body.Serial, body.Source, cmdId)	
-		print(string.format([[TLOG IDIP: IDIPHandselItemFlow|%s|%s|%d|%d|%d|%s|%d|%d]], 
+		g_tlogMgr:TlogIDIPItemFlow(body.AreaId, body.OpenId, body.GoldId, body.GoldNum, body.Serial, body.Source, cmdId)
+		print(string.format([[TLOG IDIP: IDIPHandselItemFlow|%s|%s|%d|%d|%d|%s|%d|%d]],
 			time.tostring(os.time()), body.OpenId, body.AreaId, body.GoldId, body.GoldNum, body.Serial, body.Source, cmdId))
 	elseif cmdId == 4117 then
 		--IDIP_DO_DEL_ITEM_REQ
 		g_tlogMgr:TlogIDIPItemFlow(body.AreaId, body.OpenId, body.ItemId, body.ItemNum, body.Serial, body.Source, cmdId)
-		print(string.format([[TLOG IDIP: IDIPHandselItemFlow|%s|%s|%d|%d|%d|%s|%d|%d]], 
+		print(string.format([[TLOG IDIP: IDIPHandselItemFlow|%s|%s|%d|%d|%d|%s|%d|%d]],
 			time.tostring(os.time()), body.OpenId, body.AreaId, body.ItemId, body.ItemNum, body.Serial, body.Source, cmdId))
-	end	
+	end
 end
 
 --执行技能脚本
@@ -502,7 +502,7 @@ function apiEntry.execSkill(roleID, scriptId, targetID)
 		if monster then
 			SkillScript.exec(monster, scriptId, targetID)
 		end
-	end 
+	end
 end
 
 --http异步回调
@@ -515,7 +515,7 @@ function apiEntry.writeRelation(roleID, buff)
 	local player = g_entityMgr:getPlayer(roleID)
 	local luaBuff = tolua.cast(buff, "LuaMsgBuffer")
 	if player and luaBuff then
-		--[[			
+		--[[
 			local rides = { ... }
 			local wings = { ... }
 			luaBuff:pushLString(proto.encode("PBRide", rides))
@@ -555,13 +555,13 @@ end
 function apiEntry.onloadWingRole(data)
 	local buff = tolua.cast(data, "LuaMsgBuffer")
 	local bufftable = {}
-	
+
 	local roleSID = buff:popString()
 	bufftable.wingID = buff:popInt()
 	bufftable.wingSkill = buff:popString()
 	bufftable.pomoteTime = buff:popInt()
 	bufftable.successTime = buff:popInt()
-	bufftable.state = buff:popInt()	
+	bufftable.state = buff:popInt()
 
 	g_wingMgr:onloadWingRole(roleSID, bufftable)
 
@@ -588,19 +588,21 @@ function apiEntry.onloadOffPlayer(data)
 end
 
 function apiEntry.onloadOffGiveFlower(data)
-	if data._result == 0 then	
+	if data._result == 0 then
 		g_SpillFlowerMgr:loadGiveFlowerOffDataBack(data)
 	end
 end
 
 --使用物品
 function apiEntry.onMaterialUsed(effectID, inContext, outContext, useCnt)
-	local incontext = tolua.cast(inContext, "UseItemInContext")	
-	local outcontext = tolua.cast(outContext, "UseItemOutContext")	
+	print("=======================>effectID:"..effectID)
+	local incontext = tolua.cast(inContext, "UseItemInContext")
+	local outcontext = tolua.cast(outContext, "UseItemOutContext")
 	local src = incontext.srcRoleID
 	local target = incontext.targetRoleID
 	local effData = EffectRecord[effectID]
 	if effData then
+		print("found effData")
 		local effType = effData.effectType
 		local effect = EffectTypeMap[effType](effData)
 		local ret = effect:doTest(src, target, incontext, outcontext, useCnt)
@@ -609,6 +611,8 @@ function apiEntry.onMaterialUsed(effectID, inContext, outContext, useCnt)
 		else
 			return 0
 		end
+	else
+		print("not found effData")
 	end
 	return 0
 end
@@ -629,19 +633,19 @@ end
 function apiEntry.onCallSp(roleID, tabName, datas)
 	local player = g_entityMgr:getPlayer(roleID)
 	if player then
-		g_listHandler:notifyListener("onCallSp", player, tabName, datas)	
-	end 
+		g_listHandler:notifyListener("onCallSp", player, tabName, datas)
+	end
 end
 
 --全局数据加载回调
 function apiEntry.onLoadAll(key, value, tabName, key2)
 	if tabName == "faction" then
 		FactionManager.loadFaction(key, value, key2)
-	elseif tabName == "factionmem" then	
+	elseif tabName == "factionmem" then
 		FactionManager.loadFactionMember(key, value, key2)
-	elseif tabName == "allcopy" then	
+	elseif tabName == "allcopy" then
 		CopyManager.onLoadCopyData(key, value, key2)
-	elseif tabName == "allpvp" then	
+	elseif tabName == "allpvp" then
 		SinpvpServlet.onLoadRank(key, value)
 	end
 end
@@ -651,14 +655,14 @@ function apiEntry.onSwitchScene(roleID, mapID, lastMapID)
 	local player = g_entityMgr:getPlayer(roleID)
 	if player then
 		g_listHandler:notifyListener("onSwitchScene", player, mapID, lastMapID)
-	end 
+	end
 end
 
 function apiEntry.onSwitchLine(roleID, lineID, lastLineID)
 	local player = g_entityMgr:getPlayer(roleID)
 	if player then
 		g_listHandler:notifyListener("onSwitchLine", player, lineID, lastLineID)
-	end 
+	end
 end
 
 function apiEntry.onPlayerMoveInCeremony(roleID)
@@ -672,7 +676,7 @@ function apiEntry.getStrByKey(key)
         return str_tab[key]
     else
         return ""
-    end  
+    end
 end
 
 --玩家复活的消息
@@ -755,14 +759,14 @@ end
 
 function t()
 	local resp_body = {
-		[999] = {6, 7, 8} 
+		[999] = {6, 7, 8}
 	}
-	
+
 	cjson.encode_sparse_array(true)
 	print(cjson.encode(resp_body))
 
 	local resp_body2 = {
-		[99] = {6, 7, 8} 
+		[99] = {6, 7, 8}
 	}
 	print(cjson.encode(resp_body2))
 end
@@ -773,7 +777,7 @@ function t2()
 		return t[k]
 	end
 
-	a = {vtbl = {} }	
+	a = {vtbl = {} }
 	mt = {}
 	mt.__index = function (t, k)
 		return rawget(t.vtbl, k)

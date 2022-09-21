@@ -35,7 +35,7 @@
 						<Type>NET</Type>
 						<Device>
 							<Net>
-								<Url>udp://192.168.30.139:6670</Url>
+								<Url>udp://192.168.1.102:6670</Url>
 								<Sendbuff>0</Sendbuff>
 								<RecvBuff>0</RecvBuff>
 								<AutoReconnect>1</AutoReconnect>

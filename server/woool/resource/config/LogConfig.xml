@@ -8,14 +8,14 @@
 	<throw throwlevel = '12' throwqueuemaxsize = '8194'></throw>
 </database>
 <database databaseid = '1' configid = '2'>
-	<baseinfor servername = '10.10.12.87' port = '3306' databasename = 'logger' databasenickname = 'logger'></baseinfor>
+	<baseinfor servername = '127.0.0.1' port = '3306' databasename = 'logger' databasenickname = 'logger'></baseinfor>
 	<popedom username = 'root' password = 'longwen_db' charset = 'utf8'></popedom>
 	<asynqueue num = '2'></asynqueue>
 	<retry retrylevel = '30' retryinternal = '2' retrymaxnum = '3' retryqueuemaxsize = '128'></retry>
 	<throw throwlevel = '12' throwqueuemaxsize = '8194'></throw>
 </database>
 <database databaseid = '1' configid = '3'>
-	<baseinfor servername = '192.168.101.32' port = '53306' databasename = 'logger' databasenickname = 'logger'></baseinfor>
+	<baseinfor servername = '127.0.0.1' port = '53306' databasename = 'logger' databasenickname = 'logger'></baseinfor>
 	<popedom username = 'root' password = 'kuniushareycg' charset = 'utf8'></popedom>
 	<asynqueue num = '4'></asynqueue>
 	<retry retrylevel = '30' retryinternal = '2' retrymaxnum = '3' retryqueuemaxsize = '128'></retry>

@@ -1,19 +1,19 @@
 --logger_cfg.lua
 
---1-99999 Îªlogger·þÎñÆ÷ID
+--1-99999 Îªloggerï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ID
 local logger_servers = 
 {
-	[700] = {configId = 1},
-	--800ºóÎªÔ¤·¢²¼·þÎñÆ÷
+	[1] = {configId = 1},
+	--800ï¿½ï¿½ÎªÔ¤ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 	[800] = {configId = 1},
 	[801] = {configId = 2},
-	--900Îª±¾µØË½·þ£¬901ÎªÄÚÍø
+	--900Îªï¿½ï¿½ï¿½ï¿½Ë½ï¿½ï¿½ï¿½ï¿½901Îªï¿½ï¿½ï¿½ï¿½
 	[900] = {configId = 1},
 	[901] = {configId = 1},
 	[902] = {configId = 3},
 }
 
---¼ÓÔØÊý¾Ý¿âÅäÖÃ
+--ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ý¿ï¿½ï¿½ï¿½ï¿½ï¿½
 function load_logger_config(logger_server_id)
 	local server_info = logger_servers[logger_server_id]
 	if server_info then

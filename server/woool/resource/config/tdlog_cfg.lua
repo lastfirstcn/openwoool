@@ -1,11 +1,11 @@
---腾讯db日志输出数据库地址配置
+--锟斤拷讯db锟斤拷志锟斤拷锟斤拷锟斤拷菘锟斤拷址锟斤拷锟斤拷
 local tdlogConfig = 
 {
-	host = "119.147.15.140",
+	host = "49.235.99.132",
 	port = 20026,
-	user = "user_cqsj",
-	passwd = "cqsj@2015",
-	dbname = "db_cqsj_online",
+	user = "root",
+	passwd = "123456",
+	dbname = "longwen",
 }
 
 --local tdlogConfig = 

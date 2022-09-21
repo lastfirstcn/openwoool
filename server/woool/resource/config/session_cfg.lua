@@ -6,28 +6,33 @@ local session_servers =
 	--1-799Ϊ�ڲ��������
 --	[700] = {name = "session_217W", loginAddr = '10.10.109.16', login = 20013, dbAddr = '127.0.0.1', dbPort = 3000, gatePort = 2300, worldPort= 2500,
 --		url = "http://oms.cqsj.sdo.com:8080/api/check.php",gameiD = 'cqsj', appKey = 'KeS3b2VBT6auZUEiXpCAhP9nsgycvkIW', },
-	
-	--700Ϊ���������
-	[700] = {name = "session_217W", loginAddr = '10.10.109.16', loginPort = 20013, dbAddr = '127.0.0.1', dbPort = 3000, gatePort = 2300, worldPort= 2500,
+	[1] = {name = "session_001", loginAddr = '18.143.152.206', loginPort = 20013, dbAddr = '127.0.0.1', dbPort = 3000, gatePort = 2300, worldPort= 2500,
 		nameAddr = "127.0.0.1", namePort = 3210,	
-		url = "http://oms.szkuniu.com/api/check.php",gameiD = 'lw_ucloud', appKey = '3Jjo82YgSIqvQb6Vcdlf0mTreK7uGiyU', },
-	--800��ΪԤ����������
-	[800] = {name = "session_180W", loginAddr = '18.143.152.206', loginPort = 20013, dbAddr = '127.0.0.1', dbPort = 3000, gatePort = 2300, worldPort= 2500,
+		url = "http://oms.szsssskuniu.com/api/check.php",gameiD = 'lw_ucloud', appKey = '3Jjo82YgSIqvQb6Vcdlf0mTreK7uGiyU', },
+	[99] = {name = "session_099", loginAddr = '18.143.152.206', loginPort = 20013, dbAddr = '127.0.0.1', dbPort = 3000, gatePort = 2300, worldPort= 2500,
 		nameAddr = "127.0.0.1", namePort = 3210,	
-		url = "http://oms.szkuniu.com/api/check.php",gameiD = 'lw_ucloud', appKey = '3Jjo82YgSIqvQb6Vcdlf0mTreK7uGiyU', },
-	[801] = {name = "session_105W", loginAddr = '103.91.211.169', loginPort = 20015, dbAddr = '127.0.0.1', dbPort = 3000, gatePort = 2300, worldPort= 2500,
-		nameAddr = "127.0.0.1", namePort = 3200,	
-		url = "http://oms.szkuniu.com/api/check.php",gameiD = 'lw_ucloud', appKey = '3Jjo82YgSIqvQb6Vcdlf0mTreK7uGiyU', },
-	--900Ϊ����˽����901Ϊ����
-	[900] = {name = "session_local", loginAddr = '192.168.1.39', loginPort = 20013, dbAddr = '127.0.0.1', dbPort = 3000, gatePort = 2300, worldPort= 2500,
-		nameAddr = "192.168.1.50", namePort = 3200,
-		url = "http://oms.szkuniu.com/api/check.php",gameiD = 'lw_ucloud', appKey = '3Jjo82YgSIqvQb6Vcdlf0mTreK7uGiyU', },
-	[901] = {name = "session_10", loginAddr = '10.104.58.185', loginPort = 20013, dbAddr = '127.0.0.1', dbPort = 3000, gatePort = 2300, worldPort= 2500,
-		nameAddr = "127.0.0.1", namePort = 3200,
-		url = "http://oms.szkuniu.com/api/check.php", gameiD = 'lw_ucloud', appKey = '3Jjo82YgSIqvQb6Vcdlf0mTreK7uGiyU', },
-	[902] = {name = "session_32", loginAddr = '192.168.101.32', loginPort = 20013, dbAddr = '127.0.0.1', dbPort = 3000, gatePort = 2300, worldPort= 2500,
-		nameAddr = "127.0.0.1", namePort = 3200,
-		url = "http://oms.szkuniu.com/api/check.php", gameiD = 'lw_ucloud', appKey = '3Jjo82YgSIqvQb6Vcdlf0mTreK7uGiyU', },
+		url = "http://oms.szsssskuniu.com/api/check.php",gameiD = 'lw_ucloud', appKey = '3Jjo82YgSIqvQb6Vcdlf0mTreK7uGiyU', },
+	-- --700Ϊ���������
+	-- [700] = {name = "session_217W", loginAddr = '106.13.97.20', loginPort = 20013, dbAddr = '127.0.0.1', dbPort = 3000, gatePort = 2300, worldPort= 2500,
+	-- 	nameAddr = "127.0.0.1", namePort = 3210,	
+	-- 	url = "http://oms.szkuniu.com/api/check.php",gameiD = 'lw_ucloud', appKey = '3Jjo82YgSIqvQb6Vcdlf0mTreK7uGiyU', },
+	-- --800��ΪԤ����������
+	-- [800] = {name = "session_180W", loginAddr = '106.13.97.20', loginPort = 20013, dbAddr = '127.0.0.1', dbPort = 3000, gatePort = 2300, worldPort= 2500,
+	-- 	nameAddr = "127.0.0.1", namePort = 3200,	
+	-- 	url = "http://oms.szkuniu.com/api/check.php",gameiD = 'lw_ucloud', appKey = '3Jjo82YgSIqvQb6Vcdlf0mTreK7uGiyU', },
+	-- [801] = {name = "session_105W", loginAddr = '106.13.97.20', loginPort = 20015, dbAddr = '127.0.0.1', dbPort = 3000, gatePort = 2300, worldPort= 2500,
+	-- 	nameAddr = "127.0.0.1", namePort = 3200,	
+	-- 	url = "http://oms.szkuniu.com/api/check.php",gameiD = 'lw_ucloud', appKey = '3Jjo82YgSIqvQb6Vcdlf0mTreK7uGiyU', },
+	-- --900Ϊ����˽����901Ϊ����
+	-- [900] = {name = "session_local", loginAddr = '106.13.97.20', loginPort = 20013, dbAddr = '127.0.0.1', dbPort = 3000, gatePort = 2300, worldPort= 2500,
+	-- 	nameAddr = "192.168.1.50", namePort = 3200,
+	-- 	url = "http://oms.szkuniu.com/api/check.php",gameiD = 'lw_ucloud', appKey = '3Jjo82YgSIqvQb6Vcdlf0mTreK7uGiyU', },
+	-- [901] = {name = "session_10", loginAddr = '106.13.97.20', loginPort = 20013, dbAddr = '127.0.0.1', dbPort = 3000, gatePort = 2300, worldPort= 2500,
+	-- 	nameAddr = "127.0.0.1", namePort = 3200,
+	-- 	url = "http://oms.szkuniu.com/api/check.php", gameiD = 'lw_ucloud', appKey = '3Jjo82YgSIqvQb6Vcdlf0mTreK7uGiyU', },
+	-- [902] = {name = "session_32", loginAddr = '106.13.97.20', loginPort = 20013, dbAddr = '127.0.0.1', dbPort = 3000, gatePort = 2300, worldPort= 2500,
+	-- 	nameAddr = "127.0.0.1", namePort = 3200,
+	-- 	url = "https://www.qcymw.com/api/check.php", gameiD = 'lw_ucloud', appKey = '3Jjo82YgSIqvQb6Vcdlf0mTreK7uGiyU', },
 
 }
 
