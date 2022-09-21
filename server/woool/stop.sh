@@ -1,8 +1,8 @@
 #!/bin/sh
 
-killall DBAServer_d
-killall SessionServer_d
-killall GameGateway_d
-killall WorldFrame_d
-killall NameServer_d
+killall -9 DBAServer_d
+killall -9 SessionServer_d
+killall -9 GameGateway_d
+killall -9 WorldFrame_d
+killall -9 NameServer_d
 
