@@ -100,17 +100,28 @@ local Items = {
 	{id = 100,text = '开始抽奖',type = 3,value = 'a250',param = 0,icon = 0,},
 
 
+	{id = 102,text = '进入地图',type = 3,value = 'a253',param = 0,icon = 0,},
+	{id = 103,text = '进入地图',type = 3,value = 'a254',param = 0,icon = 0,},
+	{id = 104,text = '进入地图',type = 3,value = 'a255',param = 0,icon = 0,},
+	{id = 105,text = '进入地图',type = 3,value = 'a256',param = 0,icon = 0,},
+	{id = 106,text = '进入地图',type = 3,value = 'a257',param = 0,icon = 0,},
+	{id = 107,text = '进入地图',type = 3,value = 'a258',param = 0,icon = 0,},
+	{id = 108,text = '进入地图',type = 3,value = 'a259',param = 0,icon = 0,},
+	{id = 109,text = '进入地图',type = 3,value = 'a260',param = 0,icon = 0,},
+	{id = 110,text = '进入地图',type = 3,value = 'a261',param = 0,icon = 0,},
 
 
 
-	{id = 102,text = '前往副本',type = 3,value = 'a252',param = 0,icon = 0,},
-	{id = 103,text = '前往副本',type = 3,value = 'a255',param = 0,icon = 0,},
-	{id = 104,text = '前往副本',type = 3,value = 'a257',param = 0,icon = 0,},
-	{id = 105,text = '前往副本',type = 3,value = 'a258',param = 0,icon = 0,},
-	{id = 106,text = '前往副本',type = 3,value = 'a259',param = 0,icon = 0,},
-	{id = 107,text = '前往副本',type = 3,value = 'a260',param = 0,icon = 0,},
 
-
+	{id = 122,text = '挑战教主',type = 3,value = 'a273',param = 0,icon = 0,},
+	{id = 123,text = '挑战教主',type = 3,value = 'a274',param = 0,icon = 0,},
+	{id = 124,text = '挑战教主',type = 3,value = 'a275',param = 0,icon = 0,},
+	{id = 125,text = '挑战教主',type = 3,value = 'a276',param = 0,icon = 0,},
+	{id = 126,text = '挑战教主',type = 3,value = 'a277',param = 0,icon = 0,},
+	{id = 127,text = '挑战教主',type = 3,value = 'a278',param = 0,icon = 0,},
+	{id = 128,text = '挑战教主',type = 3,value = 'a279',param = 0,icon = 0,},
+	{id = 129,text = '挑战教主',type = 3,value = 'a280',param = 0,icon = 0,},
+	{id = 130,text = '挑战教主',type = 3,value = 'a281',param = 0,icon = 0,},
 
 
 

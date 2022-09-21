@@ -67,9 +67,9 @@ if ($action == "serverList"){
     $data = '{"version":"1.0.0","default":[1],
         "servers":[
             {
-                "id":800,"name":"传世800区","status":1,
+                "id":1,"name":"传世回忆区","status":1,
                 "ip":"18.143.152.206","port":20013,
-                "gamename":"传世800区",
+                "gamename":"传世回忆区",
                 "apiport":81,
                 "apipath":"",
                 "index":"http://18.143.152.206:81/index.html",
