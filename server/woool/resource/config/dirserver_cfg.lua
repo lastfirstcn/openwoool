@@ -1,22 +1,22 @@
 --dbx_cfg.lua
--- ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ó¦ï¿½ï¿½Ïµ 1.QQIOS, 2:QQï¿½ï¿½×¿, 3:Î¢ï¿½ï¿½IOS, 4:Î¢ï¿½Å°ï¿½×¿
---1-99999 Îªdbxï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ID
+-- ´óÇø¶ÔÓ¦¹ØÏµ 1.QQIOS, 2:QQ°²×¿, 3:Î¢ÐÅIOS, 4:Î¢ÐÅ°²×¿
+--1-99999 Îªdbx·þÎñÆ÷ID
 local dbx_servers = 
 {
-	--1-799Îªï¿½ï¿½Ê½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+	--1-799ÎªÕýÊ½·þÎñÆ÷×é
 --	[1] = {name = "dbx_105W", loginAddr = '127.0.0.1', loginPort = 3000, config = 1, qq_ios = "../resource/config/qqios.conf", qq_android = "../resource/config/qqandroid.conf", winxin_ios = "../resource/config/winxinios.conf", winxin_android = "../resource/config/winxinandroid.conf"},
-	--700Îªï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
-	[1] = {name = "dir_001", loginAddr = '127.0.0.1', loginPort = 3100, config = 1, qq_ios = "../resource/config/qqios.conf", qq_android = "../resource/config/qqandroid.conf", winxin_ios = "../resource/config/winxinios.conf", winxin_android = "../resource/config/winxinandroid.conf"},
-	--800ï¿½ï¿½ÎªÔ¤ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
-	-- [800] = {name = "dir_12W", loginAddr = '127.0.0.1', loginPort = 3100, config = 1, qq_ios = "../resource/config/qqios.conf", qq_android = "../resource/config/qqandroid.conf", winxin_ios = "../resource/config/winxinios.conf", winxin_android = "../resource/config/winxinandroid.conf"},
-	-- [801] = {name = "dir_105W", loginAddr = '127.0.0.1', loginPort = 3100, config = 1, qq_ios = "../resource/config/qqios.conf", qq_android = "../resource/config/qqandroid.conf", winxin_ios = "../resource/config/winxinios.conf", winxin_android = "../resource/config/winxinandroid.conf"},
-	-- --900Îªï¿½ï¿½ï¿½ï¿½Ë½ï¿½ï¿½ï¿½ï¿½901Îªï¿½ï¿½ï¿½ï¿½
-	-- [900] = {name = "dir_local", loginAddr = '127.0.0.1', loginPort = 3100, config = 1, qq_ios = "../resource/config/qqios.conf", qq_android = "../resource/config/qqandroid.conf", winxin_ios = "../resource/config/winxinios.conf", winxin_android = "../resource/config/winxinandroid.conf"},
-	-- [901] = {name = "dir_10", loginAddr = '127.0.0.1', loginPort = 3100, config = 1, qq_ios = "../resource/config/qqios.conf", qq_android = "../resource/config/qqandroid.conf", winxin_ios = "../resource/config/winxinios.conf", winxin_android = "../resource/config/winxinandroid.conf"},
-	-- [902] = {name = "dir_32", loginAddr = '127.0.0.1', loginPort = 3100, config = 1, qq_ios = "../resource/config/qqios.conf", qq_android = "../resource/config/qqandroid.conf", winxin_ios = "../resource/config/winxinios.conf", winxin_android = "../resource/config/winxinandroid.conf"},
+	--700Îª°æÊð·þÎñÆ÷
+	[700] = {name = "dir_217W", loginAddr = '127.0.0.1', loginPort = 3100, config = 1, qq_ios = "../resource/config/qqios.conf", qq_android = "../resource/config/qqandroid.conf", winxin_ios = "../resource/config/winxinios.conf", winxin_android = "../resource/config/winxinandroid.conf"},
+	--800ºóÎªÔ¤·¢²¼·þÎñÆ÷
+	[800] = {name = "dir_12W", loginAddr = '127.0.0.1', loginPort = 3100, config = 1, qq_ios = "../resource/config/qqios.conf", qq_android = "../resource/config/qqandroid.conf", winxin_ios = "../resource/config/winxinios.conf", winxin_android = "../resource/config/winxinandroid.conf"},
+	[801] = {name = "dir_105W", loginAddr = '127.0.0.1', loginPort = 3100, config = 1, qq_ios = "../resource/config/qqios.conf", qq_android = "../resource/config/qqandroid.conf", winxin_ios = "../resource/config/winxinios.conf", winxin_android = "../resource/config/winxinandroid.conf"},
+	--900Îª±¾µØË½·þ£¬901ÎªÄÚÍø
+	[900] = {name = "dir_local", loginAddr = '127.0.0.1', loginPort = 3100, config = 1, qq_ios = "../resource/config/qqios.conf", qq_android = "../resource/config/qqandroid.conf", winxin_ios = "../resource/config/winxinios.conf", winxin_android = "../resource/config/winxinandroid.conf"},
+	[901] = {name = "dir_10", loginAddr = '127.0.0.1', loginPort = 3100, config = 1, qq_ios = "../resource/config/qqios.conf", qq_android = "../resource/config/qqandroid.conf", winxin_ios = "../resource/config/winxinios.conf", winxin_android = "../resource/config/winxinandroid.conf"},
+	[902] = {name = "dir_32", loginAddr = '127.0.0.1', loginPort = 3100, config = 1, qq_ios = "../resource/config/qqios.conf", qq_android = "../resource/config/qqandroid.conf", winxin_ios = "../resource/config/winxinios.conf", winxin_android = "../resource/config/winxinandroid.conf"},
 }
 
---ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ý¿ï¿½ï¿½ï¿½ï¿½ï¿½
+--¼ÓÔØÊý¾Ý¿âÅäÖÃ
 function load_dir_config(buff, db_server_id)	
 	local luabuf = tolua.cast(buff, "LuaMsgBuffer")
 	if luabuf then

@@ -46,7 +46,6 @@ function EventManager:addEventListener(listener)
 	end
 	if instanceof(listener, EventListener) then
 		local id = listener:getEventID()
-		Logger.getLogger():warn("event mgr,add listenerid-" .. tostring(id))
 		if not self.eventListeners[id] then self.eventListeners[id] = {} end
 		table.insert(self.eventListeners[id], listener)
 	end
@@ -54,7 +53,6 @@ function EventManager:addEventListener(listener)
 		local ids = listener:getEvents()
 		local count = listener:getEventsCount()
 		for i, id in pairs(ids) do
-			Logger.getLogger():warn("event mgr,add set listenrid-" .. tostring(id))
 			if not self.eventListeners[id] then self.eventListeners[id] = {} end
 			table.insert(self.eventListeners[id], listener)
 		end
@@ -105,7 +103,6 @@ end
 --------------------------------------------------------------------------------
 function EventManager:fireEvent(event)
 	local id = event:getID()
-	Logger.getLogger():warn("fire event id=" .. tostring(id))
 	fire(self.eventListeners[id], event)
 	release(event)
 end

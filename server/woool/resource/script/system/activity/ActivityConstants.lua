@@ -1,7 +1,7 @@
 ACTIVITY_REFRESH = 0 			--0点刷新
 DAY_SECENDS = 24 * 60 * 60		--一天的秒数
 WEEK_SECENDS = 7 * DAY_SECENDS
-WEEK_START_TIME = time.totime("2016-08-01 00:00:00")	--周一为每周第一天
+WEEK_START_TIME = time.totime("2019-10-24 00:00:00")	--周一为每周第一天
 ACTIVITY_RESIGN_INGOT = 20 		--补签一次花费元宝
 ACTIVITY_ADD_MONEY = 8888		--微信登录签到额外加成奖励金币数量
 ACTIVITY_SEVEN_FESTIVAL_DAY = 7	--七日盛典结束日期(开服后第几天)

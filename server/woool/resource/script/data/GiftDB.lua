@@ -18,6 +18,7 @@ local Items=
   {q_gift_id=10026.0,q_gift_name='强化石特惠包',q_gift_type=1.0,q_gift_data='{{30000,20,1}}',q_bind=1.0,},
   {q_gift_id=10027.0,q_gift_name='气血石特惠包',q_gift_type=1.0,q_gift_data='{{20020,5,1},{1002,5,1}}',q_bind=1.0,},
   {q_gift_id=10028.0,q_gift_name='寻宝符特惠包',q_gift_type=1.0,q_gift_data='{{5019,10,1},{2002,5,1}}',q_bind=1.0,},
+  {q_gift_id=10031.0,q_gift_name='新手成长礼包',q_gift_type=1.0,q_gift_data='{{20023, 1, 1},{1001, 15, 1},{888888, 500, 1},{222222, 33333, 1,{20035, 50, 1}}',q_bind=1.0,},   
 }
 
 return Items

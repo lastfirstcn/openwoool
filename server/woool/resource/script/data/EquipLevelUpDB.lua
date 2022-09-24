@@ -72,63 +72,6 @@ local Items=
   {q_type=8.0,q_minLevel=60.0,q_maxLevel=79.0,q_material1=1119.0,q_materialCount1=6.0,q_needStrengthLevel=40.0,q_needQuality=7.0,q_needBindMoney=7922002.2,q_school=0.0,},
   {q_type=8.0,q_minLevel=80.0,q_maxLevel=99.0,q_needStrengthLevel=50.0,q_needQuality=9.0,q_school=0.0,},
   {q_type=8.0,q_minLevel=100.0,q_maxLevel=119.0,q_needStrengthLevel=60.0,q_needQuality=11.0,q_school=0.0,},
-
-  {q_type=13.0,q_minLevel=1.0,q_maxLevel=19.0,q_material1=1116.0,q_materialCount1=1.0,q_needStrengthLevel=5.0,q_needQuality=1.0,q_needBindMoney=200000.0,q_school=0.0,},
-  {q_type=13.0,q_minLevel=20.0,q_maxLevel=39.0,q_material1=1117.0,q_materialCount1=2.0,q_needStrengthLevel=15.0,q_needQuality=3.0,q_needBindMoney=680000.0,q_school=0.0,},
-  {q_type=13.0,q_minLevel=40.0,q_maxLevel=59.0,q_material1=1118.0,q_materialCount1=4.0,q_needStrengthLevel=30.0,q_needQuality=5.0,q_needBindMoney=1200000.0,q_school=0.0,},
-  {q_type=13.0,q_minLevel=60.0,q_maxLevel=79.0,q_material1=1119.0,q_materialCount1=6.0,q_needStrengthLevel=40.0,q_needQuality=7.0,q_needBindMoney=7922002.2,q_school=0.0,},
-  {q_type=13.0,q_minLevel=80.0,q_maxLevel=99.0,q_needStrengthLevel=50.0,q_needQuality=9.0,q_school=0.0,},
-  {q_type=13.0,q_minLevel=100.0,q_maxLevel=119.0,q_needStrengthLevel=60.0,q_needQuality=11.0,q_school=0.0,},
-
-  {q_type=15.0,q_minLevel=1.0,q_maxLevel=19.0,q_material1=1116.0,q_materialCount1=1.0,q_needStrengthLevel=5.0,q_needQuality=1.0,q_needBindMoney=200000.0,q_school=0.0,},
-  {q_type=15.0,q_minLevel=20.0,q_maxLevel=39.0,q_material1=1117.0,q_materialCount1=2.0,q_needStrengthLevel=15.0,q_needQuality=3.0,q_needBindMoney=680000.0,q_school=0.0,},
-  {q_type=15.0,q_minLevel=40.0,q_maxLevel=59.0,q_material1=1118.0,q_materialCount1=4.0,q_needStrengthLevel=30.0,q_needQuality=5.0,q_needBindMoney=1200000.0,q_school=0.0,},
-  {q_type=15.0,q_minLevel=60.0,q_maxLevel=79.0,q_material1=1119.0,q_materialCount1=6.0,q_needStrengthLevel=40.0,q_needQuality=7.0,q_needBindMoney=7922002.2,q_school=0.0,},
-  {q_type=15.0,q_minLevel=80.0,q_maxLevel=99.0,q_needStrengthLevel=50.0,q_needQuality=9.0,q_school=0.0,},
-  {q_type=15.0,q_minLevel=100.0,q_maxLevel=119.0,q_needStrengthLevel=60.0,q_needQuality=11.0,q_school=0.0,},
-
-  {q_type=16.0,q_minLevel=1.0,q_maxLevel=19.0,q_material1=1116.0,q_materialCount1=1.0,q_needStrengthLevel=5.0,q_needQuality=1.0,q_needBindMoney=200000.0,q_school=0.0,},
-  {q_type=16.0,q_minLevel=20.0,q_maxLevel=39.0,q_material1=1117.0,q_materialCount1=2.0,q_needStrengthLevel=15.0,q_needQuality=3.0,q_needBindMoney=680000.0,q_school=0.0,},
-  {q_type=16.0,q_minLevel=40.0,q_maxLevel=59.0,q_material1=1118.0,q_materialCount1=4.0,q_needStrengthLevel=30.0,q_needQuality=5.0,q_needBindMoney=1200000.0,q_school=0.0,},
-  {q_type=16.0,q_minLevel=60.0,q_maxLevel=79.0,q_material1=1119.0,q_materialCount1=6.0,q_needStrengthLevel=40.0,q_needQuality=7.0,q_needBindMoney=7922002.2,q_school=0.0,},
-  {q_type=16.0,q_minLevel=80.0,q_maxLevel=99.0,q_needStrengthLevel=50.0,q_needQuality=9.0,q_school=0.0,},
-  {q_type=16.0,q_minLevel=100.0,q_maxLevel=119.0,q_needStrengthLevel=60.0,q_needQuality=11.0,q_school=0.0,},
-
-  {q_type=17.0,q_minLevel=1.0,q_maxLevel=19.0,q_material1=1116.0,q_materialCount1=1.0,q_needStrengthLevel=5.0,q_needQuality=1.0,q_needBindMoney=200000.0,q_school=0.0,},
-  {q_type=17.0,q_minLevel=20.0,q_maxLevel=39.0,q_material1=1117.0,q_materialCount1=2.0,q_needStrengthLevel=15.0,q_needQuality=3.0,q_needBindMoney=680000.0,q_school=0.0,},
-  {q_type=17.0,q_minLevel=40.0,q_maxLevel=59.0,q_material1=1118.0,q_materialCount1=4.0,q_needStrengthLevel=30.0,q_needQuality=5.0,q_needBindMoney=1200000.0,q_school=0.0,},
-  {q_type=17.0,q_minLevel=60.0,q_maxLevel=79.0,q_material1=1119.0,q_materialCount1=6.0,q_needStrengthLevel=40.0,q_needQuality=7.0,q_needBindMoney=7922002.2,q_school=0.0,},
-  {q_type=17.0,q_minLevel=80.0,q_maxLevel=99.0,q_needStrengthLevel=50.0,q_needQuality=9.0,q_school=0.0,},
-  {q_type=17.0,q_minLevel=100.0,q_maxLevel=119.0,q_needStrengthLevel=60.0,q_needQuality=11.0,q_school=0.0,},
-
-  {q_type=18.0,q_minLevel=1.0,q_maxLevel=19.0,q_material1=1116.0,q_materialCount1=1.0,q_needStrengthLevel=5.0,q_needQuality=1.0,q_needBindMoney=200000.0,q_school=0.0,},
-  {q_type=18.0,q_minLevel=20.0,q_maxLevel=39.0,q_material1=1117.0,q_materialCount1=2.0,q_needStrengthLevel=15.0,q_needQuality=3.0,q_needBindMoney=680000.0,q_school=0.0,},
-  {q_type=18.0,q_minLevel=40.0,q_maxLevel=59.0,q_material1=1118.0,q_materialCount1=4.0,q_needStrengthLevel=30.0,q_needQuality=5.0,q_needBindMoney=1200000.0,q_school=0.0,},
-  {q_type=18.0,q_minLevel=60.0,q_maxLevel=79.0,q_material1=1119.0,q_materialCount1=6.0,q_needStrengthLevel=40.0,q_needQuality=7.0,q_needBindMoney=7922002.2,q_school=0.0,},
-  {q_type=18.0,q_minLevel=80.0,q_maxLevel=99.0,q_needStrengthLevel=50.0,q_needQuality=9.0,q_school=0.0,},
-  {q_type=18.0,q_minLevel=100.0,q_maxLevel=119.0,q_needStrengthLevel=60.0,q_needQuality=11.0,q_school=0.0,},
-
-  {q_type=19.0,q_minLevel=1.0,q_maxLevel=19.0,q_material1=1116.0,q_materialCount1=1.0,q_needStrengthLevel=5.0,q_needQuality=1.0,q_needBindMoney=200000.0,q_school=0.0,},
-  {q_type=19.0,q_minLevel=20.0,q_maxLevel=39.0,q_material1=1117.0,q_materialCount1=2.0,q_needStrengthLevel=15.0,q_needQuality=3.0,q_needBindMoney=680000.0,q_school=0.0,},
-  {q_type=19.0,q_minLevel=40.0,q_maxLevel=59.0,q_material1=1118.0,q_materialCount1=4.0,q_needStrengthLevel=30.0,q_needQuality=5.0,q_needBindMoney=1200000.0,q_school=0.0,},
-  {q_type=19.0,q_minLevel=60.0,q_maxLevel=79.0,q_material1=1119.0,q_materialCount1=6.0,q_needStrengthLevel=40.0,q_needQuality=7.0,q_needBindMoney=7922002.2,q_school=0.0,},
-  {q_type=19.0,q_minLevel=80.0,q_maxLevel=99.0,q_needStrengthLevel=50.0,q_needQuality=9.0,q_school=0.0,},
-  {q_type=19.0,q_minLevel=100.0,q_maxLevel=119.0,q_needStrengthLevel=60.0,q_needQuality=11.0,q_school=0.0,},
-
-  {q_type=20.0,q_minLevel=1.0,q_maxLevel=19.0,q_material1=1116.0,q_materialCount1=1.0,q_needStrengthLevel=5.0,q_needQuality=1.0,q_needBindMoney=200000.0,q_school=0.0,},
-  {q_type=20.0,q_minLevel=20.0,q_maxLevel=39.0,q_material1=1117.0,q_materialCount1=2.0,q_needStrengthLevel=15.0,q_needQuality=3.0,q_needBindMoney=680000.0,q_school=0.0,},
-  {q_type=20.0,q_minLevel=40.0,q_maxLevel=59.0,q_material1=1118.0,q_materialCount1=4.0,q_needStrengthLevel=30.0,q_needQuality=5.0,q_needBindMoney=1200000.0,q_school=0.0,},
-  {q_type=20.0,q_minLevel=60.0,q_maxLevel=79.0,q_material1=1119.0,q_materialCount1=6.0,q_needStrengthLevel=40.0,q_needQuality=7.0,q_needBindMoney=7922002.2,q_school=0.0,},
-  {q_type=20.0,q_minLevel=80.0,q_maxLevel=99.0,q_needStrengthLevel=50.0,q_needQuality=9.0,q_school=0.0,},
-  {q_type=20.0,q_minLevel=100.0,q_maxLevel=119.0,q_needStrengthLevel=60.0,q_needQuality=11.0,q_school=0.0,},
-
-  {q_type=21.0,q_minLevel=1.0,q_maxLevel=19.0,q_material1=1116.0,q_materialCount1=1.0,q_needStrengthLevel=5.0,q_needQuality=1.0,q_needBindMoney=200000.0,q_school=0.0,},
-  {q_type=21.0,q_minLevel=20.0,q_maxLevel=39.0,q_material1=1117.0,q_materialCount1=2.0,q_needStrengthLevel=15.0,q_needQuality=3.0,q_needBindMoney=680000.0,q_school=0.0,},
-  {q_type=21.0,q_minLevel=40.0,q_maxLevel=59.0,q_material1=1118.0,q_materialCount1=4.0,q_needStrengthLevel=30.0,q_needQuality=5.0,q_needBindMoney=1200000.0,q_school=0.0,},
-  {q_type=21.0,q_minLevel=60.0,q_maxLevel=79.0,q_material1=1119.0,q_materialCount1=6.0,q_needStrengthLevel=40.0,q_needQuality=7.0,q_needBindMoney=7922002.2,q_school=0.0,},
-  {q_type=21.0,q_minLevel=80.0,q_maxLevel=99.0,q_needStrengthLevel=50.0,q_needQuality=9.0,q_school=0.0,},
-  {q_type=21.0,q_minLevel=100.0,q_maxLevel=119.0,q_needStrengthLevel=60.0,q_needQuality=11.0,q_school=0.0,},
-
 }
 
 return Items

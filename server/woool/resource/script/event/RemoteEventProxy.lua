@@ -43,7 +43,7 @@ function RemoteEventProxy.send(event, baseRole, radius)
 end
 
 --------------------------------------------------------------------------------
---接收事件 九 零 一 起 玩w w w. 9 0 1 75.com
+--接收事件
 --------------------------------------------------------------------------------
 function RemoteEventProxy.receive(peer, eventId, _, actorId, ...)
 	--g_logger:info("a event just came in, eventId=0x%x, actorId=%d",eventId,actorId)

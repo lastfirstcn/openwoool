@@ -1,13 +1,11 @@
 local Items = {
-
-	{id = 9,name = '深度冰冻',type = 2,icon = 10,cover = 2,lastTime = 4000,special = 3,effectType = 0,deadClear = 0,desc_text = '不能攻击也不能移动',desc_color = 2,lx = 9,},
-	{id = 10,name = '初级冰冻',type = 2,icon = 10,cover = 2,lastTime = 3000,special = 2,effectType = 0,deadClear = 0,desc_text = '不能移动',desc_color = 2,lx = 10,},
 	{id = 19,name = '攻击神水',type = 2,icon = 19,cover = 2,lastTime = 600000,changeAttrKey = '11#12#13#14#15#16',changeAttrValue = '0#0#0#0#0#0',changeAttrPercent = '15#15#15#15#15#15',effectType = 1,deadClear = 1,desc_text = '提升当前攻击力的15%',desc_color = 2,lx = 19,},
 	{id = 20,name = '防御神水',type = 2,icon = 20,qingchu = 21,cover = 2,lastTime = 600000,changeAttrKey = '17#18#19#20',changeAttrValue = '0#0#0#0',changeAttrPercent = '10#10#10#10',effectType = 1,deadClear = 1,desc_text = '提升当前物理防御力与魔法防御力的10%',desc_color = 2,lx = 20,},
 	{id = 21,name = '超级防御神水',type = 2,icon = 21,qingchu = 20,cover = 2,lastTime = 600000,changeAttrKey = '17#18#19#20',changeAttrValue = '0#0#0#0',changeAttrPercent = '20#20#20#20',effectType = 1,deadClear = 1,desc_text = '提升当前物理防御力与魔法防御力的20%',desc_color = 2,lx = 21,},
 	{id = 22,name = '大幅提高移动速度',type = 2,icon = 22,cover = 2,lastTime = 600000,changeAttrKey = 75,changeAttrValue = 0,changeAttrPercent = 15,effectType = 1,deadClear = 1,desc_text = '提升当前移动速度的15%',desc_color = 2,lx = 22,},
 	{id = 23,name = '触龙神毒',type = 1,icon = 6,cover = 2,lastTime = 60000,effectType = 0,modifyHurtPre = 40,spaceTime = 1000,deadClear = 0,desc_text = '世界BOSS触龙神对于挑战者的恶毒诅咒，在此状态下会持续减少玩家生命值。',desc_color = 2,lx = 23,},
-
+	{id = 9,name = '深度冰冻',type = 2,icon = 10,cover = 2,lastTime = 4000,special = 3,effectType = 0,deadClear = 0,desc_text = '不能攻击也不能移动',desc_color = 2,lx = 9,},
+	{id = 10,name = '初级冰冻',type = 2,icon = 10,cover = 2,lastTime = 3000,special = 2,effectType = 0,deadClear = 0,desc_text = '不能移动',desc_color = 2,lx = 10,},
 	{id = 32,name = '鹤嘴锄',type = 2,icon = 32,qingchuzu = '8#',groupID = 8,cover = 1,lastTime = 1800000,special = 128,effectType = 1,deadClear = 1,desc_text = '挖矿中有可能获得各种宝贝',desc_color = 2,lx = 32,},
 	{id = 33,name = '紫金鹤嘴锄',type = 2,icon = 33,qingchuzu = '8#',groupID = 8,cover = 1,lastTime = 1800000,special = 128,effectType = 1,deadClear = 1,desc_text = '挖矿中有可能获得各种宝贝',desc_color = 2,lx = 33,},
 	{id = 51,name = '行会战低级经验加成BUFF',type = 1,icon = 51,qingchu = 52,cover = 3,effectType = 1,deadClear = 3,desc_text = '在线泡点，涨经验',desc_color = 2,lx = 51,},
@@ -93,34 +91,17 @@ local Items = {
 	{id = 125,name = '隐身',type = 2,icon = 7,cover = 3,lastTime = 80000,special = 4,effectType = 1,overType = 1,deadClear = 0,desc_text = '隐身后怪物无法察觉你的存在',view_buff = 2,desc_color = 2,lx = 7,},
 	{id = 349,name = '隐身',type = 2,icon = 7,cover = 3,lastTime = 100000,special = 4,effectType = 1,overType = 1,deadClear = 0,desc_text = '隐身后怪物无法察觉你的存在',view_buff = 2,desc_color = 2,lx = 7,},
 	{id = 350,name = '隐身',type = 2,icon = 7,cover = 3,lastTime = 120000,special = 4,effectType = 1,overType = 1,deadClear = 0,desc_text = '隐身后怪物无法察觉你的存在',view_buff = 2,desc_color = 2,lx = 7,},
-
 	{id = 126,name = '烈火',type = 2,icon = 126,cover = 3,lastTime = 10000,deadClear = 0,desc_text = '你的下一次攻击将产生烈火效果',view_buff = 1,desc_color = 2,lx = 126,},
 	{id = 127,name = '尸毒',type = 2,icon = 127,cover = 2,lastTime = 5000,deadClear = 0,view_buff = 1,desc_color = 2,},
-
 	{id = 128,name = '教主附体',type = 2,icon = 128,cover = 2,lastTime = 30000,changeAttrKey = '11#12#13#14#15#16',changeAttrValue = '0#0#0#0#0#0',changeAttrPercent = '300#300#300#300#300#300',effectType = 1,deadClear = 0,view_buff = 1,desc_color = 2,lx = 128,},
 	{id = 129,name = '机关巨兽魔免',type = 2,icon = 11,cover = 3,lastTime = 2000000000,special = 2048,deadClear = 1,desc_text = '魔免',desc_color = 2,lx = 129,},
 	{id = 130,name = '机关巨兽麻痹',type = 2,icon = 11,cover = 3,lastTime = 2000,special = 3,desc_text = '麻痹',desc_color = 2,lx = 130,},
-
 	{id = 131,name = '尸霸旋风',type = 1,icon = 11,cover = 3,lastTime = 5000,spaceTime = 1000,desc_color = 2,lx = 131,triggerSkillId = 10024,},
 	{id = 132,name = '尸霸狂暴',type = 2,icon = 11,cover = 3,lastTime = 2000000000,changeAttrKey = 47,changeAttrValue = 0,changeAttrPercent = 50,effectType = 1,desc_text = '狂暴',desc_color = 2,lx = 132,},
 	{id = 133,name = '尸霸麻痹',type = 2,icon = 11,cover = 3,lastTime = 2000,special = 3,desc_text = '麻痹',desc_color = 2,lx = 133,},
 	{id = 134,name = '蛇妖王冰冻',type = 2,icon = 11,cover = 3,lastTime = 3000,special = 2,desc_text = '冰冻',desc_color = 2,lx = 134,},
 	{id = 135,name = '禁地魔王中毒',type = 2,icon = 6,cover = 3,lastTime = 10000,changeAttrKey = '17#18#19#20',changeAttrValue = '0#0#0#0',changeAttrPercent = '10#10#10#10',effectType = 0,deadClear = 0,desc_text = '降低其防御及魔御值',desc_color = 2,lx = 135,},
 	{id = 136,name = '血雾',type = 1,icon = 11,cover = 3,lastTime = 5000,spaceTime = 1000,desc_color = 2,lx = 136,triggerSkillId = 10025,},
-
-	-- 给自己加buff
-	--{id = 394,name = '毒凌波',type = 1,icon = 6,qingchuzu = '14#',groupID = 14,cover = 2,lastTime = 10000,LiuxXuePercent = 2,effectType = 0,spaceTime = 1000,deadClear = 0,desc_text = '每秒减少百分比血量',desc_color = 2,lx = 394,liuxuePercentMax = 10000,},
-	--{id = 395,name = '龙啸九天',type = 2,icon = 16,cover = 3,lastTime = 5000,special = 1,changeAttrKey = 75,changeAttrValue = 0,changeAttrPercent = 50,effectType = 0,desc_text = '重力沉默',desc_color = 2,lx = 395,},
-	--{id = 396,name = '奔雷决',type = 2,icon = 16,cover = 3,lastTime = 3000,desc_text = '奔雷决',desc_color = 2,lx = 396,},
-	--{id = 397,name = '龙啸九天',type = 2,icon = 16,cover = 3,lastTime = 3000,desc_text = '龙啸九天',desc_color = 2,lx = 397,},
-	--{id = 398,name = '魔舞吞噬',type = 2,icon = 16,cover = 3,lastTime = 3000,desc_text = '魔舞吞噬',desc_color = 2,lx = 398,},
-
-	-- add by  396196516  通过buf产生对目标的伤害
-	{id = 501,name = '旋风伤害',type = 1,icon = 24,qingchuzu = '4#12#',groupID = 12,cover = 2,lastTime = 5000,changeAttrKey = '17#18#19#20',changeAttrValue = '0#0#0#0',changeAttrPercent = '15#15#15#15',effectType = '0',modifyHurtPre = 50,spaceTime = 1000,deadClear = 0,desc_text = '对指定目标释放，降低其物防及魔防值，并同时持续造成50%伤害，对怪物使用阻止其自动回血。',desc_color = 2,lx = 131,},
-	{id = 507,name = '持续红毒',type = 1,icon = 6,qingchuzu = '4#12#',groupID = 12,cover = 2,lastTime = 10000,changeAttrKey = '17#18#19#20',changeAttrValue = '0#0#0#0',changeAttrPercent = '15#15#15#15',effectType = '0',modifyHurtPre = 50,spaceTime = 1000,deadClear = 0,desc_text = '对指定目标释放，降低其物防及魔防值，并同时持续造成50%伤害，对怪物使用阻止其自动回血。',desc_color = 2,lx = 139,},
-	{id = 508,name = '持续绿毒',type = 1,icon = 6,qingchuzu = '4#12#',groupID = 12,cover = 2,lastTime = 10000,changeAttrKey = '17#18#19#20',changeAttrValue = '0#0#0#0',changeAttrPercent = '15#15#15#15',effectType = '0',modifyHurtPre = 50,spaceTime = 1000,deadClear = 0,desc_text = '对指定目标释放，降低其物防及魔防值，并同时持续造成50%伤害，对怪物使用阻止其自动回血。',desc_color = 2,lx = 138,},
-
-
 	{id = 137,name = '三头蛇王麻痹',type = 2,icon = 11,cover = 3,lastTime = 2000,special = 3,desc_text = '麻痹',desc_color = 2,lx = 137,},
 	{id = 138,name = '三头蛇王绿毒',type = 1,icon = 6,cover = 2,lastTime = 10000,modifyHurtPre = 25,spaceTime = 1000,deadClear = 0,desc_text = '持续造成伤害',desc_color = 2,lx = 138,},
 	{id = 139,name = '三头蛇王红毒',type = 2,icon = 6,cover = 2,lastTime = 10000,changeAttrKey = '17#18#19#20',changeAttrValue = '0#0#0#0',changeAttrPercent = '10#10#10#10',effectType = 0,deadClear = 0,desc_text = '降低其防御及魔御值',desc_color = 2,lx = 139,},
@@ -172,8 +153,11 @@ local Items = {
 	{id = 369,name = '变身',type = 2,icon = 34,lastTime = 300000,special = 132,changeAttrKey = 75,changeAttrValue = 0,changeAttrPercent = 35,effectType = 0,deadClear = 1,desc_text = '变身',desc_color = 2,lx = 369,bianshen = 20029,},
 	{id = 370,name = '变身',type = 2,icon = 34,lastTime = 300000,special = 132,changeAttrKey = 75,changeAttrValue = 0,changeAttrPercent = 35,effectType = 0,deadClear = 1,desc_text = '变身',desc_color = 2,lx = 370,bianshen = 20029,},
 	{id = 371,name = '变身',type = 2,icon = 34,lastTime = 300000,special = 132,changeAttrKey = 75,changeAttrValue = 0,changeAttrPercent = 35,effectType = 0,deadClear = 1,desc_text = '变身',desc_color = 2,lx = 371,bianshen = 20029,},
-
-
+	{id = 394,name = '毒凌波',type = 1,icon = 6,qingchuzu = '14#',groupID = 14,cover = 2,lastTime = 10000,LiuxXuePercent = 2,effectType = 0,spaceTime = 1000,deadClear = 0,desc_text = '每秒减少百分比血量！',desc_color = 2,lx = 394,liuxuePercentMax = 10000,},
+	{id = 395,name = '龙啸九天',type = 2,icon = 16,cover = 3,lastTime = 5000,special = 1,changeAttrKey = 75,changeAttrValue = 0,changeAttrPercent = 50,effectType = 0,desc_text = '重力沉默！',desc_color = 2,lx = 395,},
+	{id = 396,name = '奔雷决',type = 2,icon = 16,cover = 3,lastTime = 3000,desc_text = '奔雷决',desc_color = 2,lx = 396,},
+	{id = 397,name = '龙啸九天',type = 2,icon = 16,cover = 3,lastTime = 3000,desc_text = '龙啸九天',desc_color = 2,lx = 397,},
+	{id = 398,name = '魔舞吞噬',type = 2,icon = 16,cover = 3,lastTime = 3000,desc_text = '魔舞吞噬',desc_color = 2,lx = 398,},
 	{id = 399,name = '3V3战士加血',type = 2,lastTime = 2000000000,changeAttrKey = 6,changeAttrValue = 50000,changeAttrPercent = 0,effectType = 1,deadClear = 1,},
 	{id = 400,name = '3V3法师加血',type = 2,lastTime = 2000000000,changeAttrKey = 6,changeAttrValue = 25000,changeAttrPercent = 0,effectType = 1,deadClear = 1,},
 	{id = 401,name = '3V3道士加血',type = 2,lastTime = 2000000000,changeAttrKey = 6,changeAttrValue = 35000,changeAttrPercent = 0,effectType = 1,deadClear = 1,},
@@ -198,11 +182,6 @@ local Items = {
 	{id = 413,name = '炼狱经验',type = 1,icon = 52,cover = 2,lastTime = 2000000000,spaceTime = 10000,deadClear = 3,desc_text = '每十秒获得大量经验',desc_color = 2,lx = 413,upEXP = 950,},
 	{id = 414,name = '炼狱经验',type = 1,icon = 52,cover = 2,lastTime = 2000000000,spaceTime = 10000,deadClear = 3,desc_text = '每十秒获得大量经验',desc_color = 2,lx = 414,upEXP = 1000,},
 	{id = 415,name = '无敌',type = 2,icon = 16,cover = 2,lastTime = 0,special = 8,effectType = 1,overType = 16,desc_text = '练功师无敌BUFF',desc_color = 2,lx = 16,},
-
-
-	{id = 518,name = '吸血术',type = 12,icon = 5,qingchuzu = '3#',groupID = 3,cover = 3,lastTime = 1000,modifyHurt = 80,effectType = 1,modifyHurtPre = 10,spaceTime = 1000,deadClear = 0,desc_text = '大量恢复自己生命值，吸血效果受道术影响。',desc_color = 2,lx = 35,},
-	{id = 519,name = '超速再生',type = 1,icon = 12,cover = 1,lastTime = 10000,modifyHurt = 100000,effectType = 1,spaceTime = 1000,deadClear = 1,desc_text = '回复少量生命值，持续3秒',view_buff = 1,desc_color = 2,lx = 99,},
-	
-
+	{id = 420,name = '麻痹',type = 1,icon = 11,cover = 3,lastTime = 2000,special = 2,desc_text = '麻痹',desc_color = 2,lx = 133,},	
 };
 return Items

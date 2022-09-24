@@ -1,16 +1,16 @@
 --RideManager.lua
 --/*-----------------------------------------------------------------
---* Module:  RideManager.lua
---* Author:  seezon
---* Modified: 2014年6月16日
---* Purpose: 坐骑管理器
--------------------------------------------------------------------*/
+ --* Module:  RideManager.lua
+ --* Author:  seezon
+ --* Modified: 2014年6月16日
+ --* Purpose: 坐骑管理器
+ -------------------------------------------------------------------*/
 require ("system.ride.RideServlet")
 require ("system.ride.RoleRideInfo")
 require ("system.ride.RideConstant")
 require ("system.ride.RideEventParse")
 require ("system.ride.LuaRideDAO")
-
+	
 RideManager = class(nil, Singleton)
 --全局对象定义
 g_rideServlet = RideServlet.getInstance()
@@ -28,18 +28,18 @@ function RideManager:onPlayerLoaded(player)
 
 	if not memInfo then
 		return
-	end
-	memInfo:notifyClientLoadData()
+    end
+    memInfo:notifyClientLoadData()
 end
 
 
 function RideManager:firstActiveRide(player)
 	local memInfo = self:getRoleRideInfo(player:getID())
-
+	
 	if not memInfo or not player then
 		return false
 	end
-
+	
 	local school = player:getSchool()
 	local rideID = 0
 	if school == 1 then
@@ -54,14 +54,14 @@ function RideManager:firstActiveRide(player)
 		return
 	end
 	memInfo:addRide(rideID)
-
+	
 	self:loadProp(player, rideID)
 
 	SCRIDEFRESHRIDE.writeFun(memInfo:getRoleID(),memInfo:getRide(), true, memInfo:getRideState(),0)
 	return true
 end
 
---判断是否有坐骑 悟 空 源 码 网  www . wk y mw.com
+--判断是否有坐骑
 function RideManager:hasRide(roleSID, rideID)
 	local memInfo = self:getRoleRideInfoBySID(roleSID)
 	if memInfo:hasRide(rideID) then
@@ -74,35 +74,27 @@ end
 function RideManager:addNewRide(roleID, rideID)
 	local player = g_entityMgr:getPlayer(roleID)
 	local memInfo = self:getRoleRideInfo(roleID)
-
+	
 	if not memInfo or not player then
 		g_rideServlet:sendErrMsg2Client(roleID, RIDE_ERR_CFG_ERR, 0)
 		return false
-	else
-		print("not memInfo")
 	end
 
 	local rideProto = g_LuaRideDAO:getPrototype(rideID)
 
-	if not rideProto then
+    if not rideProto then
 		g_rideServlet:sendErrMsg2Client(roleID, RIDE_ERR_CFG_ERR, 0)
-		return false
-	else
-		print("not rideProto")
-	end
+        return false
+    end
 
 	if player:getLevel() < tonumber(rideProto.q_needLevel) then
 		g_rideServlet:sendErrMsg2Client(roleID, RIDE_ERR_NOT_ENOUGH_LEVEL, 0)
 		return false
-	else
-		print("not getLevel")
 	end
 
 	if memInfo:hasRide(rideID) then
 		g_rideServlet:sendErrMsg2Client(roleID, RIDE_ERR_HAS_SAME, 0)
 		return false
-	else
-		print("not hasRide")
 	end
 
 	memInfo:addRide(rideID)
@@ -116,7 +108,7 @@ end
 function RideManager:deleRide(roleID, rideID)
 	local player = g_entityMgr:getPlayer(roleID)
 	local memInfo = self:getRoleRideInfo(roleID)
-
+	
 	if not memInfo or not player then
 		return false
 	end
@@ -138,7 +130,7 @@ end
 
 function RideManager:offRide(roleSID)
 	local memInfo = self:getRoleRideInfoBySID(roleSID)
-
+	
 	if memInfo then
 		memInfo:offRide()
 	end
@@ -146,7 +138,7 @@ end
 
 function RideManager:getRideActiveState(roleSID)
 	local memInfo = self:getRoleRideInfoBySID(roleSID)
-
+	
 	if not memInfo then
 		return false
 	end
@@ -167,13 +159,13 @@ function RideManager:getPlayerInfo(player)
 		memInfo:setRoleID(roleID)
 		memInfo:setRoleSID(roleSID)
 		self._roleRideInfos[roleID] = memInfo
-		self._roleRideInfoBySID[roleSID] = memInfo
+		self._roleRideInfoBySID[roleSID] = memInfo	
 
 	end
 	return memInfo
 end
 
-function RideManager.loadDBData(player, cache_buf, roleSid)
+function RideManager.loadDBData(player, cache_buf, roleSid)		
 	local memInfo = g_rideMgr:getPlayerInfo(player)
 	if #cache_buf > 0 then
 		memInfo:loadData(cache_buf)
@@ -186,9 +178,9 @@ function RideManager:onPlayerOffLine(player)
 	local roleID = player:getID()
 	local memInfo = self:getRoleRideInfoBySID(roleSID)
 	if not memInfo then
-		return
-	end
-
+	return
+    end
+    
 	if memInfo then
 		self._roleRideInfos[roleID] = nil
 		self._roleRideInfoBySID[roleSID] = nil
@@ -198,11 +190,11 @@ end
 
 --掉线登陆
 function RideManager:onActivePlayer(player)
-	local memInfo = self:getRoleRideInfoBySID(player:getSerialID())
+	local memInfo = self:getRoleRideInfoBySID(player:getSerialID()) 
 	if not memInfo then
 		return
-	end
-	memInfo:notifyClientLoadData()
+    end
+    memInfo:notifyClientLoadData()
 end
 
 --切换world的通知
@@ -222,18 +214,18 @@ function RideManager:onPlayerSwitch(player, type, buff)
 		memInfo:setRoleID(roleID)
 		memInfo:setRoleSID(roleSID)
 		self._roleRideInfos[roleID] = memInfo
-		self._roleRideInfoBySID[roleSID] = memInfo
+		self._roleRideInfoBySID[roleSID] = memInfo	
 		local state = buff:popBool()
 		memInfo:setRideState(state)
 		local cache_buf = buff:popLString()
 		memInfo:loadData(cache_buf)
-	end
+	end	
 end
 
 --获取坐骑关系
 function RideManager:writrRideInfo(roleID, luaBuff)
-	local memInfo = self:getRoleRideInfo(roleID)
-	if memInfo then
+    local memInfo = self:getRoleRideInfo(roleID)
+    if memInfo then
 		local data = memInfo:writrRideInfo()
 		luaBuff:pushLString(data, #data)
 	else
@@ -243,25 +235,25 @@ end
 
 --加载坐骑属性
 function RideManager:loadProp(player, rideID)
-	local rideProto = g_LuaRideDAO:getPrototype(rideID)
+    local rideProto = g_LuaRideDAO:getPrototype(rideID)
 
-	if not rideProto then
-		return
-	end
+    if not rideProto then  
+        return
+    end
 
-	--加载装备本身的属性
+    --加载装备本身的属性
 	changPlayerProp(player, rideProto, true)
 end
 
 --卸载坐骑属性
 function RideManager:unloadProp(player, rideID)
-	local rideProto = g_LuaRideDAO:getPrototype(rideID)
+    local rideProto = g_LuaRideDAO:getPrototype(rideID)
 
-	if not rideProto then
-		return
-	end
-
-	--卸载装备本身的属性
+    if not rideProto then  
+        return
+    end
+    
+    --卸载装备本身的属性
 	changPlayerProp(player, rideProto, false)
 end
 
@@ -280,7 +272,7 @@ function RideManager:setDisplayRideID(roleID, rideID, add)
 	local memInfo = self:getRoleRideInfo(roleID)
 	if not memInfo then
 		return
-	end
+    end
 
 	if add then
 		self:addNewRide(roleID, rideID)

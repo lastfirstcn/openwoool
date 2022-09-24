@@ -19,8 +19,15 @@ local Items = {
 	{q_ID = 37,F2 = '迷仙阵',q_or = 1,q_level = 39,q_type = 1,q_desc = '探索迷仙阵可获得大量羽毛',q_condition = 0,F11 = 40,},
 	{q_ID = 34,F2 = '祝福',q_or = 1,q_level = 40,q_type = 1,q_desc = '祝福可提升武器的幸运值',q_condition = 0,F11 = 40,},
 	{q_ID = 36,F2 = '点金',q_or = 1,q_level = 55,q_type = 1,q_desc = '点击可额外获得附加属性',q_condition = 0,F11 = 35,},
-	{q_ID = 29,F2 = '在线挖矿',q_or = 1,q_level = 999,q_type = 1,q_desc = '在线挖矿可以获得丰富的矿石、金币',q_condition = 0,F11 = 999,},
-	{q_ID = 17,F2 = '神秘商店',q_or = 1,q_level = 999,q_type = 1,q_desc = '神秘商店可以购买许多稀有物品',q_condition = 0,F11 = 999,},
-	{q_ID = 4,F2 = '寻宝',q_or = 1,q_level = 999,q_type = 0,q_desc = '绝世装备和道具等着勇士来寻',q_condition = 0,F11 = 999,},
+	{q_ID = 29,F2 = '在线挖矿',q_or = 1,q_level = 1,q_type = 1,q_desc = '在线挖矿可以获得丰富的矿石、金币',q_condition = 0,F11 = 999,},
+	{q_ID = 17,F2 = '神秘商店',q_or = 1,q_level = 1,q_type = 1,q_desc = '神秘商店可以购买许多稀有物品',q_condition = 0,F11 = 15,},
+	{q_ID = 4,F2 = '寻宝',q_or = 1,q_level = 1,q_type = 0,q_desc = '绝世装备和道具等着勇士来寻',q_condition = 0,F11 = 0,},
+	{q_ID = 5,F2 = '特戒',q_or = 1,q_level = 1,q_type = 0,q_desc = '绝世装备和道具等着勇士来寻',q_condition = 0,F11 = 15,},	
+	--{q_ID = 15,F2 = '美人',q_or = 1,q_level = 1,q_type = 0,q_desc = '绝世装备和道具等着勇士来寻',q_condition = 0,F11 = 0,},
+	--{q_ID = 21,F2 = '元神挂机',q_or = 1,q_level = 1,q_type = 0,q_desc = '绝世装备和道具等着勇士来寻',q_condition = 0,F11 = 0,},
+	--{q_ID = 22,F2 = '美人战甲',q_or = 1,q_level = 1,q_type = 0,q_desc = '绝世装备和道具等着勇士来寻',q_condition = 0,F11 = 0,},	
+	--{q_ID = 23,F2 = '美人武器',q_or = 1,q_level = 1,q_type = 0,q_desc = '绝世装备和道具等着勇士来寻',q_condition = 0,F11 = 0,},
+	{q_ID = 27,F2 = '元婴',q_or = 1,q_level = 1,q_type = 0,q_desc = '绝世装备和道具等着勇士来寻',q_condition = 0,F11 = 0,},	
+	{q_ID = 28,F2 = '元婴品质',q_or = 1,q_level = 1,q_type = 0,q_desc = '绝世装备和道具等着勇士来寻',q_condition = 0,F11 = 0,},
 };
 return Items

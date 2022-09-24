@@ -37,7 +37,7 @@ function ShaWarServlet:doGotoSha(event)
     g_shaWarMgr:gotoSha(player:getID())
 end
 
---领取每日奖励 九 零 一 起玩   w w w. 9 01 7 5.com
+--领取每日奖励
 function ShaWarServlet:doPickShaReward(event)
     local params = event:getParams()
 	local pbc_string, dbid, hGate = params[1], params[2], params[3]

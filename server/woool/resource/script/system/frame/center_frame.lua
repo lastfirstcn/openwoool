@@ -537,7 +537,7 @@ function centerFrame.sendNotice(cmdId, response, dataPackets)
 		body.Priority, body.Hyperlink, encodeURIValue(body.ButtonContent), body.NoticeType, body.Partition)
 	mysql_callSQL(mysql_center, sql)
 	
-	local result_resp = build_response_data(dataPackets, 0, {result = 0, RetMsg = "success", EventId = body.EventId})
+	local result_resp = build_response_data(dataPackets, 0, {result = 0, RetMsg = "success", EventId = body.EventId}})
 	response:addContents(result_resp)
 	response:makeResponse(SC_OK)
 end

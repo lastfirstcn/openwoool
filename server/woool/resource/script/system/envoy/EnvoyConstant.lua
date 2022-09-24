@@ -11,7 +11,7 @@ ENVOY_HOLD_MAT_TIME = 1	--玩家持有物品时间（分钟）
 --ENVOY_JOIN_LEVEL = 32	--参加活动的等级限制
 --ENVOY_JOIN_MONEY = 50000	--参加活动的金钱限制
 --ENVOY_NEXT_FLOOR_NEED_MAT = 6200025	--进入下一层需要的物品
-ENVOY_ONE_TIME = 30*60 --一次炼狱时间30分钟
+ENVOY_ONE_TIME = 50*60 --一次炼狱时间30分钟
 
 ENVOY_EXPERIENCE_TIME = 5 * 60 --体验卡体验时间
 

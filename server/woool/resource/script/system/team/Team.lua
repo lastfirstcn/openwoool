@@ -84,7 +84,7 @@ function Team:changeLeader(newLeaderID)
 	self.leaderID = newLeaderID
 end
 
---获取所有队员 悟  空 源 码网   www.w k y mw.com
+--获取所有队员
 function Team:getAllMember()
 	local tmp = {}
 	for i=1, #self._onLineMems do

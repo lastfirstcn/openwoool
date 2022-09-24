@@ -2533,7 +2533,7 @@ function CopyManager:updateProgressBook()
 					for i=1, #rewardData1 do
 						local tmpresult = rewardData[i]
 						local tmpNum = data[tmpresult.itemID].num or 0
-						data[tmpresult.itemID] = {}
+						data[tmpresult.itemID] = ｛｝
 						data[tmpresult.itemID].num = tmpNum + tmpresult.count
 						data[tmpresult.itemID].bind = tmpresult.bind
 					end

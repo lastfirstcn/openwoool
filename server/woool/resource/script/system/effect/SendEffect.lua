@@ -1,5 +1,5 @@
 --SendEffect.lua
---ï¿½ï¿½ï¿½ï¿½Ð§ï¿½ï¿½
+--´«ËÍÐ§¹û
 local EFFECT_TYPES = {
 	EffectType.Send, 
 }
@@ -24,14 +24,14 @@ function SendEffect:doEffect(src, target, incontext, outcontext, useCnt)
 			return 0
 		end
 		local effData = self:getDatas()
-		--ï¿½Ø³ï¿½ï¿½ï¿½
+		--»Ø³ÇÀà
 		if effData.effectType == EffectType.Send then
 			local mapID = effData.mapID
-			local xPos = effData.xPos
+			local xpos = effData.xPos
 			local yPos = effData.yPos
-			g_sceneMgr:enterPublicScene(target, mapID, xPos, yPos)
+			g_sceneMgr:enterPublicScene(target, mapID, xpos, yPos)
 			return useCnt
-		--ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+		--Ëæ»ú¾íÖá
 		elseif effData.effectType == EffectType.RandSend then
 			local scene = tarEntity:getScene()
 			local sceneSize = scene:getSize()
@@ -50,12 +50,6 @@ function SendEffect:doEffect(src, target, incontext, outcontext, useCnt)
 				print("----send error",sceneSize.x,sceneSize.y)
 				return 0
 			end
-		elseif effData.effectType == EffectType.PrivateSend then
-			local mapID = effData.mapID
-			local xPos = effData.xPos
-			local yPos = effData.yPos
-			g_entityMgr:enterGroupMap(target, mapID, xPos, yPos)
-			return useCnt
 		end
 	end
 	return 0

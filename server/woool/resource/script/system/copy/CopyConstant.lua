@@ -35,7 +35,7 @@ CLEAR_PRO_TIME_MONEY = 10	--花元宝可以直接扫荡完成
 HELP_LEVEL_LIMIT = 5	--可以援护的好友等级差限制
 MULTI_COPYFIRST_EMAIL = 15	--多人副本每日首通奖励邮件
 CALL_PER_INGOT = 20	--每召唤一次好友需要增加的元宝
-INNER_PER_INGOT = 5	--内置CD所需单位元宝 九零 一起 玩 www.901 7 5.com
+INNER_PER_INGOT = 5	--内置CD所需单位元宝
 COPY_SINGLE_PROGRESSALL = 50	--单人副本一件扫荡价格
 
 COPY_HELP_LEVEL_LIMIT = 28

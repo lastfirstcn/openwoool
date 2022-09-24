@@ -11,7 +11,7 @@ SHAWAR_LAST_TIME = 60*60			--活动持续时间
 SHAWAR_PALACE_HOLD_POS = {[1]={x=10,y=26},[2]={x=19,y=29},[3]={x=22,y=23},[4]={x=29,y=21}}	--由城墙进入皇宫的皇宫坐标
 SHAWAR_HOLD_POS = {[1]={x=97,y=82},[2]={x=105,y=82},[3]={x=109,y=79},[4]={x=113,y=76}}			--城墙驻守的坐标
 SHAWAR_CANCLE_HOLD_POS = {[1]={x=94,y=85},[2]={x=108,y=86},[3]={x=112,y=83},[4]={x=116,y=80}}	--取消城墙驻守时的坐标
-SHAWAR_OPEN_WEEK = 4			--沙城开战周数
+SHAWAR_OPEN_WEEK = 1			--沙城开战周数
 SHAWAR_COUNT_DOWN_NUM = 30			--沙城开战前倒计时秒数
 SHAWAR_DEFEND_NPCID	= "384"				--守城NPCID
 SHAWAR_DEFENDNPC_FRESHID = 2192		--守城NPC刷新ID

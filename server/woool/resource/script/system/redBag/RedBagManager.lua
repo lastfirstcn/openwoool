@@ -74,11 +74,6 @@ function RedBagManager:worldBossKill(player, bossLevel, bossName)
 	self:sendRedBag(player, math.min(100, bossLevel), 1, bossName)
 end
 
--- 幸运抽奖发红包
-function RedBagManager:lottery(player, itemName)
-	self:sendRedBag(player,100, 111, itemName)
-end
-
 --获得中州战胜利
 function RedBagManager:winnerManorWar(roleSID, name)
 	local num = 666

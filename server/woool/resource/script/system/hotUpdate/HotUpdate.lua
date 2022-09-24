@@ -105,7 +105,7 @@ end
 
 --Ñ°±¦±í
 HotUpdate.updateXunBao = function()
-	--g_XunBaoMgr:loadItem()
+	g_XunBaoMgr:loadItem()
 end
 
 --ïÚ³µ

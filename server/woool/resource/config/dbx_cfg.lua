@@ -1,22 +1,22 @@
 --dbx_cfg.lua
 
---1-99999 Îªdbxï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ID
+--1-99999 Îªdbx·þÎñÆ÷ID
 local dbx_servers = 
 {
-	--1-799Îªï¿½ï¿½Ê½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+	--1-799ÎªÕýÊ½·þÎñÆ÷×é
 --	[1] = {name = "dbx_105W", loginAddr = '127.0.0.1', loginPort = 3000, config = 1},
-	--700Îªï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
-	[1] = {name = "dbx_001W", loginAddr = '127.0.0.1', loginPort = 3000, config = 2},
-	--800ï¿½ï¿½ÎªÔ¤ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
-	-- [800] = {name = "dbx_12W", loginAddr = '127.0.0.1', loginPort = 3000, config = 2},
-	-- [801] = {name = "dbx_105W", loginAddr = '127.0.0.1', loginPort = 3000, config = 1},
-	-- --900Îªï¿½ï¿½ï¿½ï¿½Ë½ï¿½ï¿½ï¿½ï¿½901Îªï¿½ï¿½ï¿½ï¿½
-	-- [900] = {name = "dbx_local", loginAddr = '127.0.0.1', loginPort = 3000, config = 2},
-	-- [901] = {name = "dbx_10", loginAddr = '127.0.0.1', loginPort = 3000, config = 3},
-	-- [902] = {name = "dbx_32", loginAddr = '127.0.0.1', loginPort = 3000, config = 5},
+	--700Îª°æÊð·þÎñÆ÷
+	[700] = {name = "dbx_217W", loginAddr = '127.0.0.1', loginPort = 3000, config = 2},
+	--800ºóÎªÔ¤·¢²¼·þÎñÆ÷
+	[800] = {name = "dbx_12W", loginAddr = '127.0.0.1', loginPort = 3000, config = 2},
+	[801] = {name = "dbx_105W", loginAddr = '127.0.0.1', loginPort = 3000, config = 1},
+	--900Îª±¾µØË½·þ£¬901ÎªÄÚÍø
+	[900] = {name = "dbx_local", loginAddr = '127.0.0.1', loginPort = 3000, config = 2},
+	[901] = {name = "dbx_10", loginAddr = '127.0.0.1', loginPort = 3000, config = 3},
+	[902] = {name = "dbx_32", loginAddr = '127.0.0.1', loginPort = 3000, config = 5},
 }
 
---ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ý¿ï¿½ï¿½ï¿½ï¿½ï¿½
+--¼ÓÔØÊý¾Ý¿âÅäÖÃ
 function load_dbx_config(buff, db_server_id)	
 	local luabuf = tolua.cast(buff, "LuaMsgBuffer")
 	if luabuf then

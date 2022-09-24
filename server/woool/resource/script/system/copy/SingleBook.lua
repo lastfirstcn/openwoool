@@ -39,7 +39,7 @@ function SingleBook:getCopyEndTime()
 	return self._copyEndTime
 end
 
---单人副本奖励 亲 测 源 码网ww w. qc ymw.com
+--单人副本奖励
 function SingleBook:doReward1(newTime)
 	local playerID = self:getPlayerID()
 	local copyPlayer = g_copyMgr:getCopyPlayer(playerID)

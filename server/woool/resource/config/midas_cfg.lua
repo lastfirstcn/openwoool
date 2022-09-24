@@ -1,5 +1,5 @@
 midas_config = {
-openapi_host = 'www.obbo.ga',				--接口IP
+openapi_host = 'msdktest.qq.com',				--接口IP
 android_key = 'SRQRw3rhJYsC1CGGqmiR9V4KWfs3kV0Y&',		--android sig签名key
 android_appid = '1450006842',					--android 应用的唯一ID
 ios_key = '8VevIBEuRiUiwnjKdFDTJT6uCD0SJQuA&',			--ios sig签名key

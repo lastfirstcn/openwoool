@@ -432,12 +432,9 @@ function RankManager:worldNO1(roleID)
 		return
 	end
 
-   	g_achieveMgr:Thefirstday(self._worldNO1[player:getSchool()][player:getSex()].dbid, player:getSerialID())
-
-
 	self._worldTimeStamp[player:getSerialID()] = os.time()
 
-	
+	--改玩家为天下第一
 	self._worldNO1[player:getSchool()][player:getSex()].dbid = player:getSerialID()
 	self._worldNO1[player:getSchool()][player:getSex()].name = player:getName()
 	self._worldNO1[player:getSchool()][player:getSex()].Lv = player:getLevel()
@@ -447,9 +444,6 @@ function RankManager:worldNO1(roleID)
 	self:getNO1Data()
 	updateCommonData(COMMON_DATA_ID_WORLD_NO1, self._worldNO1)
 	self:sysNO1()
-   
-
-	
 end
 
 function RankManager:getNO1Data(roleID)

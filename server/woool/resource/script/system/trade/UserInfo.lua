@@ -701,9 +701,7 @@ function UserInfo:SellItem(bagSlot, num)
 	end
 	
 	local count = item:getCount()
-	local money = player:getMoney()			--player:getBindMoney()
-	local ingot = player:getIngot()
-	local XP = player:getXP()
+	local money = player:getIngot()			--player:getBindMoney()
 	
 	if count < num or num < 0 then
 		g_tradeMgr:sendErrMsg2Client(self:getUserID(), TRADE_ERR_ITEM_SELL, 0, {})
@@ -734,17 +732,10 @@ function UserInfo:SellItem(bagSlot, num)
 		itemMgr:removeItem(Item_BagIndex_Bag, bagSlot, num, errorCode)
 		itemMgr:addItemBySlot(Item_BagIndex_Back, slot, item:getProtoID(), num, false, errorCode)			
 	end
-	local hs = item:getSellPrice()
-	if	hs < 0 then
-		hs = math.abs (hs)
-		player:setIngot(ingot + hs * num)
-	elseif hs >= 0 and hs <= 1000000000 then
-		player:setMoney(money + hs * num)
-	else
-		hs = hs - 1000000000
-		player:setXP(XP + hs * num)
-	end
-	g_logManager:writeMoneyChange(RoleSID,"",1,96,player:getMoney(),item:getSellPrice() * num,1)
+
+	--player:setMoney(money + item:getSellPrice() * num)
+	player:setIngot(money + item:getSellPrice() * num)
+	g_logManager:writeMoneyChange(RoleSID,"",1,96,player:getIngot(),item:getSellPrice() * num,1)
 	local protoID = item:getProtoID()
 	local Binded = 	item:isBinded() and 1 or 0
 	g_logManager:writePropChange(RoleSID,2,96,protoID,0,num,Binded)
@@ -767,66 +758,35 @@ function UserInfo:BackItem(backSlot, num)
 	end
 
 	local count = item:getCount()
-	local money = player:getMoney()						--player:getBindMoney()
-	local ingot = player:getIngot()
-	local price = 0
-	local hg = 0
-	if	item:getSellPrice() < 0 then
-		price = math.abs (item:getSellPrice()) * num *2
-		hg = 1
-	elseif	item:getSellPrice() >= 0 and item:getSellPrice() < 1000000000 then
-			price = item:getSellPrice() * num *2
-			hg = 2
-	else
-			price = (item:getSellPrice() - 1000000000) * num *2
-			hg = 3
-	end
+	local money = player:getIngot()						--player:getBindMoney()
+	local price = item:getSellPrice() * num			--20151021  回购价格改为10倍
+	
 	if count < num or num < 0 then
 		print("UserInfo:BackItem 02",backSlot,num)
 		g_tradeMgr:sendErrMsg2Client(self:getUserID(), TRADE_ERR_ITEM_SELL, 0, {})
 		return
 	end
-	if hg == 1 then
-		if not isIngotEnough(player,price)  then
-			g_tradeMgr:sendErrMsg2Client(self:getUserID(), TRADE_ERR_INGOT, 0, {})
-			return
-		end	
-	elseif hg == 2 then
-		if not isMoneyEnough(player,price)  then
-			g_tradeMgr:sendErrMsg2Client(self:getUserID(), TRADE_ERR_MONEY, 0, {})
-			return
-		end
-	else
-		g_tradeMgr:sendErrMsg2Client(self:getUserID(), -56, 0, {})
+	
+	if money < price then
+		g_tradeMgr:sendErrMsg2Client(self:getUserID(), TRADE_ERR_MONEY, 0, {})
+		return
 	end
-		
 	
 	local slot = itemMgr:findFreeSlot(Item_BagIndex_Bag)
 	if 0 == slot then
 		g_tradeMgr:sendErrMsg2Client(self:getUserID(), TRADE_ERR_BAG_NOSLOT, 0, {})
 		return
 	end
-	if hg == 1 and ingot >= price then
-		if count == num then	
-			itemMgr:swapItem(Item_BagIndex_Back, backSlot, Item_BagIndex_Bag, slot, errorCode)
-		else
-			itemMgr:removeItem(Item_BagIndex_Back, backSlot, num, errorCode)
-			itemMgr:addItemBySlot(Item_BagIndex_Bag, slot, item:getProtoID(), num, false, errorCode)	
-				
-		end	
-		costIngot(player, price, 97)
-	elseif hg == 2 and money >= price then 
-		if count == num then	
-			itemMgr:swapItem(Item_BagIndex_Back, backSlot, Item_BagIndex_Bag, slot, errorCode)
-		else
-			itemMgr:removeItem(Item_BagIndex_Back, backSlot, num, errorCode)
-			itemMgr:addItemBySlot(Item_BagIndex_Bag, slot, item:getProtoID(), num, false, errorCode)	
-				
-		end			
-		costMoney(player, price, 97)
+	
+	if count == num then		
+		itemMgr:swapItem(Item_BagIndex_Back, backSlot, Item_BagIndex_Bag, slot, errorCode)
 	else
-		local jy = 0
-	end	
+		itemMgr:removeItem(Item_BagIndex_Back, backSlot, num, errorCode)
+		itemMgr:addItemBySlot(Item_BagIndex_Bag, slot, item:getProtoID(), num, false, errorCode)			
+	end		
+	
+	player:setIngot(money - price)
+	--costMoney(player, price, 97)
 	local protoID = item:getProtoID()
 	local Binded = item:isBinded() and 1 or 0
 	g_logManager:writePropChange(RoleSID,1,97,protoID,0,num,Binded)

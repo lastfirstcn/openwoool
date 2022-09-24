@@ -95,7 +95,7 @@ function string.bytecode(value)
 	return ""
 end
 
---@note£ºÈ¡×Ö·û´®µÄ×Ö´® Ç×²â Ô´ ÂëÍø www .q c y mw.com
+--@note£ºÈ¡×Ö·û´®µÄ×Ö´®
 function string.substr(value, index, length)
 	if value then
 		local ret = {}

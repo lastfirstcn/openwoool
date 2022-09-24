@@ -554,29 +554,6 @@ end
 function addExpToPlayer(player,exp,reason,subReason)
 	local beforelv = player:getLevel()
 	player:setXP(player:getXP() + exp)	
-
-
-	local beforelv = player:getLevel()               --方案：手动设置每级经验
-	if beforelv < 200 then   --自己设定的最大等级
-	   player:setXP(player:getXP() + exp)
-	else
-	   player:setLevel(200) --自己设定的最大等级
-	end
-	if  player:getXP() > 200000000  then  --经验值比你的服务端少1，和客户端保持一致
-	   player:setLevel(player:getLevel() + 1)
-	   player:setXP(0)
-	end
-
-      
-      
-      
-      
-      
-      
-      
-      
-
-
 	local afterlv = player:getLevel()
 	if beforelv ~= afterlv then
 		local nSubReason = subReason or 0

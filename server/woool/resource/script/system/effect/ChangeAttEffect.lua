@@ -1,5 +1,5 @@
 --ChangeAttEffect.lua
---¸Ä±äÊôÐÔÐ§¹û
+--�ı�����Ч��
 local EFFECT_TYPES = {
 	EffectType.ChangeAttribute, 
 }
@@ -7,7 +7,7 @@ local EFFECT_TYPES = {
 ChangeAttEffect = class(Effect)
 
 function ChangeAttEffect:__init(config)
-	self._effData = {}	--Êý¾Ý¼ÇÂ¼
+	self._effData = {}	--���ݼ�¼
 end
 
 function ChangeAttEffect:getPropValue(entity, attr)
@@ -35,14 +35,10 @@ function ChangeAttEffect:getPropValue(entity, attr)
 		return self._effData[11] or entity:getLuck()
 	elseif attr == 12 then
 		return self._effData[12] or entity:getPK()
-	elseif attr == 133 then
-		return 0
-	elseif attr == 134 then
-		return 0
 	end
 end
 
---´æµ½±¾Éí
+--�浽����
 function ChangeAttEffect:setPropValue1(entity, attr, addVal, incontext, outcontext, useCnt)
 	for i=1, useCnt do
 		local oldVal = self:getPropValue(entity, attr)
@@ -152,17 +148,11 @@ function ChangeAttEffect:setPropValue1(entity, attr, addVal, incontext, outconte
 				outcontext.params.next = tmp
 				outcontext.retCode = Item_OP_Result_ReducePK
 			end
-		elseif attr == 133 then
-			--get a new pet
-			self._effData[133] = addVal
-		elseif attr == 134 then
-			--get a new pet
-			self._effData[134] = addVal
 		end
 	end
 end
 
---ÕæÕýÉèÖÃÊôÐÔ
+--������������
 function ChangeAttEffect:setPropValue2(attr, val, entity, outcontext, itemId)
 	if attr == 1 then
 		local old = entity:getXP()
@@ -174,7 +164,7 @@ function ChangeAttEffect:setPropValue2(attr, val, entity, outcontext, itemId)
 	elseif attr == 2 then
 		local old = entity:getHP()
 		entity:setHP(val)		
-		--Í¨Öª¸Ä±ä			
+		--֪ͨ�ı�			
 	--[[	local protoData = {
 			roleId = 0,
 			hurts = {
@@ -226,65 +216,6 @@ function ChangeAttEffect:setPropValue2(attr, val, entity, outcontext, itemId)
 		entity:setLuck(val) 
 	elseif attr == 12 then
 		entity:setPK(val)
-	elseif attr == 133 then
-		local scene = entity:getScene()
-		local monsterID = val
-		local monster = g_entityFct:createMonster(monsterID)
-
-		--召唤怪物
-		local oldPetID = entity:getPetID4()
-		if monster and scene then
-			local dtMax = entity:getMaxDT()
-		
-			--增加的属性值
-			local addHp = dtMax*10					--生命
-			local addMinAtk = dtMax*0.1				--攻击下限
-			local addMaxAtk = dtMax*0.1				--攻击上限
-			local addMinDef = dtMax*0.01			--防御下限
-			local addMaxDef = dtMax*0.01			--防御上限
-			local addMinMDef = dtMax*0.01			--魔防下限
-			local addMaxMDef = dtMax*0.01			--魔防上限
-
-			monster:setMaxHP(monster:getMaxHP() + addHp)
-			monster:setMinAT(monster:getMinAT() + addMinAtk)
-			monster:setMaxAT(monster:getMaxAT() + addMaxAtk)
-			monster:setMinDF(monster:getMinDF() + addMinDef)
-			monster:setMaxDF(monster:getMaxDF() + addMaxDef)
-			monster:setMinMF(monster:getMinMF() + addMinMDef)
-			monster:setMaxMF(monster:getMaxMF() + addMaxMDef)
-
-			monster:setCampID(entity:getCampID())
-			monster:setHP(monster:getMaxHP())
-			monster:setHost(entity:getID())
-			local pos = entity:getPosition()
-			entity:setPetID4(monster:getID())
-			name = monster:getName()
-			monster:setName(entity:getName()..'的'..name)
-			scene:attachEntity(monster:getID(), pos.x + 4, pos.y + 4)
-			if oldPetID > 0 then
-				g_entityMgr:destoryEntity(oldPetID)
-			end
-		else
-			print("cannot create monster or get scene")
-		end
-	elseif attr == 134 then
-		local scene = entity:getScene()
-		local monsterID = val
-		local monster = g_entityFct:createMonster(monsterID)
-
-		--刷新怪物
-		if monster then
-			local mapID = entity:getMapID()
-			local position = entity:getPosition()
-			if mapID > 0 then
-				local pScene = g_sceneMgr:getPublicScene(mapID)
-				if pScene then
-					g_sceneMgr:enterPublicScene(monster:getID(), mapID, position.x, position.y, entity:getCurrentLine())
-					pScene:addMonster(monster)
-					return
-				end
-			end		
-		end
 	end
 end
 
@@ -320,7 +251,7 @@ function ChangeAttEffect:doEffect(src, target, incontext, outcontext, useCnt)
 				end
 				outcontext.paramCnt = 1
 				outcontext.params.str = (tostring(val) or "")..(retStr or "")
-				outcontext.retCode = Item_OP_Result_GetItem	--»ñµÃÎïÆ·
+				outcontext.retCode = Item_OP_Result_GetItem	--�����Ʒ
 			end
 		end
 		return useCnt

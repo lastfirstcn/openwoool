@@ -28,11 +28,9 @@ function Level:initialize()
 	local level = 0
 	if player then level = player:getLevel() end
 	for index, _ in pairs(g_DataMgr:getLevelConfig()) do
-	    --可以领取
 		if level >= index then
 			self._datas.status[index] = 0
 		else
-		    --不能领取
 			self._datas.status[index] = 1
 		end
 	end

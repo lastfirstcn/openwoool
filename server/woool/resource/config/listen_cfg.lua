@@ -1,15 +1,15 @@
 --listen_cfg.lua
 
---ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+--·şÎñÆ÷ÅäÖÃ
 listen_config = 
 {
-	[1] = {center_addr = "49.235.99.132", center_port = 20007},	--ï¿½Ú²ï¿½ï¿½ï¿½Ô·ï¿½ï¿½ï¿½ï¿½ï¿½
+	[1] = {center_addr = "203.195.223.12", center_port = 20007},	--ÄÚ²â²âÊÔ·şÎñÆ÷
 }
 
---ï¿½ï¿½ï¿½ï¿½Ê±ï¿½ï¿½
+--¿ª·şÊ±¼ä
 server_start_date = "2016-10-07 10:00:00"
 
---ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+--¼ÓÔØÅäÖÃ
 function load_listen_config(buff, configid)
 	local luabuf = tolua.cast(buff, "LuaMsgBuffer")
 	if luabuf then

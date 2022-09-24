@@ -20,17 +20,6 @@ function send_response_data(opid, phead, result, pbody)
 	g_frame:send2Server(0, ret_buff)
 end
 
---插入物品兑换记录
-function insertPayLog(roleID,num)
-    
-    --local sql = string.format([[insert into paylog (role_id, title, num) values ('%s', '%s', '%s')]], roleID, "积分兑换", num)
-		
-	--mysql_callSQL(mysql_game, sql)
-	
-	return true
-		        
-end
-
 ------------------------------------------------------------------------------------
 --若干框架函数
 ------------------------------------------------------------------------------------

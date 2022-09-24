@@ -1,31 +1,29 @@
 --gateway_cfg.lua
 
---1-99999Îªgatewayï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ID
+--1-99999Îªgateway·þÎñÆ÷ID
 local gateway_servers = 
 {
-	--1-799Îªï¿½Ú²ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
-	[1] = {name = "gateway_001", connectAddr = '18.143.152.206:20020', loginAddr = '18.143.152.206', loginPort = 20020, 
-		sessionAddr = '127.0.0.1', sessionPort = 2300, worldPort = 2200},
-	[99] = {name = "gateway_099", connectAddr = '18.143.152.206:20020', loginAddr = '18.143.152.206', loginPort = 20020, 
-		sessionAddr = '127.0.0.1', sessionPort = 2300, worldPort = 2200},
-	--700Îªï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
-	-- [700] = {name = "gateway_217W", connectAddr = '106.13.97.20:20020', loginAddr = '106.13.97.20', loginPort = 20020, 
-	-- 	sessionAddr = '106.13.97.20', sessionPort = 2300, worldPort= 2200},
-	-- --800ï¿½ï¿½ÎªÔ¤ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
-	-- [800] = {name = "gateway_180W", connectAddr = '106.13.97.20:20020', loginAddr = '106.13.97.20', loginPort = 20020, 
-	-- 	sessionAddr = '127.0.0.1', sessionPort = 2300, worldPort= 2200},
-	-- [801] = {name = "gateway_105W", connectAddr = '106.13.97.20:20030', loginAddr = '106.13.97.20', loginPort = 20030, 
-	-- 	sessionAddr = '127.0.0.1', sessionPort = 2300, worldPort= 2200},
-	-- --900Îªï¿½ï¿½ï¿½ï¿½Ë½ï¿½ï¿½ï¿½ï¿½901Îªï¿½ï¿½ï¿½ï¿½
-	-- [900] = {name = "gateway", connectAddr = '106.13.97.20:20020', loginAddr = '106.13.97.20', loginPort = 20020, 
-	-- 	sessionAddr = '127.0.0.1', sessionPort = 2300, worldPort= 2200},
-	-- [901] = {name = "gateway_10", connectAddr = '106.13.97.20:20020', loginAddr = '106.13.97.20', loginPort = 20020, 
-	-- 	sessionAddr = '106.13.97.20', sessionPort = 2300, worldPort= 2200},
-	-- [902] = {name = "gateway_48", connectAddr = '106.13.97.20:20020', loginAddr = '106.13.97.20', loginPort = 20020, 
-	-- 	sessionAddr = '106.13.97.20', sessionPort = 2300, worldPort= 2200},
+	--1-799ÎªÄÚ²â·þÎñÆ÷×é
+--	[1] = {name = "gateway_105W", connectAddr = '120.132.53.105', loginAddr = '10.10.2.230', loginPort = 20020, 
+--		sessionAddr = '10.10.2.230:2300', worldPort = 2200},
+	--700Îª°æÊð·þÎñÆ÷
+	[700] = {name = "gateway_217W", connectAddr = '123.59.54.217:20020', loginAddr = '10.10.109.16', loginPort = 20020, 
+		sessionAddr = '10.10.109.16', sessionPort = 2300, worldPort= 2200},
+	--800ºóÎªÔ¤·¢²¼·þÎñÆ÷
+	[800] = {name = "gateway_180W", connectAddr = '18.143.152.206:20020', loginAddr = '18.143.152.206', loginPort = 20020, 
+		sessionAddr = '127.0.0.1', sessionPort = 2300, worldPort= 2200},
+	[801] = {name = "gateway_105W", connectAddr = '103.91.211.169:20030', loginAddr = '103.91.211.169', loginPort = 20030, 
+		sessionAddr = '127.0.0.1', sessionPort = 2300, worldPort= 2200},
+	--900Îª±¾µØË½·þ£¬901ÎªÄÚÍø
+	[900] = {name = "gateway", connectAddr = '192.168.1.39:20020', loginAddr = '192.168.1.39', loginPort = 20020, 
+		sessionAddr = '127.0.0.1', sessionPort = 2300, worldPort= 2200},
+	[901] = {name = "gateway_10", connectAddr = '119.29.35.50:20020', loginAddr = '10.104.58.185', loginPort = 20020, 
+		sessionAddr = '119.29.35.50', sessionPort = 2300, worldPort= 2200},
+	[902] = {name = "gateway_48", connectAddr = '192.168.101.32:20020', loginAddr = '192.168.101.32', loginPort = 20020, 
+		sessionAddr = '192.168.101.32', sessionPort = 2300, worldPort= 2200},
 }
 
---ï¿½ï¿½ï¿½ï¿½gatewayï¿½ï¿½ï¿½ï¿½
+--¼ÓÔØgatewayÅäÖÃ
 function load_gateway_config(buff, gateway_server_id)
 	local luabuf = tolua.cast(buff, "LuaMsgBuffer")
 	if luabuf then

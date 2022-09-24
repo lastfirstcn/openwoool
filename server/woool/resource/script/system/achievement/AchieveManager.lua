@@ -828,7 +828,7 @@ function AchieveManager:dealUpSkill(roleSID, ...)
 	for skillID, skillLevel in pairs(skills) do
 		local skillConfig = g_configMgr:getSkillConfig(skillID)
 		if skillConfig then
-			if skillConfig.skillType == 7 then
+			if skillConfig.skillType == 9 then
 				winSkill[skillID] = skillLevel
 
 				if skillLevel > maxWingSkill then
@@ -1270,43 +1270,6 @@ function AchieveManager:glamourRankNotify(oldRoleSID, newRoleSID)
 		end
 	end
 end
-
-
-
-
-function AchieveManager:Thefirstday(oldRoleSID, newRoleSID)
-
-	if oldRoleSID then
-		local player = g_entityMgr:getPlayerBySID(oldRoleSID)
-		if player then
-			local achievePlayer = self:getAchievePlayer(player:getSerialID())
-			local titleID = TheDayTitle[player:getSchool()][player:getSex()]
-			if achievePlayer and titleID then
-				achievePlayer:removeTitle(titleID)
-			end
-		end
-	end
-
-	if newRoleSID then
-		local player = g_entityMgr:getPlayerBySID(newRoleSID)
-		if player then
-			local achievePlayer = self:getAchievePlayer(player:getSerialID())
-			local titleID = TheDayTitle[player:getSchool()][player:getSex()]
-			if achievePlayer and titleID then
-				achievePlayer:addTitle(titleID)
-			end
-		end
-	end
-end
-
-
-
-
-
-
-
-
-
 
 --获得头顶物品
 function AchieveManager:onGotDropItem(player, itemID)

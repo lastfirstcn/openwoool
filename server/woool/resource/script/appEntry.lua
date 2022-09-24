@@ -244,7 +244,6 @@ end
 
 --LUA_RPC消息处理
 function processRPCMessage2(eventID, buff, hSource, hGate)
-	--todo,debug,print("rpc2" ..tostring(eventID))
 	if eventID then
 		local buff = tolua.cast(buff, "LuaMsgBuffer")
 		local event = g_eventFty:getEvent(eventID, nil, buff, hSource, hGate)
@@ -254,7 +253,6 @@ end
 
 --LUA_RPC消息处理
 function processRPCMessage(eventID, hSource, hGate, pbcString)
-	--todo,debug,print("rpc" ..tostring(eventID))
 	if eventID then
 		local event = g_eventFty:getEvent(eventID, nil, pbcString, hSource, hGate)
 		g_eventMgr:fireEvent(event)

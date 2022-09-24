@@ -62,5 +62,3 @@ require "system.mount.MountManager"
 require "system.treasure.TreasureManger"
 
 require "system.marriage.MarriageManager"
-require "system.lottery.LotteryServlet"
-require "system.customFb.CustomFbServlet"

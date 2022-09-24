@@ -7,5 +7,6 @@ local Items = {
 	{manorID = 6,bannerPos = '28,19',name = '通天塔',mapID = 6014,q_mapID = 4110,diePos = '{8100,94,85}',level = 50,bannerMoney = 0,winPeriod = 600,leaderWeapon = 0,expPlus = 20,minePlus = 20,standardRange = 20,nearRange = 5,openTime = '*,*,*,2 4,19:00:00-20:00:00,2',openNotice1 = '*,*,*,2 4,18:50:00-19:00:00,2',dailyReward = '{828}',},
 	{manorID = 7,bannerPos = '72,66',name = '铁血魔城',mapID = 6015,q_mapID = 4120,diePos = '{9100,29,33}',level = 50,bannerMoney = 0,winPeriod = 600,leaderWeapon = 0,expPlus = 20,minePlus = 20,standardRange = 20,nearRange = 5,openTime = '*,*,*,2 4,19:00:00-20:00:00,2',openNotice1 = '*,*,*,2 4,18:50:00-19:00:00,2',dailyReward = '{829}',},
 	{manorID = 8,bannerPos = '70,60',name = '修罗天',mapID = 6016,q_mapID = 4130,diePos = '{9100,29,33}',level = 50,bannerMoney = 0,winPeriod = 600,leaderWeapon = 0,expPlus = 20,minePlus = 20,standardRange = 20,nearRange = 5,openTime = '*,*,*,2 4,19:00:00-20:00:00,2',openNotice1 = '*,*,*,2 4,18:50:00-19:00:00,2',dailyReward = '{830}',},
+	{manorID = 9,bannerPos = '48,35',name = '凌霄天界',mapID = 6040,q_mapID = 4133,diePos = '{9100,29,33}',level = 60,bannerMoney = 0,winPeriod = 600,leaderWeapon = 0,expPlus = 20,minePlus = 20,standardRange = 20,nearRange = 5,openTime = '*,*,*,2 4,19:00:00-20:00:00,2',openNotice1 = '*,*,*,2 4,18:50:00-19:00:00,2',dailyReward = '{830}',},
 };
 return Items
