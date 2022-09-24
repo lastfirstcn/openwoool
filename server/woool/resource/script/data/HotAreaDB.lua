@@ -162,7 +162,7 @@ local Items = {
 	{q_id = 174,q_mapid = 4232,F3 = '圣殿山谷',q_x = 113,q_y = 29,q_radius = 2,q_tar_mapid = 4233,F8 = '圣殿山顶',q_tar_x = 100,q_tar_y = 141,q_type = 0,q_type1 = 0,q_xa = 20,q_yb = 29,q_sjcs_x = 12,q_sjcs_y = 158,side = 4,},
 --	{q_id = 175,q_mapid = 8301,F3 = '南天宫-南靖出口坐标',q_x = 52,q_y = 72,--F3 = '南天宫-南靖入口坐标',q_tar_x = 74,q_tar_y = 87,
 	{q_id = 175,q_mapid = 8301,F3 = '龙穴',q_x = 137,q_y = 36,q_radius = 2,q_tar_mapid = 8300,F8 = '锁龙殿',q_tar_x = 194,q_tar_y = 187,q_type = 0,q_type1 = 0,q_xa = 21,q_yb = 72,q_sjcs_x = 100,q_sjcs_y = 100,side = 2,},
---	{q_id = 176,q_mapid = 8200,F3 = '南天宫',q_x = 65,q_y = 210,q_radius = 2,q_tar_mapid = 4930,F8 = '通灵塔',q_tar_x = 50,q_tar_y = 50,q_type = 0,q_type1 = 0,q_xa = 21,q_yb = 72,q_sjcs_x = 50,q_sjcs_y = 50,side = 4,},
+	{q_id = 176,q_mapid = 8200,F3 = '南天宫',q_x = 65,q_y = 210,q_radius = 2,q_tar_mapid = 4930,F8 = '通灵塔',q_tar_x = 50,q_tar_y = 50,q_type = 0,q_type1 = 0,q_xa = 21,q_yb = 72,q_sjcs_x = 50,q_sjcs_y = 50,side = 4,},
 	{q_id = 177,q_mapid = 8200,F3 = '南天宫',q_x = 80,q_y = 200,q_radius = 2,q_tar_mapid = 4214,F8 = '心魔幻境',q_tar_x = 50,q_tar_y = 50,q_type = 0,q_type1 = 0,q_xa = 21,q_yb = 72,q_sjcs_x = 50,q_sjcs_y = 50,side = 4,},	
 };
 return Items
