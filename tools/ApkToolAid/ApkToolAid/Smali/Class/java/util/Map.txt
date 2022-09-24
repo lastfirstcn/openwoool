@@ -1,0 +1,59 @@
+将键映射到值的对象。Map 接口提供三种collection 视图，允许以键集、值集或键-值映射关系集的形式查看某个映射的内容。映射顺序 定义为迭代器在映射的 collection 视图上返回其元素的顺序。某些映射实现可明确保证其顺序，如 TreeMap 类；另一些映射实现则不保证顺序，如 HashMap 类。
+interface java.util.Map
+.class interface Ljava/util/Map;
+
+从此映射中移除所有映射关系（可选操作）。
+void clear()
+invoke-interface {v0}, Ljava/util/Map;->clear()V
+
+如果此映射包含指定键的映射关系，则返回 true。
+boolean containsKey(Object key)
+invoke-interface {v0, v1}, Ljava/util/Map;->containsKey(Ljava/lang/Object;)Z
+
+如果此映射将一个或多个键映射到指定值，则返回 true。
+boolean containsValue(Object value)
+invoke-interface {v0, v1}, Ljava/util/Map;->containsValue(Ljava/lang/Object;)Z
+
+返回此映射中包含的映射关系的 Set 视图。
+Set<Map.Entry<K,V>> entrySet()
+invoke-interface {v0}, Ljava/util/Map;->entrySet()Ljava/util/Set;
+
+比较指定的对象与此映射是否相等。
+boolean equals(Object o)
+invoke-interface {v0, v1}, Ljava/util/Map;->equals(Ljava/lang/Object;)Z
+
+返回指定键所映射的值；如果此映射不包含该键的映射关系，则返回 null。
+V get(Object key)
+invoke-interface {v0, v1}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
+
+返回此映射的哈希码值。
+int hashCode()
+invoke-interface {v0}, Ljava/util/Map;->hashCode()I
+
+如果此映射未包含键-值映射关系，则返回 true。
+boolean isEmpty()
+invoke-interface {v0}, Ljava/util/Map;->isEmpty()Z
+
+返回此映射中包含的键的 Set 视图。
+Set<K> keySet()
+invoke-interface {v0}, Ljava/util/Map;->keySet()Ljava/util/Set;
+
+将指定的值与此映射中的指定键关联（可选操作）。
+V put(K key, V value)
+invoke-interface {v0, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+从指定映射中将所有映射关系复制到此映射中（可选操作）。
+void putAll(Map<? extends K,? extends V> m)
+invoke-interface {v0, v1}, Ljava/util/Map;->putAll(Ljava/util/Map;)V
+
+如果存在一个键的映射关系，则将其从此映射中移除（可选操作）。
+V remove(Object key)
+invoke-interface {v0, v1}, Ljava/util/Map;->remove(Ljava/lang/Object;)Ljava/lang/Object;
+
+返回此映射中的键-值映射关系数。
+int size()
+invoke-interface {v0}, Ljava/util/Map;->size()I
+
+返回此映射中包含的值的 Collection 视图。
+Collection<V> values()
+invoke-interface {v0}, Ljava/util/Map;->values()Ljava/util/Collection;

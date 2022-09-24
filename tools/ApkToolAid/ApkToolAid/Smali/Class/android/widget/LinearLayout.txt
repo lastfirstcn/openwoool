@@ -1,0 +1,191 @@
+A layout that arranges other views either horizontally in a single column or vertically in a single row.
+class android.widget.LinearLayout
+.class Landroid/widget/LinearLayout;
+
+继承
+inherit android.view.ViewGroup
+.super Landroid/view/ViewGroup;
+
+继承
+inherit android.view.ViewParent
+.super Landroid/view/ViewParent;
+
+继承
+inherit android.view.ViewManager
+.super Landroid/view/ViewManager;
+
+继承
+inherit android.graphics.drawable.Drawable.Callback
+.super Landroid/graphics/drawable/Drawable$Callback;
+
+继承
+inherit android.view.KeyEvent.Callback
+.super Landroid/view/KeyEvent$Callback;
+
+继承
+inherit android.view.accessibility.AccessibilityEventSource
+.super Landroid/view/accessibility/AccessibilityEventSource;
+
+没有帮助内容
+public static final int HORIZONTAL
+sget v0, Landroid/widget/LinearLayout;->HORIZONTAL:I
+
+Show a divider at the beginning of the group.
+public static final int SHOW_DIVIDER_BEGINNING
+sget v0, Landroid/widget/LinearLayout;->SHOW_DIVIDER_BEGINNING:I
+
+Show a divider at the end of the group.
+public static final int SHOW_DIVIDER_END
+sget v0, Landroid/widget/LinearLayout;->SHOW_DIVIDER_END:I
+
+Show dividers between each item in the group.
+public static final int SHOW_DIVIDER_MIDDLE
+sget v0, Landroid/widget/LinearLayout;->SHOW_DIVIDER_MIDDLE:I
+
+Don't show any dividers.
+public static final int SHOW_DIVIDER_NONE
+sget v0, Landroid/widget/LinearLayout;->SHOW_DIVIDER_NONE:I
+
+没有帮助内容
+public static final int VERTICAL
+sget v0, Landroid/widget/LinearLayout;->VERTICAL:I
+
+构造方法：没有帮助内容
+constructor LinearLayout(Context context)
+invoke-direct {v0, v1}, Landroid/widget/LinearLayout;-><init>(Landroid/content/Context;)V
+
+构造方法：没有帮助内容
+constructor LinearLayout(Context context, AttributeSet attrs)
+invoke-direct {v0, v1, v2}, Landroid/widget/LinearLayout;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
+
+构造方法：没有帮助内容
+constructor LinearLayout(Context context, AttributeSet attrs, int defStyleAttr)
+invoke-direct {v0, v1, v2, v3}, Landroid/widget/LinearLayout;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;I)V
+
+构造方法：没有帮助内容
+constructor LinearLayout(Context context, AttributeSet attrs, int defStyleAttr, int defStyleRes)
+invoke-direct {v0, v1, v2, v3, v4}, Landroid/widget/LinearLayout;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;II)V
+
+Returns a new set of layout parameters based on the supplied attributes set.
+LinearLayout.LayoutParams generateLayoutParams(AttributeSet attrs)
+invoke-virtual {v0, v1}, Landroid/widget/LinearLayout;->generateLayoutParams(Landroid/util/AttributeSet;)Landroid/widget/LinearLayout$LayoutParams;
+
+Return the class name of this object to be used for accessibility purposes.
+CharSequence getAccessibilityClassName()
+invoke-virtual {v0}, Landroid/widget/LinearLayout;->getAccessibilityClassName()Ljava/lang/CharSequence;
+
+Return the offset of the widget's text baseline from the widget's top boundary.
+int getBaseline()
+invoke-virtual {v0}, Landroid/widget/LinearLayout;->getBaseline()I
+
+没有帮助内容
+int getBaselineAlignedChildIndex()
+invoke-virtual {v0}, Landroid/widget/LinearLayout;->getBaselineAlignedChildIndex()I
+
+没有帮助内容
+Drawable getDividerDrawable()
+invoke-virtual {v0}, Landroid/widget/LinearLayout;->getDividerDrawable()Landroid/graphics/drawable/Drawable;
+
+Get the padding size used to inset dividers in pixels
+int getDividerPadding()
+invoke-virtual {v0}, Landroid/widget/LinearLayout;->getDividerPadding()I
+
+Returns the current gravity.
+int getGravity()
+invoke-virtual {v0}, Landroid/widget/LinearLayout;->getGravity()I
+
+Returns the current orientation.
+int getOrientation()
+invoke-virtual {v0}, Landroid/widget/LinearLayout;->getOrientation()I
+
+没有帮助内容
+int getShowDividers()
+invoke-virtual {v0}, Landroid/widget/LinearLayout;->getShowDividers()I
+
+Returns the desired weights sum.
+float getWeightSum()
+invoke-virtual {v0}, Landroid/widget/LinearLayout;->getWeightSum()F
+
+Indicates whether widgets contained within this layout are aligned on their baseline or not.
+boolean isBaselineAligned()
+invoke-virtual {v0}, Landroid/widget/LinearLayout;->isBaselineAligned()Z
+
+When true, all children with a weight will be considered having the minimum size of the largest child.
+boolean isMeasureWithLargestChildEnabled()
+invoke-virtual {v0}, Landroid/widget/LinearLayout;->isMeasureWithLargestChildEnabled()Z
+
+Called when any RTL property (layout direction or text direction or text alignment) has been changed.
+void onRtlPropertiesChanged(int layoutDirection)
+invoke-virtual {v0, v1}, Landroid/widget/LinearLayout;->onRtlPropertiesChanged(I)V
+
+Defines whether widgets contained in this layout are baseline-aligned or not.
+void setBaselineAligned(boolean baselineAligned)
+invoke-virtual {v0, v1}, Landroid/widget/LinearLayout;->setBaselineAligned(Z)V
+
+没有帮助内容
+void setBaselineAlignedChildIndex(int i)
+invoke-virtual {v0, v1}, Landroid/widget/LinearLayout;->setBaselineAlignedChildIndex(I)V
+
+Set a drawable to be used as a divider between items.
+void setDividerDrawable(Drawable divider)
+invoke-virtual {v0, v1}, Landroid/widget/LinearLayout;->setDividerDrawable(Landroid/graphics/drawable/Drawable;)V
+
+Set padding displayed on both ends of dividers.
+void setDividerPadding(int padding)
+invoke-virtual {v0, v1}, Landroid/widget/LinearLayout;->setDividerPadding(I)V
+
+Describes how the child views are positioned.
+void setGravity(int gravity)
+invoke-virtual {v0, v1}, Landroid/widget/LinearLayout;->setGravity(I)V
+
+没有帮助内容
+void setHorizontalGravity(int horizontalGravity)
+invoke-virtual {v0, v1}, Landroid/widget/LinearLayout;->setHorizontalGravity(I)V
+
+When set to true, all children with a weight will be considered having the minimum size of the largest child.
+void setMeasureWithLargestChildEnabled(boolean enabled)
+invoke-virtual {v0, v1}, Landroid/widget/LinearLayout;->setMeasureWithLargestChildEnabled(Z)V
+
+Should the layout be a column or a row.
+void setOrientation(int orientation)
+invoke-virtual {v0, v1}, Landroid/widget/LinearLayout;->setOrientation(I)V
+
+Set how dividers should be shown between items in this layout
+void setShowDividers(int showDividers)
+invoke-virtual {v0, v1}, Landroid/widget/LinearLayout;->setShowDividers(I)V
+
+没有帮助内容
+void setVerticalGravity(int verticalGravity)
+invoke-virtual {v0, v1}, Landroid/widget/LinearLayout;->setVerticalGravity(I)V
+
+Defines the desired weights sum.
+void setWeightSum(float weightSum)
+invoke-virtual {v0, v1}, Landroid/widget/LinearLayout;->setWeightSum(F)V
+
+Return true if the pressed state should be delayed for children or descendants of this ViewGroup.
+boolean shouldDelayChildPressedState()
+invoke-virtual {v0}, Landroid/widget/LinearLayout;->shouldDelayChildPressedState()Z
+
+没有帮助内容
+protected boolean checkLayoutParams(ViewGroup.LayoutParams p)
+invoke-virtual {v0, v1}, Landroid/widget/LinearLayout;->checkLayoutParams(Landroid/view/ViewGroup$LayoutParams;)Z
+
+Returns a set of layout parameters with a width of ViewGroup.LayoutParams.MATCH_PARENT and a height of ViewGroup.LayoutParams.WRAP_CONTENT when the layout's orientation is VERTICAL.
+protected LinearLayout.LayoutParams generateDefaultLayoutParams()
+invoke-virtual {v0}, Landroid/widget/LinearLayout;->generateDefaultLayoutParams()Landroid/widget/LinearLayout$LayoutParams;
+
+Returns a safe set of layout parameters based on the supplied layout params.
+protected LinearLayout.LayoutParams generateLayoutParams(ViewGroup.LayoutParams lp)
+invoke-virtual {v0, v1}, Landroid/widget/LinearLayout;->generateLayoutParams(Landroid/view/ViewGroup$LayoutParams;)Landroid/widget/LinearLayout$LayoutParams;
+
+Implement this to do your drawing.
+protected void onDraw(Canvas canvas)
+invoke-virtual {v0, v1}, Landroid/widget/LinearLayout;->onDraw(Landroid/graphics/Canvas;)V
+
+Called from layout when this view should assign a size and position to each of its children.
+protected void onLayout(boolean changed, int l, int t, int r, int b)
+invoke-virtual/range {v0 .. v5}, Landroid/widget/LinearLayout;->onLayout(ZIIII)V
+
+Measure the view and its content to determine the measured width and the measured height.
+protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec)
+invoke-virtual {v0, v1, v2}, Landroid/widget/LinearLayout;->onMeasure(II)V

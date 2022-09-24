@@ -1,0 +1,7 @@
+Interface definition for a callback to be invoked when the context menu for this view is being built.
+interface View.OnCreateContextMenuListener
+.class interface Landroid/view/View$OnCreateContextMenuListener;
+
+Called when the context menu for this view is being built.
+abstract void onCreateContextMenu(ContextMenu menu, View v, ContextMenu.ContextMenuInfo menuInfo)
+event onCreateContextMenu(Landroid/view/ContextMenu;Landroid/view/View;Landroid/view/ContextMenu$ContextMenuInfo;)V

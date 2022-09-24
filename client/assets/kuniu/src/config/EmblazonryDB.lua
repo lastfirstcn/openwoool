@@ -1,4 +1,4 @@
-local Items = {
+local Items = {-----纹饰套装属性
 	{q_id = 1601,q_suitID = 1001,q_job = 1,q_activeType = 0,q_tenacity = 6,q_battle = 60,q_decomposeNum = 100,q_activeNum = 500,},
 	{q_id = 1602,q_suitID = 1001,q_job = 1,q_activeType = 0,q_max_hp = 660,q_battle = 231.00000000,q_decomposeNum = 150,q_activeNum = 750,},
 	{q_id = 1603,q_suitID = 1001,q_job = 1,q_activeType = 0,q_attack_min = 12,q_attack_max = 18,q_battle = 90,q_decomposeNum = 200,q_activeNum = 1000,},

@@ -1,0 +1,7 @@
+Interface definition for a callback to be invoked when the focus state of a view changed.
+interface View.OnFocusChangeListener
+.class interface Landroid/view/View$OnFocusChangeListener;
+
+Called when the focus state of a view has changed.
+abstract void onFocusChange(View v, boolean hasFocus)
+event onFocusChange(Landroid/view/View;Z)V

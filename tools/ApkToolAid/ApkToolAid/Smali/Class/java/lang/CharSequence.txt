@@ -1,0 +1,19 @@
+CharSequence 是 char 值的一个可读序列。此接口对许多不同种类的 char 序列提供统一的只读访问。char 值表示 Basic Multilingual Plane (BMP) 或代理项中的一个字符。
+interface java.lang.CharSequence
+.class interface Ljava/lang/CharSequence;
+
+返回指定索引的 char 值。
+char charAt(int index)
+invoke-interface {v0, v1}, Ljava/lang/CharSequence;->charAt(I)C
+
+返回此字符序列的长度。
+int length()
+invoke-interface {v0}, Ljava/lang/CharSequence;->length()I
+
+返回一个新的 CharSequence，它是此序列的子序列。
+CharSequence subSequence(int start, int end)
+invoke-interface {v0, v1, v2}, Ljava/lang/CharSequence;->subSequence(II)Ljava/lang/CharSequence;
+
+返回一个包含此序列中字符的字符串，该字符串与此序列的顺序相同。
+String toString()
+invoke-interface {v0}, Ljava/lang/CharSequence;->toString()Ljava/lang/String;

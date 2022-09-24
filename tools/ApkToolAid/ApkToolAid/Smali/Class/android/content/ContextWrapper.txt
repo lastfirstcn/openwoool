@@ -1,0 +1,435 @@
+Proxying implementation of Context that simply delegates all of its calls to another Context. Can be subclassed to modify behavior without changing the original Context.
+class android.content.ContextWrapper
+.class Landroid/content/ContextWrapper;
+
+继承
+inherit android.content.Context
+.super Landroid/content/Context;
+
+构造方法：没有帮助内容
+constructor ContextWrapper(Context base)
+invoke-direct {v0, v1}, Landroid/content/ContextWrapper;-><init>(Landroid/content/Context;)V
+
+Connect to an application service, creating it if needed.
+boolean bindService(Intent service, ServiceConnection conn, int flags)
+invoke-virtual {v0, v1, v2, v3}, Landroid/content/ContextWrapper;->bindService(Landroid/content/Intent;Landroid/content/ServiceConnection;I)Z
+
+Determine whether the calling process of an IPC or you have been granted a particular permission.
+int checkCallingOrSelfPermission(String permission)
+invoke-virtual {v0, v1}, Landroid/content/ContextWrapper;->checkCallingOrSelfPermission(Ljava/lang/String;)I
+
+Determine whether the calling process of an IPC or you has been granted permission to access a specific URI.
+int checkCallingOrSelfUriPermission(Uri uri, int modeFlags)
+invoke-virtual {v0, v1, v2}, Landroid/content/ContextWrapper;->checkCallingOrSelfUriPermission(Landroid/net/Uri;I)I
+
+Determine whether the calling process of an IPC you are handling has been granted a particular permission.
+int checkCallingPermission(String permission)
+invoke-virtual {v0, v1}, Landroid/content/ContextWrapper;->checkCallingPermission(Ljava/lang/String;)I
+
+Determine whether the calling process and user ID has been granted permission to access a specific URI.
+int checkCallingUriPermission(Uri uri, int modeFlags)
+invoke-virtual {v0, v1, v2}, Landroid/content/ContextWrapper;->checkCallingUriPermission(Landroid/net/Uri;I)I
+
+Determine whether the given permission is allowed for a particular process and user ID running in the system.
+int checkPermission(String permission, int pid, int uid)
+invoke-virtual {v0, v1, v2, v3}, Landroid/content/ContextWrapper;->checkPermission(Ljava/lang/String;II)I
+
+Determine whether you have been granted a particular permission.
+int checkSelfPermission(String permission)
+invoke-virtual {v0, v1}, Landroid/content/ContextWrapper;->checkSelfPermission(Ljava/lang/String;)I
+
+Check both a Uri and normal permission.
+int checkUriPermission(Uri uri, String readPermission, String writePermission, int pid, int uid, int modeFlags)
+invoke-virtual/range {v0 .. v6}, Landroid/content/ContextWrapper;->checkUriPermission(Landroid/net/Uri;Ljava/lang/String;Ljava/lang/String;III)I
+
+Determine whether a particular process and user ID has been granted permission to access a specific URI.
+int checkUriPermission(Uri uri, int pid, int uid, int modeFlags)
+invoke-virtual {v0, v1, v2, v3, v4}, Landroid/content/ContextWrapper;->checkUriPermission(Landroid/net/Uri;III)I
+
+This method was deprecated in API level 23. Use WallpaperManager.clear() instead.%Return%This method requires the caller to hold the permission Manifest.permission.SET_WALLPAPER.
+void clearWallpaper()
+invoke-virtual {v0}, Landroid/content/ContextWrapper;->clearWallpaper()V
+
+Return a new Context object for the current Context but whose resources are adjusted to match the given Configuration.
+Context createConfigurationContext(Configuration overrideConfiguration)
+invoke-virtual {v0, v1}, Landroid/content/ContextWrapper;->createConfigurationContext(Landroid/content/res/Configuration;)Landroid/content/Context;
+
+Return a new Context object for the current Context but whose storage APIs are backed by device-protected storage.
+Context createDeviceProtectedStorageContext()
+invoke-virtual {v0}, Landroid/content/ContextWrapper;->createDeviceProtectedStorageContext()Landroid/content/Context;
+
+Return a new Context object for the current Context but whose resources are adjusted to match the metrics of the given Display.
+Context createDisplayContext(Display display)
+invoke-virtual {v0, v1}, Landroid/content/ContextWrapper;->createDisplayContext(Landroid/view/Display;)Landroid/content/Context;
+
+Return a new Context object for the given application name.
+Context createPackageContext(String packageName, int flags)
+invoke-virtual {v0, v1, v2}, Landroid/content/ContextWrapper;->createPackageContext(Ljava/lang/String;I)Landroid/content/Context;
+
+Returns an array of strings naming the private databases associated with this Context's application package.
+String[] databaseList()
+invoke-virtual {v0}, Landroid/content/ContextWrapper;->databaseList()[Ljava/lang/String;
+
+Delete an existing private SQLiteDatabase associated with this Context's application package.
+boolean deleteDatabase(String name)
+invoke-virtual {v0, v1}, Landroid/content/ContextWrapper;->deleteDatabase(Ljava/lang/String;)Z
+
+Delete the given private file associated with this Context's application package.
+boolean deleteFile(String name)
+invoke-virtual {v0, v1}, Landroid/content/ContextWrapper;->deleteFile(Ljava/lang/String;)Z
+
+Delete an existing shared preferences file.
+boolean deleteSharedPreferences(String name)
+invoke-virtual {v0, v1}, Landroid/content/ContextWrapper;->deleteSharedPreferences(Ljava/lang/String;)Z
+
+If neither you nor the calling process of an IPC you are handling has been granted a particular permission, throw a SecurityException.
+void enforceCallingOrSelfPermission(String permission, String message)
+invoke-virtual {v0, v1, v2}, Landroid/content/ContextWrapper;->enforceCallingOrSelfPermission(Ljava/lang/String;Ljava/lang/String;)V
+
+If the calling process of an IPC or you has not been granted permission to access a specific URI, throw SecurityException.
+void enforceCallingOrSelfUriPermission(Uri uri, int modeFlags, String message)
+invoke-virtual {v0, v1, v2, v3}, Landroid/content/ContextWrapper;->enforceCallingOrSelfUriPermission(Landroid/net/Uri;ILjava/lang/String;)V
+
+If the calling process of an IPC you are handling has not been granted a particular permission, throw a SecurityException.
+void enforceCallingPermission(String permission, String message)
+invoke-virtual {v0, v1, v2}, Landroid/content/ContextWrapper;->enforceCallingPermission(Ljava/lang/String;Ljava/lang/String;)V
+
+If the calling process and user ID has not been granted permission to access a specific URI, throw SecurityException.
+void enforceCallingUriPermission(Uri uri, int modeFlags, String message)
+invoke-virtual {v0, v1, v2, v3}, Landroid/content/ContextWrapper;->enforceCallingUriPermission(Landroid/net/Uri;ILjava/lang/String;)V
+
+If the given permission is not allowed for a particular process and user ID running in the system, throw a SecurityException.
+void enforcePermission(String permission, int pid, int uid, String message)
+invoke-virtual {v0, v1, v2, v3, v4}, Landroid/content/ContextWrapper;->enforcePermission(Ljava/lang/String;IILjava/lang/String;)V
+
+Enforce both a Uri and normal permission.
+void enforceUriPermission(Uri uri, String readPermission, String writePermission, int pid, int uid, int modeFlags, String message)
+invoke-virtual/range {v0 .. v7}, Landroid/content/ContextWrapper;->enforceUriPermission(Landroid/net/Uri;Ljava/lang/String;Ljava/lang/String;IIILjava/lang/String;)V
+
+If a particular process and user ID has not been granted permission to access a specific URI, throw SecurityException.
+void enforceUriPermission(Uri uri, int pid, int uid, int modeFlags, String message)
+invoke-virtual/range {v0 .. v5}, Landroid/content/ContextWrapper;->enforceUriPermission(Landroid/net/Uri;IIILjava/lang/String;)V
+
+Returns an array of strings naming the private files associated with this Context's application package.
+String[] fileList()
+invoke-virtual {v0}, Landroid/content/ContextWrapper;->fileList()[Ljava/lang/String;
+
+Return the context of the single, global Application object of the current process.
+Context getApplicationContext()
+invoke-virtual {v0}, Landroid/content/ContextWrapper;->getApplicationContext()Landroid/content/Context;
+
+Return the full application info for this context's package.
+ApplicationInfo getApplicationInfo()
+invoke-virtual {v0}, Landroid/content/ContextWrapper;->getApplicationInfo()Landroid/content/pm/ApplicationInfo;
+
+Returns an AssetManager instance for the application's package.
+AssetManager getAssets()
+invoke-virtual {v0}, Landroid/content/ContextWrapper;->getAssets()Landroid/content/res/AssetManager;
+
+没有帮助内容
+Context getBaseContext()
+invoke-virtual {v0}, Landroid/content/ContextWrapper;->getBaseContext()Landroid/content/Context;
+
+Returns the absolute path to the application specific cache directory on the filesystem.
+File getCacheDir()
+invoke-virtual {v0}, Landroid/content/ContextWrapper;->getCacheDir()Ljava/io/File;
+
+Return a class loader you can use to retrieve classes in this package.
+ClassLoader getClassLoader()
+invoke-virtual {v0}, Landroid/content/ContextWrapper;->getClassLoader()Ljava/lang/ClassLoader;
+
+Returns the absolute path to the application specific cache directory on the filesystem designed for storing cached code.
+File getCodeCacheDir()
+invoke-virtual {v0}, Landroid/content/ContextWrapper;->getCodeCacheDir()Ljava/io/File;
+
+Return a ContentResolver instance for your application's package.
+ContentResolver getContentResolver()
+invoke-virtual {v0}, Landroid/content/ContextWrapper;->getContentResolver()Landroid/content/ContentResolver;
+
+Returns the absolute path to the directory on the filesystem where all private files belonging to this app are stored.
+File getDataDir()
+invoke-virtual {v0}, Landroid/content/ContextWrapper;->getDataDir()Ljava/io/File;
+
+Returns the absolute path on the filesystem where a database created with openOrCreateDatabase(String, int, SQLiteDatabase.CursorFactory) is stored.
+File getDatabasePath(String name)
+invoke-virtual {v0, v1}, Landroid/content/ContextWrapper;->getDatabasePath(Ljava/lang/String;)Ljava/io/File;
+
+Retrieve, creating if needed, a new directory in which the application can place its own custom data files.
+File getDir(String name, int mode)
+invoke-virtual {v0, v1, v2}, Landroid/content/ContextWrapper;->getDir(Ljava/lang/String;I)Ljava/io/File;
+
+Returns absolute path to application-specific directory on the primary shared/external storage device where the application can place cache files it owns.
+File getExternalCacheDir()
+invoke-virtual {v0}, Landroid/content/ContextWrapper;->getExternalCacheDir()Ljava/io/File;
+
+Returns absolute paths to application-specific directories on all shared/external storage devices where the application can place cache files it owns.
+File[] getExternalCacheDirs()
+invoke-virtual {v0}, Landroid/content/ContextWrapper;->getExternalCacheDirs()[Ljava/io/File;
+
+Returns the absolute path to the directory on the primary shared/external storage device where the application can place persistent files it owns.
+File getExternalFilesDir(String type)
+invoke-virtual {v0, v1}, Landroid/content/ContextWrapper;->getExternalFilesDir(Ljava/lang/String;)Ljava/io/File;
+
+Returns absolute paths to application-specific directories on all shared/external storage devices where the application can place persistent files it owns.
+File[] getExternalFilesDirs(String type)
+invoke-virtual {v0, v1}, Landroid/content/ContextWrapper;->getExternalFilesDirs(Ljava/lang/String;)[Ljava/io/File;
+
+Returns absolute paths to application-specific directories on all shared/external storage devices where the application can place media files.
+File[] getExternalMediaDirs()
+invoke-virtual {v0}, Landroid/content/ContextWrapper;->getExternalMediaDirs()[Ljava/io/File;
+
+Returns the absolute path on the filesystem where a file created with openFileOutput(String, int) is stored.
+File getFileStreamPath(String name)
+invoke-virtual {v0, v1}, Landroid/content/ContextWrapper;->getFileStreamPath(Ljava/lang/String;)Ljava/io/File;
+
+Returns the absolute path to the directory on the filesystem where files created with openFileOutput(String, int) are stored.
+File getFilesDir()
+invoke-virtual {v0}, Landroid/content/ContextWrapper;->getFilesDir()Ljava/io/File;
+
+Return an Executor that will run enqueued tasks on the main thread associated with this context.
+Executor getMainExecutor()
+invoke-virtual {v0}, Landroid/content/ContextWrapper;->getMainExecutor()Ljava/util/concurrent/Executor;
+
+Return the Looper for the main thread of the current process.
+Looper getMainLooper()
+invoke-virtual {v0}, Landroid/content/ContextWrapper;->getMainLooper()Landroid/os/Looper;
+
+Returns the absolute path to the directory on the filesystem similar to getFilesDir().
+File getNoBackupFilesDir()
+invoke-virtual {v0}, Landroid/content/ContextWrapper;->getNoBackupFilesDir()Ljava/io/File;
+
+Return the primary shared/external storage directory where this application's OBB files (if there are any) can be found.
+File getObbDir()
+invoke-virtual {v0}, Landroid/content/ContextWrapper;->getObbDir()Ljava/io/File;
+
+Returns absolute paths to application-specific directories on all shared/external storage devices where the application's OBB files (if there are any) can be found.
+File[] getObbDirs()
+invoke-virtual {v0}, Landroid/content/ContextWrapper;->getObbDirs()[Ljava/io/File;
+
+Return the full path to this context's primary Android package.
+String getPackageCodePath()
+invoke-virtual {v0}, Landroid/content/ContextWrapper;->getPackageCodePath()Ljava/lang/String;
+
+Return PackageManager instance to find global package information.
+PackageManager getPackageManager()
+invoke-virtual {v0}, Landroid/content/ContextWrapper;->getPackageManager()Landroid/content/pm/PackageManager;
+
+Return the name of this application's package.
+String getPackageName()
+invoke-virtual {v0}, Landroid/content/ContextWrapper;->getPackageName()Ljava/lang/String;
+
+Return the full path to this context's primary Android package.
+String getPackageResourcePath()
+invoke-virtual {v0}, Landroid/content/ContextWrapper;->getPackageResourcePath()Ljava/lang/String;
+
+Returns a Resources instance for the application's package.
+Resources getResources()
+invoke-virtual {v0}, Landroid/content/ContextWrapper;->getResources()Landroid/content/res/Resources;
+
+Retrieve and hold the contents of the preferences file 'name', returning a SharedPreferences through which you can retrieve and modify its values.
+SharedPreferences getSharedPreferences(String name, int mode)
+invoke-virtual {v0, v1, v2}, Landroid/content/ContextWrapper;->getSharedPreferences(Ljava/lang/String;I)Landroid/content/SharedPreferences;
+
+Return the handle to a system-level service by name.
+Object getSystemService(String name)
+invoke-virtual {v0, v1}, Landroid/content/ContextWrapper;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
+
+Gets the name of the system-level service that is represented by the specified class.
+String getSystemServiceName(Class<?> serviceClass)
+invoke-virtual {v0, v1}, Landroid/content/ContextWrapper;->getSystemServiceName(Ljava/lang/Class;)Ljava/lang/String;
+
+Return the Theme object associated with this Context.
+Resources.Theme getTheme()
+invoke-virtual {v0}, Landroid/content/ContextWrapper;->getTheme()Landroid/content/res/Resources$Theme;
+
+This method was deprecated in API level 23. Use WallpaperManager.get() instead.
+Drawable getWallpaper()
+invoke-virtual {v0}, Landroid/content/ContextWrapper;->getWallpaper()Landroid/graphics/drawable/Drawable;
+
+This method was deprecated in API level 23. Use WallpaperManager.getDesiredMinimumHeight() instead.
+int getWallpaperDesiredMinimumHeight()
+invoke-virtual {v0}, Landroid/content/ContextWrapper;->getWallpaperDesiredMinimumHeight()I
+
+This method was deprecated in API level 23. Use WallpaperManager.getDesiredMinimumWidth() instead.
+int getWallpaperDesiredMinimumWidth()
+invoke-virtual {v0}, Landroid/content/ContextWrapper;->getWallpaperDesiredMinimumWidth()I
+
+Grant permission to access a specific Uri to another package, regardless of whether that package has general permission to access the Uri's content provider.
+void grantUriPermission(String toPackage, Uri uri, int modeFlags)
+invoke-virtual {v0, v1, v2, v3}, Landroid/content/ContextWrapper;->grantUriPermission(Ljava/lang/String;Landroid/net/Uri;I)V
+
+Indicates if the storage APIs of this Context are backed by device-protected storage.
+boolean isDeviceProtectedStorage()
+invoke-virtual {v0}, Landroid/content/ContextWrapper;->isDeviceProtectedStorage()Z
+
+Indicates whether this Context is restricted.
+boolean isRestricted()
+invoke-virtual {v0}, Landroid/content/ContextWrapper;->isRestricted()Z
+
+Move an existing database file from the given source storage context to this context.
+boolean moveDatabaseFrom(Context sourceContext, String name)
+invoke-virtual {v0, v1, v2}, Landroid/content/ContextWrapper;->moveDatabaseFrom(Landroid/content/Context;Ljava/lang/String;)Z
+
+Move an existing shared preferences file from the given source storage context to this context.
+boolean moveSharedPreferencesFrom(Context sourceContext, String name)
+invoke-virtual {v0, v1, v2}, Landroid/content/ContextWrapper;->moveSharedPreferencesFrom(Landroid/content/Context;Ljava/lang/String;)Z
+
+Open a private file associated with this Context's application package for reading.
+FileInputStream openFileInput(String name)
+invoke-virtual {v0, v1}, Landroid/content/ContextWrapper;->openFileInput(Ljava/lang/String;)Ljava/io/FileInputStream;
+
+Open a private file associated with this Context's application package for writing.
+FileOutputStream openFileOutput(String name, int mode)
+invoke-virtual {v0, v1, v2}, Landroid/content/ContextWrapper;->openFileOutput(Ljava/lang/String;I)Ljava/io/FileOutputStream;
+
+Open a new private SQLiteDatabase associated with this Context's application package.
+SQLiteDatabase openOrCreateDatabase(String name, int mode, SQLiteDatabase.CursorFactory factory, DatabaseErrorHandler errorHandler)
+invoke-virtual {v0, v1, v2, v3, v4}, Landroid/content/ContextWrapper;->openOrCreateDatabase(Ljava/lang/String;ILandroid/database/sqlite/SQLiteDatabase$CursorFactory;Landroid/database/DatabaseErrorHandler;)Landroid/database/sqlite/SQLiteDatabase;
+
+Open a new private SQLiteDatabase associated with this Context's application package.
+SQLiteDatabase openOrCreateDatabase(String name, int mode, SQLiteDatabase.CursorFactory factory)
+invoke-virtual {v0, v1, v2, v3}, Landroid/content/ContextWrapper;->openOrCreateDatabase(Ljava/lang/String;ILandroid/database/sqlite/SQLiteDatabase$CursorFactory;)Landroid/database/sqlite/SQLiteDatabase;
+
+This method was deprecated in API level 23. Use WallpaperManager.peek() instead.
+Drawable peekWallpaper()
+invoke-virtual {v0}, Landroid/content/ContextWrapper;->peekWallpaper()Landroid/graphics/drawable/Drawable;
+
+Register a BroadcastReceiver to be run in the main activity thread.
+Intent registerReceiver(BroadcastReceiver receiver, IntentFilter filter)
+invoke-virtual {v0, v1, v2}, Landroid/content/ContextWrapper;->registerReceiver(Landroid/content/BroadcastReceiver;Landroid/content/IntentFilter;)Landroid/content/Intent;
+
+Register to receive intent broadcasts, with the receiver optionally being exposed to Instant Apps.
+Intent registerReceiver(BroadcastReceiver receiver, IntentFilter filter, int flags)
+invoke-virtual {v0, v1, v2, v3}, Landroid/content/ContextWrapper;->registerReceiver(Landroid/content/BroadcastReceiver;Landroid/content/IntentFilter;I)Landroid/content/Intent;
+
+Register to receive intent broadcasts, to run in the context of scheduler.
+Intent registerReceiver(BroadcastReceiver receiver, IntentFilter filter, String broadcastPermission, Handler scheduler, int flags)
+invoke-virtual/range {v0 .. v5}, Landroid/content/ContextWrapper;->registerReceiver(Landroid/content/BroadcastReceiver;Landroid/content/IntentFilter;Ljava/lang/String;Landroid/os/Handler;I)Landroid/content/Intent;
+
+Register to receive intent broadcasts, to run in the context of scheduler.
+Intent registerReceiver(BroadcastReceiver receiver, IntentFilter filter, String broadcastPermission, Handler scheduler)
+invoke-virtual {v0, v1, v2, v3, v4}, Landroid/content/ContextWrapper;->registerReceiver(Landroid/content/BroadcastReceiver;Landroid/content/IntentFilter;Ljava/lang/String;Landroid/os/Handler;)Landroid/content/Intent;
+
+This method was deprecated in API level 23. Sticky broadcasts should not be used. They provide no security (anyone can access them), no protection (anyone can modify them), and many other problems. The recommended pattern is to use a non-sticky broadcast to report that something has changed, with another mechanism for apps to retrieve the current value whenever desired.
+void removeStickyBroadcast(Intent intent)
+invoke-virtual {v0, v1}, Landroid/content/ContextWrapper;->removeStickyBroadcast(Landroid/content/Intent;)V
+
+This method was deprecated in API level 23. Sticky broadcasts should not be used. They provide no security (anyone can access them), no protection (anyone can modify them), and many other problems. The recommended pattern is to use a non-sticky broadcast to report that something has changed, with another mechanism for apps to retrieve the current value whenever desired.
+void removeStickyBroadcastAsUser(Intent intent, UserHandle user)
+invoke-virtual {v0, v1, v2}, Landroid/content/ContextWrapper;->removeStickyBroadcastAsUser(Landroid/content/Intent;Landroid/os/UserHandle;)V
+
+Remove all permissions to access a particular content provider Uri that were previously added with grantUriPermission(String, Uri, int) or any other mechanism.
+void revokeUriPermission(Uri uri, int modeFlags)
+invoke-virtual {v0, v1, v2}, Landroid/content/ContextWrapper;->revokeUriPermission(Landroid/net/Uri;I)V
+
+Remove permissions to access a particular content provider Uri that were previously added with grantUriPermission(String, Uri, int) for a specific target package.
+void revokeUriPermission(String targetPackage, Uri uri, int modeFlags)
+invoke-virtual {v0, v1, v2, v3}, Landroid/content/ContextWrapper;->revokeUriPermission(Ljava/lang/String;Landroid/net/Uri;I)V
+
+Broadcast the given intent to all interested BroadcastReceivers, allowing an optional required permission to be enforced.
+void sendBroadcast(Intent intent, String receiverPermission)
+invoke-virtual {v0, v1, v2}, Landroid/content/ContextWrapper;->sendBroadcast(Landroid/content/Intent;Ljava/lang/String;)V
+
+Broadcast the given intent to all interested BroadcastReceivers.
+void sendBroadcast(Intent intent)
+invoke-virtual {v0, v1}, Landroid/content/ContextWrapper;->sendBroadcast(Landroid/content/Intent;)V
+
+Version of sendBroadcast(Intent) that allows you to specify the user the broadcast will be sent to.
+void sendBroadcastAsUser(Intent intent, UserHandle user)
+invoke-virtual {v0, v1, v2}, Landroid/content/ContextWrapper;->sendBroadcastAsUser(Landroid/content/Intent;Landroid/os/UserHandle;)V
+
+Version of sendBroadcast(Intent, String) that allows you to specify the user the broadcast will be sent to.
+void sendBroadcastAsUser(Intent intent, UserHandle user, String receiverPermission)
+invoke-virtual {v0, v1, v2, v3}, Landroid/content/ContextWrapper;->sendBroadcastAsUser(Landroid/content/Intent;Landroid/os/UserHandle;Ljava/lang/String;)V
+
+Version of sendBroadcast(Intent) that allows you to receive data back from the broadcast.
+void sendOrderedBroadcast(Intent intent, String receiverPermission, BroadcastReceiver resultReceiver, Handler scheduler, int initialCode, String initialData, Bundle initialExtras)
+invoke-virtual/range {v0 .. v7}, Landroid/content/ContextWrapper;->sendOrderedBroadcast(Landroid/content/Intent;Ljava/lang/String;Landroid/content/BroadcastReceiver;Landroid/os/Handler;ILjava/lang/String;Landroid/os/Bundle;)V
+
+Broadcast the given intent to all interested BroadcastReceivers, delivering them one at a time to allow more preferred receivers to consume the broadcast before it is delivered to less preferred receivers.
+void sendOrderedBroadcast(Intent intent, String receiverPermission)
+invoke-virtual {v0, v1, v2}, Landroid/content/ContextWrapper;->sendOrderedBroadcast(Landroid/content/Intent;Ljava/lang/String;)V
+
+Version of sendOrderedBroadcast(Intent, String, BroadcastReceiver, Handler, int, String, Bundle) that allows you to specify the user the broadcast will be sent to.
+void sendOrderedBroadcastAsUser(Intent intent, UserHandle user, String receiverPermission, BroadcastReceiver resultReceiver, Handler scheduler, int initialCode, String initialData, Bundle initialExtras)
+invoke-virtual/range {v0 .. v8}, Landroid/content/ContextWrapper;->sendOrderedBroadcastAsUser(Landroid/content/Intent;Landroid/os/UserHandle;Ljava/lang/String;Landroid/content/BroadcastReceiver;Landroid/os/Handler;ILjava/lang/String;Landroid/os/Bundle;)V
+
+This method was deprecated in API level 23. Sticky broadcasts should not be used. They provide no security (anyone can access them), no protection (anyone can modify them), and many other problems. The recommended pattern is to use a non-sticky broadcast to report that something has changed, with another mechanism for apps to retrieve the current value whenever desired.
+void sendStickyBroadcast(Intent intent)
+invoke-virtual {v0, v1}, Landroid/content/ContextWrapper;->sendStickyBroadcast(Landroid/content/Intent;)V
+
+This method was deprecated in API level 23. Sticky broadcasts should not be used. They provide no security (anyone can access them), no protection (anyone can modify them), and many other problems. The recommended pattern is to use a non-sticky broadcast to report that something has changed, with another mechanism for apps to retrieve the current value whenever desired.
+void sendStickyBroadcastAsUser(Intent intent, UserHandle user)
+invoke-virtual {v0, v1, v2}, Landroid/content/ContextWrapper;->sendStickyBroadcastAsUser(Landroid/content/Intent;Landroid/os/UserHandle;)V
+
+This method was deprecated in API level 23. Sticky broadcasts should not be used. They provide no security (anyone can access them), no protection (anyone can modify them), and many other problems. The recommended pattern is to use a non-sticky broadcast to report that something has changed, with another mechanism for apps to retrieve the current value whenever desired.
+void sendStickyOrderedBroadcast(Intent intent, BroadcastReceiver resultReceiver, Handler scheduler, int initialCode, String initialData, Bundle initialExtras)
+invoke-virtual/range {v0 .. v6}, Landroid/content/ContextWrapper;->sendStickyOrderedBroadcast(Landroid/content/Intent;Landroid/content/BroadcastReceiver;Landroid/os/Handler;ILjava/lang/String;Landroid/os/Bundle;)V
+
+This method was deprecated in API level 23. Sticky broadcasts should not be used. They provide no security (anyone can access them), no protection (anyone can modify them), and many other problems. The recommended pattern is to use a non-sticky broadcast to report that something has changed, with another mechanism for apps to retrieve the current value whenever desired.
+void sendStickyOrderedBroadcastAsUser(Intent intent, UserHandle user, BroadcastReceiver resultReceiver, Handler scheduler, int initialCode, String initialData, Bundle initialExtras)
+invoke-virtual/range {v0 .. v7}, Landroid/content/ContextWrapper;->sendStickyOrderedBroadcastAsUser(Landroid/content/Intent;Landroid/os/UserHandle;Landroid/content/BroadcastReceiver;Landroid/os/Handler;ILjava/lang/String;Landroid/os/Bundle;)V
+
+Set the base theme for this context.
+void setTheme(int resid)
+invoke-virtual {v0, v1}, Landroid/content/ContextWrapper;->setTheme(I)V
+
+This method was deprecated in API level 23. Use WallpaperManager.set() instead.%Return%This method requires the caller to hold the permission Manifest.permission.SET_WALLPAPER.
+void setWallpaper(Bitmap bitmap)
+invoke-virtual {v0, v1}, Landroid/content/ContextWrapper;->setWallpaper(Landroid/graphics/Bitmap;)V
+
+This method was deprecated in API level 23. Use WallpaperManager.set() instead.%Return%This method requires the caller to hold the permission Manifest.permission.SET_WALLPAPER.
+void setWallpaper(InputStream data)
+invoke-virtual {v0, v1}, Landroid/content/ContextWrapper;->setWallpaper(Ljava/io/InputStream;)V
+
+Launch multiple new activities.
+void startActivities(Intent[] intents, Bundle options)
+invoke-virtual {v0, v1, v2}, Landroid/content/ContextWrapper;->startActivities([Landroid/content/Intent;Landroid/os/Bundle;)V
+
+Same as startActivities(Intent[], Bundle) with no options specified.
+void startActivities(Intent[] intents)
+invoke-virtual {v0, v1}, Landroid/content/ContextWrapper;->startActivities([Landroid/content/Intent;)V
+
+Same as startActivity(Intent, Bundle) with no options specified.
+void startActivity(Intent intent)
+invoke-virtual {v0, v1}, Landroid/content/ContextWrapper;->startActivity(Landroid/content/Intent;)V
+
+Launch a new activity.
+void startActivity(Intent intent, Bundle options)
+invoke-virtual {v0, v1, v2}, Landroid/content/ContextWrapper;->startActivity(Landroid/content/Intent;Landroid/os/Bundle;)V
+
+Similar to startService(Intent), but with an implicit promise that the Service will call startForeground(int, android.app.Notification) once it begins running.
+ComponentName startForegroundService(Intent service)
+invoke-virtual {v0, v1}, Landroid/content/ContextWrapper;->startForegroundService(Landroid/content/Intent;)Landroid/content/ComponentName;
+
+Start executing an Instrumentation class.
+boolean startInstrumentation(ComponentName className, String profileFile, Bundle arguments)
+invoke-virtual {v0, v1, v2, v3}, Landroid/content/ContextWrapper;->startInstrumentation(Landroid/content/ComponentName;Ljava/lang/String;Landroid/os/Bundle;)Z
+
+Same as startIntentSender(IntentSender, Intent, int, int, int, Bundle) with no options specified.
+void startIntentSender(IntentSender intent, Intent fillInIntent, int flagsMask, int flagsValues, int extraFlags)
+invoke-virtual/range {v0 .. v5}, Landroid/content/ContextWrapper;->startIntentSender(Landroid/content/IntentSender;Landroid/content/Intent;III)V
+
+Like startActivity(Intent, Bundle), but taking a IntentSender to start.
+void startIntentSender(IntentSender intent, Intent fillInIntent, int flagsMask, int flagsValues, int extraFlags, Bundle options)
+invoke-virtual/range {v0 .. v6}, Landroid/content/ContextWrapper;->startIntentSender(Landroid/content/IntentSender;Landroid/content/Intent;IIILandroid/os/Bundle;)V
+
+Request that a given application service be started.
+ComponentName startService(Intent service)
+invoke-virtual {v0, v1}, Landroid/content/ContextWrapper;->startService(Landroid/content/Intent;)Landroid/content/ComponentName;
+
+Request that a given application service be stopped.
+boolean stopService(Intent name)
+invoke-virtual {v0, v1}, Landroid/content/ContextWrapper;->stopService(Landroid/content/Intent;)Z
+
+Disconnect from an application service.
+void unbindService(ServiceConnection conn)
+invoke-virtual {v0, v1}, Landroid/content/ContextWrapper;->unbindService(Landroid/content/ServiceConnection;)V
+
+Unregister a previously registered BroadcastReceiver.
+void unregisterReceiver(BroadcastReceiver receiver)
+invoke-virtual {v0, v1}, Landroid/content/ContextWrapper;->unregisterReceiver(Landroid/content/BroadcastReceiver;)V
+
+Set the base context for this ContextWrapper.
+protected void attachBaseContext(Context base)
+invoke-virtual {v0, v1}, Landroid/content/ContextWrapper;->attachBaseContext(Landroid/content/Context;)V

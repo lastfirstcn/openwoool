@@ -1,0 +1,167 @@
+整型类，该类提供了多个方法，能在 int 类型和 String 类型之间互相转换，还提供了处理 int 类型时非常有用的其他一些常量和方法。
+class java.lang.Integer
+.class Ljava/lang/Integer;
+
+继承
+inherit java.lang.Number
+.super Ljava/lang/Number;
+
+值为 2^31－1 的常量，它表示 int 类型能够表示的最大值。
+public static final int MAX_VALUE
+sget v0, Ljava/lang/Integer;->MAX_VALUE:I
+
+值为 －2^31 的常量，它表示 int 类型能够表示的最小值。
+public static final int MIN_VALUE
+sget v0, Ljava/lang/Integer;->MIN_VALUE:I
+
+用来以二进制补码形式表示 int 值的比特位数。
+public static final int SIZE
+sget v0, Ljava/lang/Integer;->SIZE:I
+
+表示基本类型 int 的 Class 实例。
+public static final Class<Integer> TYPE
+sget-object v0, Ljava/lang/Integer;->TYPE:Ljava/lang/Class;
+
+构造方法：构造一个新分配的 Integer 对象，它表示指定的 int 值。
+constructor Integer(int value)
+invoke-direct {v0, v1}, Ljava/lang/Integer;-><init>(I)V
+
+构造方法：构造一个新分配的 Integer 对象，它表示 String 参数所指示的 int 值。
+constructor Integer(String s)
+invoke-direct {v0, v1}, Ljava/lang/Integer;-><init>(Ljava/lang/String;)V
+
+返回指定 int 值的二进制补码表示形式的 1 位的数量。
+int bitCount(int i)
+invoke-static {v0}, Ljava/lang/Integer;->bitCount(I)I
+
+以 byte 类型返回该 Integer 的值。
+byte byteValue()
+invoke-virtual {v0}, Ljava/lang/Integer;->byteValue()B
+
+在数字上比较两个 Integer 对象。
+int compareTo(Integer anotherInteger)
+invoke-virtual {v0, v1}, Ljava/lang/Integer;->compareTo(Ljava/lang/Integer;)I
+
+将 String 解码为 Integer。
+Integer decode(String nm)
+invoke-static {v0}, Ljava/lang/Integer;->decode(Ljava/lang/String;)Ljava/lang/Integer;
+
+以 double 类型返回该 Integer 的值。
+double doubleValue()
+invoke-virtual {v0}, Ljava/lang/Integer;->doubleValue()D
+
+比较此对象与指定对象。
+boolean equals(Object obj)
+invoke-virtual {v0, v1}, Ljava/lang/Integer;->equals(Ljava/lang/Object;)Z
+
+以 float 类型返回该 Integer 的值。
+float floatValue()
+invoke-virtual {v0}, Ljava/lang/Integer;->floatValue()F
+
+确定具有指定名称的系统属性的整数值。
+Integer getInteger(String nm)
+invoke-static {v0}, Ljava/lang/Integer;->getInteger(Ljava/lang/String;)Ljava/lang/Integer;
+
+确定具有指定名称的系统属性的整数值。
+Integer getInteger(String nm, int val)
+invoke-static {v0, v1}, Ljava/lang/Integer;->getInteger(Ljava/lang/String;I)Ljava/lang/Integer;
+
+返回具有指定名称的系统属性的整数值。
+Integer getInteger(String nm, Integer val)
+invoke-static {v0, v1}, Ljava/lang/Integer;->getInteger(Ljava/lang/String;Ljava/lang/Integer;)Ljava/lang/Integer;
+
+返回此 Integer 的哈希码。
+int hashCode()
+invoke-virtual {v0}, Ljava/lang/Integer;->hashCode()I
+
+返回具有至多单个 1 位的 int 值，在指定的 int 值中最高位（最左边）的 1 位的位置。
+int highestOneBit(int i)
+invoke-static {v0}, Ljava/lang/Integer;->highestOneBit(I)I
+
+以 int 类型返回该 Integer 的值。
+int intValue()
+invoke-virtual {v0}, Ljava/lang/Integer;->intValue()I
+
+以 long 类型返回该 Integer 的值。
+long longValue()
+invoke-virtual {v0}, Ljava/lang/Integer;->longValue()J
+
+返回具有至多单个 1 位的 int 值，在指定的 int 值中最低位（最右边）的 1 位的位置。
+int lowestOneBit(int i)
+invoke-static {v0}, Ljava/lang/Integer;->lowestOneBit(I)I
+
+在指定 int 值的二进制补码表示形式中最高位（最左边）的 1 位之前，返回零位的数量。
+int numberOfLeadingZeros(int i)
+invoke-static {v0}, Ljava/lang/Integer;->numberOfLeadingZeros(I)I
+
+返回指定的 int 值的二进制补码表示形式中最低（“最右边”）的为 1 的位后面的零位个数。
+int numberOfTrailingZeros(int i)
+invoke-static {v0}, Ljava/lang/Integer;->numberOfTrailingZeros(I)I
+
+将字符串参数作为有符号的十进制整数进行解析。
+int parseInt(String s)
+invoke-static {v0}, Ljava/lang/Integer;->parseInt(Ljava/lang/String;)I
+
+使用第二个参数指定的基数，将字符串参数解析为有符号的整数。
+int parseInt(String s, int radix)
+invoke-static {v0, v1}, Ljava/lang/Integer;->parseInt(Ljava/lang/String;I)I
+
+返回通过反转指定 int 值的二进制补码表示形式中位的顺序而获得的值。
+int reverse(int i)
+invoke-static {v0}, Ljava/lang/Integer;->reverse(I)I
+
+返回通过反转指定 int 值的二进制补码表示形式中字节的顺序而获得的值。
+int reverseBytes(int i)
+invoke-static {v0}, Ljava/lang/Integer;->reverseBytes(I)I
+
+返回根据指定的位数循环左移指定的 int 值的二进制补码表示形式而得到的值。
+int rotateLeft(int i, int distance)
+invoke-static {v0, v1}, Ljava/lang/Integer;->rotateLeft(II)I
+
+返回根据指定的位数循环右移指定的 int 值的二进制补码表示形式而得到的值。
+int rotateRight(int i, int distance)
+invoke-static {v0, v1}, Ljava/lang/Integer;->rotateRight(II)I
+
+以 short 类型返回该 Integer 的值。
+short shortValue()
+invoke-virtual {v0}, Ljava/lang/Integer;->shortValue()S
+
+返回指定 int 值的符号函数。
+int signum(int i)
+invoke-static {v0}, Ljava/lang/Integer;->signum(I)I
+
+以二进制（基数 2）无符号整数形式返回一个整数参数的字符串表示形式。
+String toBinaryString(int i)
+invoke-static {v0}, Ljava/lang/Integer;->toBinaryString(I)Ljava/lang/String;
+
+以十六进制（基数 16）无符号整数形式返回一个整数参数的字符串表示形式。
+String toHexString(int i)
+invoke-static {v0}, Ljava/lang/Integer;->toHexString(I)Ljava/lang/String;
+
+以八进制（基数 8）无符号整数形式返回一个整数参数的字符串表示形式。
+String toOctalString(int i)
+invoke-static {v0}, Ljava/lang/Integer;->toOctalString(I)Ljava/lang/String;
+
+返回一个表示该 Integer 值的 String 对象。
+String toString()
+invoke-virtual {v0}, Ljava/lang/Integer;->toString()Ljava/lang/String;
+
+返回一个表示指定整数的 String 对象。
+String toString(int i)
+invoke-static {v0}, Ljava/lang/Integer;->toString(I)Ljava/lang/String;
+
+返回用第二个参数指定基数表示的第一个参数的字符串表示形式。
+String toString(int i, int radix)
+invoke-static {v0, v1}, Ljava/lang/Integer;->toString(II)Ljava/lang/String;
+
+返回一个表示指定的 int 值的 Integer 实例。
+Integer valueOf(int i)
+invoke-static {v0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+返回保存指定的 String 的值的 Integer 对象。
+Integer valueOf(String s)
+invoke-static {v0}, Ljava/lang/Integer;->valueOf(Ljava/lang/String;)Ljava/lang/Integer;
+
+返回一个 Integer 对象，该对象中保存了用第二个参数提供的基数进行解析时从指定的 String 中提取的值。
+Integer valueOf(String s, int radix)
+invoke-static {v0, v1}, Ljava/lang/Integer;->valueOf(Ljava/lang/String;I)Ljava/lang/Integer;

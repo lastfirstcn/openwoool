@@ -1,0 +1,7 @@
+Interface definition for a callback to be invoked when the layout bounds of a view changes due to layout processing.
+interface View.OnLayoutChangeListener
+.class interface Landroid/view/View$OnLayoutChangeListener;
+
+Called when the layout bounds of a view changes due to layout processing.
+abstract void onLayoutChange(View v, int left, int top, int right, int bottom, int oldLeft, int oldTop, int oldRight, int oldBottom)
+event onLayoutChange(Landroid/view/View;IIIIIIII)V

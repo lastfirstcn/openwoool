@@ -1,0 +1,7 @@
+迭代器类
+interface java.lang.Iterable
+.class interface Ljava/lang/Iterable;
+
+返回一个在一组 T 类型的元素上进行迭代的迭代器。
+Iterator<T> iterator()
+invoke-interface {v0}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;

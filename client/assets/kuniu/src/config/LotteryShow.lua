@@ -12,6 +12,6 @@ local Items=
   {title='神戒碎片',include='火焰戒指碎片\n传送神戒碎片\n护身神戒碎片\n麻痹神戒碎片\n复活神戒碎片',icon=1200.0,color='purple',},
   {title='真气丹',include='10w\n20w',icon=777777.0,color='purple',},
   {title='日常道具',include='复活玫瑰\n喇叭\n万年雪霜\n天山雪莲',icon=1002.0,color='purple',},
-}
+};
 
 return Items

@@ -17,7 +17,7 @@ return
 	eClsTypeMagic = 5,
 
 	Channel_ID_Privacy	= 1,		--私聊
-	Channel_ID_Team		= 2,	    --队伍频道
+	Channel_ID_Team		= 2,	--队伍频道
 	Channel_ID_Faction	= 3,		--帮派
 	Channel_ID_World	= 4,		--世界频道(广播)
 	Channel_ID_Bugle	= 5,		--小喇叭
@@ -110,9 +110,9 @@ return
 
     -------------------------------------------------------------------------
     -- 坐骑ID
-    RIDE_ID_GOLDEN_HORSE                = 3004,      -- 黄金宝马 [不大于此id都不可骑战]
-    RIDE_ID_FLARING_FIRE_KYLIN          = 3015,      -- 炽焰麒麟
-    RIDE_ID_SANTO_PANTHER               = 8888,      -- 城主专属
+    RIDE_ID_GOLDEN_HORSE                = 3101,     -- 黄金宝马 [不大于此id都不可骑战]
+    RIDE_ID_FLARING_FIRE_KYLIN          = 3102,     -- 炽焰麒麟
+    RIDE_ID_SANTO_PANTHER               = 8888,     -- 城主黑豹
     -------------------------------------------------------------------------
     
 

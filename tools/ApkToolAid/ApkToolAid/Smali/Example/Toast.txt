@@ -1,0 +1,15 @@
+Toast的显示
+------------------------------------------------------------------------------------------------
+    # 0是短时间显示，1是长时间显示
+    const/4 v0, 0x0
+    const/4 v0, 0x1
+
+    # 显示内容
+    const-string v1, "Test"
+
+    # Toast所在Context
+    sget-object v2, Lxxx/yyy/zzz;->ac:Landroid/content/Context;
+
+    invoke-static {v2, v1, v0}, Landroid/widget/Toast;->makeText(Landroid/content/Context;Ljava/lang/CharSequence;I)Landroid/widget/Toast;
+    move-result-object v3
+    invoke-virtual {v3}, Landroid/widget/Toast;->show()V

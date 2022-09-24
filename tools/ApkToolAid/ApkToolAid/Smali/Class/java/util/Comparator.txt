@@ -1,0 +1,11 @@
+强行对某个对象 collection 进行整体排序 的比较函数。可以将 Comparator 传递给 sort 方法（如 Collections.sort 或 Arrays.sort），从而允许在排序顺序上实现精确控制。还可以使用 Comparator 来控制某些数据结构（如有序 set或有序映射）的顺序，或者为那些没有自然顺序的对象 collection 提供排序。
+interface java.util.Comparator
+.class interface Ljava/util/Comparator;
+
+比较用来排序的两个参数。
+int compare(T o1, T o2)
+invoke-interface {v0, v1, v2}, Ljava/util/Comparator;->compare(Ljava/lang/Object;Ljava/lang/Object;)I
+
+指示某个其他对象是否“等于”此 Comparator。
+boolean equals(Object obj)
+invoke-interface {v0, v1}, Ljava/util/Comparator;->equals(Ljava/lang/Object;)Z

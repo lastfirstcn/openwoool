@@ -1,0 +1,1071 @@
+An activity is a single, focused thing that the user can do. Almost all activities interact with the user, so the Activity class takes care of creating a window for you in which you can place your UI with setContentView(View). While activities are often presented to the user as full-screen windows, they can also be used in other ways: as floating windows (via a theme with R.attr.windowIsFloating set) or embedded inside of another activity (using ActivityGroup).
+class android.app.Activity
+.class Landroid/app/Activity;
+
+继承
+inherit android.view.ContextThemeWrapper
+.super Landroid/view/ContextThemeWrapper;
+
+继承
+inherit android.view.LayoutInflater.Factory2
+.super Landroid/view/LayoutInflater$Factory2;
+
+继承
+inherit android.view.Window.Callback
+.super Landroid/view/Window$Callback;
+
+继承
+inherit android.view.KeyEvent.Callback
+.super Landroid/view/KeyEvent$Callback;
+
+继承
+inherit android.view.View.OnCreateContextMenuListener
+.super Landroid/view/View$OnCreateContextMenuListener;
+
+继承
+inherit android.content.ComponentCallbacks2
+.super Landroid/content/ComponentCallbacks2;
+
+Use with setDefaultKeyMode(int) to launch the dialer during default key handling.
+public static final int DEFAULT_KEYS_DIALER
+sget v0, Landroid/app/Activity;->DEFAULT_KEYS_DIALER:I
+
+Use with setDefaultKeyMode(int) to turn off default handling of keys.
+public static final int DEFAULT_KEYS_DISABLE
+sget v0, Landroid/app/Activity;->DEFAULT_KEYS_DISABLE:I
+
+Use with setDefaultKeyMode(int) to specify that unhandled keystrokes will start a global search (typically web search, but some platforms may define alternate methods for global search)%Return%See android.app.SearchManager for more details.
+public static final int DEFAULT_KEYS_SEARCH_GLOBAL
+sget v0, Landroid/app/Activity;->DEFAULT_KEYS_SEARCH_GLOBAL:I
+
+Use with setDefaultKeyMode(int) to specify that unhandled keystrokes will start an application-defined search.
+public static final int DEFAULT_KEYS_SEARCH_LOCAL
+sget v0, Landroid/app/Activity;->DEFAULT_KEYS_SEARCH_LOCAL:I
+
+Use with setDefaultKeyMode(int) to execute a menu shortcut in default key handling.
+public static final int DEFAULT_KEYS_SHORTCUT
+sget v0, Landroid/app/Activity;->DEFAULT_KEYS_SHORTCUT:I
+
+Standard activity result: operation canceled.
+public static final int RESULT_CANCELED
+sget v0, Landroid/app/Activity;->RESULT_CANCELED:I
+
+Start of user-defined activity results.
+public static final int RESULT_FIRST_USER
+sget v0, Landroid/app/Activity;->RESULT_FIRST_USER:I
+
+Standard activity result: operation succeeded.
+public static final int RESULT_OK
+sget v0, Landroid/app/Activity;->RESULT_OK:I
+
+没有帮助内容
+protected static final int[] FOCUSED_STATE_SET
+sget-object v0, Landroid/app/Activity;->FOCUSED_STATE_SET:[I
+
+构造方法：没有帮助内容
+constructor Activity()
+invoke-direct {v0}, Landroid/app/Activity;-><init>()V
+
+Add an additional content view to the activity.
+void addContentView(View view, ViewGroup.LayoutParams params)
+invoke-virtual {v0, v1, v2}, Landroid/app/Activity;->addContentView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
+
+Programmatically closes the most recently opened context menu, if showing.
+void closeContextMenu()
+invoke-virtual {v0}, Landroid/app/Activity;->closeContextMenu()V
+
+Progammatically closes the options menu.
+void closeOptionsMenu()
+invoke-virtual {v0}, Landroid/app/Activity;->closeOptionsMenu()V
+
+Create a new PendingIntent object which you can hand to others for them to use to send result data back to your onActivityResult(int, int, Intent) callback.
+PendingIntent createPendingResult(int requestCode, Intent data, int flags)
+invoke-virtual {v0, v1, v2, v3}, Landroid/app/Activity;->createPendingResult(ILandroid/content/Intent;I)Landroid/app/PendingIntent;
+
+This method was deprecated in API level 13. Use the new DialogFragment class with FragmentManager instead; this is also available on older platforms through the Android compatibility package.
+final void dismissDialog(int id)
+invoke-virtual {v0, v1}, Landroid/app/Activity;->dismissDialog(I)V
+
+Dismiss the Keyboard Shortcuts screen.
+final void dismissKeyboardShortcutsHelper()
+invoke-virtual {v0}, Landroid/app/Activity;->dismissKeyboardShortcutsHelper()V
+
+Called to process generic motion events.
+boolean dispatchGenericMotionEvent(MotionEvent ev)
+invoke-virtual {v0, v1}, Landroid/app/Activity;->dispatchGenericMotionEvent(Landroid/view/MotionEvent;)Z
+
+Called to process key events.
+boolean dispatchKeyEvent(KeyEvent event)
+invoke-virtual {v0, v1}, Landroid/app/Activity;->dispatchKeyEvent(Landroid/view/KeyEvent;)Z
+
+Called to process a key shortcut event.
+boolean dispatchKeyShortcutEvent(KeyEvent event)
+invoke-virtual {v0, v1}, Landroid/app/Activity;->dispatchKeyShortcutEvent(Landroid/view/KeyEvent;)Z
+
+Called to process population of AccessibilityEvents.
+boolean dispatchPopulateAccessibilityEvent(AccessibilityEvent event)
+invoke-virtual {v0, v1}, Landroid/app/Activity;->dispatchPopulateAccessibilityEvent(Landroid/view/accessibility/AccessibilityEvent;)Z
+
+Called to process touch screen events.
+boolean dispatchTouchEvent(MotionEvent ev)
+invoke-virtual {v0, v1}, Landroid/app/Activity;->dispatchTouchEvent(Landroid/view/MotionEvent;)Z
+
+Called to process trackball events.
+boolean dispatchTrackballEvent(MotionEvent ev)
+invoke-virtual {v0, v1}, Landroid/app/Activity;->dispatchTrackballEvent(Landroid/view/MotionEvent;)Z
+
+Print the Activity's state into the given stream.
+void dump(String prefix, FileDescriptor fd, PrintWriter writer, String[] args)
+invoke-virtual {v0, v1, v2, v3, v4}, Landroid/app/Activity;->dump(Ljava/lang/String;Ljava/io/FileDescriptor;Ljava/io/PrintWriter;[Ljava/lang/String;)V
+
+Puts the activity in picture-in-picture mode if possible in the current system state.
+boolean enterPictureInPictureMode(PictureInPictureParams params)
+invoke-virtual {v0, v1}, Landroid/app/Activity;->enterPictureInPictureMode(Landroid/app/PictureInPictureParams;)Z
+
+Puts the activity in picture-in-picture mode if possible in the current system state.
+void enterPictureInPictureMode()
+invoke-virtual {v0}, Landroid/app/Activity;->enterPictureInPictureMode()V
+
+Finds a view that was identified by the android:id XML attribute that was processed in onCreate(Bundle).
+<T extends View> T findViewById(int id)
+invoke-virtual {v0, v1}, Landroid/app/Activity;->findViewById(I)Ljava/lang/Object;
+
+Call this when your activity is done and should be closed.
+void finish()
+invoke-virtual {v0}, Landroid/app/Activity;->finish()V
+
+Force finish another activity that you had previously started with startActivityForResult(Intent, int).
+void finishActivity(int requestCode)
+invoke-virtual {v0, v1}, Landroid/app/Activity;->finishActivity(I)V
+
+This is called when a child activity of this one calls its finishActivity().
+void finishActivityFromChild(Activity child, int requestCode)
+invoke-virtual {v0, v1, v2}, Landroid/app/Activity;->finishActivityFromChild(Landroid/app/Activity;I)V
+
+Finish this activity as well as all activities immediately below it in the current task that have the same affinity.
+void finishAffinity()
+invoke-virtual {v0}, Landroid/app/Activity;->finishAffinity()V
+
+Reverses the Activity Scene entry Transition and triggers the calling Activity to reverse its exit Transition.
+void finishAfterTransition()
+invoke-virtual {v0}, Landroid/app/Activity;->finishAfterTransition()V
+
+Call this when your activity is done and should be closed and the task should be completely removed as a part of finishing the root activity of the task.
+void finishAndRemoveTask()
+invoke-virtual {v0}, Landroid/app/Activity;->finishAndRemoveTask()V
+
+This is called when a child activity of this one calls its finish() method.
+void finishFromChild(Activity child)
+invoke-virtual {v0, v1}, Landroid/app/Activity;->finishFromChild(Landroid/app/Activity;)V
+
+Retrieve a reference to this activity's ActionBar.
+ActionBar getActionBar()
+invoke-virtual {v0}, Landroid/app/Activity;->getActionBar()Landroid/app/ActionBar;
+
+Return the application that owns this activity.
+final Application getApplication()
+invoke-virtual {v0}, Landroid/app/Activity;->getApplication()Landroid/app/Application;
+
+Return the name of the activity that invoked this activity.
+ComponentName getCallingActivity()
+invoke-virtual {v0}, Landroid/app/Activity;->getCallingActivity()Landroid/content/ComponentName;
+
+Return the name of the package that invoked this activity.
+String getCallingPackage()
+invoke-virtual {v0}, Landroid/app/Activity;->getCallingPackage()Ljava/lang/String;
+
+If this activity is being destroyed because it can not handle a configuration parameter being changed (and thus its onConfigurationChanged(Configuration) method is not being called), then you can use this method to discover the set of changes that have occurred while in the process of being destroyed.
+int getChangingConfigurations()
+invoke-virtual {v0}, Landroid/app/Activity;->getChangingConfigurations()I
+
+Returns the complete component name of this activity.
+ComponentName getComponentName()
+invoke-virtual {v0}, Landroid/app/Activity;->getComponentName()Landroid/content/ComponentName;
+
+Retrieve the Scene representing this window's current content.
+Scene getContentScene()
+invoke-virtual {v0}, Landroid/app/Activity;->getContentScene()Landroid/transition/Scene;
+
+Retrieve the TransitionManager responsible for default transitions in this window.
+TransitionManager getContentTransitionManager()
+invoke-virtual {v0}, Landroid/app/Activity;->getContentTransitionManager()Landroid/transition/TransitionManager;
+
+Calls Window.getCurrentFocus() on the Window of this Activity to return the currently focused view.
+View getCurrentFocus()
+invoke-virtual {v0}, Landroid/app/Activity;->getCurrentFocus()Landroid/view/View;
+
+This method was deprecated in API level 28. Use FragmentActivity.getSupportFragmentManager().
+FragmentManager getFragmentManager()
+invoke-virtual {v0}, Landroid/app/Activity;->getFragmentManager()Landroid/app/FragmentManager;
+
+Return the intent that started this activity.
+Intent getIntent()
+invoke-virtual {v0}, Landroid/app/Activity;->getIntent()Landroid/content/Intent;
+
+Retrieve the non-configuration instance data that was previously returned by onRetainNonConfigurationInstance().
+Object getLastNonConfigurationInstance()
+invoke-virtual {v0}, Landroid/app/Activity;->getLastNonConfigurationInstance()Ljava/lang/Object;
+
+Convenience for calling Window.getLayoutInflater().
+LayoutInflater getLayoutInflater()
+invoke-virtual {v0}, Landroid/app/Activity;->getLayoutInflater()Landroid/view/LayoutInflater;
+
+This method was deprecated in API level 28. Use FragmentActivity.getSupportLoaderManager().
+LoaderManager getLoaderManager()
+invoke-virtual {v0}, Landroid/app/Activity;->getLoaderManager()Landroid/app/LoaderManager;
+
+Returns class name for this activity with the package prefix removed.
+String getLocalClassName()
+invoke-virtual {v0}, Landroid/app/Activity;->getLocalClassName()Ljava/lang/String;
+
+Return the number of actions that will be displayed in the picture-in-picture UI when the user interacts with the activity currently in picture-in-picture mode.
+int getMaxNumPictureInPictureActions()
+invoke-virtual {v0}, Landroid/app/Activity;->getMaxNumPictureInPictureActions()I
+
+Gets the controller which should be receiving media key and volume events while this activity is in the foreground.
+final MediaController getMediaController()
+invoke-virtual {v0}, Landroid/app/Activity;->getMediaController()Landroid/media/session/MediaController;
+
+Returns a MenuInflater with this context.
+MenuInflater getMenuInflater()
+invoke-virtual {v0}, Landroid/app/Activity;->getMenuInflater()Landroid/view/MenuInflater;
+
+Return the parent activity if this view is an embedded child.
+final Activity getParent()
+invoke-virtual {v0}, Landroid/app/Activity;->getParent()Landroid/app/Activity;
+
+Obtain an Intent that will launch an explicit target activity specified by this activity's logical parent.
+Intent getParentActivityIntent()
+invoke-virtual {v0}, Landroid/app/Activity;->getParentActivityIntent()Landroid/content/Intent;
+
+Retrieve a SharedPreferences object for accessing preferences that are private to this activity.
+SharedPreferences getPreferences(int mode)
+invoke-virtual {v0, v1}, Landroid/app/Activity;->getPreferences(I)Landroid/content/SharedPreferences;
+
+Return information about who launched this activity.
+Uri getReferrer()
+invoke-virtual {v0}, Landroid/app/Activity;->getReferrer()Landroid/net/Uri;
+
+Return the current requested orientation of the activity.
+int getRequestedOrientation()
+invoke-virtual {v0}, Landroid/app/Activity;->getRequestedOrientation()I
+
+During the onSearchRequested() callbacks, this function will return the SearchEvent that triggered the callback, if it exists.
+final SearchEvent getSearchEvent()
+invoke-virtual {v0}, Landroid/app/Activity;->getSearchEvent()Landroid/view/SearchEvent;
+
+Return the handle to a system-level service by name.
+Object getSystemService(String name)
+invoke-virtual {v0, v1}, Landroid/app/Activity;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
+
+Return the identifier of the task this activity is in.
+int getTaskId()
+invoke-virtual {v0}, Landroid/app/Activity;->getTaskId()I
+
+没有帮助内容
+final CharSequence getTitle()
+invoke-virtual {v0}, Landroid/app/Activity;->getTitle()Ljava/lang/CharSequence;
+
+没有帮助内容
+final int getTitleColor()
+invoke-virtual {v0}, Landroid/app/Activity;->getTitleColor()I
+
+Retrieve the active VoiceInteractor that the user is going through to interact with this activity.
+VoiceInteractor getVoiceInteractor()
+invoke-virtual {v0}, Landroid/app/Activity;->getVoiceInteractor()Landroid/app/VoiceInteractor;
+
+Gets the suggested audio stream whose volume should be changed by the hardware volume controls.
+final int getVolumeControlStream()
+invoke-virtual {v0}, Landroid/app/Activity;->getVolumeControlStream()I
+
+Retrieve the current Window for the activity.
+Window getWindow()
+invoke-virtual {v0}, Landroid/app/Activity;->getWindow()Landroid/view/Window;
+
+Retrieve the window manager for showing custom windows.
+WindowManager getWindowManager()
+invoke-virtual {v0}, Landroid/app/Activity;->getWindowManager()Landroid/view/WindowManager;
+
+Returns true if this activity's main window currently has window focus.
+boolean hasWindowFocus()
+invoke-virtual {v0}, Landroid/app/Activity;->hasWindowFocus()Z
+
+Declare that the options menu has changed, so should be recreated.
+void invalidateOptionsMenu()
+invoke-virtual {v0}, Landroid/app/Activity;->invalidateOptionsMenu()V
+
+Returns whether there are any activity transitions currently running on this activity.
+boolean isActivityTransitionRunning()
+invoke-virtual {v0}, Landroid/app/Activity;->isActivityTransitionRunning()Z
+
+Check to see whether this activity is in the process of being destroyed in order to be recreated with a new configuration.
+boolean isChangingConfigurations()
+invoke-virtual {v0}, Landroid/app/Activity;->isChangingConfigurations()Z
+
+Is this activity embedded inside of another activity?
+final boolean isChild()
+invoke-virtual {v0}, Landroid/app/Activity;->isChild()Z
+
+Returns true if the final onDestroy() call has been made on the Activity, so this instance is now dead.
+boolean isDestroyed()
+invoke-virtual {v0}, Landroid/app/Activity;->isDestroyed()Z
+
+Check to see whether this activity is in the process of finishing, either because you called finish() on it or someone else has requested that it finished.
+boolean isFinishing()
+invoke-virtual {v0}, Landroid/app/Activity;->isFinishing()Z
+
+Bit indicating that this activity is "immersive" and should not be interrupted by notifications if possible.
+boolean isImmersive()
+invoke-virtual {v0}, Landroid/app/Activity;->isImmersive()Z
+
+Returns true if the activity is currently in multi-window mode.
+boolean isInMultiWindowMode()
+invoke-virtual {v0}, Landroid/app/Activity;->isInMultiWindowMode()Z
+
+Returns true if the activity is currently in picture-in-picture mode.
+boolean isInPictureInPictureMode()
+invoke-virtual {v0}, Landroid/app/Activity;->isInPictureInPictureMode()Z
+
+Queries whether the currently enabled voice interaction service supports returning a voice interactor for use by the activity.
+boolean isLocalVoiceInteractionSupported()
+invoke-virtual {v0}, Landroid/app/Activity;->isLocalVoiceInteractionSupported()Z
+
+Return whether this activity is the root of a task.
+boolean isTaskRoot()
+invoke-virtual {v0}, Landroid/app/Activity;->isTaskRoot()Z
+
+Check whether this activity is running as part of a voice interaction with the user.
+boolean isVoiceInteraction()
+invoke-virtual {v0}, Landroid/app/Activity;->isVoiceInteraction()Z
+
+Like isVoiceInteraction(), but only returns true if this is also the root of a voice interaction.
+boolean isVoiceInteractionRoot()
+invoke-virtual {v0}, Landroid/app/Activity;->isVoiceInteractionRoot()Z
+
+This method was deprecated in API level 11. Use CursorLoader instead.
+final Cursor managedQuery(Uri uri, String[] projection, String selection, String[] selectionArgs, String sortOrder)
+invoke-virtual/range {v0 .. v5}, Landroid/app/Activity;->managedQuery(Landroid/net/Uri;[Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;Ljava/lang/String;)Landroid/database/Cursor;
+
+Move the task containing this activity to the back of the activity stack.
+boolean moveTaskToBack(boolean nonRoot)
+invoke-virtual {v0, v1}, Landroid/app/Activity;->moveTaskToBack(Z)Z
+
+Navigate from this activity to the activity specified by upIntent, finishing this activity in the process.
+boolean navigateUpTo(Intent upIntent)
+invoke-virtual {v0, v1}, Landroid/app/Activity;->navigateUpTo(Landroid/content/Intent;)Z
+
+This is called when a child activity of this one calls its navigateUpTo(Intent) method.
+boolean navigateUpToFromChild(Activity child, Intent upIntent)
+invoke-virtual {v0, v1, v2}, Landroid/app/Activity;->navigateUpToFromChild(Landroid/app/Activity;Landroid/content/Intent;)Z
+
+Notifies the activity that an action mode has finished.
+void onActionModeFinished(ActionMode mode)
+invoke-virtual {v0, v1}, Landroid/app/Activity;->onActionModeFinished(Landroid/view/ActionMode;)V
+
+Notifies the Activity that an action mode has been started.
+void onActionModeStarted(ActionMode mode)
+invoke-virtual {v0, v1}, Landroid/app/Activity;->onActionModeStarted(Landroid/view/ActionMode;)V
+
+Called when an activity you launched with an activity transition exposes this Activity through a returning activity transition, giving you the resultCode and any additional data from it.
+void onActivityReenter(int resultCode, Intent data)
+invoke-virtual {v0, v1, v2}, Landroid/app/Activity;->onActivityReenter(ILandroid/content/Intent;)V
+
+This method was deprecated in API level 28. Use FragmentActivity.onAttachFragment(android.support.v4.app.Fragment).
+void onAttachFragment(Fragment fragment)
+invoke-virtual {v0, v1}, Landroid/app/Activity;->onAttachFragment(Landroid/app/Fragment;)V
+
+Called when the main window associated with the activity has been attached to the window manager.
+void onAttachedToWindow()
+invoke-virtual {v0}, Landroid/app/Activity;->onAttachedToWindow()V
+
+Called when the activity has detected the user's press of the back key.
+void onBackPressed()
+invoke-virtual {v0}, Landroid/app/Activity;->onBackPressed()V
+
+Called by the system when the device configuration changes while your activity is running.
+void onConfigurationChanged(Configuration newConfig)
+invoke-virtual {v0, v1}, Landroid/app/Activity;->onConfigurationChanged(Landroid/content/res/Configuration;)V
+
+This hook is called whenever the content view of the screen changes (due to a call to Window.setContentView or Window.addContentView).
+void onContentChanged()
+invoke-virtual {v0}, Landroid/app/Activity;->onContentChanged()V
+
+This hook is called whenever an item in a context menu is selected.
+boolean onContextItemSelected(MenuItem item)
+invoke-virtual {v0, v1}, Landroid/app/Activity;->onContextItemSelected(Landroid/view/MenuItem;)Z
+
+This hook is called whenever the context menu is being closed (either by the user canceling the menu with the back/menu button, or when an item is selected).
+void onContextMenuClosed(Menu menu)
+invoke-virtual {v0, v1}, Landroid/app/Activity;->onContextMenuClosed(Landroid/view/Menu;)V
+
+Same as onCreate(android.os.Bundle) but called for those activities created with the attribute R.attr.persistableMode set to persistAcrossReboots.
+void onCreate(Bundle savedInstanceState, PersistableBundle persistentState)
+invoke-virtual {v0, v1, v2}, Landroid/app/Activity;->onCreate(Landroid/os/Bundle;Landroid/os/PersistableBundle;)V
+
+Called when a context menu for the view is about to be shown.
+void onCreateContextMenu(ContextMenu menu, View v, ContextMenu.ContextMenuInfo menuInfo)
+invoke-virtual {v0, v1, v2, v3}, Landroid/app/Activity;->onCreateContextMenu(Landroid/view/ContextMenu;Landroid/view/View;Landroid/view/ContextMenu$ContextMenuInfo;)V
+
+Generate a new description for this activity.
+CharSequence onCreateDescription()
+invoke-virtual {v0}, Landroid/app/Activity;->onCreateDescription()Ljava/lang/CharSequence;
+
+Define the synthetic task stack that will be generated during Up navigation from a different task.
+void onCreateNavigateUpTaskStack(TaskStackBuilder builder)
+invoke-virtual {v0, v1}, Landroid/app/Activity;->onCreateNavigateUpTaskStack(Landroid/app/TaskStackBuilder;)V
+
+Initialize the contents of the Activity's standard options menu.
+boolean onCreateOptionsMenu(Menu menu)
+invoke-virtual {v0, v1}, Landroid/app/Activity;->onCreateOptionsMenu(Landroid/view/Menu;)Z
+
+Default implementation of Window.Callback.onCreatePanelMenu(int, Menu) for activities.
+boolean onCreatePanelMenu(int featureId, Menu menu)
+invoke-virtual {v0, v1, v2}, Landroid/app/Activity;->onCreatePanelMenu(ILandroid/view/Menu;)Z
+
+Default implementation of Window.Callback.onCreatePanelView(int) for activities.
+View onCreatePanelView(int featureId)
+invoke-virtual {v0, v1}, Landroid/app/Activity;->onCreatePanelView(I)Landroid/view/View;
+
+This method was deprecated in API level 28. Method doesn't do anything and will be removed in the future.
+boolean onCreateThumbnail(Bitmap outBitmap, Canvas canvas)
+invoke-virtual {v0, v1, v2}, Landroid/app/Activity;->onCreateThumbnail(Landroid/graphics/Bitmap;Landroid/graphics/Canvas;)Z
+
+Standard implementation of LayoutInflater.Factory2.onCreateView(View, String, Context, AttributeSet) used when inflating with the LayoutInflater returned by Context.getSystemService(Class).
+View onCreateView(View parent, String name, Context context, AttributeSet attrs)
+invoke-virtual {v0, v1, v2, v3, v4}, Landroid/app/Activity;->onCreateView(Landroid/view/View;Ljava/lang/String;Landroid/content/Context;Landroid/util/AttributeSet;)Landroid/view/View;
+
+Standard implementation of LayoutInflater.Factory.onCreateView(String, Context, AttributeSet) used when inflating with the LayoutInflater returned by Context.getSystemService(Class).
+View onCreateView(String name, Context context, AttributeSet attrs)
+invoke-virtual {v0, v1, v2, v3}, Landroid/app/Activity;->onCreateView(Ljava/lang/String;Landroid/content/Context;Landroid/util/AttributeSet;)Landroid/view/View;
+
+Called when the main window associated with the activity has been detached from the window manager.
+void onDetachedFromWindow()
+invoke-virtual {v0}, Landroid/app/Activity;->onDetachedFromWindow()V
+
+Activities cannot draw during the period that their windows are animating in.
+void onEnterAnimationComplete()
+invoke-virtual {v0}, Landroid/app/Activity;->onEnterAnimationComplete()V
+
+Called when a generic motion event was not handled by any of the views inside of the activity.
+boolean onGenericMotionEvent(MotionEvent event)
+invoke-virtual {v0, v1}, Landroid/app/Activity;->onGenericMotionEvent(Landroid/view/MotionEvent;)Z
+
+Called when a key was pressed down and not handled by any of the views inside of the activity.
+boolean onKeyDown(int keyCode, KeyEvent event)
+invoke-virtual {v0, v1, v2}, Landroid/app/Activity;->onKeyDown(ILandroid/view/KeyEvent;)Z
+
+Default implementation of KeyEvent.Callback.onKeyLongPress(): always returns false (doesn't handle the event).
+boolean onKeyLongPress(int keyCode, KeyEvent event)
+invoke-virtual {v0, v1, v2}, Landroid/app/Activity;->onKeyLongPress(ILandroid/view/KeyEvent;)Z
+
+Default implementation of KeyEvent.Callback.onKeyMultiple(): always returns false (doesn't handle the event).
+boolean onKeyMultiple(int keyCode, int repeatCount, KeyEvent event)
+invoke-virtual {v0, v1, v2, v3}, Landroid/app/Activity;->onKeyMultiple(IILandroid/view/KeyEvent;)Z
+
+Called when a key shortcut event is not handled by any of the views in the Activity.
+boolean onKeyShortcut(int keyCode, KeyEvent event)
+invoke-virtual {v0, v1, v2}, Landroid/app/Activity;->onKeyShortcut(ILandroid/view/KeyEvent;)Z
+
+Called when a key was released and not handled by any of the views inside of the activity.
+boolean onKeyUp(int keyCode, KeyEvent event)
+invoke-virtual {v0, v1, v2}, Landroid/app/Activity;->onKeyUp(ILandroid/view/KeyEvent;)Z
+
+Callback to indicate that startLocalVoiceInteraction(Bundle) has resulted in a voice interaction session being started.
+void onLocalVoiceInteractionStarted()
+invoke-virtual {v0}, Landroid/app/Activity;->onLocalVoiceInteractionStarted()V
+
+Callback to indicate that the local voice interaction has stopped either because it was requested through a call to stopLocalVoiceInteraction() or because it was canceled by the user.
+void onLocalVoiceInteractionStopped()
+invoke-virtual {v0}, Landroid/app/Activity;->onLocalVoiceInteractionStopped()V
+
+This is called when the overall system is running low on memory, and actively running processes should trim their memory usage.
+void onLowMemory()
+invoke-virtual {v0}, Landroid/app/Activity;->onLowMemory()V
+
+Default implementation of Window.Callback.onMenuItemSelected(int, MenuItem) for activities.
+boolean onMenuItemSelected(int featureId, MenuItem item)
+invoke-virtual {v0, v1, v2}, Landroid/app/Activity;->onMenuItemSelected(ILandroid/view/MenuItem;)Z
+
+Called when a panel's menu is opened by the user.
+boolean onMenuOpened(int featureId, Menu menu)
+invoke-virtual {v0, v1, v2}, Landroid/app/Activity;->onMenuOpened(ILandroid/view/Menu;)Z
+
+This method was deprecated in API level 26. Use onMultiWindowModeChanged(boolean, Configuration) instead.
+void onMultiWindowModeChanged(boolean isInMultiWindowMode)
+invoke-virtual {v0, v1}, Landroid/app/Activity;->onMultiWindowModeChanged(Z)V
+
+Called by the system when the activity changes from fullscreen mode to multi-window mode and visa-versa.
+void onMultiWindowModeChanged(boolean isInMultiWindowMode, Configuration newConfig)
+invoke-virtual {v0, v1, v2}, Landroid/app/Activity;->onMultiWindowModeChanged(ZLandroid/content/res/Configuration;)V
+
+This method is called whenever the user chooses to navigate Up within your application's activity hierarchy from the action bar.
+boolean onNavigateUp()
+invoke-virtual {v0}, Landroid/app/Activity;->onNavigateUp()Z
+
+This is called when a child activity of this one attempts to navigate up.
+boolean onNavigateUpFromChild(Activity child)
+invoke-virtual {v0, v1}, Landroid/app/Activity;->onNavigateUpFromChild(Landroid/app/Activity;)Z
+
+This hook is called whenever an item in your options menu is selected.
+boolean onOptionsItemSelected(MenuItem item)
+invoke-virtual {v0, v1}, Landroid/app/Activity;->onOptionsItemSelected(Landroid/view/MenuItem;)Z
+
+This hook is called whenever the options menu is being closed (either by the user canceling the menu with the back/menu button, or when an item is selected).
+void onOptionsMenuClosed(Menu menu)
+invoke-virtual {v0, v1}, Landroid/app/Activity;->onOptionsMenuClosed(Landroid/view/Menu;)V
+
+Default implementation of Window.Callback.onPanelClosed(int, Menu) for activities.
+void onPanelClosed(int featureId, Menu menu)
+invoke-virtual {v0, v1, v2}, Landroid/app/Activity;->onPanelClosed(ILandroid/view/Menu;)V
+
+Called by the system when the activity changes to and from picture-in-picture mode.
+void onPictureInPictureModeChanged(boolean isInPictureInPictureMode, Configuration newConfig)
+invoke-virtual {v0, v1, v2}, Landroid/app/Activity;->onPictureInPictureModeChanged(ZLandroid/content/res/Configuration;)V
+
+This method was deprecated in API level 26. Use onPictureInPictureModeChanged(boolean, Configuration) instead.
+void onPictureInPictureModeChanged(boolean isInPictureInPictureMode)
+invoke-virtual {v0, v1}, Landroid/app/Activity;->onPictureInPictureModeChanged(Z)V
+
+This is the same as onPostCreate(Bundle) but is called for activities created with the attribute R.attr.persistableMode set to persistAcrossReboots.
+void onPostCreate(Bundle savedInstanceState, PersistableBundle persistentState)
+invoke-virtual {v0, v1, v2}, Landroid/app/Activity;->onPostCreate(Landroid/os/Bundle;Landroid/os/PersistableBundle;)V
+
+Prepare the synthetic task stack that will be generated during Up navigation from a different task.
+void onPrepareNavigateUpTaskStack(TaskStackBuilder builder)
+invoke-virtual {v0, v1}, Landroid/app/Activity;->onPrepareNavigateUpTaskStack(Landroid/app/TaskStackBuilder;)V
+
+Prepare the Screen's standard options menu to be displayed.
+boolean onPrepareOptionsMenu(Menu menu)
+invoke-virtual {v0, v1}, Landroid/app/Activity;->onPrepareOptionsMenu(Landroid/view/Menu;)Z
+
+Default implementation of Window.Callback.onPreparePanel(int, View, Menu) for activities.
+boolean onPreparePanel(int featureId, View view, Menu menu)
+invoke-virtual {v0, v1, v2, v3}, Landroid/app/Activity;->onPreparePanel(ILandroid/view/View;Landroid/view/Menu;)Z
+
+This is called when the user is requesting an assist, to provide references to content related to the current activity.
+void onProvideAssistContent(AssistContent outContent)
+invoke-virtual {v0, v1}, Landroid/app/Activity;->onProvideAssistContent(Landroid/app/assist/AssistContent;)V
+
+This is called when the user is requesting an assist, to build a full Intent.ACTION_ASSIST Intent with all of the context of the current application.
+void onProvideAssistData(Bundle data)
+invoke-virtual {v0, v1}, Landroid/app/Activity;->onProvideAssistData(Landroid/os/Bundle;)V
+
+Called when Keyboard Shortcuts are requested for the current window.
+void onProvideKeyboardShortcuts(List<KeyboardShortcutGroup> data, Menu menu, int deviceId)
+invoke-virtual {v0, v1, v2, v3}, Landroid/app/Activity;->onProvideKeyboardShortcuts(Ljava/util/List;Landroid/view/Menu;I)V
+
+Override to generate the desired referrer for the content currently being shown by the app.
+Uri onProvideReferrer()
+invoke-virtual {v0}, Landroid/app/Activity;->onProvideReferrer()Landroid/net/Uri;
+
+Callback for the result from requesting permissions.
+void onRequestPermissionsResult(int requestCode, String[] permissions, int[] grantResults)
+invoke-virtual {v0, v1, v2, v3}, Landroid/app/Activity;->onRequestPermissionsResult(I[Ljava/lang/String;[I)V
+
+This is the same as onRestoreInstanceState(Bundle) but is called for activities created with the attribute R.attr.persistableMode set to persistAcrossReboots.
+void onRestoreInstanceState(Bundle savedInstanceState, PersistableBundle persistentState)
+invoke-virtual {v0, v1, v2}, Landroid/app/Activity;->onRestoreInstanceState(Landroid/os/Bundle;Landroid/os/PersistableBundle;)V
+
+Called by the system, as part of destroying an activity due to a configuration change, when it is known that a new instance will immediately be created for the new configuration.
+Object onRetainNonConfigurationInstance()
+invoke-virtual {v0}, Landroid/app/Activity;->onRetainNonConfigurationInstance()Ljava/lang/Object;
+
+This is the same as onSaveInstanceState(Bundle) but is called for activities created with the attribute R.attr.persistableMode set to persistAcrossReboots.
+void onSaveInstanceState(Bundle outState, PersistableBundle outPersistentState)
+invoke-virtual {v0, v1, v2}, Landroid/app/Activity;->onSaveInstanceState(Landroid/os/Bundle;Landroid/os/PersistableBundle;)V
+
+This hook is called when the user signals the desire to start a search.
+boolean onSearchRequested(SearchEvent searchEvent)
+invoke-virtual {v0, v1}, Landroid/app/Activity;->onSearchRequested(Landroid/view/SearchEvent;)Z
+
+Called when the user signals the desire to start a search.
+boolean onSearchRequested()
+invoke-virtual {v0}, Landroid/app/Activity;->onSearchRequested()Z
+
+Called when an onResume() is coming up, prior to other pre-resume callbacks such as onNewIntent(Intent) and onActivityResult(int, int, Intent).
+void onStateNotSaved()
+invoke-virtual {v0}, Landroid/app/Activity;->onStateNotSaved()V
+
+Called when a touch screen event was not handled by any of the views under it.
+boolean onTouchEvent(MotionEvent event)
+invoke-virtual {v0, v1}, Landroid/app/Activity;->onTouchEvent(Landroid/view/MotionEvent;)Z
+
+Called when the trackball was moved and not handled by any of the views inside of the activity.
+boolean onTrackballEvent(MotionEvent event)
+invoke-virtual {v0, v1}, Landroid/app/Activity;->onTrackballEvent(Landroid/view/MotionEvent;)Z
+
+Called when the operating system has determined that it is a good time for a process to trim unneeded memory from its process.
+void onTrimMemory(int level)
+invoke-virtual {v0, v1}, Landroid/app/Activity;->onTrimMemory(I)V
+
+Called whenever a key, touch, or trackball event is dispatched to the activity.
+void onUserInteraction()
+invoke-virtual {v0}, Landroid/app/Activity;->onUserInteraction()V
+
+This method was deprecated in API level 26. This method's functionality is no longer supported as of Build.VERSION_CODES.O and will be removed in a future release.
+void onVisibleBehindCanceled()
+invoke-virtual {v0}, Landroid/app/Activity;->onVisibleBehindCanceled()V
+
+This is called whenever the current window attributes change.
+void onWindowAttributesChanged(WindowManager.LayoutParams params)
+invoke-virtual {v0, v1}, Landroid/app/Activity;->onWindowAttributesChanged(Landroid/view/WindowManager$LayoutParams;)V
+
+Called when the current Window of the activity gains or loses focus.
+void onWindowFocusChanged(boolean hasFocus)
+invoke-virtual {v0, v1}, Landroid/app/Activity;->onWindowFocusChanged(Z)V
+
+Called when an action mode is being started for this window.
+ActionMode onWindowStartingActionMode(ActionMode.Callback callback, int type)
+invoke-virtual {v0, v1, v2}, Landroid/app/Activity;->onWindowStartingActionMode(Landroid/view/ActionMode$Callback;I)Landroid/view/ActionMode;
+
+Give the Activity a chance to control the UI for an action mode requested by the system.
+ActionMode onWindowStartingActionMode(ActionMode.Callback callback)
+invoke-virtual {v0, v1}, Landroid/app/Activity;->onWindowStartingActionMode(Landroid/view/ActionMode$Callback;)Landroid/view/ActionMode;
+
+Programmatically opens the context menu for a particular view.
+void openContextMenu(View view)
+invoke-virtual {v0, v1}, Landroid/app/Activity;->openContextMenu(Landroid/view/View;)V
+
+Programmatically opens the options menu.
+void openOptionsMenu()
+invoke-virtual {v0}, Landroid/app/Activity;->openOptionsMenu()V
+
+Call immediately after one of the flavors of startActivity(Intent) or finish() to specify an explicit transition animation to perform next.
+void overridePendingTransition(int enterAnim, int exitAnim)
+invoke-virtual {v0, v1, v2}, Landroid/app/Activity;->overridePendingTransition(II)V
+
+Postpone the entering activity transition when Activity was started with ActivityOptions.makeSceneTransitionAnimation(Activity, android.util.Pair[]).
+void postponeEnterTransition()
+invoke-virtual {v0}, Landroid/app/Activity;->postponeEnterTransition()V
+
+Cause this Activity to be recreated with a new instance.
+void recreate()
+invoke-virtual {v0}, Landroid/app/Activity;->recreate()V
+
+Registers a context menu to be shown for the given view (multiple views can show the context menu).
+void registerForContextMenu(View view)
+invoke-virtual {v0, v1}, Landroid/app/Activity;->registerForContextMenu(Landroid/view/View;)V
+
+Ask that the local app instance of this activity be released to free up its memory.
+boolean releaseInstance()
+invoke-virtual {v0}, Landroid/app/Activity;->releaseInstance()Z
+
+This method was deprecated in API level 13. Use the new DialogFragment class with FragmentManager instead; this is also available on older platforms through the Android compatibility package.
+final void removeDialog(int id)
+invoke-virtual {v0, v1}, Landroid/app/Activity;->removeDialog(I)V
+
+Report to the system that your app is now fully drawn, purely for diagnostic purposes (calling it does not impact the visible behavior of the activity).
+void reportFullyDrawn()
+invoke-virtual {v0}, Landroid/app/Activity;->reportFullyDrawn()V
+
+Create DragAndDropPermissions object bound to this activity and controlling the access permissions for content URIs associated with the DragEvent.
+DragAndDropPermissions requestDragAndDropPermissions(DragEvent event)
+invoke-virtual {v0, v1}, Landroid/app/Activity;->requestDragAndDropPermissions(Landroid/view/DragEvent;)Landroid/view/DragAndDropPermissions;
+
+Requests permissions to be granted to this application.
+final void requestPermissions(String[] permissions, int requestCode)
+invoke-virtual {v0, v1, v2}, Landroid/app/Activity;->requestPermissions([Ljava/lang/String;I)V
+
+Request the Keyboard Shortcuts screen to show up.
+final void requestShowKeyboardShortcuts()
+invoke-virtual {v0}, Landroid/app/Activity;->requestShowKeyboardShortcuts()V
+
+This method was deprecated in API level 26. This method's functionality is no longer supported as of Build.VERSION_CODES.O and will be removed in a future release.
+boolean requestVisibleBehind(boolean visible)
+invoke-virtual {v0, v1}, Landroid/app/Activity;->requestVisibleBehind(Z)Z
+
+Enable extended window features.
+final boolean requestWindowFeature(int featureId)
+invoke-virtual {v0, v1}, Landroid/app/Activity;->requestWindowFeature(I)Z
+
+Finds a view that was identified by the android:id XML attribute that was processed in onCreate(Bundle), or throws an IllegalArgumentException if the ID is invalid, or there is no matching view in the hierarchy.
+final <T extends View> T requireViewById(int id)
+invoke-virtual {v0, v1}, Landroid/app/Activity;->requireViewById(I)Ljava/lang/Object;
+
+Runs the specified action on the UI thread.
+final void runOnUiThread(Runnable action)
+invoke-virtual {v0, v1}, Landroid/app/Activity;->runOnUiThread(Ljava/lang/Runnable;)V
+
+Set a Toolbar to act as the ActionBar for this Activity window.
+void setActionBar(Toolbar toolbar)
+invoke-virtual {v0, v1}, Landroid/app/Activity;->setActionBar(Landroid/widget/Toolbar;)V
+
+Set the TransitionManager to use for default transitions in this window.
+void setContentTransitionManager(TransitionManager tm)
+invoke-virtual {v0, v1}, Landroid/app/Activity;->setContentTransitionManager(Landroid/transition/TransitionManager;)V
+
+Set the activity content to an explicit view.
+void setContentView(View view, ViewGroup.LayoutParams params)
+invoke-virtual {v0, v1, v2}, Landroid/app/Activity;->setContentView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
+
+Set the activity content to an explicit view.
+void setContentView(View view)
+invoke-virtual {v0, v1}, Landroid/app/Activity;->setContentView(Landroid/view/View;)V
+
+Set the activity content from a layout resource.
+void setContentView(int layoutResID)
+invoke-virtual {v0, v1}, Landroid/app/Activity;->setContentView(I)V
+
+Select the default key handling for this activity.
+final void setDefaultKeyMode(int mode)
+invoke-virtual {v0, v1}, Landroid/app/Activity;->setDefaultKeyMode(I)V
+
+When ActivityOptions.makeSceneTransitionAnimation(Activity, android.view.View, String) was used to start an Activity, callback will be called to handle shared elements on the launched Activity.
+void setEnterSharedElementCallback(SharedElementCallback callback)
+invoke-virtual {v0, v1}, Landroid/app/Activity;->setEnterSharedElementCallback(Landroid/app/SharedElementCallback;)V
+
+When ActivityOptions.makeSceneTransitionAnimation(Activity, android.view.View, String) was used to start an Activity, callback will be called to handle shared elements on the launching Activity.
+void setExitSharedElementCallback(SharedElementCallback callback)
+invoke-virtual {v0, v1}, Landroid/app/Activity;->setExitSharedElementCallback(Landroid/app/SharedElementCallback;)V
+
+Convenience for calling Window.setFeatureDrawable(int, Drawable).
+final void setFeatureDrawable(int featureId, Drawable drawable)
+invoke-virtual {v0, v1, v2}, Landroid/app/Activity;->setFeatureDrawable(ILandroid/graphics/drawable/Drawable;)V
+
+Convenience for calling Window.setFeatureDrawableAlpha(int, int).
+final void setFeatureDrawableAlpha(int featureId, int alpha)
+invoke-virtual {v0, v1, v2}, Landroid/app/Activity;->setFeatureDrawableAlpha(II)V
+
+Convenience for calling Window.setFeatureDrawableResource(int, int).
+final void setFeatureDrawableResource(int featureId, int resId)
+invoke-virtual {v0, v1, v2}, Landroid/app/Activity;->setFeatureDrawableResource(II)V
+
+Convenience for calling Window.setFeatureDrawableUri(int, Uri).
+final void setFeatureDrawableUri(int featureId, Uri uri)
+invoke-virtual {v0, v1, v2}, Landroid/app/Activity;->setFeatureDrawableUri(ILandroid/net/Uri;)V
+
+Sets whether this activity is finished when touched outside its window's bounds.
+void setFinishOnTouchOutside(boolean finish)
+invoke-virtual {v0, v1}, Landroid/app/Activity;->setFinishOnTouchOutside(Z)V
+
+Adjust the current immersive mode setting.
+void setImmersive(boolean i)
+invoke-virtual {v0, v1}, Landroid/app/Activity;->setImmersive(Z)V
+
+Change the intent returned by getIntent().
+void setIntent(Intent newIntent)
+invoke-virtual {v0, v1}, Landroid/app/Activity;->setIntent(Landroid/content/Intent;)V
+
+Sets a MediaController to send media keys and volume changes to.
+final void setMediaController(MediaController controller)
+invoke-virtual {v0, v1}, Landroid/app/Activity;->setMediaController(Landroid/media/session/MediaController;)V
+
+Updates the properties of the picture-in-picture activity, or sets it to be used later when enterPictureInPictureMode() is called.
+void setPictureInPictureParams(PictureInPictureParams params)
+invoke-virtual {v0, v1}, Landroid/app/Activity;->setPictureInPictureParams(Landroid/app/PictureInPictureParams;)V
+
+This method was deprecated in API level 24. No longer supported starting in API 21.
+final void setProgress(int progress)
+invoke-virtual {v0, v1}, Landroid/app/Activity;->setProgress(I)V
+
+This method was deprecated in API level 24. No longer supported starting in API 21.
+final void setProgressBarIndeterminate(boolean indeterminate)
+invoke-virtual {v0, v1}, Landroid/app/Activity;->setProgressBarIndeterminate(Z)V
+
+This method was deprecated in API level 24. No longer supported starting in API 21.
+final void setProgressBarIndeterminateVisibility(boolean visible)
+invoke-virtual {v0, v1}, Landroid/app/Activity;->setProgressBarIndeterminateVisibility(Z)V
+
+This method was deprecated in API level 24. No longer supported starting in API 21.
+final void setProgressBarVisibility(boolean visible)
+invoke-virtual {v0, v1}, Landroid/app/Activity;->setProgressBarVisibility(Z)V
+
+Change the desired orientation of this activity.
+void setRequestedOrientation(int requestedOrientation)
+invoke-virtual {v0, v1}, Landroid/app/Activity;->setRequestedOrientation(I)V
+
+Call this to set the result that your activity will return to its caller.
+final void setResult(int resultCode, Intent data)
+invoke-virtual {v0, v1, v2}, Landroid/app/Activity;->setResult(ILandroid/content/Intent;)V
+
+Call this to set the result that your activity will return to its caller.
+final void setResult(int resultCode)
+invoke-virtual {v0, v1}, Landroid/app/Activity;->setResult(I)V
+
+This method was deprecated in API level 24. No longer supported starting in API 21.
+final void setSecondaryProgress(int secondaryProgress)
+invoke-virtual {v0, v1}, Landroid/app/Activity;->setSecondaryProgress(I)V
+
+Specifies whether an Activity should be shown on top of the lock screen whenever the lockscreen is up and the activity is resumed.
+void setShowWhenLocked(boolean showWhenLocked)
+invoke-virtual {v0, v1}, Landroid/app/Activity;->setShowWhenLocked(Z)V
+
+Sets information describing the task with this activity for presentation inside the Recents System UI.
+void setTaskDescription(ActivityManager.TaskDescription taskDescription)
+invoke-virtual {v0, v1}, Landroid/app/Activity;->setTaskDescription(Landroid/app/ActivityManager$TaskDescription;)V
+
+Set the base theme for this context.
+void setTheme(int resid)
+invoke-virtual {v0, v1}, Landroid/app/Activity;->setTheme(I)V
+
+Change the title associated with this activity.
+void setTitle(CharSequence title)
+invoke-virtual {v0, v1}, Landroid/app/Activity;->setTitle(Ljava/lang/CharSequence;)V
+
+Change the title associated with this activity.
+void setTitle(int titleId)
+invoke-virtual {v0, v1}, Landroid/app/Activity;->setTitle(I)V
+
+This method was deprecated in API level 21. Use action bar styles instead.
+void setTitleColor(int textColor)
+invoke-virtual {v0, v1}, Landroid/app/Activity;->setTitleColor(I)V
+
+Specifies whether the screen should be turned on when the Activity is resumed.
+void setTurnScreenOn(boolean turnScreenOn)
+invoke-virtual {v0, v1}, Landroid/app/Activity;->setTurnScreenOn(Z)V
+
+Control whether this activity's main window is visible.
+void setVisible(boolean visible)
+invoke-virtual {v0, v1}, Landroid/app/Activity;->setVisible(Z)V
+
+Suggests an audio stream whose volume should be changed by the hardware volume controls.
+final void setVolumeControlStream(int streamType)
+invoke-virtual {v0, v1}, Landroid/app/Activity;->setVolumeControlStream(I)V
+
+Enable or disable virtual reality (VR) mode for this Activity.
+void setVrModeEnabled(boolean enabled, ComponentName requestedComponent)
+invoke-virtual {v0, v1, v2}, Landroid/app/Activity;->setVrModeEnabled(ZLandroid/content/ComponentName;)V
+
+Gets whether you should show UI with rationale for requesting a permission.
+boolean shouldShowRequestPermissionRationale(String permission)
+invoke-virtual {v0, v1}, Landroid/app/Activity;->shouldShowRequestPermissionRationale(Ljava/lang/String;)Z
+
+Returns true if the app should recreate the task when navigating 'up' from this activity by using targetIntent.
+boolean shouldUpRecreateTask(Intent targetIntent)
+invoke-virtual {v0, v1}, Landroid/app/Activity;->shouldUpRecreateTask(Landroid/content/Intent;)Z
+
+Ask to have the current assistant shown to the user.
+boolean showAssist(Bundle args)
+invoke-virtual {v0, v1}, Landroid/app/Activity;->showAssist(Landroid/os/Bundle;)Z
+
+This method was deprecated in API level 13. Use the new DialogFragment class with FragmentManager instead; this is also available on older platforms through the Android compatibility package.
+final boolean showDialog(int id, Bundle args)
+invoke-virtual {v0, v1, v2}, Landroid/app/Activity;->showDialog(ILandroid/os/Bundle;)Z
+
+This method was deprecated in API level 13. Use the new DialogFragment class with FragmentManager instead; this is also available on older platforms through the Android compatibility package.
+final void showDialog(int id)
+invoke-virtual {v0, v1}, Landroid/app/Activity;->showDialog(I)V
+
+Shows the user the system defined message for telling the user how to exit lock task mode.
+void showLockTaskEscapeMessage()
+invoke-virtual {v0}, Landroid/app/Activity;->showLockTaskEscapeMessage()V
+
+Start an action mode of the given type.
+ActionMode startActionMode(ActionMode.Callback callback, int type)
+invoke-virtual {v0, v1, v2}, Landroid/app/Activity;->startActionMode(Landroid/view/ActionMode$Callback;I)Landroid/view/ActionMode;
+
+Start an action mode of the default type ActionMode.TYPE_PRIMARY.
+ActionMode startActionMode(ActionMode.Callback callback)
+invoke-virtual {v0, v1}, Landroid/app/Activity;->startActionMode(Landroid/view/ActionMode$Callback;)Landroid/view/ActionMode;
+
+Launch a new activity.
+void startActivities(Intent[] intents, Bundle options)
+invoke-virtual {v0, v1, v2}, Landroid/app/Activity;->startActivities([Landroid/content/Intent;Landroid/os/Bundle;)V
+
+Same as startActivities(Intent[], Bundle) with no options specified.
+void startActivities(Intent[] intents)
+invoke-virtual {v0, v1}, Landroid/app/Activity;->startActivities([Landroid/content/Intent;)V
+
+Same as startActivity(Intent, Bundle) with no options specified.
+void startActivity(Intent intent)
+invoke-virtual {v0, v1}, Landroid/app/Activity;->startActivity(Landroid/content/Intent;)V
+
+Launch a new activity.
+void startActivity(Intent intent, Bundle options)
+invoke-virtual {v0, v1, v2}, Landroid/app/Activity;->startActivity(Landroid/content/Intent;Landroid/os/Bundle;)V
+
+Same as calling startActivityForResult(Intent, int, Bundle) with no options.
+void startActivityForResult(Intent intent, int requestCode)
+invoke-virtual {v0, v1, v2}, Landroid/app/Activity;->startActivityForResult(Landroid/content/Intent;I)V
+
+Launch an activity for which you would like a result when it finished.
+void startActivityForResult(Intent intent, int requestCode, Bundle options)
+invoke-virtual {v0, v1, v2, v3}, Landroid/app/Activity;->startActivityForResult(Landroid/content/Intent;ILandroid/os/Bundle;)V
+
+Same as calling startActivityFromChild(Activity, Intent, int, Bundle) with no options.
+void startActivityFromChild(Activity child, Intent intent, int requestCode)
+invoke-virtual {v0, v1, v2, v3}, Landroid/app/Activity;->startActivityFromChild(Landroid/app/Activity;Landroid/content/Intent;I)V
+
+This is called when a child activity of this one calls its startActivity(Intent) or startActivityForResult(Intent, int) method.
+void startActivityFromChild(Activity child, Intent intent, int requestCode, Bundle options)
+invoke-virtual {v0, v1, v2, v3, v4}, Landroid/app/Activity;->startActivityFromChild(Landroid/app/Activity;Landroid/content/Intent;ILandroid/os/Bundle;)V
+
+This method was deprecated in API level 28. Use FragmentActivity.startActivityFromFragment(android.support.v4.app.Fragment, Intent, int, Bundle).
+void startActivityFromFragment(Fragment fragment, Intent intent, int requestCode, Bundle options)
+invoke-virtual {v0, v1, v2, v3, v4}, Landroid/app/Activity;->startActivityFromFragment(Landroid/app/Fragment;Landroid/content/Intent;ILandroid/os/Bundle;)V
+
+This method was deprecated in API level 28. Use FragmentActivity.startActivityFromFragment(android.support.v4.app.Fragment, Intent, int).
+void startActivityFromFragment(Fragment fragment, Intent intent, int requestCode)
+invoke-virtual {v0, v1, v2, v3}, Landroid/app/Activity;->startActivityFromFragment(Landroid/app/Fragment;Landroid/content/Intent;I)V
+
+A special variation to launch an activity only if a new activity instance is needed to handle the given Intent.
+boolean startActivityIfNeeded(Intent intent, int requestCode, Bundle options)
+invoke-virtual {v0, v1, v2, v3}, Landroid/app/Activity;->startActivityIfNeeded(Landroid/content/Intent;ILandroid/os/Bundle;)Z
+
+Same as calling startActivityIfNeeded(Intent, int, Bundle) with no options.
+boolean startActivityIfNeeded(Intent intent, int requestCode)
+invoke-virtual {v0, v1, v2}, Landroid/app/Activity;->startActivityIfNeeded(Landroid/content/Intent;I)Z
+
+Same as calling startIntentSender(IntentSender, Intent, int, int, int, Bundle) with no options.
+void startIntentSender(IntentSender intent, Intent fillInIntent, int flagsMask, int flagsValues, int extraFlags)
+invoke-virtual/range {v0 .. v5}, Landroid/app/Activity;->startIntentSender(Landroid/content/IntentSender;Landroid/content/Intent;III)V
+
+Like startActivity(Intent, Bundle), but taking a IntentSender to start; see startIntentSenderForResult(IntentSender, int, Intent, int, int, int, Bundle) for more information.
+void startIntentSender(IntentSender intent, Intent fillInIntent, int flagsMask, int flagsValues, int extraFlags, Bundle options)
+invoke-virtual/range {v0 .. v6}, Landroid/app/Activity;->startIntentSender(Landroid/content/IntentSender;Landroid/content/Intent;IIILandroid/os/Bundle;)V
+
+Same as calling startIntentSenderForResult(IntentSender, int, Intent, int, int, int, Bundle) with no options.
+void startIntentSenderForResult(IntentSender intent, int requestCode, Intent fillInIntent, int flagsMask, int flagsValues, int extraFlags)
+invoke-virtual/range {v0 .. v6}, Landroid/app/Activity;->startIntentSenderForResult(Landroid/content/IntentSender;ILandroid/content/Intent;III)V
+
+Like startActivityForResult(Intent, int), but allowing you to use a IntentSender to describe the activity to be started.
+void startIntentSenderForResult(IntentSender intent, int requestCode, Intent fillInIntent, int flagsMask, int flagsValues, int extraFlags, Bundle options)
+invoke-virtual/range {v0 .. v7}, Landroid/app/Activity;->startIntentSenderForResult(Landroid/content/IntentSender;ILandroid/content/Intent;IIILandroid/os/Bundle;)V
+
+Like startActivityFromChild(Activity, Intent, int), but taking a IntentSender; see startIntentSenderForResult(IntentSender, int, Intent, int, int, int) for more information.
+void startIntentSenderFromChild(Activity child, IntentSender intent, int requestCode, Intent fillInIntent, int flagsMask, int flagsValues, int extraFlags, Bundle options)
+invoke-virtual/range {v0 .. v8}, Landroid/app/Activity;->startIntentSenderFromChild(Landroid/app/Activity;Landroid/content/IntentSender;ILandroid/content/Intent;IIILandroid/os/Bundle;)V
+
+Same as calling startIntentSenderFromChild(Activity, IntentSender, int, Intent, int, int, int, Bundle) with no options.
+void startIntentSenderFromChild(Activity child, IntentSender intent, int requestCode, Intent fillInIntent, int flagsMask, int flagsValues, int extraFlags)
+invoke-virtual/range {v0 .. v7}, Landroid/app/Activity;->startIntentSenderFromChild(Landroid/app/Activity;Landroid/content/IntentSender;ILandroid/content/Intent;III)V
+
+Starts a local voice interaction session.
+void startLocalVoiceInteraction(Bundle privateOptions)
+invoke-virtual {v0, v1}, Landroid/app/Activity;->startLocalVoiceInteraction(Landroid/os/Bundle;)V
+
+Request to put this activity in a mode where the user is locked to a restricted set of applications.
+void startLockTask()
+invoke-virtual {v0}, Landroid/app/Activity;->startLockTask()V
+
+This method was deprecated in API level 11. Use the new CursorLoader class with LoaderManager instead; this is also available on older platforms through the Android compatibility package.
+void startManagingCursor(Cursor c)
+invoke-virtual {v0, v1}, Landroid/app/Activity;->startManagingCursor(Landroid/database/Cursor;)V
+
+Special version of starting an activity, for use when you are replacing other activity components.
+boolean startNextMatchingActivity(Intent intent, Bundle options)
+invoke-virtual {v0, v1, v2}, Landroid/app/Activity;->startNextMatchingActivity(Landroid/content/Intent;Landroid/os/Bundle;)Z
+
+Same as calling startNextMatchingActivity(Intent, Bundle) with no options.
+boolean startNextMatchingActivity(Intent intent)
+invoke-virtual {v0, v1}, Landroid/app/Activity;->startNextMatchingActivity(Landroid/content/Intent;)Z
+
+Begin postponed transitions after postponeEnterTransition() was called.
+void startPostponedEnterTransition()
+invoke-virtual {v0}, Landroid/app/Activity;->startPostponedEnterTransition()V
+
+This hook is called to launch the search UI.
+void startSearch(String initialQuery, boolean selectInitialQuery, Bundle appSearchData, boolean globalSearch)
+invoke-virtual {v0, v1, v2, v3, v4}, Landroid/app/Activity;->startSearch(Ljava/lang/String;ZLandroid/os/Bundle;Z)V
+
+Request to terminate the current voice interaction that was previously started using startLocalVoiceInteraction(Bundle).
+void stopLocalVoiceInteraction()
+invoke-virtual {v0}, Landroid/app/Activity;->stopLocalVoiceInteraction()V
+
+Stop the current task from being locked.
+void stopLockTask()
+invoke-virtual {v0}, Landroid/app/Activity;->stopLockTask()V
+
+This method was deprecated in API level 11. Use the new CursorLoader class with LoaderManager instead; this is also available on older platforms through the Android compatibility package.
+void stopManagingCursor(Cursor c)
+invoke-virtual {v0, v1}, Landroid/app/Activity;->stopManagingCursor(Landroid/database/Cursor;)V
+
+Request that key events come to this activity.
+void takeKeyEvents(boolean get)
+invoke-virtual {v0, v1}, Landroid/app/Activity;->takeKeyEvents(Z)V
+
+Similar to startSearch(String, boolean, Bundle, boolean), but actually fires off the search query after invoking the search dialog.
+void triggerSearch(String query, Bundle appSearchData)
+invoke-virtual {v0, v1, v2}, Landroid/app/Activity;->triggerSearch(Ljava/lang/String;Landroid/os/Bundle;)V
+
+Prevents a context menu to be shown for the given view.
+void unregisterForContextMenu(View view)
+invoke-virtual {v0, v1}, Landroid/app/Activity;->unregisterForContextMenu(Landroid/view/View;)V
+
+Set the base context for this ContextWrapper.
+protected void attachBaseContext(Context newBase)
+invoke-virtual {v0, v1}, Landroid/app/Activity;->attachBaseContext(Landroid/content/Context;)V
+
+Called when an activity you launched exits, giving you the requestCode you started it with, the resultCode it returned, and any additional data from it.
+protected void onActivityResult(int requestCode, int resultCode, Intent data)
+invoke-virtual {v0, v1, v2, v3}, Landroid/app/Activity;->onActivityResult(IILandroid/content/Intent;)V
+
+Called by setTheme(int) and getTheme() to apply a theme resource to the current Theme object.
+protected void onApplyThemeResource(Resources.Theme theme, int resid, boolean first)
+invoke-virtual {v0, v1, v2, v3}, Landroid/app/Activity;->onApplyThemeResource(Landroid/content/res/Resources$Theme;IZ)V
+
+没有帮助内容
+protected void onChildTitleChanged(Activity childActivity, CharSequence title)
+invoke-virtual {v0, v1, v2}, Landroid/app/Activity;->onChildTitleChanged(Landroid/app/Activity;Ljava/lang/CharSequence;)V
+
+Called when the activity is starting.
+protected void onCreate(Bundle savedInstanceState)
+invoke-virtual {v0, v1}, Landroid/app/Activity;->onCreate(Landroid/os/Bundle;)V
+
+This method was deprecated in API level 8. Old no-arguments version of onCreateDialog(int, Bundle).
+protected Dialog onCreateDialog(int id)
+invoke-virtual {v0, v1}, Landroid/app/Activity;->onCreateDialog(I)Landroid/app/Dialog;
+
+This method was deprecated in API level 13. Use the new DialogFragment class with FragmentManager instead; this is also available on older platforms through the Android compatibility package.
+protected Dialog onCreateDialog(int id, Bundle args)
+invoke-virtual {v0, v1, v2}, Landroid/app/Activity;->onCreateDialog(ILandroid/os/Bundle;)Landroid/app/Dialog;
+
+Perform any final cleanup before an activity is destroyed.
+protected void onDestroy()
+invoke-virtual {v0}, Landroid/app/Activity;->onDestroy()V
+
+This is called for activities that set launchMode to "singleTop" in their package, or if a client used the Intent.FLAG_ACTIVITY_SINGLE_TOP flag when calling startActivity(Intent).
+protected void onNewIntent(Intent intent)
+invoke-virtual {v0, v1}, Landroid/app/Activity;->onNewIntent(Landroid/content/Intent;)V
+
+Called as part of the activity lifecycle when an activity is going into the background, but has not (yet) been killed.
+protected void onPause()
+invoke-virtual {v0}, Landroid/app/Activity;->onPause()V
+
+Called when activity start-up is complete (after onStart() and onRestoreInstanceState(Bundle) have been called).
+protected void onPostCreate(Bundle savedInstanceState)
+invoke-virtual {v0, v1}, Landroid/app/Activity;->onPostCreate(Landroid/os/Bundle;)V
+
+Called when activity resume is complete (after onResume() has been called).
+protected void onPostResume()
+invoke-virtual {v0}, Landroid/app/Activity;->onPostResume()V
+
+This method was deprecated in API level 13. Use the new DialogFragment class with FragmentManager instead; this is also available on older platforms through the Android compatibility package.
+protected void onPrepareDialog(int id, Dialog dialog, Bundle args)
+invoke-virtual {v0, v1, v2, v3}, Landroid/app/Activity;->onPrepareDialog(ILandroid/app/Dialog;Landroid/os/Bundle;)V
+
+This method was deprecated in API level 8. Old no-arguments version of onPrepareDialog(int, Dialog, Bundle).
+protected void onPrepareDialog(int id, Dialog dialog)
+invoke-virtual {v0, v1, v2}, Landroid/app/Activity;->onPrepareDialog(ILandroid/app/Dialog;)V
+
+Called after onStop() when the current activity is being re-displayed to the user (the user has navigated back to it).
+protected void onRestart()
+invoke-virtual {v0}, Landroid/app/Activity;->onRestart()V
+
+This method is called after onStart() when the activity is being re-initialized from a previously saved state, given here in savedInstanceState.
+protected void onRestoreInstanceState(Bundle savedInstanceState)
+invoke-virtual {v0, v1}, Landroid/app/Activity;->onRestoreInstanceState(Landroid/os/Bundle;)V
+
+Called after onRestoreInstanceState(Bundle), onRestart(), or onPause(), for your activity to start interacting with the user.
+protected void onResume()
+invoke-virtual {v0}, Landroid/app/Activity;->onResume()V
+
+Called to retrieve per-instance state from an activity before being killed so that the state can be restored in onCreate(Bundle) or onRestoreInstanceState(Bundle) (the Bundle populated by this method will be passed to both).
+protected void onSaveInstanceState(Bundle outState)
+invoke-virtual {v0, v1}, Landroid/app/Activity;->onSaveInstanceState(Landroid/os/Bundle;)V
+
+Called after onCreate(Bundle) — or after onRestart() when the activity had been stopped, but is now again being displayed to the user.
+protected void onStart()
+invoke-virtual {v0}, Landroid/app/Activity;->onStart()V
+
+Called when you are no longer visible to the user.
+protected void onStop()
+invoke-virtual {v0}, Landroid/app/Activity;->onStop()V
+
+没有帮助内容
+protected void onTitleChanged(CharSequence title, int color)
+invoke-virtual {v0, v1, v2}, Landroid/app/Activity;->onTitleChanged(Ljava/lang/CharSequence;I)V
+
+Called as part of the activity lifecycle when an activity is about to go into the background as the result of user choice.
+protected void onUserLeaveHint()
+invoke-virtual {v0}, Landroid/app/Activity;->onUserLeaveHint()V

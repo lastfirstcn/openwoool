@@ -1,0 +1,259 @@
+Class to notify the user of events that happen. This is how you tell the user that something has happened in the background.
+class android.app.NotificationManager
+.class Landroid/app/NotificationManager;
+
+ผฬณะ
+inherit java.lang.Object
+.super Ljava/lang/Object;
+
+Intent that is broadcast when an application is blocked or unblocked.
+public static final String ACTION_APP_BLOCK_STATE_CHANGED
+sget-object v0, Landroid/app/NotificationManager;->ACTION_APP_BLOCK_STATE_CHANGED:Ljava/lang/String;
+
+Activity Action: Launch an Automatic Zen Rule configuration screen%Return%Input: Optionally, EXTRA_AUTOMATIC_RULE_ID, if the configuration screen for an existing rule should be displayed.
+public static final String ACTION_AUTOMATIC_ZEN_RULE
+sget-object v0, Landroid/app/NotificationManager;->ACTION_AUTOMATIC_ZEN_RULE:Ljava/lang/String;
+
+Intent that is broadcast when the state of getCurrentInterruptionFilter() changes.
+public static final String ACTION_INTERRUPTION_FILTER_CHANGED
+sget-object v0, Landroid/app/NotificationManager;->ACTION_INTERRUPTION_FILTER_CHANGED:Ljava/lang/String;
+
+Intent that is broadcast when a NotificationChannel is blocked (when NotificationChannel#getImportance() is IMPORTANCE_NONE) or unblocked (when NotificationChannel#getImportance() is anything other than IMPORTANCE_NONE).
+public static final String ACTION_NOTIFICATION_CHANNEL_BLOCK_STATE_CHANGED
+sget-object v0, Landroid/app/NotificationManager;->ACTION_NOTIFICATION_CHANNEL_BLOCK_STATE_CHANGED:Ljava/lang/String;
+
+Intent that is broadcast when a NotificationChannelGroup is NotificationChannelGroup#isBlocked() or unblocked.
+public static final String ACTION_NOTIFICATION_CHANNEL_GROUP_BLOCK_STATE_CHANGED
+sget-object v0, Landroid/app/NotificationManager;->ACTION_NOTIFICATION_CHANNEL_GROUP_BLOCK_STATE_CHANGED:Ljava/lang/String;
+
+Intent that is broadcast when the state of isNotificationPolicyAccessGranted() changes.
+public static final String ACTION_NOTIFICATION_POLICY_ACCESS_GRANTED_CHANGED
+sget-object v0, Landroid/app/NotificationManager;->ACTION_NOTIFICATION_POLICY_ACCESS_GRANTED_CHANGED:Ljava/lang/String;
+
+Intent that is broadcast when the state of getNotificationPolicy() changes.
+public static final String ACTION_NOTIFICATION_POLICY_CHANGED
+sget-object v0, Landroid/app/NotificationManager;->ACTION_NOTIFICATION_POLICY_CHANGED:Ljava/lang/String;
+
+Used as an optional string extra on ACTION_AUTOMATIC_ZEN_RULE intents.
+public static final String EXTRA_AUTOMATIC_RULE_ID
+sget-object v0, Landroid/app/NotificationManager;->EXTRA_AUTOMATIC_RULE_ID:Ljava/lang/String;
+
+Extra for ACTION_NOTIFICATION_CHANNEL_BLOCK_STATE_CHANGED or ACTION_NOTIFICATION_CHANNEL_GROUP_BLOCK_STATE_CHANGED containing the new blocked state as a boolean.
+public static final String EXTRA_BLOCKED_STATE
+sget-object v0, Landroid/app/NotificationManager;->EXTRA_BLOCKED_STATE:Ljava/lang/String;
+
+Extra for ACTION_NOTIFICATION_CHANNEL_GROUP_BLOCK_STATE_CHANGED containing the id of the NotificationChannelGroup which has a new blocked state.
+public static final String EXTRA_NOTIFICATION_CHANNEL_GROUP_ID
+sget-object v0, Landroid/app/NotificationManager;->EXTRA_NOTIFICATION_CHANNEL_GROUP_ID:Ljava/lang/String;
+
+Extra for ACTION_NOTIFICATION_CHANNEL_BLOCK_STATE_CHANGED containing the id of the NotificationChannel which has a new blocked state.
+public static final String EXTRA_NOTIFICATION_CHANNEL_ID
+sget-object v0, Landroid/app/NotificationManager;->EXTRA_NOTIFICATION_CHANNEL_ID:Ljava/lang/String;
+
+Default notification importance: shows everywhere, makes noise, but does not visually intrude.
+public static final int IMPORTANCE_DEFAULT
+sget v0, Landroid/app/NotificationManager;->IMPORTANCE_DEFAULT:I
+
+Higher notification importance: shows everywhere, makes noise and peeks.
+public static final int IMPORTANCE_HIGH
+sget v0, Landroid/app/NotificationManager;->IMPORTANCE_HIGH:I
+
+Low notification importance: Shows in the shade, and potentially in the status bar (see shouldHideSilentStatusBarIcons()), but is not audibly intrusive.
+public static final int IMPORTANCE_LOW
+sget v0, Landroid/app/NotificationManager;->IMPORTANCE_LOW:I
+
+Unused.
+public static final int IMPORTANCE_MAX
+sget v0, Landroid/app/NotificationManager;->IMPORTANCE_MAX:I
+
+Min notification importance: only shows in the shade, below the fold.
+public static final int IMPORTANCE_MIN
+sget v0, Landroid/app/NotificationManager;->IMPORTANCE_MIN:I
+
+A notification with no importance: does not show in the shade.
+public static final int IMPORTANCE_NONE
+sget v0, Landroid/app/NotificationManager;->IMPORTANCE_NONE:I
+
+Value signifying that the user has not expressed an importance.
+public static final int IMPORTANCE_UNSPECIFIED
+sget v0, Landroid/app/NotificationManager;->IMPORTANCE_UNSPECIFIED:I
+
+Interruption filter constant - Alarms only interruption filter - all notifications except those of category Notification#CATEGORY_ALARM are suppressed.
+public static final int INTERRUPTION_FILTER_ALARMS
+sget v0, Landroid/app/NotificationManager;->INTERRUPTION_FILTER_ALARMS:I
+
+Interruption filter constant - Normal interruption filter - no notifications are suppressed.
+public static final int INTERRUPTION_FILTER_ALL
+sget v0, Landroid/app/NotificationManager;->INTERRUPTION_FILTER_ALL:I
+
+Interruption filter constant - No interruptions filter - all notifications are suppressed and all audio streams (except those used for phone calls) and vibrations are muted.
+public static final int INTERRUPTION_FILTER_NONE
+sget v0, Landroid/app/NotificationManager;->INTERRUPTION_FILTER_NONE:I
+
+Interruption filter constant - Priority interruption filter - all notifications are suppressed except those that match the priority criteria.
+public static final int INTERRUPTION_FILTER_PRIORITY
+sget v0, Landroid/app/NotificationManager;->INTERRUPTION_FILTER_PRIORITY:I
+
+Interruption filter constant - returned when the value is unavailable for any reason.
+public static final int INTERRUPTION_FILTER_UNKNOWN
+sget v0, Landroid/app/NotificationManager;->INTERRUPTION_FILTER_UNKNOWN:I
+
+A required meta-data tag for activities that handle ACTION_AUTOMATIC_ZEN_RULE.
+public static final String META_DATA_AUTOMATIC_RULE_TYPE
+sget-object v0, Landroid/app/NotificationManager;->META_DATA_AUTOMATIC_RULE_TYPE:Ljava/lang/String;
+
+An optional meta-data tag for activities that handle ACTION_AUTOMATIC_ZEN_RULE.
+public static final String META_DATA_RULE_INSTANCE_LIMIT
+sget-object v0, Landroid/app/NotificationManager;->META_DATA_RULE_INSTANCE_LIMIT:Ljava/lang/String;
+
+Creates the given zen rule.
+String addAutomaticZenRule(AutomaticZenRule automaticZenRule)
+invoke-virtual {v0, v1}, Landroid/app/NotificationManager;->addAutomaticZenRule(Landroid/app/AutomaticZenRule;)Ljava/lang/String;
+
+Returns whether notifications from the calling package are blocked.
+boolean areNotificationsEnabled()
+invoke-virtual {v0}, Landroid/app/NotificationManager;->areNotificationsEnabled()Z
+
+Returns whether notifications from this package are temporarily hidden.
+boolean areNotificationsPaused()
+invoke-virtual {v0}, Landroid/app/NotificationManager;->areNotificationsPaused()Z
+
+Returns whether you are allowed to post notifications on behalf of a given package, with notifyAsPackage(java.lang.String, java.lang.String, int, android.app.Notification).
+boolean canNotifyAsPackage(String pkg)
+invoke-virtual {v0, v1}, Landroid/app/NotificationManager;->canNotifyAsPackage(Ljava/lang/String;)Z
+
+Cancel a previously shown notification.
+void cancel(int id)
+invoke-virtual {v0, v1}, Landroid/app/NotificationManager;->cancel(I)V
+
+Cancel a previously shown notification.
+void cancel(String tag, int id)
+invoke-virtual {v0, v1, v2}, Landroid/app/NotificationManager;->cancel(Ljava/lang/String;I)V
+
+Cancel all previously shown notifications.
+void cancelAll()
+invoke-virtual {v0}, Landroid/app/NotificationManager;->cancelAll()V
+
+Creates a notification channel that notifications can be posted to.
+void createNotificationChannel(NotificationChannel channel)
+invoke-virtual {v0, v1}, Landroid/app/NotificationManager;->createNotificationChannel(Landroid/app/NotificationChannel;)V
+
+Creates a group container for NotificationChannel objects.
+void createNotificationChannelGroup(NotificationChannelGroup group)
+invoke-virtual {v0, v1}, Landroid/app/NotificationManager;->createNotificationChannelGroup(Landroid/app/NotificationChannelGroup;)V
+
+Creates multiple notification channel groups.
+void createNotificationChannelGroups(List<NotificationChannelGroup> groups)
+invoke-virtual {v0, v1}, Landroid/app/NotificationManager;->createNotificationChannelGroups(Ljava/util/List;)V
+
+Creates multiple notification channels that different notifications can be posted to.
+void createNotificationChannels(List<NotificationChannel> channels)
+invoke-virtual {v0, v1}, Landroid/app/NotificationManager;->createNotificationChannels(Ljava/util/List;)V
+
+Deletes the given notification channel.
+void deleteNotificationChannel(String channelId)
+invoke-virtual {v0, v1}, Landroid/app/NotificationManager;->deleteNotificationChannel(Ljava/lang/String;)V
+
+Deletes the given notification channel group, and all notification channels that belong to it.
+void deleteNotificationChannelGroup(String groupId)
+invoke-virtual {v0, v1}, Landroid/app/NotificationManager;->deleteNotificationChannelGroup(Ljava/lang/String;)V
+
+Recover a list of active notifications: ones that have been posted by the calling app that have not yet been dismissed by the user or cancel(java.lang.String, int)ed by the app.
+StatusBarNotification[] getActiveNotifications()
+invoke-virtual {v0}, Landroid/app/NotificationManager;->getActiveNotifications()[Landroid/service/notification/StatusBarNotification;
+
+Returns the AutomaticZenRule with the given id, if it exists and the caller has access.
+AutomaticZenRule getAutomaticZenRule(String id)
+invoke-virtual {v0, v1}, Landroid/app/NotificationManager;->getAutomaticZenRule(Ljava/lang/String;)Landroid/app/AutomaticZenRule;
+
+Returns AutomaticZenRules owned by the caller.
+Map<String, AutomaticZenRule> getAutomaticZenRules()
+invoke-virtual {v0}, Landroid/app/NotificationManager;->getAutomaticZenRules()Ljava/util/Map;
+
+Gets the current notification interruption filter.
+final int getCurrentInterruptionFilter()
+invoke-virtual {v0}, Landroid/app/NotificationManager;->getCurrentInterruptionFilter()I
+
+Returns the user specified importance for notifications from the calling package.
+int getImportance()
+invoke-virtual {v0}, Landroid/app/NotificationManager;->getImportance()I
+
+Returns the notification channel settings for a given channel id.
+NotificationChannel getNotificationChannel(String channelId)
+invoke-virtual {v0, v1}, Landroid/app/NotificationManager;->getNotificationChannel(Ljava/lang/String;)Landroid/app/NotificationChannel;
+
+Returns the notification channel group settings for a given channel group id.
+NotificationChannelGroup getNotificationChannelGroup(String channelGroupId)
+invoke-virtual {v0, v1}, Landroid/app/NotificationManager;->getNotificationChannelGroup(Ljava/lang/String;)Landroid/app/NotificationChannelGroup;
+
+Returns all notification channel groups belonging to the calling app.
+List<NotificationChannelGroup> getNotificationChannelGroups()
+invoke-virtual {v0}, Landroid/app/NotificationManager;->getNotificationChannelGroups()Ljava/util/List;
+
+Returns all notification channels belonging to the calling package.
+List<NotificationChannel> getNotificationChannels()
+invoke-virtual {v0}, Landroid/app/NotificationManager;->getNotificationChannels()Ljava/util/List;
+
+Returns the delegate that can post notifications on your behalf, if there currently is one.
+String getNotificationDelegate()
+invoke-virtual {v0}, Landroid/app/NotificationManager;->getNotificationDelegate()Ljava/lang/String;
+
+Gets the current user-specified default notification policy.
+NotificationManager.Policy getNotificationPolicy()
+invoke-virtual {v0}, Landroid/app/NotificationManager;->getNotificationPolicy()Landroid/app/NotificationManager$Policy;
+
+Checks whether the user has approved a given NotificationAssistantService.
+boolean isNotificationAssistantAccessGranted(ComponentName assistant)
+invoke-virtual {v0, v1}, Landroid/app/NotificationManager;->isNotificationAssistantAccessGranted(Landroid/content/ComponentName;)Z
+
+Checks whether the user has approved a given NotificationListenerService.
+boolean isNotificationListenerAccessGranted(ComponentName listener)
+invoke-virtual {v0, v1}, Landroid/app/NotificationManager;->isNotificationListenerAccessGranted(Landroid/content/ComponentName;)Z
+
+Checks the ability to modify notification do not disturb policy for the calling package.
+boolean isNotificationPolicyAccessGranted()
+invoke-virtual {v0}, Landroid/app/NotificationManager;->isNotificationPolicyAccessGranted()Z
+
+Post a notification to be shown in the status bar.
+void notify(int id, Notification notification)
+invoke-virtual {v0, v1, v2}, Landroid/app/NotificationManager;->notify(ILandroid/app/Notification;)V
+
+Posts a notification to be shown in the status bar.
+void notify(String tag, int id, Notification notification)
+invoke-virtual {v0, v1, v2, v3}, Landroid/app/NotificationManager;->notify(Ljava/lang/String;ILandroid/app/Notification;)V
+
+Posts a notification as a specified package to be shown in the status bar.
+void notifyAsPackage(String targetPackage, String tag, int id, Notification notification)
+invoke-virtual {v0, v1, v2, v3, v4}, Landroid/app/NotificationManager;->notifyAsPackage(Ljava/lang/String;Ljava/lang/String;ILandroid/app/Notification;)V
+
+Deletes the automatic zen rule with the given id.
+boolean removeAutomaticZenRule(String id)
+invoke-virtual {v0, v1}, Landroid/app/NotificationManager;->removeAutomaticZenRule(Ljava/lang/String;)Z
+
+Revokes permission for your notification delegate to post notifications on your behalf.
+void revokeNotificationDelegate()
+invoke-virtual {v0}, Landroid/app/NotificationManager;->revokeNotificationDelegate()V
+
+Informs the notification manager that the state of an AutomaticZenRule has changed.
+void setAutomaticZenRuleState(String id, Condition condition)
+invoke-virtual {v0, v1, v2}, Landroid/app/NotificationManager;->setAutomaticZenRuleState(Ljava/lang/String;Landroid/service/notification/Condition;)V
+
+Sets the current notification interruption filter.
+final void setInterruptionFilter(int interruptionFilter)
+invoke-virtual {v0, v1}, Landroid/app/NotificationManager;->setInterruptionFilter(I)V
+
+Allows a package to post notifications on your behalf using notifyAsPackage(java.lang.String, java.lang.String, int, android.app.Notification).
+void setNotificationDelegate(String delegate)
+invoke-virtual {v0, v1}, Landroid/app/NotificationManager;->setNotificationDelegate(Ljava/lang/String;)V
+
+Sets the current notification policy.
+void setNotificationPolicy(NotificationManager.Policy policy)
+invoke-virtual {v0, v1}, Landroid/app/NotificationManager;->setNotificationPolicy(Landroid/app/NotificationManager$Policy;)V
+
+Returns whether the user wants silent notifications (see IMPORTANCE_LOW to appear in the status bar.
+boolean shouldHideSilentStatusBarIcons()
+invoke-virtual {v0}, Landroid/app/NotificationManager;->shouldHideSilentStatusBarIcons()Z
+
+Updates the given zen rule.
+boolean updateAutomaticZenRule(String id, AutomaticZenRule automaticZenRule)
+invoke-virtual {v0, v1, v2}, Landroid/app/NotificationManager;->updateAutomaticZenRule(Ljava/lang/String;Landroid/app/AutomaticZenRule;)Z

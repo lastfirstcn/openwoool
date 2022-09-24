@@ -128,3 +128,24 @@ highestLv = function(self)
 	local a = tRole[1]
 	return table.maxn(a)
 end
+
+--冰冻-麻痹
+benumb = function(self, school, level)
+	-- 默认值为0
+	local item = self:roleItem(school, level)
+	return (item and item.benumb) or 0
+end
+
+--冰冻-麻痹防御
+benumbDef = function(self, school, level)
+	-- 默认值为0
+	local item = self:roleItem(school, level)
+	return (item and item.q_benumbDef) or 0
+end
+
+--[[吸血
+vampire = function(self, school, level)
+	-- 默认值为0
+	local item = self:roleItem(school, level)
+	return (item and item.q_vampire) or 0
+end--]]

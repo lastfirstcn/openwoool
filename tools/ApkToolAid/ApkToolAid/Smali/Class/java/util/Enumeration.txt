@@ -1,0 +1,11 @@
+实现 Enumeration 接口的对象，它生成一系列元素，一次生成一个。连续调用 nextElement 方法将返回一系列的连续元素。
+interface java.util.Enumeration
+.class interface Ljava/util/Enumeration;
+
+测试此枚举是否包含更多的元素。
+boolean hasMoreElements()
+invoke-interface {v0}, Ljava/util/Enumeration;->hasMoreElements()Z
+
+如果此枚举对象至少还有一个可提供的元素，则返回此枚举的下一个元素。
+E nextElement()
+invoke-interface {v0}, Ljava/util/Enumeration;->nextElement()Ljava/lang/Object;

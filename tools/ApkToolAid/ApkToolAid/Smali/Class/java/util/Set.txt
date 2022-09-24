@@ -1,0 +1,63 @@
+一个不包含重复元素的 collection。更确切地讲，set 不包含满足 e1.equals(e2) 的元素对 e1 和 e2，并且最多包含一个 null 元素。正如其名称所暗示的，此接口模仿了数学上的 set 抽象。
+interface java.util.Set
+.class interface Ljava/util/Set;
+
+如果 set 中尚未存在指定的元素，则添加此元素（可选操作）。
+boolean add(E e)
+invoke-interface {v0, v1}, Ljava/util/Set;->add(Ljava/lang/Object;)Z
+
+如果 set 中没有指定 collection 中的所有元素，则将其添加到此 set 中（可选操作）。
+boolean addAll(Collection<? extends E> c)
+invoke-interface {v0, v1}, Ljava/util/Set;->addAll(Ljava/util/Collection;)Z
+
+移除此 set 中的所有元素（可选操作）。
+void clear()
+invoke-interface {v0}, Ljava/util/Set;->clear()V
+
+如果 set 包含指定的元素，则返回 true。
+boolean contains(Object o)
+invoke-interface {v0, v1}, Ljava/util/Set;->contains(Ljava/lang/Object;)Z
+
+如果此 set 包含指定 collection 的所有元素，则返回 true。
+boolean containsAll(Collection<?> c)
+invoke-interface {v0, v1}, Ljava/util/Set;->containsAll(Ljava/util/Collection;)Z
+
+比较指定对象与此 set 的相等性。
+boolean equals(Object o)
+invoke-interface {v0, v1}, Ljava/util/Set;->equals(Ljava/lang/Object;)Z
+
+返回 set 的哈希码值。
+int hashCode()
+invoke-interface {v0}, Ljava/util/Set;->hashCode()I
+
+如果 set 不包含元素，则返回 true。
+boolean isEmpty()
+invoke-interface {v0}, Ljava/util/Set;->isEmpty()Z
+
+返回在此 set 中的元素上进行迭代的迭代器。
+Iterator<E> iterator()
+invoke-interface {v0}, Ljava/util/Set;->iterator()Ljava/util/Iterator;
+
+如果 set 中存在指定的元素，则将其移除（可选操作）。
+boolean remove(Object o)
+invoke-interface {v0, v1}, Ljava/util/Set;->remove(Ljava/lang/Object;)Z
+
+移除 set 中那些包含在指定 collection 中的元素（可选操作）。
+boolean removeAll(Collection<?> c)
+invoke-interface {v0, v1}, Ljava/util/Set;->removeAll(Ljava/util/Collection;)Z
+
+仅保留 set 中那些包含在指定 collection 中的元素（可选操作）。
+boolean retainAll(Collection<?> c)
+invoke-interface {v0, v1}, Ljava/util/Set;->retainAll(Ljava/util/Collection;)Z
+
+返回 set 中的元素数（其容量）。
+int size()
+invoke-interface {v0}, Ljava/util/Set;->size()I
+
+返回一个包含 set 中所有元素的数组。
+Object[] toArray()
+invoke-interface {v0}, Ljava/util/Set;->toArray()[Ljava/lang/Object;
+
+返回一个包含此 set 中所有元素的数组；返回数组的运行时类型是指定数组的类型。
+<T> T[] toArray(T[] a)
+invoke-interface {v0, v1}, Ljava/util/Set;->toArray([Ljava/lang/Object;)[Ljava/lang/Object;

@@ -1,0 +1,7 @@
+Interface definition for a callback to be invoked when a view is context clicked.
+interface View.OnContextClickListener
+.class interface Landroid/view/View$OnContextClickListener;
+
+Called when a view is context clicked.
+abstract boolean onContextClick(View v)
+event onContextClick(Landroid/view/View;)Z

@@ -1,0 +1,19 @@
+User interface state that is stored by TextView for implementing View.onSaveInstanceState().
+class android.widget.TextView.SavedState
+.class Landroid/widget/TextView$SavedState;
+
+¼Ì³Ğ
+inherit android.view.View.BaseSavedState
+.super Landroid/view/View$BaseSavedState;
+
+Ã»ÓĞ°ïÖúÄÚÈİ
+public static final Creator<TextView.SavedState> CREATOR
+sget-object v0, Landroid/widget/TextView$SavedState;->CREATOR:Landroid/os/Parcelable$Creator;
+
+Returns a string representation of the object.
+String toString()
+invoke-virtual {v0}, Landroid/widget/TextView$SavedState;->toString()Ljava/lang/String;
+
+Flatten this object in to a Parcel.
+void writeToParcel(Parcel out, int flags)
+invoke-virtual {v0, v1, v2}, Landroid/widget/TextView$SavedState;->writeToParcel(Landroid/os/Parcelable;I)V

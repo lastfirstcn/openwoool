@@ -70,7 +70,7 @@ local Items = {
 	{q_id = 82,q_mapid = 2127,F3 = '中部矿区',q_x = 128,q_y = 90,q_radius = 2,q_tar_mapid = 2125,F8 = '尸王殿',q_tar_x = 85,q_tar_y = 20,q_type = 0,q_type1 = 0,q_xa = 125,q_yb = 93,q_sjcs_x = 90,q_sjcs_y = 19,side = 2,},
 	{q_id = 83,q_mapid = 2125,F3 = '尸王殿',q_x = 94,q_y = 20,q_radius = 2,q_tar_mapid = 2127,F8 = '中部矿区',q_tar_x = 122,q_tar_y = 93,q_type = 0,q_type1 = 0,q_xa = 93,q_yb = 23,q_sjcs_x = 115,q_sjcs_y = 95,side = 4,},
 	{q_id = 84,q_mapid = 6017,F3 = '行会驻地',q_x = 6,q_y = 39,q_radius = 2,q_tar_mapid = 2100,F8 = '中州',q_tar_x = 127,q_tar_y = 127,q_type = 0,q_type1 = 0,q_xa = 11,q_yb = 42,q_sjcs_x = 128,q_sjcs_y = 129,side = 2,},
-	{q_id = 85,q_mapid = 2115,F3 = '桃园',q_x = 3,q_y = 23,q_radius = 2,q_tar_mapid = 2100,F8 = '中州',q_tar_x = 109,q_tar_y = 104,q_type = 0,q_type1 = 0,q_xa = 11,q_yb = 42,q_sjcs_x = 100,q_sjcs_y = 100,side = 2,},
+	{q_id = 85,q_mapid = 2115,F3 = '桃园',q_x = 10,q_y = 26,q_radius = 2,q_tar_mapid = 2100,F8 = '中州',q_tar_x = 132,q_tar_y = 123,q_type = 0,q_type1 = 0,q_xa = 11,q_yb = 42,q_sjcs_x = 100,q_sjcs_y = 100,side = 2,},
 	{q_id = 86,q_mapid = 2211,F3 = '结婚会场',q_x = 14,q_y = 77,q_radius = 2,q_tar_mapid = 2100,F8 = '中州',q_tar_x = 129,q_tar_y = 167,q_type = 0,q_type1 = 0,q_xa = 21,q_yb = 72,q_sjcs_x = 100,q_sjcs_y = 100,side = 2,},
 	{q_id = 87,q_mapid = 2212,F3 = '结婚会场',q_x = 14,q_y = 77,q_radius = 2,q_tar_mapid = 2100,F8 = '中州',q_tar_x = 129,q_tar_y = 167,q_type = 0,q_type1 = 0,q_xa = 21,q_yb = 72,q_sjcs_x = 100,q_sjcs_y = 100,side = 2,},
 	{q_id = 88,q_mapid = 2213,F3 = '结婚会场',q_x = 14,q_y = 77,q_radius = 2,q_tar_mapid = 2100,F8 = '中州',q_tar_x = 129,q_tar_y = 167,q_type = 0,q_type1 = 0,q_xa = 21,q_yb = 72,q_sjcs_x = 100,q_sjcs_y = 100,side = 2,},
@@ -121,131 +121,48 @@ local Items = {
 	{q_id = 133,q_mapid = 2258,F3 = '结婚会场',q_x = 14,q_y = 77,q_radius = 2,q_tar_mapid = 2100,F8 = '中州',q_tar_x = 129,q_tar_y = 167,q_type = 0,q_type1 = 0,q_xa = 21,q_yb = 72,q_sjcs_x = 100,q_sjcs_y = 100,side = 2,},
 	{q_id = 134,q_mapid = 2259,F3 = '结婚会场',q_x = 14,q_y = 77,q_radius = 2,q_tar_mapid = 2100,F8 = '中州',q_tar_x = 129,q_tar_y = 167,q_type = 0,q_type1 = 0,q_xa = 21,q_yb = 72,q_sjcs_x = 100,q_sjcs_y = 100,side = 2,},
 	{q_id = 135,q_mapid = 2260,F3 = '结婚会场',q_x = 14,q_y = 77,q_radius = 2,q_tar_mapid = 2100,F8 = '中州',q_tar_x = 129,q_tar_y = 167,q_type = 0,q_type1 = 0,q_xa = 21,q_yb = 72,q_sjcs_x = 100,q_sjcs_y = 100,side = 2,},
-
-	{q_id = 136,q_mapid = 9100,F3 = '死水沼泽',q_x = 36,q_y = 154,q_radius = 2,q_tar_mapid = 8000,F8 = '凌霄天界',q_tar_x = 86,q_tar_y = 119,q_type = 0,q_type1 = 0,q_xa = 21,q_yb = 72,q_sjcs_x = 100,q_sjcs_y = 100,side = 2,},	
-	{q_id = 137,q_mapid = 8000,F3 = '凌霄天界',q_x = 82,q_y = 123,q_radius = 2,q_tar_mapid = 9100,F8 = '死水沼泽',q_tar_x = 40,q_tar_y = 151,q_type = 0,q_type1 = 0,q_xa = 21,q_yb = 72,q_sjcs_x = 100,q_sjcs_y = 100,side = 2,},	
-	{q_id = 138,q_mapid = 8000,F3 = '凌霄天界',q_x = 88,q_y = 26,q_radius = 2,q_tar_mapid = 8001,F8 = '凌霄天界2',q_tar_x = 96,q_tar_y = 113,q_type = 0,q_type1 = 0,q_xa = 21,q_yb = 72,q_sjcs_x = 100,q_sjcs_y = 100,side = 2,},	
-	{q_id = 139,q_mapid = 8001,F3 = '凌霄天界2',q_x = 99,q_y = 116,q_radius = 2,q_tar_mapid = 8000,F8 = '凌霄天界',q_tar_x = 86,q_tar_y = 28,q_type = 0,q_type1 = 0,q_xa = 21,q_yb = 72,q_sjcs_x = 100,q_sjcs_y = 100,side = 2,},	
-	{q_id = 140,q_mapid = 8001,F3 = '凌霄天界2',q_x = 94,q_y = 8,q_radius = 2,q_tar_mapid = 8002,F8 = '凌霄天界3',q_tar_x = 368,q_tar_y = 328,q_type = 0,q_type1 = 0,q_xa = 21,q_yb = 72,q_sjcs_x = 100,q_sjcs_y = 100,side = 2,},	
-	{q_id = 141,q_mapid = 8002,F3 = '凌霄天界3',q_x = 373,q_y = 331,q_radius = 2,q_tar_mapid = 8001,F8 = '凌霄天界2',q_tar_x = 94,q_tar_y = 12,q_type = 0,q_type1 = 0,q_xa = 21,q_yb = 72,q_sjcs_x = 100,q_sjcs_y = 100,side = 2,},	
-	{q_id = 142,q_mapid = 8002,F3 = '凌霄天界3',q_x = 45,q_y = 32,q_radius = 2,q_tar_mapid = 8003,F8 = '北冥魔境1',q_tar_x = 84,q_tar_y = 196,q_type = 0,q_type1 = 0,q_xa = 21,q_yb = 72,q_sjcs_x = 100,q_sjcs_y = 100,side = 2,},	
-	{q_id = 143,q_mapid = 8003,F3 = '北冥魔境1',q_x = 81,q_y = 199,q_radius = 2,q_tar_mapid = 8002,F8 = '凌霄天界3',q_tar_x = 49,q_tar_y = 35,q_type = 0,q_type1 = 0,q_xa = 21,q_yb = 72,q_sjcs_x = 100,q_sjcs_y = 100,side = 2,},	
-	{q_id = 144,q_mapid = 8003,F3 = '北冥魔境1',q_x = 93,q_y = 130,q_radius = 2,q_tar_mapid = 8004,F8 = '北冥魔境2',q_tar_x = 107,q_tar_y = 104,q_type = 0,q_type1 = 0,q_xa = 21,q_yb = 72,q_sjcs_x = 100,q_sjcs_y = 100,side = 2,},	
-	{q_id = 145,q_mapid = 8004,F3 = '北冥魔境2',q_x = 104,q_y = 106,q_radius = 2,q_tar_mapid = 8003,F8 = '北冥魔境1',q_tar_x = 77,q_tar_y = 108,q_type = 0,q_type1 = 0,q_xa = 21,q_yb = 72,q_sjcs_x = 100,q_sjcs_y = 100,side = 2,},	
-	{q_id = 146,q_mapid = 8004,F3 = '北冥魔境2',q_x = 180,q_y = 44,q_radius = 2,q_tar_mapid = 8005,F8 = '北冥魔境3',q_tar_x = 177,q_tar_y = 143,q_type = 0,q_type1 = 0,q_xa = 21,q_yb = 72,q_sjcs_x = 100,q_sjcs_y = 100,side = 2,},	
-    {q_id = 147,q_mapid = 8005,F3 = '北冥魔境3',q_x = 180,q_y = 146,q_radius = 2,q_tar_mapid = 8004,F8 = '北冥魔境2',q_tar_x = 177,q_tar_y = 46,q_type = 0,q_type1 = 0,q_xa = 21,q_yb = 72,q_sjcs_x = 100,q_sjcs_y = 100,side = 2,},	
-
-	{q_id = 174,q_mapid = 9100,F3 = '死水沼泽',q_x = 88,q_y = 152,q_radius = 2,q_tar_mapid = 8022,F8 = '沉船一层',q_tar_x = 21,q_tar_y = 117,q_type = 0,q_type1 = 0,q_xa = 54,q_yb = 12,q_sjcs_x = 27,q_sjcs_y = 113,side = 4,},
-	{q_id = 175,q_mapid = 8022,F3 = '沉船一层',q_x = 130,q_y = 81,q_radius = 2,q_tar_mapid = 8023,F8 = '沉船二层',q_tar_x = 84,q_tar_y = 25,q_type = 0,q_type1 = 0,q_xa = 123,q_yb = 83,q_sjcs_x = 29,q_sjcs_y = 114,side = 4,},
-	{q_id = 176,q_mapid = 8023,F3 = '沉船二层',q_x = 93,q_y = 12,q_radius = 2,q_tar_mapid = 8022,F8 = '沉船一层',q_tar_x = 123,q_tar_y = 84,q_type = 0,q_type1 = 0,q_xa = 132,q_yb = 126,q_sjcs_x = 27,q_sjcs_y = 113,side = 4,},
-	{q_id = 177,q_mapid = 8023,F3 = '沉船二层',q_x = 137,q_y = 104,q_radius = 2,q_tar_mapid = 8024,F8 = '沉船三层',q_tar_x = 143,q_tar_y = 93,q_type = 0,q_type1 = 0,q_xa = 127,q_yb = 85,q_sjcs_x = 85,q_sjcs_y = 113,side = 4,},
-	{q_id = 178,q_mapid = 8024,F3 = '沉船三层',q_x = 150,q_y = 88,q_radius = 2,q_tar_mapid = 8023,F8 = '沉船二层',q_tar_x = 130,q_tar_y = 99,q_type = 0,q_type1 = 0,q_xa = 132,q_yb = 126,q_sjcs_x = 27,q_sjcs_y = 113,side = 4,},
-	{q_id = 179,q_mapid = 8024,F3 = '沉船三层',q_x = 35,q_y = 139,q_radius = 2,q_tar_mapid = 8027,F8 = '龙穴',q_tar_x = 76,q_tar_y = 18,q_type = 0,q_type1 = 0,q_xa = 41,q_yb = 133,q_sjcs_x = 27,q_sjcs_y = 113,side = 4,},
-	{q_id = 180,q_mapid = 8027,F3 = '龙穴',q_x = 79,q_y = 11,q_radius = 2,q_tar_mapid = 8024,F8 = '沉船三层',q_tar_x = 30,q_tar_y = 133,q_type = 0,q_type1 = 0,q_xa = 132,q_yb = 126,q_sjcs_x = 27,q_sjcs_y = 113,side = 4,},
-	{q_id = 181,q_mapid = 8027,F3 = '龙穴',q_x = 8,q_y = 67,q_radius = 2,q_tar_mapid = 8028,F8 = '锁龙殿',q_tar_x = 39,q_tar_y = 13,q_type = 0,q_type1 = 0,q_xa = 13,q_yb = 65,q_sjcs_x = 27,q_sjcs_y = 113,side = 4,},
-	{q_id = 182,q_mapid = 8028,F3 = '锁龙殿',q_x = 44,q_y = 10,q_radius = 2,q_tar_mapid = 8027,F8 = '龙穴',q_tar_x = 15,q_tar_y = 62,q_type = 0,q_type1 = 0,q_xa = 132,q_yb = 126,q_sjcs_x = 27,q_sjcs_y = 113,side = 4,},
-
-	{q_id = 183,q_mapid = 9100,F3 = '死水沼泽',q_x = 10,q_y = 106,q_radius = 2,q_tar_mapid = 4230,F8 = '圣殿山麓',q_tar_x = 38,q_tar_y = 164,q_type = 0,q_type1 = 0,q_xa = 21,q_yb = 72,q_sjcs_x = 31,q_sjcs_y = 189,side = 2,},	
-	{q_id = 184,q_mapid = 4230,F3 = '圣殿山麓',q_x = 111,q_y = 38,q_radius = 2,q_tar_mapid = 4231,F8 = '圣殿山腰',q_tar_x = 148,q_tar_y = 190,q_type = 0,q_type1 = 0,q_xa = 20,q_yb = 29,q_sjcs_x = 12,q_sjcs_y = 158,side = 4,},
-	{q_id = 185,q_mapid = 4231,F3 = '圣殿山腰',q_x = 191,q_y = 38,q_radius = 2,q_tar_mapid = 4232,F8 = '圣殿山谷',q_tar_x = 119,q_tar_y = 205,q_type = 0,q_type1 = 0,q_xa = 20,q_yb = 29,q_sjcs_x = 12,q_sjcs_y = 158,side = 4,},
-	{q_id = 186,q_mapid = 4232,F3 = '圣殿山谷',q_x = 113,q_y = 29,q_radius = 2,q_tar_mapid = 4233,F8 = '圣殿山顶',q_tar_x = 100,q_tar_y = 141,q_type = 0,q_type1 = 0,q_xa = 20,q_yb = 29,q_sjcs_x = 12,q_sjcs_y = 158,side = 4,},
-
-	{q_id = 190,q_mapid = 9100,F3 = '死水沼泽',q_x = 14,q_y = 106,q_radius = 2,q_tar_mapid = 8200,F8 = '南天宫',q_tar_x = 194,q_tar_y = 187,q_type = 0,q_type1 = 0,q_xa = 21,q_yb = 72,q_sjcs_x = 105,q_sjcs_y = 97,side = 2,},
-	{q_id = 191,q_mapid = 8200,F3 = '南天宫',q_x = 71,q_y = 223,q_radius = 2,q_tar_mapid = 6112,F8 = '不周山',q_tar_x = 100,q_tar_y = 100,q_type = 0,q_type1 = 0,q_xa = 21,q_yb = 72,q_sjcs_x = 137,q_sjcs_y = 110,side = 4,},
-	{q_id = 192,q_mapid = 8200,F3 = '南天宫',q_x = 150,q_y = 227,q_radius = 2,q_tar_mapid = 6111,F8 = '上古遗迹',q_tar_x = 100,q_tar_y = 100,q_type = 0,q_type1 = 0,q_xa = 21,q_yb = 72,q_sjcs_x = 100,q_sjcs_y = 100,side = 4,},
-	{q_id = 193,q_mapid = 8200,F3 = '南天宫',q_x = 223,q_y = 210,q_radius = 2,q_tar_mapid = 6110,F8 = '上古战场',q_tar_x = 100,q_tar_y = 100,q_type = 0,q_type1 = 0,q_xa = 21,q_yb = 72,q_sjcs_x = 100,q_sjcs_y = 100,side = 4,},
-	{q_id = 194,q_mapid = 8200,F3 = '南天宫',q_x = 233,q_y = 131,q_radius = 2,q_tar_mapid = 6105,F8 = '伏羲聚落',q_tar_x = 100,q_tar_y = 100,q_type = 0,q_type1 = 0,q_xa = 21,q_yb = 72,q_sjcs_x = 100,q_sjcs_y = 100,side = 4,},
-	{q_id = 195,q_mapid = 8200,F3 = '南天宫',q_x = 205,q_y = 28,q_radius = 2,q_tar_mapid = 6106,F8 = '少昊聚落',q_tar_x = 100,q_tar_y = 100,q_type = 0,q_type1 = 0,q_xa = 21,q_yb = 72,q_sjcs_x = 100,q_sjcs_y = 100,side = 4,},
-	{q_id = 196,q_mapid = 8200,F3 = '南天宫',q_x = 24,q_y = 190,q_radius = 2,q_tar_mapid = 6107,F8 = '神农聚落',q_tar_x = 100,q_tar_y = 100,q_type = 0,q_type1 = 0,q_xa = 21,q_yb = 72,q_sjcs_x = 100,q_sjcs_y = 100,side = 4,},
-	{q_id = 197,q_mapid = 8200,F3 = '南天宫',q_x = 149,q_y = 45,q_radius = 2,q_tar_mapid = 6108,F8 = '轩辕聚落',q_tar_x = 100,q_tar_y = 100,q_type = 0,q_type1 = 0,q_xa = 21,q_yb = 72,q_sjcs_x = 100,q_sjcs_y = 100,side = 4,},
-    --{q_id = 176,q_mapid = 8200,F3 = '南天宫',q_x = 65,q_y = 210,q_radius = 2,q_tar_mapid = 4930,F8 = '通灵塔',q_tar_x = 50,q_tar_y = 50,q_type = 0,q_type1 = 0,q_xa = 21,q_yb = 72,q_sjcs_x = 50,q_sjcs_y = 50,side = 4,},
-	{q_id = 197,q_mapid = 8200,F3 = '南天宫',q_x = 80,q_y = 200,q_radius = 2,q_tar_mapid = 4214,F8 = '心魔幻境',q_tar_x = 80,q_tar_y = 72,q_type = 0,q_type1 = 0,q_xa = 21,q_yb = 72,q_sjcs_x = 50,q_sjcs_y = 50,side = 4,},	
-
-	{q_id = 198,q_mapid = 6112,F3 = '不周山',q_x = 40,q_y = 47,q_radius = 2,q_tar_mapid = 6201,F8 = '方丈',q_tar_x = 75,q_tar_y = 55,q_type = 0,q_type1 = 0,q_xa = 21,q_yb = 72,q_sjcs_x = 75,q_sjcs_y = 55,side = 4,},
-	{q_id = 199,q_mapid = 6112,F3 = '不周山',q_x = 217,q_y = 19,q_radius = 2,q_tar_mapid = 6202,F8 = '蓬莱',q_tar_x = 75,q_tar_y = 55,q_type = 0,q_type1 = 0,q_xa = 21,q_yb = 72,q_sjcs_x = 75,q_sjcs_y = 55,side = 4,},
-	{q_id = 200,q_mapid = 6112,F3 = '不周山',q_x = 223,q_y = 178,q_radius = 2,q_tar_mapid = 6203,F8 = '普陀',q_tar_x = 75,q_tar_y = 55,q_type = 0,q_type1 = 0,q_xa = 21,q_yb = 72,q_sjcs_x = 75,q_sjcs_y = 55,side = 4,},
-	{q_id = 201,q_mapid = 6112,F3 = '不周山',q_x = 33,q_y = 209,q_radius = 2,q_tar_mapid = 6204,F8 = '瀛洲',q_tar_x = 75,q_tar_y = 55,q_type = 0,q_type1 = 0,q_xa = 21,q_yb = 72,q_sjcs_x = 75,q_sjcs_y = 55,side = 4,},
-
-	{q_id = 202,q_mapid = 8100,F3 = '禁地',q_x = 221,q_y = 55,q_radius = 2,q_tar_mapid = 15000,F8 = 'VIP一层',q_tar_x = 16,q_tar_y = 55,q_type = 0,q_type1 = 0,q_xa = 38,q_yb = 65,q_sjcs_x = 16,q_sjcs_y = 55,side = 2,},	
-	{q_id = 220,q_mapid = 8100,F3 = '禁地',q_x = 220,q_y = 35,q_radius = 2,q_tar_mapid = 14100,F8 = '私人别墅',q_tar_x = 74,q_tar_y = 40,q_type = 0,q_type1 = 0,q_xa = 38,q_yb = 65,q_sjcs_x = 74,q_sjcs_y = 40,side = 2,},	
-	{q_id = 221,q_mapid = 8100,F3 = '禁地',q_x = 225,q_y = 35,q_radius = 2,q_tar_mapid = 14200,F8 = '高级别墅',q_tar_x = 74,q_tar_y = 40,q_type = 0,q_type1 = 0,q_xa = 38,q_yb = 65,q_sjcs_x = 74,q_sjcs_y = 40,side = 2,},	
-
-
 	{q_id = 136,q_mapid = 1100,F3 = '落霞岛',q_x = 91,q_y = 30,q_radius = 2,q_tar_mapid = 1300,F8 = '碧波岛',q_tar_x = 49,q_tar_y = 21,q_type = 0,q_type1 = 1,q_xa = 12,q_yb = 20,q_sjcs_x = 30,q_sjcs_y = 92,side = 2,},	
 	{q_id = 137,q_mapid = 1300,F3 = '碧波岛',q_x = 49,q_y = 15,q_radius = 2,q_tar_mapid = 1100,F8 = '落霞岛',q_tar_x = 89,q_tar_y = 36,q_type = 0,q_type1 = 1,q_xa = 40,q_yb = 20,q_sjcs_x = 37,q_sjcs_y = 113,side = 3,},	
-	
-
-
-
-
-	{q_id = 149,q_mapid = 2100,F3 = '中州',q_x = 247,q_y = 24,q_radius = 2,q_tar_mapid = 8010,F8 = 'BOSS乐园一层',q_tar_x = 140,q_tar_y = 134,q_type = 0,q_type1 = 0,q_xa = 38,q_yb = 65,q_sjcs_x = 100,q_sjcs_y = 110,side = 2,},	
-	{q_id = 150,q_mapid = 8010,F3 = 'BOSS乐园一层',q_x = 136,q_y = 138,q_radius = 2,q_tar_mapid = 2100,F8 = '中州',q_tar_x = 132,q_tar_y = 126,q_type = 0,q_type1 = 0,q_xa = 21,q_yb = 72,q_sjcs_x = 100,q_sjcs_y = 100,side = 2,},	
-	{q_id = 151,q_mapid = 8010,F3 = 'BOSS乐园一层',q_x = 100,q_y = 14,q_radius = 2,q_tar_mapid = 8011,F8 = 'BOSS乐园二层',q_tar_x = 185,q_tar_y = 215,q_type = 0,q_type1 = 0,q_xa = 21,q_yb = 72,q_sjcs_x = 100,q_sjcs_y = 100,side = 2,},	
-	{q_id = 152,q_mapid = 8011,F3 = 'BOSS乐园二层',q_x = 180,q_y = 220,q_radius = 2,q_tar_mapid = 8010,F8 = 'BOSS乐园一层',q_tar_x = 90,q_tar_y = 22,q_type = 0,q_type1 = 0,q_xa = 21,q_yb = 72,q_sjcs_x = 100,q_sjcs_y = 100,side = 2,},	
-	{q_id = 153,q_mapid = 8011,F3 = 'BOSS乐园二层',q_x = 140,q_y = 150,q_radius = 2,q_tar_mapid = 8012,F8 = 'BOSS乐园三层',q_tar_x = 130,q_tar_y = 130,q_type = 0,q_type1 = 0,q_xa = 21,q_yb = 72,q_sjcs_x = 100,q_sjcs_y = 100,side = 2,},	
-	{q_id = 154,q_mapid = 8012,F3 = 'BOSS乐园三层',q_x = 140,q_y = 140,q_radius = 2,q_tar_mapid = 8011,F8 = 'BOSS乐园二层',q_tar_x = 130,q_tar_y = 140,q_type = 0,q_type1 = 0,q_xa = 21,q_yb = 72,q_sjcs_x = 100,q_sjcs_y = 100,side = 2,},	
-	{q_id = 155,q_mapid = 8012,F3 = 'BOSS乐园三层',q_x = 50,q_y = 40,q_radius = 2,q_tar_mapid = 8013,F8 = 'BOSS乐园四层',q_tar_x = 50,q_tar_y = 190,q_type = 0,q_type1 = 0,q_xa = 21,q_yb = 72,q_sjcs_x = 100,q_sjcs_y = 100,side = 2,},	
-	{q_id = 156,q_mapid = 8013,F3 = 'BOSS乐园四层',q_x = 30,q_y = 200,q_radius = 2,q_tar_mapid = 8012,F8 = 'BOSS乐园三层',q_tar_x = 60,q_tar_y = 50,q_type = 0,q_type1 = 0,q_xa = 21,q_yb = 72,q_sjcs_x = 100,q_sjcs_y = 100,side = 2,},	
-	{q_id = 157,q_mapid = 8013,F3 = 'BOSS乐园四层',q_x = 170,q_y = 40,q_radius = 2,q_tar_mapid = 8014,F8 = 'BOSS乐园五层',q_tar_x = 38,q_tar_y = 181,q_type = 0,q_type1 = 0,q_xa = 21,q_yb = 72,q_sjcs_x = 100,q_sjcs_y = 100,side = 2,},	
-	{q_id = 158,q_mapid = 8014,F3 = 'BOSS乐园五层',q_x = 28,q_y = 188,q_radius = 2,q_tar_mapid = 8013,F8 = 'BOSS乐园四层',q_tar_x = 153,q_tar_y = 54,q_type = 0,q_type1 = 0,q_xa = 21,q_yb = 72,q_sjcs_x = 100,q_sjcs_y = 100,side = 2,},	
-	{q_id = 159,q_mapid = 8014,F3 = 'BOSS乐园五层',q_x = 160,q_y = 30,q_radius = 2,q_tar_mapid = 8015,F8 = 'BOSS乐园六层',q_tar_x = 50,q_tar_y = 35,q_type = 0,q_type1 = 0,q_xa = 21,q_yb = 72,q_sjcs_x = 100,q_sjcs_y = 100,side = 2,},	
-	{q_id = 160,q_mapid = 8015,F3 = 'BOSS乐园六层',q_x = 25,q_y = 35,q_radius = 2,q_tar_mapid = 8014,F8 = 'BOSS乐园五层',q_tar_x = 150,q_tar_y = 50,q_type = 0,q_type1 = 0,q_xa = 21,q_yb = 72,q_sjcs_x = 100,q_sjcs_y = 100,side = 2,},	
-	{q_id = 161,q_mapid = 8015,F3 = 'BOSS乐园六层',q_x = 330,q_y = 260,q_radius = 2,q_tar_mapid = 8016,F8 = 'BOSS乐园七层',q_tar_x = 138,q_tar_y = 26,q_type = 0,q_type1 = 0,q_xa = 21,q_yb = 72,q_sjcs_x = 100,q_sjcs_y = 100,side = 2,},	
-	{q_id = 162,q_mapid = 8016,F3 = 'BOSS乐园七层',q_x = 134,q_y = 24,q_radius = 2,q_tar_mapid = 8015,F8 = 'BOSS乐园六层',q_tar_x = 325,q_tar_y = 250,q_type = 0,q_type1 = 0,q_xa = 21,q_yb = 72,q_sjcs_x = 100,q_sjcs_y = 100,side = 2,},	
-	{q_id = 163,q_mapid = 8016,F3 = 'BOSS乐园七层',q_x = 94,q_y = 90,q_radius = 2,q_tar_mapid = 8017,F8 = 'BOSS乐园八层',q_tar_x = 30,q_tar_y = 42,q_type = 0,q_type1 = 0,q_xa = 21,q_yb = 72,q_sjcs_x = 100,q_sjcs_y = 100,side = 2,},	
-	{q_id = 164,q_mapid = 8017,F3 = 'BOSS乐园八层',q_x = 20,q_y = 50,q_radius = 2,q_tar_mapid = 8016,F8 = 'BOSS乐园七层',q_tar_x = 88,q_tar_y = 86,q_type = 0,q_type1 = 0,q_xa = 21,q_yb = 72,q_sjcs_x = 100,q_sjcs_y = 100,side = 2,},	
-	{q_id = 165,q_mapid = 8017,F3 = 'BOSS乐园八层',q_x = 15,q_y = 78,q_radius = 2,q_tar_mapid = 8018,F8 = 'BOSS乐园九层',q_tar_x = 124,q_tar_y = 122,q_type = 0,q_type1 = 0,q_xa = 21,q_yb = 72,q_sjcs_x = 100,q_sjcs_y = 100,side = 2,},	
-	{q_id = 166,q_mapid = 8018,F3 = 'BOSS乐园九层',q_x = 130,q_y = 116,q_radius = 2,q_tar_mapid = 8017,F8 = 'BOSS乐园八层',q_tar_x = 20,q_tar_y = 82,q_type = 0,q_type1 = 0,q_xa = 21,q_yb = 72,q_sjcs_x = 100,q_sjcs_y = 100,side = 2,},	
-	{q_id = 167,q_mapid = 8018,F3 = 'BOSS乐园九层',q_x = 67,q_y = 14,q_radius = 2,q_tar_mapid = 8019,F8 = '仙界桃园',q_tar_x = 30,q_tar_y = 200,q_type = 0,q_type1 = 0,q_xa = 21,q_yb = 72,q_sjcs_x = 100,q_sjcs_y = 100,side = 2,},	
-	{q_id = 168,q_mapid = 8019,F3 = '仙界桃园',q_x = 32,q_y = 209,q_radius = 2,q_tar_mapid = 8018,F8 = 'BOSS乐园九层',q_tar_x = 60,q_tar_y = 20,q_type = 0,q_type1 = 0,q_xa = 21,q_yb = 72,q_sjcs_x = 100,q_sjcs_y = 100,side = 2,},	
-
-
-
-
-
-
-	
-	{q_id = 174,q_mapid = 1300,F3 = '碧波岛',q_x = 58,q_y = 37,q_radius = 2,q_tar_mapid = 16001,F8 = '海底幻境一层',q_tar_x = 21,q_tar_y = 117,q_type = 0,q_type1 = 0,q_xa = 54,q_yb = 12,q_sjcs_x = 27,q_sjcs_y = 113,side = 4,},
-	{q_id = 175,q_mapid = 1300,F3 = '碧波岛',q_x = 58,q_y = 37,q_radius = 2,q_tar_mapid = 16002,F8 = '海底幻境二层',q_tar_x = 84,q_tar_y = 25,q_type = 0,q_type1 = 0,q_xa = 123,q_yb = 83,q_sjcs_x = 29,q_sjcs_y = 114,side = 4,},
-	{q_id = 177,q_mapid = 1300,F3 = '碧波岛',q_x = 58,q_y = 37,q_radius = 2,q_tar_mapid =16003,F8 = '海底幻境三层',q_tar_x = 143,q_tar_y = 93,q_type = 0,q_type1 = 0,q_xa = 127,q_yb = 85,q_sjcs_x = 85,q_sjcs_y = 113,side = 4,},
-	{q_id = 2,q_mapid = 1300,F3 = '碧波岛',q_x = 58,q_y = 37,q_radius = 2,q_tar_mapid = 16004,F8 = '暗黑将军坟',q_tar_x = 28,q_tar_y = 23,q_type = 0,q_type1 = 0,q_xa = 23,q_yb = 36,q_sjcs_x = 107,q_sjcs_y = 84,side = 2,},
-	{q_id = 20,q_mapid = 1300,F3 = '碧波岛',q_x = 58,q_y = 37,q_radius = 2,q_tar_mapid = 16005,F8 = '暗黑五蛇殿',q_tar_x = 22,q_tar_y = 48,q_type = 0,q_type1 = 0,q_xa = 57,q_yb = 160,q_sjcs_x = 58,q_sjcs_y = 43,side = 4,CS_BOSS = 1,},
-	{q_id = 38,q_mapid = 1300,F3 = '碧波岛',q_x = 58,q_y = 37,q_radius = 2,q_tar_mapid = 16006,F8 = '暗黑逆魔大殿',q_tar_x = 43,q_tar_y = 42,q_type = 0,q_type1 = 0,q_xa = 110,q_yb = 31,q_sjcs_x = 28,q_sjcs_y = 31,side = 2,CS_BOSS = 1,},
-	{q_id = 46,q_mapid = 1300,F3 = '碧波岛',q_x = 58,q_y = 37,q_radius = 2,q_tar_mapid = 16007,F8 = '暗黑魔穴',q_tar_x = 27,q_tar_y = 45,q_type = 0,q_type1 = 0,q_xa = 79,q_yb = 139,q_sjcs_x = 70,q_sjcs_y = 43,side = 1,CS_BOSS = 1,},
-	{q_id = 64,q_mapid = 1300,F3 = '碧波岛',q_x = 58,q_y = 37,q_radius = 2,q_tar_mapid = 16008,F8 = '暗黑铁血魔宫',q_tar_x = 82,q_tar_y = 79,q_type = 0,q_type1 = 0,q_xa = 31,q_yb = 53,q_sjcs_x = 70,q_sjcs_y = 63,side = 1,CS_BOSS = 1,},
-	{q_id = 54,q_mapid = 1300,F3 = '碧波岛',q_x = 58,q_y = 37,q_radius = 2,q_tar_mapid = 16009,F8 = '暗黑九重云霄',q_tar_x = 104,q_tar_y = 79,q_type = 0,q_type1 = 0,q_xa = 94,q_yb = 80,q_sjcs_x = 65,q_sjcs_y = 54,side = 3,CS_BOSS = 1,},
-	{q_id = 72,q_mapid = 1300,F3 = '碧波岛',q_x = 58,q_y = 37,q_radius = 2,q_tar_mapid = 16010,F8 = '暗黑修罗神殿',q_tar_x = 41,q_tar_y = 110,q_type = 0,q_type1 = 0,q_xa = 144,q_yb = 80,q_sjcs_x = 66,q_sjcs_y = 86,side = 1,CS_BOSS = 1,},
-	{q_id = 86,q_mapid = 1300,F3 = '碧波岛',q_x = 58,q_y = 37,q_radius = 2,q_tar_mapid = 16011,F8 = '暗黑中州',q_tar_x = 129,q_tar_y = 167,q_type = 0,q_type1 = 0,q_xa = 21,q_yb = 72,q_sjcs_x = 100,q_sjcs_y = 100,side = 2,},
-	{q_id = 30,q_mapid = 1300,F3 = '碧波岛',q_x = 58,q_y = 37,q_radius = 2,q_tar_mapid = 16012,F8 = '幻影沙巴克',q_tar_x = 20,q_tar_y = 20,q_type = 0,q_type1 = 0,q_xa = 168,q_yb = 152,q_sjcs_x = 171,q_sjcs_y = 143,side = 2,},
-	{q_id = 142,q_mapid = 1300,F3 = '碧波岛',q_x = 58,q_y = 37,q_radius = 2,q_tar_mapid = 16013,F8 = '北冥大陆',q_tar_x = 84,q_tar_y = 196,q_type = 0,q_type1 = 0,q_xa = 21,q_yb = 72,q_sjcs_x = 100,q_sjcs_y = 100,side = 2,},	
-	{q_id = 196,q_mapid = 1300,F3 = '碧波岛',q_x = 58,q_y = 37,q_radius = 2,q_tar_mapid = 16014,F8 = '上古战场',q_tar_x = 100,q_tar_y = 100,q_type = 0,q_type1 = 0,q_xa = 21,q_yb = 72,q_sjcs_x = 100,q_sjcs_y = 100,side = 4,},
-	{q_id = 197,q_mapid = 1300,F3 = '碧波岛',q_x = 58,q_y = 37,q_radius = 2,q_tar_mapid = 16015,F8 = '众神领域',q_tar_x = 100,q_tar_y = 100,q_type = 0,q_type1 = 0,q_xa = 21,q_yb = 72,q_sjcs_x = 100,q_sjcs_y = 100,side = 4,},
-    {q_id = 192,q_mapid = 1300,F3 = '碧波岛',q_x = 58,q_y = 37,q_radius = 2,q_tar_mapid = 16016,F8 = '朝圣神地',q_tar_x = 100,q_tar_y = 100,q_type = 0,q_type1 = 0,q_xa = 21,q_yb = 72,q_sjcs_x = 100,q_sjcs_y = 100,side = 4,},
-	{q_id = 193,q_mapid = 1300,F3 = '碧波岛',q_x = 58,q_y = 37,q_radius = 2,q_tar_mapid = 16017,F8 = '仙境遗迹',q_tar_x = 100,q_tar_y = 100,q_type = 0,q_type1 = 0,q_xa = 21,q_yb = 72,q_sjcs_x = 100,q_sjcs_y = 100,side = 4,},
-	
-
-
-
-
-
-
-
-
-
-
-
+	{q_id = 138,q_mapid = 3100,F3 = '热砂荒漠',q_x = 51,q_y = 10,q_radius = 2,q_tar_mapid = 6082,F8 = '沉船一层',q_tar_x = 25,q_tar_y = 124,q_type = 0,q_type1 = 0,q_xa = 17,q_yb = 169,q_sjcs_x = 15,q_sjcs_y = 112,side = 1,},		
+	{q_id = 139,q_mapid = 6082,F3 = '沉船一层',q_x = 20,q_y = 118,q_radius = 2,q_tar_mapid = 3100,F8 = '热砂荒漠',q_tar_x = 46,q_tar_y = 18,q_type = 0,q_type1 = 0,q_xa = 251,q_yb = 221,q_sjcs_x = 90,q_sjcs_y = 72,side = 3,},
+	{q_id = 140,q_mapid = 8100,F3 = '禁地',q_x = 149,q_y = 22,q_radius = 2,q_tar_mapid = 4230,F8 = '圣殿山麓',q_tar_x = 11,q_tar_y = 137,q_type = 0,q_type1 = 0,q_xa = 28,q_yb = 29,q_sjcs_x = 11,q_sjcs_y = 145,side = 3,},
+	{q_id = 141,q_mapid = 4230,F3 = '圣殿山麓',q_x = 12,q_y = 158,q_radius = 2,q_tar_mapid = 8100,F8 = '禁地',q_tar_x = 148,q_tar_y = 24,q_type = 0,q_type1 = 0,q_xa = 20,q_yb = 29,q_sjcs_x = 12,q_sjcs_y = 158,side = 4,},	
+	{q_id = 142,q_mapid = 8100,F3 = '禁地',q_x = 212,q_y = 202,q_radius = 2,q_tar_mapid = 4133,F8 = '凌霄天界',q_tar_x = 220,q_tar_y = 208,q_type = 0,q_type1 = 0,q_xa = 28,q_yb = 29,q_sjcs_x = 220,q_sjcs_y = 208,side = 1,},
+	--{q_id = 143,q_mapid = 4133,F3 = '凌霄天界',q_x = 48,q_y = 35,q_radius = 2,q_tar_mapid = 4133,F8 = '凌霄天界',q_tar_x = 368,q_tar_y = 328,q_type = 0,q_type1 = 0,q_xa = 20,q_yb = 29,q_sjcs_x = 368,q_sjcs_y = 328,side = 4,},	
+	--{q_id = 144,q_mapid = 4133,F3 = '凌霄天界',q_x = 368,q_y = 328,q_radius = 2,q_tar_mapid = 4133,F8 = '凌霄天界',q_tar_x = 48,q_tar_y = 35,q_type = 0,q_type1 = 0,q_xa = 20,q_yb = 29,q_sjcs_x = 48,q_sjcs_y = 35,side = 1,},	
+	{q_id = 145,q_mapid = 4133,F3 = '凌霄天界',q_x = 100,q_y = 350,q_radius = 2,q_tar_mapid = 4134,F8 = '苍天回廊',q_tar_x = 91,q_tar_y = 58,q_type = 0,q_type1 = 0,q_xa = 20,q_yb = 29,q_sjcs_x = 91,q_sjcs_y = 58,side = 1,},
+	{q_id = 146,q_mapid = 2100,F3 = '中州',q_x = 259,q_y = 21,q_radius = 2,q_tar_mapid = 2350,F8 = '灵犀仙岛',q_tar_x = 50,q_tar_y = 27,q_type = 0,q_type1 = 0,q_xa = 23,q_yb = 36,q_sjcs_x = 50,q_sjcs_y = 27,side = 2,},
+	{q_id = 147,q_mapid = 2350,F3 = '灵犀仙岛',q_x = 46,q_y = 20,q_radius = 2,q_tar_mapid = 2100,F8 = '中州',q_tar_x = 133,q_tar_y = 128,q_type = 0,q_type1 = 0,q_xa = 26,q_yb = 19,q_sjcs_x = 129,q_sjcs_y = 129,side = 1,},
+--	{q_id = 148,q_mapid = 2100,F3 = '中州',q_x = 126,q_y = 165,q_radius = 2,q_tar_mapid = 2211,F8 = '结婚会场',q_tar_x = 13,q_tar_y = 76,q_type = 0,q_type1 = 0,q_xa = 21,q_yb = 72,q_sjcs_x = 100,q_sjcs_y = 100,side = 2,},
+	{q_id = 149,q_mapid = 2350,F3 = '灵犀仙岛',q_x = 59,q_y = 38,q_radius = 2,q_tar_mapid = 2351,F8 = '猛兽高原',q_tar_x = 17,q_tar_y = 84,q_type = 0,q_type1 = 0,q_xa = 26,q_yb = 19,q_sjcs_x = 129,q_sjcs_y = 129,side = 1,},
+	{q_id = 150,q_mapid = 2351,F3 = '猛兽高原',q_x = 11,q_y = 92,q_radius = 2,q_tar_mapid = 2350,F8 = '灵犀仙岛',q_tar_x = 50,q_tar_y = 27,q_type = 0,q_type1 = 0,q_xa = 23,q_yb = 36,q_sjcs_x = 107,q_sjcs_y = 84,side = 1,},	
+	{q_id = 151,q_mapid = 2350,F3 = '灵犀仙岛',q_x = 19,q_y = 47,q_radius = 2,q_tar_mapid = 2352,F8 = '灵虎森林',q_tar_x = 35,q_tar_y = 77,q_type = 0,q_type1 = 0,q_xa = 26,q_yb = 19,q_sjcs_x = 129,q_sjcs_y = 129,side = 1,},
+	{q_id = 152,q_mapid = 2352,F3 = '灵虎森林',q_x = 26,q_y = 92,q_radius = 2,q_tar_mapid = 2350,F8 = '灵犀仙岛',q_tar_x = 50,q_tar_y = 27,q_type = 0,q_type1 = 0,q_xa = 23,q_yb = 36,q_sjcs_x = 107,q_sjcs_y = 84,side = 2,},
+	{q_id = 153,q_mapid = 2350,F3 = '灵犀仙岛',q_x = 6,q_y = 58,q_radius = 2,q_tar_mapid = 2353,F8 = '麒麟仙池',q_tar_x = 23,q_tar_y = 85,q_type = 0,q_type1 = 0,q_xa = 26,q_yb = 19,q_sjcs_x = 129,q_sjcs_y = 129,side = 1,},
+	{q_id = 154,q_mapid = 2353,F3 = '麒麟仙池',q_x = 9,q_y = 80,q_radius = 2,q_tar_mapid = 2350,F8 = '灵犀仙岛',q_tar_x = 50,q_tar_y = 27,q_type = 0,q_type1 = 0,q_xa = 23,q_yb = 36,q_sjcs_x = 107,q_sjcs_y = 84,side = 2,},
+	{q_id = 155,q_mapid = 2350,F3 = '灵犀仙岛',q_x = 17,q_y = 88,q_radius = 2,q_tar_mapid = 2354,F8 = '狂狮草原',q_tar_x = 35,q_tar_y = 77,q_type = 0,q_type1 = 0,q_xa = 26,q_yb = 19,q_sjcs_x = 129,q_sjcs_y = 129,side = 2,},
+	{q_id = 156,q_mapid = 2354,F3 = '狂狮草原',q_x = 26,q_y = 92,q_radius = 2,q_tar_mapid = 2350,F8 = '灵犀仙岛',q_tar_x = 50,q_tar_y = 27,q_type = 0,q_type1 = 0,q_xa = 23,q_yb = 36,q_sjcs_x = 107,q_sjcs_y = 84,side = 2,},
+	{q_id = 157,q_mapid = 2350,F3 = '灵犀仙岛',q_x = 32,q_y = 86,q_radius = 2,q_tar_mapid = 2355,F8 = '栖凤灵岛',q_tar_x = 35,q_tar_y = 77,q_type = 0,q_type1 = 0,q_xa = 26,q_yb = 19,q_sjcs_x = 129,q_sjcs_y = 129,side = 1,},
+	{q_id = 158,q_mapid = 2355,F3 = '栖凤灵岛',q_x = 26,q_y = 92,q_radius = 2,q_tar_mapid = 2350,F8 = '灵犀仙岛',q_tar_x = 50,q_tar_y = 27,q_type = 0,q_type1 = 0,q_xa = 23,q_yb = 36,q_sjcs_x = 107,q_sjcs_y = 84,side = 2,},	
+	{q_id = 159,q_mapid = 6082,F3 = '沉船一层',q_x = 129,q_y = 80,q_radius = 2,q_tar_mapid = 8301,F8 = '龙穴',q_tar_x = 24,q_tar_y = 120,q_type = 0,q_type1 = 0,q_xa = 21,q_yb = 72,q_sjcs_x = 100,q_sjcs_y = 100,side = 2,},	
+	{q_id = 160,q_mapid = 9100,F3 = '死水沼泽',q_x = 14,q_y = 106,q_radius = 2,q_tar_mapid = 8200,F8 = '南天宫',q_tar_x = 194,q_tar_y = 187,q_type = 0,q_type1 = 0,q_xa = 21,q_yb = 72,q_sjcs_x = 105,q_sjcs_y = 97,side = 2,},
+	{q_id = 161,q_mapid = 8200,F3 = '南天宫',q_x = 71,q_y = 223,q_radius = 2,q_tar_mapid = 6112,F8 = '不周山',q_tar_x = 100,q_tar_y = 100,q_type = 0,q_type1 = 0,q_xa = 21,q_yb = 72,q_sjcs_x = 137,q_sjcs_y = 110,side = 4,},
+	{q_id = 162,q_mapid = 8200,F3 = '南天宫',q_x = 150,q_y = 227,q_radius = 2,q_tar_mapid = 6111,F8 = '上古遗迹',q_tar_x = 100,q_tar_y = 100,q_type = 0,q_type1 = 0,q_xa = 21,q_yb = 72,q_sjcs_x = 100,q_sjcs_y = 100,side = 4,},
+	{q_id = 163,q_mapid = 8200,F3 = '南天宫',q_x = 223,q_y = 210,q_radius = 2,q_tar_mapid = 6110,F8 = '上古战场',q_tar_x = 100,q_tar_y = 100,q_type = 0,q_type1 = 0,q_xa = 21,q_yb = 72,q_sjcs_x = 100,q_sjcs_y = 100,side = 4,},
+	{q_id = 164,q_mapid = 8200,F3 = '南天宫',q_x = 233,q_y = 131,q_radius = 2,q_tar_mapid = 6105,F8 = '伏羲聚落',q_tar_x = 100,q_tar_y = 100,q_type = 0,q_type1 = 0,q_xa = 21,q_yb = 72,q_sjcs_x = 100,q_sjcs_y = 100,side = 4,},
+	{q_id = 165,q_mapid = 8200,F3 = '南天宫',q_x = 205,q_y = 28,q_radius = 2,q_tar_mapid = 6106,F8 = '少昊聚落',q_tar_x = 100,q_tar_y = 100,q_type = 0,q_type1 = 0,q_xa = 21,q_yb = 72,q_sjcs_x = 100,q_sjcs_y = 100,side = 4,},
+	{q_id = 166,q_mapid = 8200,F3 = '南天宫',q_x = 24,q_y = 190,q_radius = 2,q_tar_mapid = 6107,F8 = '神农聚落',q_tar_x = 100,q_tar_y = 100,q_type = 0,q_type1 = 0,q_xa = 21,q_yb = 72,q_sjcs_x = 100,q_sjcs_y = 100,side = 4,},
+	{q_id = 167,q_mapid = 8200,F3 = '南天宫',q_x = 149,q_y = 45,q_radius = 2,q_tar_mapid = 6108,F8 = '轩辕聚落',q_tar_x = 100,q_tar_y = 100,q_type = 0,q_type1 = 0,q_xa = 21,q_yb = 72,q_sjcs_x = 100,q_sjcs_y = 100,side = 4,},
+	{q_id = 168,q_mapid = 6112,F3 = '不周山',q_x = 40,q_y = 47,q_radius = 2,q_tar_mapid = 6201,F8 = '方丈',q_tar_x = 75,q_tar_y = 55,q_type = 0,q_type1 = 0,q_xa = 21,q_yb = 72,q_sjcs_x = 75,q_sjcs_y = 55,side = 4,},
+	{q_id = 169,q_mapid = 6112,F3 = '不周山',q_x = 217,q_y = 19,q_radius = 2,q_tar_mapid = 6202,F8 = '蓬莱',q_tar_x = 75,q_tar_y = 55,q_type = 0,q_type1 = 0,q_xa = 21,q_yb = 72,q_sjcs_x = 75,q_sjcs_y = 55,side = 4,},
+	{q_id = 170,q_mapid = 6112,F3 = '不周山',q_x = 223,q_y = 178,q_radius = 2,q_tar_mapid = 6203,F8 = '普陀',q_tar_x = 75,q_tar_y = 55,q_type = 0,q_type1 = 0,q_xa = 21,q_yb = 72,q_sjcs_x = 75,q_sjcs_y = 55,side = 4,},
+	{q_id = 171,q_mapid = 6112,F3 = '不周山',q_x = 33,q_y = 209,q_radius = 2,q_tar_mapid = 6204,F8 = '瀛洲',q_tar_x = 75,q_tar_y = 55,q_type = 0,q_type1 = 0,q_xa = 21,q_yb = 72,q_sjcs_x = 75,q_sjcs_y = 55,side = 4,},
+	{q_id = 172,q_mapid = 4230,F3 = '圣殿山麓',q_x = 111,q_y = 38,q_radius = 2,q_tar_mapid = 4231,F8 = '圣殿山腰',q_tar_x = 148,q_tar_y = 190,q_type = 0,q_type1 = 0,q_xa = 20,q_yb = 29,q_sjcs_x = 12,q_sjcs_y = 158,side = 4,},
+	{q_id = 173,q_mapid = 4231,F3 = '圣殿山腰',q_x = 191,q_y = 38,q_radius = 2,q_tar_mapid = 4232,F8 = '圣殿山谷',q_tar_x = 119,q_tar_y = 205,q_type = 0,q_type1 = 0,q_xa = 20,q_yb = 29,q_sjcs_x = 12,q_sjcs_y = 158,side = 4,},
+	{q_id = 174,q_mapid = 4232,F3 = '圣殿山谷',q_x = 113,q_y = 29,q_radius = 2,q_tar_mapid = 4233,F8 = '圣殿山顶',q_tar_x = 100,q_tar_y = 141,q_type = 0,q_type1 = 0,q_xa = 20,q_yb = 29,q_sjcs_x = 12,q_sjcs_y = 158,side = 4,},
+--	{q_id = 175,q_mapid = 8301,F3 = '南天宫-南靖出口坐标',q_x = 52,q_y = 72,--F3 = '南天宫-南靖入口坐标',q_tar_x = 74,q_tar_y = 87,
+	{q_id = 175,q_mapid = 8301,F3 = '龙穴',q_x = 137,q_y = 36,q_radius = 2,q_tar_mapid = 8300,F8 = '锁龙殿',q_tar_x = 194,q_tar_y = 187,q_type = 0,q_type1 = 0,q_xa = 21,q_yb = 72,q_sjcs_x = 100,q_sjcs_y = 100,side = 2,},
+--	{q_id = 176,q_mapid = 8200,F3 = '南天宫',q_x = 65,q_y = 210,q_radius = 2,q_tar_mapid = 4930,F8 = '通灵塔',q_tar_x = 50,q_tar_y = 50,q_type = 0,q_type1 = 0,q_xa = 21,q_yb = 72,q_sjcs_x = 50,q_sjcs_y = 50,side = 4,},
+	{q_id = 177,q_mapid = 8200,F3 = '南天宫',q_x = 80,q_y = 200,q_radius = 2,q_tar_mapid = 4214,F8 = '心魔幻境',q_tar_x = 50,q_tar_y = 50,q_type = 0,q_type1 = 0,q_xa = 21,q_yb = 72,q_sjcs_x = 50,q_sjcs_y = 50,side = 4,},	
 };
-
-
-
-
-
-
-local n = 1
-
-for n = 1,#Items do
-Items[n].q_id = n
-
-end
-
 return Items

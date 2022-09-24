@@ -431,7 +431,7 @@ goUse = function(id)
 		
 		local MPropOutput = require "src/config/PropOutputWayOp"
 		record = MPropOutput:record(no1)
-		return MPropOutput:gotoRecord(record)
+		return MPropOutput:goto(record)
 	end
 end
 

@@ -17,5 +17,11 @@ local Items = {
 	{mountId = 106,max_level = 20,q_max_hp = 420,q_attack_min = 40,q_attack_max = 70,q_defence_min = 10,q_defence_max = 20,q_magic_defence_min = 10,q_magic_defence_max = 20,highest_count = 2,free_give_item = 7,free_give_item2 = 8,speed = 1,isold = 0,},
 	{mountId = 206,max_level = 20,q_max_hp = 420,q_magic_attack_min = 40,q_magic_attack_max = 70,q_defence_min = 10,q_defence_max = 20,q_magic_defence_min = 10,q_magic_defence_max = 20,highest_count = 2,free_give_item = 7,free_give_item2 = 8,speed = 1,isold = 0,},
 	{mountId = 306,max_level = 20,q_max_hp = 420,q_sc_attack_min = 40,q_sc_attack_max = 70,q_defence_min = 10,q_defence_max = 20,q_magic_defence_min = 10,q_magic_defence_max = 20,highest_count = 2,free_give_item = 7,free_give_item2 = 8,speed = 1,isold = 0,},
+	{mountId = 107,max_level = 10,q_max_hp = 420,q_attack_min = 40,q_attack_max = 70,q_defence_min = 10,q_defence_max = 20,q_magic_defence_min = 10,q_magic_defence_max = 20,highest_count = 2,free_give_item = 7,free_give_item2 = 8,speed = 1,isold = 0,},
+	{mountId = 207,max_level = 10,q_max_hp = 420,q_magic_attack_min = 40,q_magic_attack_max = 70,q_defence_min = 10,q_defence_max = 20,q_magic_defence_min = 10,q_magic_defence_max = 20,highest_count = 2,free_give_item = 7,free_give_item2 = 8,speed = 1,isold = 0,},
+	{mountId = 307,max_level = 10,q_max_hp = 420,q_sc_attack_min = 40,q_sc_attack_max = 70,q_defence_min = 10,q_defence_max = 20,q_magic_defence_min = 10,q_magic_defence_max = 20,highest_count = 2,free_give_item = 7,free_give_item2 = 8,speed = 1,isold = 0,},
+	{mountId = 108,max_level = 10,q_max_hp = 420,q_attack_min = 40,q_attack_max = 70,q_defence_min = 10,q_defence_max = 20,q_magic_defence_min = 10,q_magic_defence_max = 20,highest_count = 2,free_give_item = 7,free_give_item2 = 8,speed = 1,isold = 0,},
+	{mountId = 208,max_level = 10,q_max_hp = 420,q_magic_attack_min = 40,q_magic_attack_max = 70,q_defence_min = 10,q_defence_max = 20,q_magic_defence_min = 10,q_magic_defence_max = 20,highest_count = 2,free_give_item = 7,free_give_item2 = 8,speed = 1,isold = 0,},
+	{mountId = 308,max_level = 10,q_max_hp = 420,q_sc_attack_min = 40,q_sc_attack_max = 70,q_defence_min = 10,q_defence_max = 20,q_magic_defence_min = 10,q_magic_defence_max = 20,highest_count = 2,free_give_item = 7,free_give_item2 = 8,speed = 1,isold = 0,},	
 };
 return Items

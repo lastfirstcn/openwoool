@@ -1,0 +1,27 @@
+Creates an image that the system displays during the drag and drop operation. This is called a "drag shadow". The default implementation for a DragShadowBuilder based on a View returns an image that has exactly the same appearance as the given View. The default also positions the center of the drag shadow directly under the touch point. If no View is provided (the constructor with no parameters is used), and onProvideShadowMetrics() and onDrawShadow() are not overridden, then the default is an invisible drag shadow.
+class android.view.View.DragShadowBuilder
+.class Landroid/view/View$DragShadowBuilder;
+
+继承
+inherit java.lang.Object
+.super Ljava/lang/Object;
+
+构造方法：Constructs a shadow image builder based on a View.
+constructor View.DragShadowBuilder(View view)
+invoke-direct {v0, v1}, Landroid/view/View$DragShadowBuilder;-><init>(Landroid/view/View;)V
+
+构造方法：Construct a shadow builder object with no associated View.
+constructor View.DragShadowBuilder()
+invoke-direct {v0}, Landroid/view/View$DragShadowBuilder;-><init>()V
+
+Returns the View object that had been passed to the View.DragShadowBuilder(View) constructor.
+final View getView()
+invoke-virtual {v0}, Landroid/view/View$DragShadowBuilder;->getView()Landroid/view/View;
+
+Draws the shadow image.
+void onDrawShadow(Canvas canvas)
+invoke-virtual {v0, v1}, Landroid/view/View$DragShadowBuilder;->onDrawShadow(Landroid/graphics/Canvas;)V
+
+Provides the metrics for the shadow image.
+void onProvideShadowMetrics(Point outShadowSize, Point outShadowTouchPoint)
+invoke-virtual {v0, v1, v2}, Landroid/view/View$DragShadowBuilder;->onProvideShadowMetrics(Landroid/graphics/Point;Landroid/graphics/Point;)V

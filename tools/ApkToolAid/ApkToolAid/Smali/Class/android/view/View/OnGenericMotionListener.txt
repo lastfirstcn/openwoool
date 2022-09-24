@@ -1,0 +1,7 @@
+Interface definition for a callback to be invoked when a generic motion event is dispatched to this view.
+interface View.OnGenericMotionListener
+.class interface Landroid/view/View$OnGenericMotionListener;
+
+Called when a generic motion event is dispatched to a view.
+abstract boolean onGenericMotion(View v, MotionEvent event)
+event onGenericMotion(Landroid/view/View;Landroid/view/MotionEvent;)Z

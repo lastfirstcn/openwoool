@@ -1,0 +1,51 @@
+This class represents a delegate that can be registered in a View to enhance accessibility support via composition rather via inheritance. It is specifically targeted to widget developers that extend basic View classes i.e. classes in package android.view, that would like their applications to be backwards compatible.
+class android.view.View.AccessibilityDelegate
+.class Landroid/view/View$AccessibilityDelegate;
+
+继承
+inherit java.lang.Object
+.super Ljava/lang/Object;
+
+构造方法：没有帮助内容
+constructor View.AccessibilityDelegate()
+invoke-direct {v0}, Landroid/view/View$AccessibilityDelegate;-><init>()V
+
+Adds extra data to an AccessibilityNodeInfo based on an explicit request for the additional data.
+void addExtraDataToAccessibilityNodeInfo(View host, AccessibilityNodeInfo info, String extraDataKey, Bundle arguments)
+invoke-virtual {v0, v1, v2, v3, v4}, Landroid/view/View$AccessibilityDelegate;->addExtraDataToAccessibilityNodeInfo(Landroid/view/View;Landroid/view/accessibility/AccessibilityNodeInfo;Ljava/lang/String;Landroid/os/Bundle;)V
+
+Dispatches an AccessibilityEvent to the host View first and then to its children for adding their text content to the event.
+boolean dispatchPopulateAccessibilityEvent(View host, AccessibilityEvent event)
+invoke-virtual {v0, v1, v2}, Landroid/view/View$AccessibilityDelegate;->dispatchPopulateAccessibilityEvent(Landroid/view/View;Landroid/view/accessibility/AccessibilityEvent;)Z
+
+Gets the provider for managing a virtual view hierarchy rooted at this View and reported to AccessibilityServices that explore the window content.
+AccessibilityNodeProvider getAccessibilityNodeProvider(View host)
+invoke-virtual {v0, v1}, Landroid/view/View$AccessibilityDelegate;->getAccessibilityNodeProvider(Landroid/view/View;)Landroid/view/accessibility/AccessibilityNodeProvider;
+
+Initializes an AccessibilityEvent with information about the the host View which is the event source.
+void onInitializeAccessibilityEvent(View host, AccessibilityEvent event)
+invoke-virtual {v0, v1, v2}, Landroid/view/View$AccessibilityDelegate;->onInitializeAccessibilityEvent(Landroid/view/View;Landroid/view/accessibility/AccessibilityEvent;)V
+
+Initializes an AccessibilityNodeInfo with information about the host view.
+void onInitializeAccessibilityNodeInfo(View host, AccessibilityNodeInfo info)
+invoke-virtual {v0, v1, v2}, Landroid/view/View$AccessibilityDelegate;->onInitializeAccessibilityNodeInfo(Landroid/view/View;Landroid/view/accessibility/AccessibilityNodeInfo;)V
+
+Gives a chance to the host View to populate the accessibility event with its text content.
+void onPopulateAccessibilityEvent(View host, AccessibilityEvent event)
+invoke-virtual {v0, v1, v2}, Landroid/view/View$AccessibilityDelegate;->onPopulateAccessibilityEvent(Landroid/view/View;Landroid/view/accessibility/AccessibilityEvent;)V
+
+Called when a child of the host View has requested sending an AccessibilityEvent and gives an opportunity to the parent (the host) to augment the event.
+boolean onRequestSendAccessibilityEvent(ViewGroup host, View child, AccessibilityEvent event)
+invoke-virtual {v0, v1, v2, v3}, Landroid/view/View$AccessibilityDelegate;->onRequestSendAccessibilityEvent(Landroid/view/ViewGroup;Landroid/view/View;Landroid/view/accessibility/AccessibilityEvent;)Z
+
+Performs the specified accessibility action on the view.
+boolean performAccessibilityAction(View host, int action, Bundle args)
+invoke-virtual {v0, v1, v2, v3}, Landroid/view/View$AccessibilityDelegate;->performAccessibilityAction(Landroid/view/View;ILandroid/os/Bundle;)Z
+
+Sends an accessibility event of the given type.
+void sendAccessibilityEvent(View host, int eventType)
+invoke-virtual {v0, v1, v2}, Landroid/view/View$AccessibilityDelegate;->sendAccessibilityEvent(Landroid/view/View;I)V
+
+Sends an accessibility event.
+void sendAccessibilityEventUnchecked(View host, AccessibilityEvent event)
+invoke-virtual {v0, v1, v2}, Landroid/view/View$AccessibilityDelegate;->sendAccessibilityEventUnchecked(Landroid/view/View;Landroid/view/accessibility/AccessibilityEvent;)V

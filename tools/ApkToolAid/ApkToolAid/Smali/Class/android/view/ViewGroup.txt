@@ -1,0 +1,739 @@
+A ViewGroup is a special view that can contain other views (called children.) The view group is the base class for layouts and views containers. This class also defines the ViewGroup.LayoutParams class which serves as the base class for layouts parameters.
+class android.view.ViewGroup
+.class Landroid/view/ViewGroup;
+
+继承
+inherit android.view.View
+.super Landroid/view/View;
+
+继承
+inherit android.graphics.drawable.Drawable.Callback
+.super Landroid/graphics/drawable/Drawable$Callback;
+
+继承
+inherit android.view.KeyEvent.Callback
+.super Landroid/view/KeyEvent$Callback;
+
+继承
+inherit android.view.accessibility.AccessibilityEventSource
+.super Landroid/view/accessibility/AccessibilityEventSource;
+
+继承
+inherit android.view.ViewParent
+.super Landroid/view/ViewParent;
+
+继承
+inherit android.view.ViewManager
+.super Landroid/view/ViewManager;
+
+构造方法：没有帮助内容
+constructor ViewGroup(Context context)
+invoke-direct {v0, v1}, Landroid/view/ViewGroup;-><init>(Landroid/content/Context;)V
+
+构造方法：没有帮助内容
+constructor ViewGroup(Context context, AttributeSet attrs)
+invoke-direct {v0, v1, v2}, Landroid/view/ViewGroup;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
+
+构造方法：没有帮助内容
+constructor ViewGroup(Context context, AttributeSet attrs, int defStyleAttr)
+invoke-direct {v0, v1, v2, v3}, Landroid/view/ViewGroup;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;I)V
+
+构造方法：没有帮助内容
+constructor ViewGroup(Context context, AttributeSet attrs, int defStyleAttr, int defStyleRes)
+invoke-direct {v0, v1, v2, v3, v4}, Landroid/view/ViewGroup;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;II)V
+
+Adds the children of this View relevant for accessibility to the given list as output.
+void addChildrenForAccessibility(ArrayList<View> outChildren)
+invoke-virtual {v0, v1}, Landroid/view/ViewGroup;->addChildrenForAccessibility(Ljava/util/ArrayList;)V
+
+Adds any focusable views that are descendants of this view (possibly including this view if it is focusable itself) to views.
+void addFocusables(ArrayList<View> views, int direction, int focusableMode)
+invoke-virtual {v0, v1, v2, v3}, Landroid/view/ViewGroup;->addFocusables(Ljava/util/ArrayList;II)V
+
+Adds any keyboard navigation cluster roots that are descendants of this view (possibly including this view if it is a cluster root itself) to views.
+void addKeyboardNavigationClusters(Collection<View> views, int direction)
+invoke-virtual {v0, v1, v2}, Landroid/view/ViewGroup;->addKeyboardNavigationClusters(Ljava/util/Collection;I)V
+
+Returns whether this ViewGroup's drawable states also include its children's drawable states.
+boolean addStatesFromChildren()
+invoke-virtual {v0}, Landroid/view/ViewGroup;->addStatesFromChildren()Z
+
+Add any touchable views that are descendants of this view (possibly including this view if it is touchable itself) to views.
+void addTouchables(ArrayList<View> views)
+invoke-virtual {v0, v1}, Landroid/view/ViewGroup;->addTouchables(Ljava/util/ArrayList;)V
+
+Adds a child view with the specified layout parameters.
+void addView(View child, ViewGroup.LayoutParams params)
+invoke-virtual {v0, v1, v2}, Landroid/view/ViewGroup;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
+
+Adds a child view.
+void addView(View child, int index)
+invoke-virtual {v0, v1, v2}, Landroid/view/ViewGroup;->addView(Landroid/view/View;I)V
+
+Adds a child view with the specified layout parameters.
+void addView(View child, int index, ViewGroup.LayoutParams params)
+invoke-virtual {v0, v1, v2, v3}, Landroid/view/ViewGroup;->addView(Landroid/view/View;ILandroid/view/ViewGroup$LayoutParams;)V
+
+Adds a child view.
+void addView(View child)
+invoke-virtual {v0, v1}, Landroid/view/ViewGroup;->addView(Landroid/view/View;)V
+
+Adds a child view with this ViewGroup's default layout parameters and the specified width and height.
+void addView(View child, int width, int height)
+invoke-virtual {v0, v1, v2, v3}, Landroid/view/ViewGroup;->addView(Landroid/view/View;II)V
+
+Change the z order of the child so it's on top of all other children.
+void bringChildToFront(View child)
+invoke-virtual {v0, v1}, Landroid/view/ViewGroup;->bringChildToFront(Landroid/view/View;)V
+
+If addStatesFromChildren() is true, refreshes this group's drawable state (to include the states from its children).
+void childDrawableStateChanged(View child)
+invoke-virtual {v0, v1}, Landroid/view/ViewGroup;->childDrawableStateChanged(Landroid/view/View;)V
+
+Called when a child view has changed whether or not it is tracking transient state.
+void childHasTransientStateChanged(View child, boolean childHasTransientState)
+invoke-virtual {v0, v1, v2}, Landroid/view/ViewGroup;->childHasTransientStateChanged(Landroid/view/View;Z)V
+
+Called when a child of this parent is giving up focus
+void clearChildFocus(View child)
+invoke-virtual {v0, v1}, Landroid/view/ViewGroup;->clearChildFocus(Landroid/view/View;)V
+
+Removes any pending animations for views that have been removed.
+void clearDisappearingChildren()
+invoke-virtual {v0}, Landroid/view/ViewGroup;->clearDisappearingChildren()V
+
+Called when this view wants to give up focus.
+void clearFocus()
+invoke-virtual {v0}, Landroid/view/ViewGroup;->clearFocus()V
+
+Request to apply the given window insets to this view or another view in its subtree.
+WindowInsets dispatchApplyWindowInsets(WindowInsets insets)
+invoke-virtual {v0, v1}, Landroid/view/ViewGroup;->dispatchApplyWindowInsets(Landroid/view/WindowInsets;)Landroid/view/WindowInsets;
+
+Pass a captured pointer event down to the focused view.
+boolean dispatchCapturedPointerEvent(MotionEvent event)
+invoke-virtual {v0, v1}, Landroid/view/ViewGroup;->dispatchCapturedPointerEvent(Landroid/view/MotionEvent;)Z
+
+Dispatch a notification about a resource configuration change down the view hierarchy.
+void dispatchConfigurationChanged(Configuration newConfig)
+invoke-virtual {v0, v1}, Landroid/view/ViewGroup;->dispatchConfigurationChanged(Landroid/content/res/Configuration;)V
+
+Dispatch a hint about whether this view is displayed.
+void dispatchDisplayHint(int hint)
+invoke-virtual {v0, v1}, Landroid/view/ViewGroup;->dispatchDisplayHint(I)V
+
+Detects if this View is enabled and has a drag event listener.
+boolean dispatchDragEvent(DragEvent event)
+invoke-virtual {v0, v1}, Landroid/view/ViewGroup;->dispatchDragEvent(Landroid/view/DragEvent;)Z
+
+Dispatches drawable hotspot changes to child views that meet at least one of the following criteria:
+void dispatchDrawableHotspotChanged(float x, float y)
+invoke-virtual {v0, v1, v2}, Landroid/view/ViewGroup;->dispatchDrawableHotspotChanged(FF)V
+
+Dispatch a key event to the next view on the focus path.
+boolean dispatchKeyEvent(KeyEvent event)
+invoke-virtual {v0, v1}, Landroid/view/ViewGroup;->dispatchKeyEvent(Landroid/view/KeyEvent;)Z
+
+Dispatch a key event before it is processed by any input method associated with the view hierarchy.
+boolean dispatchKeyEventPreIme(KeyEvent event)
+invoke-virtual {v0, v1}, Landroid/view/ViewGroup;->dispatchKeyEventPreIme(Landroid/view/KeyEvent;)Z
+
+Dispatches a key shortcut event.
+boolean dispatchKeyShortcutEvent(KeyEvent event)
+invoke-virtual {v0, v1}, Landroid/view/ViewGroup;->dispatchKeyShortcutEvent(Landroid/view/KeyEvent;)Z
+
+没有帮助内容
+void dispatchPointerCaptureChanged(boolean hasCapture)
+invoke-virtual {v0, v1}, Landroid/view/ViewGroup;->dispatchPointerCaptureChanged(Z)V
+
+Dispatches creation of a ViewStructures for autofill purposes down the hierarchy, when an Assist structure is being created as part of an autofill request.%Return%This implementation adds in all child views of the view group, in addition to calling the default View implementation.
+void dispatchProvideAutofillStructure(ViewStructure structure, int flags)
+invoke-virtual {v0, v1, v2}, Landroid/view/ViewGroup;->dispatchProvideAutofillStructure(Landroid/view/ViewStructure;I)V
+
+Dispatch creation of ViewStructure down the hierarchy.
+void dispatchProvideStructure(ViewStructure structure)
+invoke-virtual {v0, v1}, Landroid/view/ViewGroup;->dispatchProvideStructure(Landroid/view/ViewStructure;)V
+
+Dispatch setActivated to all of this View's children.
+void dispatchSetActivated(boolean activated)
+invoke-virtual {v0, v1}, Landroid/view/ViewGroup;->dispatchSetActivated(Z)V
+
+Dispatch setSelected to all of this View's children.
+void dispatchSetSelected(boolean selected)
+invoke-virtual {v0, v1}, Landroid/view/ViewGroup;->dispatchSetSelected(Z)V
+
+Dispatch callbacks to setOnSystemUiVisibilityChangeListener(View.OnSystemUiVisibilityChangeListener) down the view hierarchy.
+void dispatchSystemUiVisibilityChanged(int visible)
+invoke-virtual {v0, v1}, Landroid/view/ViewGroup;->dispatchSystemUiVisibilityChanged(I)V
+
+Pass the touch screen motion event down to the target view, or this view if it is the target.
+boolean dispatchTouchEvent(MotionEvent ev)
+invoke-virtual {v0, v1}, Landroid/view/ViewGroup;->dispatchTouchEvent(Landroid/view/MotionEvent;)Z
+
+Pass a trackball motion event down to the focused view.
+boolean dispatchTrackballEvent(MotionEvent event)
+invoke-virtual {v0, v1}, Landroid/view/ViewGroup;->dispatchTrackballEvent(Landroid/view/MotionEvent;)Z
+
+This method is the last chance for the focused view and its ancestors to respond to an arrow key.
+boolean dispatchUnhandledMove(View focused, int direction)
+invoke-virtual {v0, v1, v2}, Landroid/view/ViewGroup;->dispatchUnhandledMove(Landroid/view/View;I)Z
+
+Called when the window containing this view gains or loses window focus.
+void dispatchWindowFocusChanged(boolean hasFocus)
+invoke-virtual {v0, v1}, Landroid/view/ViewGroup;->dispatchWindowFocusChanged(Z)V
+
+Dispatch callbacks to onWindowSystemUiVisibilityChanged(int) down the view hierarchy.
+void dispatchWindowSystemUiVisiblityChanged(int visible)
+invoke-virtual {v0, v1}, Landroid/view/ViewGroup;->dispatchWindowSystemUiVisiblityChanged(I)V
+
+Dispatch a window visibility change down the view hierarchy.
+void dispatchWindowVisibilityChanged(int visibility)
+invoke-virtual {v0, v1}, Landroid/view/ViewGroup;->dispatchWindowVisibilityChanged(I)V
+
+This method should always be called following an earlier call to startViewTransition(android.view.View).
+void endViewTransition(View view)
+invoke-virtual {v0, v1}, Landroid/view/ViewGroup;->endViewTransition(Landroid/view/View;)V
+
+Find the view in the hierarchy rooted at this view that currently has focus.
+View findFocus()
+invoke-virtual {v0}, Landroid/view/ViewGroup;->findFocus()Landroid/view/View;
+
+Finds the Views that contain given text.
+void findViewsWithText(ArrayList<View> outViews, CharSequence text, int flags)
+invoke-virtual {v0, v1, v2, v3}, Landroid/view/ViewGroup;->findViewsWithText(Ljava/util/ArrayList;Ljava/lang/CharSequence;I)V
+
+Find the nearest view in the specified direction that wants to take focus.
+View focusSearch(View focused, int direction)
+invoke-virtual {v0, v1, v2}, Landroid/view/ViewGroup;->focusSearch(Landroid/view/View;I)Landroid/view/View;
+
+Tells the parent that a new focusable view has become available.
+void focusableViewAvailable(View v)
+invoke-virtual {v0, v1}, Landroid/view/ViewGroup;->focusableViewAvailable(Landroid/view/View;)V
+
+没有帮助内容
+boolean gatherTransparentRegion(Region region)
+invoke-virtual {v0, v1}, Landroid/view/ViewGroup;->gatherTransparentRegion(Landroid/graphics/Region;)Z
+
+Returns a new set of layout parameters based on the supplied attributes set.
+ViewGroup.LayoutParams generateLayoutParams(AttributeSet attrs)
+invoke-virtual {v0, v1}, Landroid/view/ViewGroup;->generateLayoutParams(Landroid/util/AttributeSet;)Landroid/view/ViewGroup$LayoutParams;
+
+Return the class name of this object to be used for accessibility purposes.
+CharSequence getAccessibilityClassName()
+invoke-virtual {v0}, Landroid/view/ViewGroup;->getAccessibilityClassName()Ljava/lang/CharSequence;
+
+Returns the view at the specified position in the group.
+View getChildAt(int index)
+invoke-virtual {v0, v1}, Landroid/view/ViewGroup;->getChildAt(I)Landroid/view/View;
+
+Returns the number of children in the group.
+int getChildCount()
+invoke-virtual {v0}, Landroid/view/ViewGroup;->getChildCount()I
+
+Does the hard part of measureChildren: figuring out the MeasureSpec to pass to a particular child.
+int getChildMeasureSpec(int spec, int padding, int childDimension)
+invoke-static {v0, v1, v2}, Landroid/view/ViewGroup;->getChildMeasureSpec(III)I
+
+Compute the visible part of a rectangular region defined in terms of a child view's coordinates.
+boolean getChildVisibleRect(View child, Rect r, Point offset)
+invoke-virtual {v0, v1, v2, v3}, Landroid/view/ViewGroup;->getChildVisibleRect(Landroid/view/View;Landroid/graphics/Rect;Landroid/graphics/Point;)Z
+
+Returns whether this group's children are clipped to their bounds before drawing.
+boolean getClipChildren()
+invoke-virtual {v0}, Landroid/view/ViewGroup;->getClipChildren()Z
+
+Returns whether this ViewGroup will clip its children to its padding, and resize (but not clip) any EdgeEffect to the padded region, if padding is present.
+boolean getClipToPadding()
+invoke-virtual {v0}, Landroid/view/ViewGroup;->getClipToPadding()Z
+
+Gets the descendant focusability of this view group.
+int getDescendantFocusability()
+invoke-virtual {v0}, Landroid/view/ViewGroup;->getDescendantFocusability()I
+
+Returns the focused child of this view, if any.
+View getFocusedChild()
+invoke-virtual {v0}, Landroid/view/ViewGroup;->getFocusedChild()Landroid/view/View;
+
+Returns the layout animation controller used to animate the group's children.
+LayoutAnimationController getLayoutAnimation()
+invoke-virtual {v0}, Landroid/view/ViewGroup;->getLayoutAnimation()Landroid/view/animation/LayoutAnimationController;
+
+Returns the animation listener to which layout animation events are sent.
+Animation.AnimationListener getLayoutAnimationListener()
+invoke-virtual {v0}, Landroid/view/ViewGroup;->getLayoutAnimationListener()Landroid/view/animation/Animation$AnimationListener;
+
+Returns the basis of alignment during layout operations on this ViewGroup: either LAYOUT_MODE_CLIP_BOUNDS or LAYOUT_MODE_OPTICAL_BOUNDS.
+int getLayoutMode()
+invoke-virtual {v0}, Landroid/view/ViewGroup;->getLayoutMode()I
+
+Gets the LayoutTransition object for this ViewGroup.
+LayoutTransition getLayoutTransition()
+invoke-virtual {v0}, Landroid/view/ViewGroup;->getLayoutTransition()Landroid/animation/LayoutTransition;
+
+Return the current axes of nested scrolling for this ViewGroup.
+int getNestedScrollAxes()
+invoke-virtual {v0}, Landroid/view/ViewGroup;->getNestedScrollAxes()I
+
+Returns the ViewGroupOverlay for this view group, creating it if it does not yet exist.
+ViewGroupOverlay getOverlay()
+invoke-virtual {v0}, Landroid/view/ViewGroup;->getOverlay()Landroid/view/ViewGroupOverlay;
+
+This method was deprecated in API level 28. The view drawing cache was largely made obsolete with the introduction of hardware-accelerated rendering in API 11. With hardware-acceleration, intermediate cache layers are largely unnecessary and can easily result in a net loss in performance due to the cost of creating and updating the layer. In the rare cases where caching layers are useful, such as for alpha animations, View.setLayerType(int, android.graphics.Paint) handles this with hardware rendering. For software-rendered snapshots of a small part of the View hierarchy or individual Views it is recommended to create a Canvas from either a Bitmap or Picture and call View.draw(android.graphics.Canvas) on the View. However these software-rendered usages are discouraged and have compatibility issues with hardware-only rendering features such as Config.HARDWARE bitmaps, real-time shadows, and outline clipping. For screenshots of the UI for feedback reports or unit testing the PixelCopy API is recommended.
+int getPersistentDrawingCache()
+invoke-virtual {v0}, Landroid/view/ViewGroup;->getPersistentDrawingCache()I
+
+Check whether this ViewGroup should ignore focus requests for itself and its children.
+boolean getTouchscreenBlocksFocus()
+invoke-virtual {v0}, Landroid/view/ViewGroup;->getTouchscreenBlocksFocus()Z
+
+Returns true if this view has or contains focus
+boolean hasFocus()
+invoke-virtual {v0}, Landroid/view/ViewGroup;->hasFocus()Z
+
+Indicates whether the view is currently tracking transient state that the app should not need to concern itself with saving and restoring, but that the framework should take special note to preserve when possible.
+boolean hasTransientState()
+invoke-virtual {v0}, Landroid/view/ViewGroup;->hasTransientState()Z
+
+Returns the position in the group of the specified child view.
+int indexOfChild(View child)
+invoke-virtual {v0, v1}, Landroid/view/ViewGroup;->indexOfChild(Landroid/view/View;)I
+
+This method is deprecated. Use onDescendantInvalidated(android.view.View, android.view.View) instead to observe updates to draw state in descendants.
+final void invalidateChild(View child, Rect dirty)
+invoke-virtual {v0, v1, v2}, Landroid/view/ViewGroup;->invalidateChild(Landroid/view/View;Landroid/graphics/Rect;)V
+
+This method is deprecated. Use onDescendantInvalidated(android.view.View, android.view.View) instead to observe updates to draw state in descendants.
+ViewParent invalidateChildInParent(int[] location, Rect dirty)
+invoke-virtual {v0, v1, v2}, Landroid/view/ViewGroup;->invalidateChildInParent([ILandroid/graphics/Rect;)Landroid/view/ViewParent;
+
+This method was deprecated in API level 23. As of Build.VERSION_CODES.M, this property is ignored. Child views may no longer have their caching behavior disabled by parents.
+boolean isAlwaysDrawnWithCacheEnabled()
+invoke-virtual {v0}, Landroid/view/ViewGroup;->isAlwaysDrawnWithCacheEnabled()Z
+
+This method was deprecated in API level 23. As of Build.VERSION_CODES.M, this property is ignored. Caching behavior of children may be controlled through View#setLayerType(int, Paint).
+boolean isAnimationCacheEnabled()
+invoke-virtual {v0}, Landroid/view/ViewGroup;->isAnimationCacheEnabled()Z
+
+Returns whether layout calls on this container are currently being suppressed, due to an earlier call to suppressLayout(boolean).
+boolean isLayoutSuppressed()
+invoke-virtual {v0}, Landroid/view/ViewGroup;->isLayoutSuppressed()Z
+
+Returns true if MotionEvents dispatched to this ViewGroup can be split to multiple children.
+boolean isMotionEventSplittingEnabled()
+invoke-virtual {v0}, Landroid/view/ViewGroup;->isMotionEventSplittingEnabled()Z
+
+Returns true if this ViewGroup should be considered as a single entity for removal when executing an Activity transition.
+boolean isTransitionGroup()
+invoke-virtual {v0}, Landroid/view/ViewGroup;->isTransitionGroup()Z
+
+Call Drawable#jumpToCurrentState() on all Drawable objects associated with this view.
+void jumpDrawablesToCurrentState()
+invoke-virtual {v0}, Landroid/view/ViewGroup;->jumpDrawablesToCurrentState()V
+
+Assign a size and position to a view and all of its descendants%Return%This is the second phase of the layout mechanism.
+final void layout(int l, int t, int r, int b)
+invoke-virtual {v0, v1, v2, v3, v4}, Landroid/view/ViewGroup;->layout(IIII)V
+
+Notifies a view parent that the accessibility state of one of its descendants has changed and that the structure of the subtree is different.
+void notifySubtreeAccessibilityStateChanged(View child, View source, int changeType)
+invoke-virtual {v0, v1, v2, v3}, Landroid/view/ViewGroup;->notifySubtreeAccessibilityStateChanged(Landroid/view/View;Landroid/view/View;I)V
+
+Offset a rectangle that is in a descendant's coordinate space into our coordinate space.
+final void offsetDescendantRectToMyCoords(View descendant, Rect rect)
+invoke-virtual {v0, v1, v2}, Landroid/view/ViewGroup;->offsetDescendantRectToMyCoords(Landroid/view/View;Landroid/graphics/Rect;)V
+
+Offset a rectangle that is in our coordinate space into an ancestor's coordinate space.
+final void offsetRectIntoDescendantCoords(View descendant, Rect rect)
+invoke-virtual {v0, v1, v2}, Landroid/view/ViewGroup;->offsetRectIntoDescendantCoords(Landroid/view/View;Landroid/graphics/Rect;)V
+
+The target View has been invalidated, or has had a drawing property changed that requires the hierarchy to re-render. If you override this method you must call through to the superclass implementation.
+void onDescendantInvalidated(View child, View target)
+invoke-virtual {v0, v1, v2}, Landroid/view/ViewGroup;->onDescendantInvalidated(Landroid/view/View;Landroid/view/View;)V
+
+Implement this method to intercept hover events before they are handled by child views.
+boolean onInterceptHoverEvent(MotionEvent event)
+invoke-virtual {v0, v1}, Landroid/view/ViewGroup;->onInterceptHoverEvent(Landroid/view/MotionEvent;)Z
+
+Implement this method to intercept all touch screen motion events.
+boolean onInterceptTouchEvent(MotionEvent ev)
+invoke-virtual {v0, v1}, Landroid/view/ViewGroup;->onInterceptTouchEvent(Landroid/view/MotionEvent;)Z
+
+Request a fling from a nested scroll.
+boolean onNestedFling(View target, float velocityX, float velocityY, boolean consumed)
+invoke-virtual {v0, v1, v2, v3, v4}, Landroid/view/ViewGroup;->onNestedFling(Landroid/view/View;FFZ)Z
+
+React to a nested fling before the target view consumes it.
+boolean onNestedPreFling(View target, float velocityX, float velocityY)
+invoke-virtual {v0, v1, v2, v3}, Landroid/view/ViewGroup;->onNestedPreFling(Landroid/view/View;FF)Z
+
+React to an accessibility action delegated by a target descendant view before the target processes it.%Return%Subclasses should always call super.onNestedPrePerformAccessibilityAction
+boolean onNestedPrePerformAccessibilityAction(View target, int action, Bundle args)
+invoke-virtual {v0, v1, v2, v3}, Landroid/view/ViewGroup;->onNestedPrePerformAccessibilityAction(Landroid/view/View;ILandroid/os/Bundle;)Z
+
+React to a nested scroll in progress before the target view consumes a portion of the scroll.
+void onNestedPreScroll(View target, int dx, int dy, int[] consumed)
+invoke-virtual {v0, v1, v2, v3, v4}, Landroid/view/ViewGroup;->onNestedPreScroll(Landroid/view/View;II[I)V
+
+React to a nested scroll in progress.
+void onNestedScroll(View target, int dxConsumed, int dyConsumed, int dxUnconsumed, int dyUnconsumed)
+invoke-virtual/range {v0 .. v5}, Landroid/view/ViewGroup;->onNestedScroll(Landroid/view/View;IIII)V
+
+React to the successful claiming of a nested scroll operation.
+void onNestedScrollAccepted(View child, View target, int axes)
+invoke-virtual {v0, v1, v2, v3}, Landroid/view/ViewGroup;->onNestedScrollAccepted(Landroid/view/View;Landroid/view/View;I)V
+
+Called when a child has requested sending an AccessibilityEvent and gives an opportunity to its parent to augment the event.
+boolean onRequestSendAccessibilityEvent(View child, AccessibilityEvent event)
+invoke-virtual {v0, v1, v2}, Landroid/view/ViewGroup;->onRequestSendAccessibilityEvent(Landroid/view/View;Landroid/view/accessibility/AccessibilityEvent;)Z
+
+Returns the pointer icon for the motion event, or null if it doesn't specify the icon.
+PointerIcon onResolvePointerIcon(MotionEvent event, int pointerIndex)
+invoke-virtual {v0, v1, v2}, Landroid/view/ViewGroup;->onResolvePointerIcon(Landroid/view/MotionEvent;I)Landroid/view/PointerIcon;
+
+React to a descendant view initiating a nestable scroll operation, claiming the nested scroll operation if appropriate.
+boolean onStartNestedScroll(View child, View target, int nestedScrollAxes)
+invoke-virtual {v0, v1, v2, v3}, Landroid/view/ViewGroup;->onStartNestedScroll(Landroid/view/View;Landroid/view/View;I)Z
+
+React to a nested scroll operation ending.
+void onStopNestedScroll(View child)
+invoke-virtual {v0, v1}, Landroid/view/ViewGroup;->onStopNestedScroll(Landroid/view/View;)V
+
+Called when a new child is added to this ViewGroup.
+void onViewAdded(View child)
+invoke-virtual {v0, v1}, Landroid/view/ViewGroup;->onViewAdded(Landroid/view/View;)V
+
+Called when a child view is removed from this ViewGroup.
+void onViewRemoved(View child)
+invoke-virtual {v0, v1}, Landroid/view/ViewGroup;->onViewRemoved(Landroid/view/View;)V
+
+Tell view hierarchy that the global view attributes need to be re-evaluated.
+void recomputeViewAttributes(View child)
+invoke-virtual {v0, v1}, Landroid/view/ViewGroup;->recomputeViewAttributes(Landroid/view/View;)V
+
+Call this method to remove all child views from the ViewGroup.
+void removeAllViews()
+invoke-virtual {v0}, Landroid/view/ViewGroup;->removeAllViews()V
+
+Called by a ViewGroup subclass to remove child views from itself, when it must first know its size on screen before it can calculate how many child views it will render.
+void removeAllViewsInLayout()
+invoke-virtual {v0}, Landroid/view/ViewGroup;->removeAllViewsInLayout()V
+
+Note: do not invoke this method from View.draw(android.graphics.Canvas), View.onDraw(android.graphics.Canvas), dispatchDraw(android.graphics.Canvas) or any related method.
+void removeView(View view)
+invoke-virtual {v0, v1}, Landroid/view/ViewGroup;->removeView(Landroid/view/View;)V
+
+Removes the view at the specified position in the group.
+void removeViewAt(int index)
+invoke-virtual {v0, v1}, Landroid/view/ViewGroup;->removeViewAt(I)V
+
+Removes a view during layout.
+void removeViewInLayout(View view)
+invoke-virtual {v0, v1}, Landroid/view/ViewGroup;->removeViewInLayout(Landroid/view/View;)V
+
+Removes the specified range of views from the group.
+void removeViews(int start, int count)
+invoke-virtual {v0, v1, v2}, Landroid/view/ViewGroup;->removeViews(II)V
+
+Removes a range of views during layout.
+void removeViewsInLayout(int start, int count)
+invoke-virtual {v0, v1, v2}, Landroid/view/ViewGroup;->removeViewsInLayout(II)V
+
+Called when a child of this parent wants focus
+void requestChildFocus(View child, View focused)
+invoke-virtual {v0, v1, v2}, Landroid/view/ViewGroup;->requestChildFocus(Landroid/view/View;Landroid/view/View;)V
+
+Called when a child of this group wants a particular rectangle to be positioned onto the screen.
+boolean requestChildRectangleOnScreen(View child, Rect rectangle, boolean immediate)
+invoke-virtual {v0, v1, v2, v3}, Landroid/view/ViewGroup;->requestChildRectangleOnScreen(Landroid/view/View;Landroid/graphics/Rect;Z)Z
+
+Called when a child does not want this parent and its ancestors to intercept touch events with ViewGroup#onInterceptTouchEvent(MotionEvent).
+void requestDisallowInterceptTouchEvent(boolean disallowIntercept)
+invoke-virtual {v0, v1}, Landroid/view/ViewGroup;->requestDisallowInterceptTouchEvent(Z)V
+
+Call this to try to give focus to a specific view or to one of its descendants and give it hints about the direction and a specific rectangle that the focus is coming from. Looks for a view to give focus to respecting the setting specified by getDescendantFocusability().
+boolean requestFocus(int direction, Rect previouslyFocusedRect)
+invoke-virtual {v0, v1, v2}, Landroid/view/ViewGroup;->requestFocus(ILandroid/graphics/Rect;)Z
+
+Called by a child to request from its parent to send an AccessibilityEvent.
+boolean requestSendAccessibilityEvent(View child, AccessibilityEvent event)
+invoke-virtual {v0, v1, v2}, Landroid/view/ViewGroup;->requestSendAccessibilityEvent(Landroid/view/View;Landroid/view/accessibility/AccessibilityEvent;)Z
+
+Called when a child wants the view hierarchy to gather and report transparent regions to the window compositor.
+void requestTransparentRegion(View child)
+invoke-virtual {v0, v1}, Landroid/view/ViewGroup;->requestTransparentRegion(Landroid/view/View;)V
+
+Gives focus to the default-focus view in the view hierarchy that has this view as a root.
+boolean restoreDefaultFocus()
+invoke-virtual {v0}, Landroid/view/ViewGroup;->restoreDefaultFocus()Z
+
+Schedules the layout animation to be played after the next layout pass of this view group.
+void scheduleLayoutAnimation()
+invoke-virtual {v0}, Landroid/view/ViewGroup;->scheduleLayoutAnimation()V
+
+Sets whether this ViewGroup's drawable states also include its children's drawable states.
+void setAddStatesFromChildren(boolean addsStates)
+invoke-virtual {v0, v1}, Landroid/view/ViewGroup;->setAddStatesFromChildren(Z)V
+
+This method was deprecated in API level 23. As of Build.VERSION_CODES.M, this property is ignored. Child views may no longer have their caching behavior disabled by parents.
+void setAlwaysDrawnWithCacheEnabled(boolean always)
+invoke-virtual {v0, v1}, Landroid/view/ViewGroup;->setAlwaysDrawnWithCacheEnabled(Z)V
+
+This method was deprecated in API level 23. As of Build.VERSION_CODES.M, this property is ignored. Caching behavior of children may be controlled through View#setLayerType(int, Paint).
+void setAnimationCacheEnabled(boolean enabled)
+invoke-virtual {v0, v1}, Landroid/view/ViewGroup;->setAnimationCacheEnabled(Z)V
+
+By default, children are clipped to their bounds before drawing.
+void setClipChildren(boolean clipChildren)
+invoke-virtual {v0, v1}, Landroid/view/ViewGroup;->setClipChildren(Z)V
+
+Sets whether this ViewGroup will clip its children to its padding and resize (but not clip) any EdgeEffect to the padded region, if padding is present.
+void setClipToPadding(boolean clipToPadding)
+invoke-virtual {v0, v1}, Landroid/view/ViewGroup;->setClipToPadding(Z)V
+
+Set the descendant focusability of this view group.
+void setDescendantFocusability(int focusability)
+invoke-virtual {v0, v1}, Landroid/view/ViewGroup;->setDescendantFocusability(I)V
+
+Sets the layout animation controller used to animate the group's children after the first layout.
+void setLayoutAnimation(LayoutAnimationController controller)
+invoke-virtual {v0, v1}, Landroid/view/ViewGroup;->setLayoutAnimation(Landroid/view/animation/LayoutAnimationController;)V
+
+Specifies the animation listener to which layout animation events must be sent.
+void setLayoutAnimationListener(Animation.AnimationListener animationListener)
+invoke-virtual {v0, v1}, Landroid/view/ViewGroup;->setLayoutAnimationListener(Landroid/view/animation/Animation$AnimationListener;)V
+
+Sets the basis of alignment during the layout of this ViewGroup.
+void setLayoutMode(int layoutMode)
+invoke-virtual {v0, v1}, Landroid/view/ViewGroup;->setLayoutMode(I)V
+
+Sets the LayoutTransition object for this ViewGroup.
+void setLayoutTransition(LayoutTransition transition)
+invoke-virtual {v0, v1}, Landroid/view/ViewGroup;->setLayoutTransition(Landroid/animation/LayoutTransition;)V
+
+Enable or disable the splitting of MotionEvents to multiple children during touch event dispatch.
+void setMotionEventSplittingEnabled(boolean split)
+invoke-virtual {v0, v1}, Landroid/view/ViewGroup;->setMotionEventSplittingEnabled(Z)V
+
+Register a callback to be invoked when a child is added to or removed from this view.
+void setOnHierarchyChangeListener(ViewGroup.OnHierarchyChangeListener listener)
+invoke-virtual {v0, v1}, Landroid/view/ViewGroup;->setOnHierarchyChangeListener(Landroid/view/ViewGroup$OnHierarchyChangeListener;)V
+
+This method was deprecated in API level 28. The view drawing cache was largely made obsolete with the introduction of hardware-accelerated rendering in API 11. With hardware-acceleration, intermediate cache layers are largely unnecessary and can easily result in a net loss in performance due to the cost of creating and updating the layer. In the rare cases where caching layers are useful, such as for alpha animations, View.setLayerType(int, android.graphics.Paint) handles this with hardware rendering. For software-rendered snapshots of a small part of the View hierarchy or individual Views it is recommended to create a Canvas from either a Bitmap or Picture and call View.draw(android.graphics.Canvas) on the View. However these software-rendered usages are discouraged and have compatibility issues with hardware-only rendering features such as Config.HARDWARE bitmaps, real-time shadows, and outline clipping. For screenshots of the UI for feedback reports or unit testing the PixelCopy API is recommended.
+void setPersistentDrawingCache(int drawingCacheToKeep)
+invoke-virtual {v0, v1}, Landroid/view/ViewGroup;->setPersistentDrawingCache(I)V
+
+Set whether this ViewGroup should ignore focus requests for itself and its children.
+void setTouchscreenBlocksFocus(boolean touchscreenBlocksFocus)
+invoke-virtual {v0, v1}, Landroid/view/ViewGroup;->setTouchscreenBlocksFocus(Z)V
+
+Changes whether or not this ViewGroup should be treated as a single entity during Activity Transitions.
+void setTransitionGroup(boolean isTransitionGroup)
+invoke-virtual {v0, v1}, Landroid/view/ViewGroup;->setTransitionGroup(Z)V
+
+Return true if the pressed state should be delayed for children or descendants of this ViewGroup.
+boolean shouldDelayChildPressedState()
+invoke-virtual {v0}, Landroid/view/ViewGroup;->shouldDelayChildPressedState()Z
+
+Shows the context menu for the specified view or its ancestors anchored to the specified view-relative coordinate.
+boolean showContextMenuForChild(View originalView, float x, float y)
+invoke-virtual {v0, v1, v2, v3}, Landroid/view/ViewGroup;->showContextMenuForChild(Landroid/view/View;FF)Z
+
+Shows the context menu for the specified view or its ancestors.
+boolean showContextMenuForChild(View originalView)
+invoke-virtual {v0, v1}, Landroid/view/ViewGroup;->showContextMenuForChild(Landroid/view/View;)Z
+
+Start an action mode of a specific type for the specified view.
+ActionMode startActionModeForChild(View originalView, ActionMode.Callback callback, int type)
+invoke-virtual {v0, v1, v2, v3}, Landroid/view/ViewGroup;->startActionModeForChild(Landroid/view/View;Landroid/view/ActionMode$Callback;I)Landroid/view/ActionMode;
+
+Start an action mode for the specified view with the default type ActionMode#TYPE_PRIMARY.
+ActionMode startActionModeForChild(View originalView, ActionMode.Callback callback)
+invoke-virtual {v0, v1, v2}, Landroid/view/ViewGroup;->startActionModeForChild(Landroid/view/View;Landroid/view/ActionMode$Callback;)Landroid/view/ActionMode;
+
+Runs the layout animation.
+void startLayoutAnimation()
+invoke-virtual {v0}, Landroid/view/ViewGroup;->startLayoutAnimation()V
+
+This method tells the ViewGroup that the given View object, which should have this ViewGroup as its parent, should be kept around (re-displayed when the ViewGroup draws its children) even if it is removed from its parent.
+void startViewTransition(View view)
+invoke-virtual {v0, v1}, Landroid/view/ViewGroup;->startViewTransition(Landroid/view/View;)V
+
+Tells this ViewGroup to suppress all layout() calls until layout suppression is disabled with a later call to suppressLayout(false).
+void suppressLayout(boolean suppress)
+invoke-virtual {v0, v1}, Landroid/view/ViewGroup;->suppressLayout(Z)V
+
+没有帮助内容
+void updateViewLayout(View view, ViewGroup.LayoutParams params)
+invoke-virtual {v0, v1, v2}, Landroid/view/ViewGroup;->updateViewLayout(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
+
+Adds a view during layout.
+protected boolean addViewInLayout(View child, int index, ViewGroup.LayoutParams params, boolean preventRequestLayout)
+invoke-virtual {v0, v1, v2, v3, v4}, Landroid/view/ViewGroup;->addViewInLayout(Landroid/view/View;ILandroid/view/ViewGroup$LayoutParams;Z)Z
+
+Adds a view during layout.
+protected boolean addViewInLayout(View child, int index, ViewGroup.LayoutParams params)
+invoke-virtual {v0, v1, v2, v3}, Landroid/view/ViewGroup;->addViewInLayout(Landroid/view/View;ILandroid/view/ViewGroup$LayoutParams;)Z
+
+Subclasses should override this method to set layout animation parameters on the supplied child.
+protected void attachLayoutAnimationParameters(View child, ViewGroup.LayoutParams params, int index, int count)
+invoke-virtual {v0, v1, v2, v3, v4}, Landroid/view/ViewGroup;->attachLayoutAnimationParameters(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;II)V
+
+Attaches a view to this view group.
+protected void attachViewToParent(View child, int index, ViewGroup.LayoutParams params)
+invoke-virtual {v0, v1, v2, v3}, Landroid/view/ViewGroup;->attachViewToParent(Landroid/view/View;ILandroid/view/ViewGroup$LayoutParams;)V
+
+Indicates whether the view group has the ability to animate its children after the first layout.
+protected boolean canAnimate()
+invoke-virtual {v0}, Landroid/view/ViewGroup;->canAnimate()Z
+
+没有帮助内容
+protected boolean checkLayoutParams(ViewGroup.LayoutParams p)
+invoke-virtual {v0, v1}, Landroid/view/ViewGroup;->checkLayoutParams(Landroid/view/ViewGroup$LayoutParams;)Z
+
+Prevents the specified child to be laid out during the next layout pass.
+protected void cleanupLayoutState(View child)
+invoke-virtual {v0, v1}, Landroid/view/ViewGroup;->cleanupLayoutState(Landroid/view/View;)V
+
+没有帮助内容
+protected void debug(int depth)
+invoke-virtual {v0, v1}, Landroid/view/ViewGroup;->debug(I)V
+
+Detaches all views from the parent.
+protected void detachAllViewsFromParent()
+invoke-virtual {v0}, Landroid/view/ViewGroup;->detachAllViewsFromParent()V
+
+Detaches a view from its parent.
+protected void detachViewFromParent(int index)
+invoke-virtual {v0, v1}, Landroid/view/ViewGroup;->detachViewFromParent(I)V
+
+Detaches a view from its parent.
+protected void detachViewFromParent(View child)
+invoke-virtual {v0, v1}, Landroid/view/ViewGroup;->detachViewFromParent(Landroid/view/View;)V
+
+Detaches a range of views from their parents.
+protected void detachViewsFromParent(int start, int count)
+invoke-virtual {v0, v1, v2}, Landroid/view/ViewGroup;->detachViewsFromParent(II)V
+
+Called by draw to draw the child views.
+protected void dispatchDraw(Canvas canvas)
+invoke-virtual {v0, v1}, Landroid/view/ViewGroup;->dispatchDraw(Landroid/graphics/Canvas;)V
+
+Perform dispatching of a View.saveHierarchyState(android.util.SparseArray) freeze()} to only this view, not to its children.
+protected void dispatchFreezeSelfOnly(SparseArray<Parcelable> container)
+invoke-virtual {v0, v1}, Landroid/view/ViewGroup;->dispatchFreezeSelfOnly(Landroid/util/SparseArray;)V
+
+Dispatch a generic motion event to the currently focused view.
+protected boolean dispatchGenericFocusedEvent(MotionEvent event)
+invoke-virtual {v0, v1}, Landroid/view/ViewGroup;->dispatchGenericFocusedEvent(Landroid/view/MotionEvent;)Z
+
+Dispatch a generic motion event to the view under the first pointer.
+protected boolean dispatchGenericPointerEvent(MotionEvent event)
+invoke-virtual {v0, v1}, Landroid/view/ViewGroup;->dispatchGenericPointerEvent(Landroid/view/MotionEvent;)Z
+
+Dispatch a hover event.
+protected boolean dispatchHoverEvent(MotionEvent event)
+invoke-virtual {v0, v1}, Landroid/view/ViewGroup;->dispatchHoverEvent(Landroid/view/MotionEvent;)Z
+
+Called by restoreHierarchyState(android.util.SparseArray) to retrieve the state for this view and its children.
+protected void dispatchRestoreInstanceState(SparseArray<Parcelable> container)
+invoke-virtual {v0, v1}, Landroid/view/ViewGroup;->dispatchRestoreInstanceState(Landroid/util/SparseArray;)V
+
+Called by saveHierarchyState(android.util.SparseArray) to store the state for this view and its children.
+protected void dispatchSaveInstanceState(SparseArray<Parcelable> container)
+invoke-virtual {v0, v1}, Landroid/view/ViewGroup;->dispatchSaveInstanceState(Landroid/util/SparseArray;)V
+
+Dispatch setPressed to all of this View's children.
+protected void dispatchSetPressed(boolean pressed)
+invoke-virtual {v0, v1}, Landroid/view/ViewGroup;->dispatchSetPressed(Z)V
+
+Perform dispatching of a View.restoreHierarchyState(android.util.SparseArray) to only this view, not to its children.
+protected void dispatchThawSelfOnly(SparseArray<Parcelable> container)
+invoke-virtual {v0, v1}, Landroid/view/ViewGroup;->dispatchThawSelfOnly(Landroid/util/SparseArray;)V
+
+Dispatch a view visibility change down the view hierarchy.
+protected void dispatchVisibilityChanged(View changedView, int visibility)
+invoke-virtual {v0, v1, v2}, Landroid/view/ViewGroup;->dispatchVisibilityChanged(Landroid/view/View;I)V
+
+Draw one child of this View Group.
+protected boolean drawChild(Canvas canvas, View child, long drawingTime)
+invoke-virtual {v0, v1, v2, v3, v4}, Landroid/view/ViewGroup;->drawChild(Landroid/graphics/Canvas;Landroid/view/View;J)Z
+
+This function is called whenever the state of the view changes in such a way that it impacts the state of drawables being shown.
+protected void drawableStateChanged()
+invoke-virtual {v0}, Landroid/view/ViewGroup;->drawableStateChanged()V
+
+Returns a set of default layout parameters.
+protected ViewGroup.LayoutParams generateDefaultLayoutParams()
+invoke-virtual {v0}, Landroid/view/ViewGroup;->generateDefaultLayoutParams()Landroid/view/ViewGroup$LayoutParams;
+
+Returns a safe set of layout parameters based on the supplied layout params.
+protected ViewGroup.LayoutParams generateLayoutParams(ViewGroup.LayoutParams p)
+invoke-virtual {v0, v1}, Landroid/view/ViewGroup;->generateLayoutParams(Landroid/view/ViewGroup$LayoutParams;)Landroid/view/ViewGroup$LayoutParams;
+
+Returns the index of the child to draw for this iteration.
+protected int getChildDrawingOrder(int childCount, int i)
+invoke-virtual {v0, v1, v2}, Landroid/view/ViewGroup;->getChildDrawingOrder(II)I
+
+Sets t to be the static transformation of the child, if set, returning a boolean to indicate whether a static transform was set.
+protected boolean getChildStaticTransformation(View child, Transformation t)
+invoke-virtual {v0, v1, v2}, Landroid/view/ViewGroup;->getChildStaticTransformation(Landroid/view/View;Landroid/view/animation/Transformation;)Z
+
+Indicates whether the ViewGroup is drawing its children in the order defined by getChildDrawingOrder(int, int).
+protected boolean isChildrenDrawingOrderEnabled()
+invoke-virtual {v0}, Landroid/view/ViewGroup;->isChildrenDrawingOrderEnabled()Z
+
+This method was deprecated in API level 23. As of Build.VERSION_CODES.M, this property is ignored. Child views may no longer be forced to cache their rendering state by their parents. Use View#setLayerType(int, Paint) on individual Views instead.
+protected boolean isChildrenDrawnWithCacheEnabled()
+invoke-virtual {v0}, Landroid/view/ViewGroup;->isChildrenDrawnWithCacheEnabled()Z
+
+Ask one of the children of this view to measure itself, taking into account both the MeasureSpec requirements for this view and its padding.
+protected void measureChild(View child, int parentWidthMeasureSpec, int parentHeightMeasureSpec)
+invoke-virtual {v0, v1, v2, v3}, Landroid/view/ViewGroup;->measureChild(Landroid/view/View;II)V
+
+Ask one of the children of this view to measure itself, taking into account both the MeasureSpec requirements for this view and its padding and margins.
+protected void measureChildWithMargins(View child, int parentWidthMeasureSpec, int widthUsed, int parentHeightMeasureSpec, int heightUsed)
+invoke-virtual/range {v0 .. v5}, Landroid/view/ViewGroup;->measureChildWithMargins(Landroid/view/View;IIII)V
+
+Ask all of the children of this view to measure themselves, taking into account both the MeasureSpec requirements for this view and its padding.
+protected void measureChildren(int widthMeasureSpec, int heightMeasureSpec)
+invoke-virtual {v0, v1, v2}, Landroid/view/ViewGroup;->measureChildren(II)V
+
+This is called when the view is attached to a window.
+protected void onAttachedToWindow()
+invoke-virtual {v0}, Landroid/view/ViewGroup;->onAttachedToWindow()V
+
+Generate the new Drawable state for this view.
+protected int[] onCreateDrawableState(int extraSpace)
+invoke-virtual {v0, v1}, Landroid/view/ViewGroup;->onCreateDrawableState(I)[I
+
+This is called when the view is detached from a window.
+protected void onDetachedFromWindow()
+invoke-virtual {v0}, Landroid/view/ViewGroup;->onDetachedFromWindow()V
+
+Called from layout when this view should assign a size and position to each of its children.
+protected abstract void onLayout(boolean changed, int l, int t, int r, int b)
+invoke-virtual/range {v0 .. v5}, Landroid/view/ViewGroup;->onLayout(ZIIII)V
+
+Look for a descendant to call View#requestFocus on.
+protected boolean onRequestFocusInDescendants(int direction, Rect previouslyFocusedRect)
+invoke-virtual {v0, v1, v2}, Landroid/view/ViewGroup;->onRequestFocusInDescendants(ILandroid/graphics/Rect;)Z
+
+Finishes the removal of a detached view.
+protected void removeDetachedView(View child, boolean animate)
+invoke-virtual {v0, v1, v2}, Landroid/view/ViewGroup;->removeDetachedView(Landroid/view/View;Z)V
+
+This method was deprecated in API level 28. The view drawing cache was largely made obsolete with the introduction of hardware-accelerated rendering in API 11. With hardware-acceleration, intermediate cache layers are largely unnecessary and can easily result in a net loss in performance due to the cost of creating and updating the layer. In the rare cases where caching layers are useful, such as for alpha animations, View.setLayerType(int, android.graphics.Paint) handles this with hardware rendering. For software-rendered snapshots of a small part of the View hierarchy or individual Views it is recommended to create a Canvas from either a Bitmap or Picture and call View.draw(android.graphics.Canvas) on the View. However these software-rendered usages are discouraged and have compatibility issues with hardware-only rendering features such as Config.HARDWARE bitmaps, real-time shadows, and outline clipping. For screenshots of the UI for feedback reports or unit testing the PixelCopy API is recommended.
+protected void setChildrenDrawingCacheEnabled(boolean enabled)
+invoke-virtual {v0, v1}, Landroid/view/ViewGroup;->setChildrenDrawingCacheEnabled(Z)V
+
+Tells the ViewGroup whether to draw its children in the order defined by the method getChildDrawingOrder(int, int).
+protected void setChildrenDrawingOrderEnabled(boolean enabled)
+invoke-virtual {v0, v1}, Landroid/view/ViewGroup;->setChildrenDrawingOrderEnabled(Z)V
+
+This method was deprecated in API level 23. As of Build.VERSION_CODES.M, this property is ignored. Child views may no longer be forced to cache their rendering state by their parents. Use View#setLayerType(int, Paint) on individual Views instead.
+protected void setChildrenDrawnWithCacheEnabled(boolean enabled)
+invoke-virtual {v0, v1}, Landroid/view/ViewGroup;->setChildrenDrawnWithCacheEnabled(Z)V
+
+When this property is set to true, this ViewGroup supports static transformations on children; this causes getChildStaticTransformation(android.view.View, android.view.animation.Transformation) to be invoked when a child is drawn.
+protected void setStaticTransformationsEnabled(boolean enabled)
+invoke-virtual {v0, v1}, Landroid/view/ViewGroup;->setStaticTransformationsEnabled(Z)V

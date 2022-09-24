@@ -1,0 +1,7 @@
+一个可在观察者要得到 observable 对象更改通知时可实现 Observer 接口的类。
+interface java.util.Observer
+.class interface Ljava/util/Observer;
+
+只要改变了 observable 对象就调用此方法。
+void update(Observable o, Object arg)
+invoke-interface {v0, v1, v2}, Ljava/util/Observer;->update(Ljava/util/Observable;Ljava/lang/Object;)V

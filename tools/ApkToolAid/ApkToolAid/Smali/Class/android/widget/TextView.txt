@@ -1,0 +1,1199 @@
+A user interface element that displays text to the user. To provide user-editable text, see EditText.
+class android.widget.TextView
+.class Landroid/widget/TextView;
+
+继承
+inherit android.view.View
+.super Landroid/view/View;
+
+继承
+inherit android.view.ViewTreeObserver.OnPreDrawListener
+.super Landroid/view/ViewTreeObserver$OnPreDrawListener;
+
+The TextView does not auto-size text (default).
+public static final int AUTO_SIZE_TEXT_TYPE_NONE
+sget v0, Landroid/widget/TextView;->AUTO_SIZE_TEXT_TYPE_NONE:I
+
+The TextView scales text size both horizontally and vertically to fit within the container.
+public static final int AUTO_SIZE_TEXT_TYPE_UNIFORM
+sget v0, Landroid/widget/TextView;->AUTO_SIZE_TEXT_TYPE_UNIFORM:I
+
+构造方法：没有帮助内容
+constructor TextView(Context context)
+invoke-direct {v0, v1}, Landroid/widget/TextView;-><init>(Landroid/content/Context;)V
+
+构造方法：没有帮助内容
+constructor TextView(Context context, AttributeSet attrs)
+invoke-direct {v0, v1, v2}, Landroid/widget/TextView;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
+
+构造方法：没有帮助内容
+constructor TextView(Context context, AttributeSet attrs, int defStyleAttr)
+invoke-direct {v0, v1, v2, v3}, Landroid/widget/TextView;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;I)V
+
+构造方法：没有帮助内容
+constructor TextView(Context context, AttributeSet attrs, int defStyleAttr, int defStyleRes)
+invoke-direct {v0, v1, v2, v3, v4}, Landroid/widget/TextView;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;II)V
+
+Adds extra data to an AccessibilityNodeInfo based on an explicit request for the additional data.
+void addExtraDataToAccessibilityNodeInfo(AccessibilityNodeInfo info, String extraDataKey, Bundle arguments)
+invoke-virtual {v0, v1, v2, v3}, Landroid/widget/TextView;->addExtraDataToAccessibilityNodeInfo(Landroid/view/accessibility/AccessibilityNodeInfo;Ljava/lang/String;Landroid/os/Bundle;)V
+
+Adds a TextWatcher to the list of those whose methods are called whenever this TextView's text changes.
+void addTextChangedListener(TextWatcher watcher)
+invoke-virtual {v0, v1}, Landroid/widget/TextView;->addTextChangedListener(Landroid/text/TextWatcher;)V
+
+Convenience method to append the specified text to the TextView's display buffer, upgrading it to TextView.BufferType.EDITABLE if it was not already editable.
+final void append(CharSequence text)
+invoke-virtual {v0, v1}, Landroid/widget/TextView;->append(Ljava/lang/CharSequence;)V
+
+Convenience method to append the specified text slice to the TextView's display buffer, upgrading it to TextView.BufferType.EDITABLE if it was not already editable.
+void append(CharSequence text, int start, int end)
+invoke-virtual {v0, v1, v2, v3}, Landroid/widget/TextView;->append(Ljava/lang/CharSequence;II)V
+
+Automatically fills the content of this view with the value.
+void autofill(AutofillValue value)
+invoke-virtual {v0, v1}, Landroid/widget/TextView;->autofill(Landroid/view/autofill/AutofillValue;)V
+
+没有帮助内容
+void beginBatchEdit()
+invoke-virtual {v0}, Landroid/widget/TextView;->beginBatchEdit()V
+
+Move the point, specified by the offset, into the view if it is needed.
+boolean bringPointIntoView(int offset)
+invoke-virtual {v0, v1}, Landroid/widget/TextView;->bringPointIntoView(I)Z
+
+Cancels a pending long press.
+void cancelLongPress()
+invoke-virtual {v0}, Landroid/widget/TextView;->cancelLongPress()V
+
+Use BaseInputConnection.removeComposingSpans() to remove any IME composing state from this text view.
+void clearComposingText()
+invoke-virtual {v0}, Landroid/widget/TextView;->clearComposingText()V
+
+Called by a parent to request that a child update its values for mScrollX and mScrollY if necessary.
+void computeScroll()
+invoke-virtual {v0}, Landroid/widget/TextView;->computeScroll()V
+
+Prints information about this view in the log output, with the tag VIEW_LOG_TAG.
+void debug(int depth)
+invoke-virtual {v0, v1}, Landroid/widget/TextView;->debug(I)V
+
+Returns true, only while processing a touch gesture, if the initial touch down event caused focus to move to the text view and as a result its selection changed.
+boolean didTouchFocusSelect()
+invoke-virtual {v0}, Landroid/widget/TextView;->didTouchFocusSelect()Z
+
+This function is called whenever the view hotspot changes and needs to be propagated to drawables or child views managed by the view.
+void drawableHotspotChanged(float x, float y)
+invoke-virtual {v0, v1, v2}, Landroid/widget/TextView;->drawableHotspotChanged(FF)V
+
+没有帮助内容
+void endBatchEdit()
+invoke-virtual {v0}, Landroid/widget/TextView;->endBatchEdit()V
+
+If this TextView contains editable content, extract a portion of it based on the information in request in to outText.
+boolean extractText(ExtractedTextRequest request, ExtractedText outText)
+invoke-virtual {v0, v1, v2}, Landroid/widget/TextView;->extractText(Landroid/view/inputmethod/ExtractedTextRequest;Landroid/view/inputmethod/ExtractedText;)Z
+
+Finds the Views that contain given text.
+void findViewsWithText(ArrayList<View> outViews, CharSequence searched, int flags)
+invoke-virtual {v0, v1, v2, v3}, Landroid/widget/TextView;->findViewsWithText(Ljava/util/ArrayList;Ljava/lang/CharSequence;I)V
+
+Return the class name of this object to be used for accessibility purposes.
+CharSequence getAccessibilityClassName()
+invoke-virtual {v0}, Landroid/widget/TextView;->getAccessibilityClassName()Ljava/lang/CharSequence;
+
+Gets the autolink mask of the text.
+final int getAutoLinkMask()
+invoke-virtual {v0}, Landroid/widget/TextView;->getAutoLinkMask()I
+
+没有帮助内容
+int getAutoSizeMaxTextSize()
+invoke-virtual {v0}, Landroid/widget/TextView;->getAutoSizeMaxTextSize()I
+
+没有帮助内容
+int getAutoSizeMinTextSize()
+invoke-virtual {v0}, Landroid/widget/TextView;->getAutoSizeMinTextSize()I
+
+没有帮助内容
+int getAutoSizeStepGranularity()
+invoke-virtual {v0}, Landroid/widget/TextView;->getAutoSizeStepGranularity()I
+
+没有帮助内容
+int[] getAutoSizeTextAvailableSizes()
+invoke-virtual {v0}, Landroid/widget/TextView;->getAutoSizeTextAvailableSizes()[I
+
+Returns the type of auto-size set for this widget.
+int getAutoSizeTextType()
+invoke-virtual {v0}, Landroid/widget/TextView;->getAutoSizeTextType()I
+
+Describes the autofill type of this view, so an AutofillService can create the proper AutofillValue when autofilling the view.
+int getAutofillType()
+invoke-virtual {v0}, Landroid/widget/TextView;->getAutofillType()I
+
+Gets the TextView's current text for AutoFill.
+AutofillValue getAutofillValue()
+invoke-virtual {v0}, Landroid/widget/TextView;->getAutofillValue()Landroid/view/autofill/AutofillValue;
+
+Return the offset of the widget's text baseline from the widget's top boundary.
+int getBaseline()
+invoke-virtual {v0}, Landroid/widget/TextView;->getBaseline()I
+
+Gets the current strategy for breaking paragraphs into lines.
+int getBreakStrategy()
+invoke-virtual {v0}, Landroid/widget/TextView;->getBreakStrategy()I
+
+Returns the padding between the compound drawables and the text.
+int getCompoundDrawablePadding()
+invoke-virtual {v0}, Landroid/widget/TextView;->getCompoundDrawablePadding()I
+
+没有帮助内容
+ColorStateList getCompoundDrawableTintList()
+invoke-virtual {v0}, Landroid/widget/TextView;->getCompoundDrawableTintList()Landroid/content/res/ColorStateList;
+
+Returns the blending mode used to apply the tint to the compound drawables, if specified.
+PorterDuff.Mode getCompoundDrawableTintMode()
+invoke-virtual {v0}, Landroid/widget/TextView;->getCompoundDrawableTintMode()Landroid/graphics/PorterDuff$Mode;
+
+Returns drawables for the left, top, right, and bottom borders.
+Drawable[] getCompoundDrawables()
+invoke-virtual {v0}, Landroid/widget/TextView;->getCompoundDrawables()[Landroid/graphics/drawable/Drawable;
+
+Returns drawables for the start, top, end, and bottom borders.
+Drawable[] getCompoundDrawablesRelative()
+invoke-virtual {v0}, Landroid/widget/TextView;->getCompoundDrawablesRelative()[Landroid/graphics/drawable/Drawable;
+
+Returns the bottom padding of the view, plus space for the bottom Drawable if any.
+int getCompoundPaddingBottom()
+invoke-virtual {v0}, Landroid/widget/TextView;->getCompoundPaddingBottom()I
+
+Returns the end padding of the view, plus space for the end Drawable if any.
+int getCompoundPaddingEnd()
+invoke-virtual {v0}, Landroid/widget/TextView;->getCompoundPaddingEnd()I
+
+Returns the left padding of the view, plus space for the left Drawable if any.
+int getCompoundPaddingLeft()
+invoke-virtual {v0}, Landroid/widget/TextView;->getCompoundPaddingLeft()I
+
+Returns the right padding of the view, plus space for the right Drawable if any.
+int getCompoundPaddingRight()
+invoke-virtual {v0}, Landroid/widget/TextView;->getCompoundPaddingRight()I
+
+Returns the start padding of the view, plus space for the start Drawable if any.
+int getCompoundPaddingStart()
+invoke-virtual {v0}, Landroid/widget/TextView;->getCompoundPaddingStart()I
+
+Returns the top padding of the view, plus space for the top Drawable if any.
+int getCompoundPaddingTop()
+invoke-virtual {v0}, Landroid/widget/TextView;->getCompoundPaddingTop()I
+
+Return the current color selected to paint the hint text.
+final int getCurrentHintTextColor()
+invoke-virtual {v0}, Landroid/widget/TextView;->getCurrentHintTextColor()I
+
+Return the current color selected for normal text.
+final int getCurrentTextColor()
+invoke-virtual {v0}, Landroid/widget/TextView;->getCurrentTextColor()I
+
+Retrieves the value set in setCustomInsertionActionModeCallback(ActionMode.Callback).
+ActionMode.Callback getCustomInsertionActionModeCallback()
+invoke-virtual {v0}, Landroid/widget/TextView;->getCustomInsertionActionModeCallback()Landroid/view/ActionMode$Callback;
+
+Retrieves the value set in setCustomSelectionActionModeCallback(ActionMode.Callback).
+ActionMode.Callback getCustomSelectionActionModeCallback()
+invoke-virtual {v0}, Landroid/widget/TextView;->getCustomSelectionActionModeCallback()Landroid/view/ActionMode$Callback;
+
+Return the text that TextView is displaying as an Editable object.
+Editable getEditableText()
+invoke-virtual {v0}, Landroid/widget/TextView;->getEditableText()Landroid/text/Editable;
+
+Returns where, if anywhere, words that are longer than the view is wide should be ellipsized.
+TextUtils.TruncateAt getEllipsize()
+invoke-virtual {v0}, Landroid/widget/TextView;->getEllipsize()Landroid/text/TextUtils$TruncateAt;
+
+Returns the error message that was set to be displayed with setError(CharSequence), or null if no error was set or if it the error was cleared by the widget after user input.
+CharSequence getError()
+invoke-virtual {v0}, Landroid/widget/TextView;->getError()Ljava/lang/CharSequence;
+
+Returns the extended bottom padding of the view, including both the bottom Drawable if any and any extra space to keep more than maxLines of text from showing.
+int getExtendedPaddingBottom()
+invoke-virtual {v0}, Landroid/widget/TextView;->getExtendedPaddingBottom()I
+
+Returns the extended top padding of the view, including both the top Drawable if any and any extra space to keep more than maxLines of text from showing.
+int getExtendedPaddingTop()
+invoke-virtual {v0}, Landroid/widget/TextView;->getExtendedPaddingTop()I
+
+Returns the current list of input filters.
+InputFilter[] getFilters()
+invoke-virtual {v0}, Landroid/widget/TextView;->getFilters()[Landroid/text/InputFilter;
+
+Returns the distance between the first text baseline and the top of this TextView.
+int getFirstBaselineToTopHeight()
+invoke-virtual {v0}, Landroid/widget/TextView;->getFirstBaselineToTopHeight()I
+
+When a view has focus and the user navigates away from it, the next view is searched for starting from the rectangle filled in by this method.
+void getFocusedRect(Rect r)
+invoke-virtual {v0, v1}, Landroid/widget/TextView;->getFocusedRect(Landroid/graphics/Rect;)V
+
+Returns the font feature settings.
+String getFontFeatureSettings()
+invoke-virtual {v0}, Landroid/widget/TextView;->getFontFeatureSettings()Ljava/lang/String;
+
+Returns the font variation settings.
+String getFontVariationSettings()
+invoke-virtual {v0}, Landroid/widget/TextView;->getFontVariationSettings()Ljava/lang/String;
+
+Return whether this text view is including its entire text contents in frozen icicles.
+boolean getFreezesText()
+invoke-virtual {v0}, Landroid/widget/TextView;->getFreezesText()Z
+
+Returns the horizontal and vertical alignment of this TextView.
+int getGravity()
+invoke-virtual {v0}, Landroid/widget/TextView;->getGravity()I
+
+没有帮助内容
+int getHighlightColor()
+invoke-virtual {v0}, Landroid/widget/TextView;->getHighlightColor()I
+
+Returns the hint that is displayed when the text of the TextView is empty.
+CharSequence getHint()
+invoke-virtual {v0}, Landroid/widget/TextView;->getHint()Ljava/lang/CharSequence;
+
+没有帮助内容
+final ColorStateList getHintTextColors()
+invoke-virtual {v0}, Landroid/widget/TextView;->getHintTextColors()Landroid/content/res/ColorStateList;
+
+Gets the current frequency of automatic hyphenation to be used when determining word breaks.
+int getHyphenationFrequency()
+invoke-virtual {v0}, Landroid/widget/TextView;->getHyphenationFrequency()I
+
+Get the IME action ID previous set with setImeActionLabel(CharSequence, int).
+int getImeActionId()
+invoke-virtual {v0}, Landroid/widget/TextView;->getImeActionId()I
+
+Get the IME action label previous set with setImeActionLabel(CharSequence, int).
+CharSequence getImeActionLabel()
+invoke-virtual {v0}, Landroid/widget/TextView;->getImeActionLabel()Ljava/lang/CharSequence;
+
+没有帮助内容
+LocaleList getImeHintLocales()
+invoke-virtual {v0}, Landroid/widget/TextView;->getImeHintLocales()Landroid/os/LocaleList;
+
+Get the type of the Input Method Editor (IME).
+int getImeOptions()
+invoke-virtual {v0}, Landroid/widget/TextView;->getImeOptions()I
+
+Gets whether the TextView includes extra top and bottom padding to make room for accents that go above the normal ascent and descent.
+boolean getIncludeFontPadding()
+invoke-virtual {v0}, Landroid/widget/TextView;->getIncludeFontPadding()Z
+
+Retrieve the input extras currently associated with the text view, which can be viewed as well as modified.
+Bundle getInputExtras(boolean create)
+invoke-virtual {v0, v1}, Landroid/widget/TextView;->getInputExtras(Z)Landroid/os/Bundle;
+
+Get the type of the editable content.
+int getInputType()
+invoke-virtual {v0}, Landroid/widget/TextView;->getInputType()I
+
+没有帮助内容
+int getJustificationMode()
+invoke-virtual {v0}, Landroid/widget/TextView;->getJustificationMode()I
+
+Gets the current KeyListener for the TextView.
+final KeyListener getKeyListener()
+invoke-virtual {v0}, Landroid/widget/TextView;->getKeyListener()Landroid/text/method$KeyListener;
+
+Returns the distance between the last text baseline and the bottom of this TextView.
+int getLastBaselineToBottomHeight()
+invoke-virtual {v0}, Landroid/widget/TextView;->getLastBaselineToBottomHeight()I
+
+Gets the Layout that is currently being used to display the text.
+final Layout getLayout()
+invoke-virtual {v0}, Landroid/widget/TextView;->getLayout()Landroid/text/Layout;
+
+Gets the text letter-space value, which determines the spacing between characters.
+float getLetterSpacing()
+invoke-virtual {v0}, Landroid/widget/TextView;->getLetterSpacing()F
+
+Return the baseline for the specified line (0...getLineCount() - 1) If bounds is not null, return the top, left, right, bottom extents of the specified line in it.
+int getLineBounds(int line, Rect bounds)
+invoke-virtual {v0, v1, v2}, Landroid/widget/TextView;->getLineBounds(ILandroid/graphics/Rect;)I
+
+Return the number of lines of text, or 0 if the internal Layout has not been built.
+int getLineCount()
+invoke-virtual {v0}, Landroid/widget/TextView;->getLineCount()I
+
+Gets the vertical distance between lines of text, in pixels.
+int getLineHeight()
+invoke-virtual {v0}, Landroid/widget/TextView;->getLineHeight()I
+
+Gets the line spacing extra space
+float getLineSpacingExtra()
+invoke-virtual {v0}, Landroid/widget/TextView;->getLineSpacingExtra()F
+
+Gets the line spacing multiplier
+float getLineSpacingMultiplier()
+invoke-virtual {v0}, Landroid/widget/TextView;->getLineSpacingMultiplier()F
+
+没有帮助内容
+final ColorStateList getLinkTextColors()
+invoke-virtual {v0}, Landroid/widget/TextView;->getLinkTextColors()Landroid/content/res/ColorStateList;
+
+Returns whether the movement method will automatically be set to LinkMovementMethod if setAutoLinkMask(int) has been set to nonzero and links are detected in setText(char[], int, int).
+final boolean getLinksClickable()
+invoke-virtual {v0}, Landroid/widget/TextView;->getLinksClickable()Z
+
+Gets the number of times the marquee animation is repeated.
+int getMarqueeRepeatLimit()
+invoke-virtual {v0}, Landroid/widget/TextView;->getMarqueeRepeatLimit()I
+
+Returns the maximum width of TextView in terms of ems or -1 if the maximum width was set using setMaxWidth(int) or setWidth(int).
+int getMaxEms()
+invoke-virtual {v0}, Landroid/widget/TextView;->getMaxEms()I
+
+Returns the maximum height of TextView in terms of pixels or -1 if the maximum height was set using setMaxLines(int) or setLines(int).
+int getMaxHeight()
+invoke-virtual {v0}, Landroid/widget/TextView;->getMaxHeight()I
+
+Returns the maximum height of TextView in terms of number of lines or -1 if the maximum height was set using setMaxHeight(int) or setHeight(int).
+int getMaxLines()
+invoke-virtual {v0}, Landroid/widget/TextView;->getMaxLines()I
+
+Returns the maximum width of TextView in terms of pixels or -1 if the maximum width was set using setMaxEms(int) or setEms(int).
+int getMaxWidth()
+invoke-virtual {v0}, Landroid/widget/TextView;->getMaxWidth()I
+
+Returns the minimum width of TextView in terms of ems or -1 if the minimum width was set using setMinWidth(int) or setWidth(int).
+int getMinEms()
+invoke-virtual {v0}, Landroid/widget/TextView;->getMinEms()I
+
+Returns the minimum height of TextView in terms of pixels or -1 if the minimum height was set using setMinLines(int) or setLines(int).
+int getMinHeight()
+invoke-virtual {v0}, Landroid/widget/TextView;->getMinHeight()I
+
+Returns the minimum height of TextView in terms of number of lines or -1 if the minimum height was set using setMinHeight(int) or setHeight(int).
+int getMinLines()
+invoke-virtual {v0}, Landroid/widget/TextView;->getMinLines()I
+
+Returns the minimum width of TextView in terms of pixels or -1 if the minimum width was set using setMinEms(int) or setEms(int).
+int getMinWidth()
+invoke-virtual {v0}, Landroid/widget/TextView;->getMinWidth()I
+
+Gets the MovementMethod being used for this TextView, which provides positioning, scrolling, and text selection functionality.
+final MovementMethod getMovementMethod()
+invoke-virtual {v0}, Landroid/widget/TextView;->getMovementMethod()Landroid/text/method$MovementMethod;
+
+Get the character offset closest to the specified absolute position.
+int getOffsetForPosition(float x, float y)
+invoke-virtual {v0, v1, v2}, Landroid/widget/TextView;->getOffsetForPosition(FF)I
+
+Gets the TextPaint used for the text.
+TextPaint getPaint()
+invoke-virtual {v0}, Landroid/widget/TextView;->getPaint()Landroid/text/TextPaint;
+
+Gets the flags on the Paint being used to display the text.
+int getPaintFlags()
+invoke-virtual {v0}, Landroid/widget/TextView;->getPaintFlags()I
+
+Get the private type of the content.
+String getPrivateImeOptions()
+invoke-virtual {v0}, Landroid/widget/TextView;->getPrivateImeOptions()Ljava/lang/String;
+
+Convenience for Selection.getSelectionEnd(CharSequence).
+int getSelectionEnd()
+invoke-virtual {v0}, Landroid/widget/TextView;->getSelectionEnd()I
+
+Convenience for Selection.getSelectionStart(CharSequence).
+int getSelectionStart()
+invoke-virtual {v0}, Landroid/widget/TextView;->getSelectionStart()I
+
+Gets the color of the shadow layer.
+int getShadowColor()
+invoke-virtual {v0}, Landroid/widget/TextView;->getShadowColor()I
+
+没有帮助内容
+float getShadowDx()
+invoke-virtual {v0}, Landroid/widget/TextView;->getShadowDx()F
+
+Gets the vertical offset of the shadow layer.
+float getShadowDy()
+invoke-virtual {v0}, Landroid/widget/TextView;->getShadowDy()F
+
+Gets the radius of the shadow layer.
+float getShadowRadius()
+invoke-virtual {v0}, Landroid/widget/TextView;->getShadowRadius()F
+
+Returns whether the soft input method will be made visible when this TextView gets focused.
+final boolean getShowSoftInputOnFocus()
+invoke-virtual {v0}, Landroid/widget/TextView;->getShowSoftInputOnFocus()Z
+
+Return the text that TextView is displaying.
+CharSequence getText()
+invoke-virtual {v0}, Landroid/widget/TextView;->getText()Ljava/lang/CharSequence;
+
+Returns the TextClassifier used by this TextView.
+TextClassifier getTextClassifier()
+invoke-virtual {v0}, Landroid/widget/TextView;->getTextClassifier()Landroid/view/textclassifier$TextClassifier;
+
+Gets the text colors for the different states (normal, selected, focused) of the TextView.
+final ColorStateList getTextColors()
+invoke-virtual {v0}, Landroid/widget/TextView;->getTextColors()Landroid/content/res/ColorStateList;
+
+Get the default primary Locale of the text in this TextView.
+Locale getTextLocale()
+invoke-virtual {v0}, Landroid/widget/TextView;->getTextLocale()Ljava/util/Locale;
+
+Get the default LocaleList of the text in this TextView.
+LocaleList getTextLocales()
+invoke-virtual {v0}, Landroid/widget/TextView;->getTextLocales()Landroid/os/LocaleList;
+
+Gets the parameters for text layout precomputation, for use with PrecomputedText.
+PrecomputedText.Params getTextMetricsParams()
+invoke-virtual {v0}, Landroid/widget/TextView;->getTextMetricsParams()Landroid/text/PrecomputedText$Params;
+
+Gets the extent by which text should be stretched horizontally.
+float getTextScaleX()
+invoke-virtual {v0}, Landroid/widget/TextView;->getTextScaleX()F
+
+没有帮助内容
+float getTextSize()
+invoke-virtual {v0}, Landroid/widget/TextView;->getTextSize()F
+
+Returns the total bottom padding of the view, including the bottom Drawable if any, the extra space to keep more than maxLines from showing, and the vertical offset for gravity, if any.
+int getTotalPaddingBottom()
+invoke-virtual {v0}, Landroid/widget/TextView;->getTotalPaddingBottom()I
+
+Returns the total end padding of the view, including the end Drawable if any.
+int getTotalPaddingEnd()
+invoke-virtual {v0}, Landroid/widget/TextView;->getTotalPaddingEnd()I
+
+Returns the total left padding of the view, including the left Drawable if any.
+int getTotalPaddingLeft()
+invoke-virtual {v0}, Landroid/widget/TextView;->getTotalPaddingLeft()I
+
+Returns the total right padding of the view, including the right Drawable if any.
+int getTotalPaddingRight()
+invoke-virtual {v0}, Landroid/widget/TextView;->getTotalPaddingRight()I
+
+Returns the total start padding of the view, including the start Drawable if any.
+int getTotalPaddingStart()
+invoke-virtual {v0}, Landroid/widget/TextView;->getTotalPaddingStart()I
+
+Returns the total top padding of the view, including the top Drawable if any, the extra space to keep more than maxLines from showing, and the vertical offset for gravity, if any.
+int getTotalPaddingTop()
+invoke-virtual {v0}, Landroid/widget/TextView;->getTotalPaddingTop()I
+
+Gets the current TransformationMethod for the TextView.
+final TransformationMethod getTransformationMethod()
+invoke-virtual {v0}, Landroid/widget/TextView;->getTransformationMethod()Landroid/text/method$TransformationMethod;
+
+Gets the current Typeface that is used to style the text.
+Typeface getTypeface()
+invoke-virtual {v0}, Landroid/widget/TextView;->getTypeface()Landroid/graphics/Typeface;
+
+Returns the list of URLSpans attached to the text (by Linkify or otherwise) if any.
+URLSpan[] getUrls()
+invoke-virtual {v0}, Landroid/widget/TextView;->getUrls()[Landroid/text/style/URLSpan;
+
+Returns whether this View has content which overlaps.
+boolean hasOverlappingRendering()
+invoke-virtual {v0}, Landroid/widget/TextView;->hasOverlappingRendering()Z
+
+Return true iff there is a selection inside this text view.
+boolean hasSelection()
+invoke-virtual {v0}, Landroid/widget/TextView;->hasSelection()Z
+
+Invalidates the specified Drawable.
+void invalidateDrawable(Drawable drawable)
+invoke-virtual {v0, v1}, Landroid/widget/TextView;->invalidateDrawable(Landroid/graphics/drawable/Drawable;)V
+
+Checks whether the transformation method applied to this TextView is set to ALL CAPS.
+boolean isAllCaps()
+invoke-virtual {v0}, Landroid/widget/TextView;->isAllCaps()Z
+
+没有帮助内容
+boolean isCursorVisible()
+invoke-virtual {v0}, Landroid/widget/TextView;->isCursorVisible()Z
+
+Get the value of the TextView's elegant height metrics flag.
+boolean isElegantTextHeight()
+invoke-virtual {v0}, Landroid/widget/TextView;->isElegantTextHeight()Z
+
+没有帮助内容
+boolean isFallbackLineSpacing()
+invoke-virtual {v0}, Landroid/widget/TextView;->isFallbackLineSpacing()Z
+
+Returns whether this text view is a current input method target.
+boolean isInputMethodTarget()
+invoke-virtual {v0}, Landroid/widget/TextView;->isInputMethodTarget()Z
+
+Return whether or not suggestions are enabled on this TextView.
+boolean isSuggestionsEnabled()
+invoke-virtual {v0}, Landroid/widget/TextView;->isSuggestionsEnabled()Z
+
+Returns the state of the textIsSelectable flag (See setTextIsSelectable()).
+boolean isTextSelectable()
+invoke-virtual {v0}, Landroid/widget/TextView;->isTextSelectable()Z
+
+Call Drawable.jumpToCurrentState() on all Drawable objects associated with this view.
+void jumpDrawablesToCurrentState()
+invoke-virtual {v0}, Landroid/widget/TextView;->jumpDrawablesToCurrentState()V
+
+Returns the length, in characters, of the text managed by this TextView
+int length()
+invoke-virtual {v0}, Landroid/widget/TextView;->length()I
+
+Move the cursor, if needed, so that it is at an offset that is visible to the user.
+boolean moveCursorToVisibleOffset()
+invoke-virtual {v0}, Landroid/widget/TextView;->moveCursorToVisibleOffset()Z
+
+Called by the framework in response to a request to begin a batch of edit operations through a call to link beginBatchEdit().
+void onBeginBatchEdit()
+invoke-virtual {v0}, Landroid/widget/TextView;->onBeginBatchEdit()V
+
+Check whether the called view is a text editor, in which case it would make sense to automatically display a soft input window for it.
+boolean onCheckIsTextEditor()
+invoke-virtual {v0}, Landroid/widget/TextView;->onCheckIsTextEditor()Z
+
+Called by the framework in response to a text completion from the current input method, provided by it calling InputConnection.commitCompletion().
+void onCommitCompletion(CompletionInfo text)
+invoke-virtual {v0, v1}, Landroid/widget/TextView;->onCommitCompletion(Landroid/view/inputmethod/CompletionInfo;)V
+
+Called by the framework in response to a text auto-correction (such as fixing a typo using a dictionary) from the current input method, provided by it calling InputConnection.commitCorrection().
+void onCommitCorrection(CorrectionInfo info)
+invoke-virtual {v0, v1}, Landroid/widget/TextView;->onCommitCorrection(Landroid/view/inputmethod/CorrectionInfo;)V
+
+Create a new InputConnection for an InputMethod to interact with the view.
+InputConnection onCreateInputConnection(EditorInfo outAttrs)
+invoke-virtual {v0, v1}, Landroid/widget/TextView;->onCreateInputConnection(Landroid/view/inputmethod/EditorInfo;)Landroid/view/inputmethod$InputConnection;
+
+Handles drag events sent by the system following a call to startDragAndDrop().
+boolean onDragEvent(DragEvent event)
+invoke-virtual {v0, v1}, Landroid/widget/TextView;->onDragEvent(Landroid/view/DragEvent;)Z
+
+Called when an attached input method calls InputConnection.performEditorAction() for this text view.
+void onEditorAction(int actionCode)
+invoke-virtual {v0, v1}, Landroid/widget/TextView;->onEditorAction(I)V
+
+Called by the framework in response to a request to end a batch of edit operations through a call to link endBatchEdit().
+void onEndBatchEdit()
+invoke-virtual {v0}, Landroid/widget/TextView;->onEndBatchEdit()V
+
+Implement this method to handle generic motion events.
+boolean onGenericMotionEvent(MotionEvent event)
+invoke-virtual {v0, v1}, Landroid/widget/TextView;->onGenericMotionEvent(Landroid/view/MotionEvent;)Z
+
+Default implementation of KeyEvent.Callback.onKeyDown(): perform press of the view when KeyEvent.KEYCODE_DPAD_CENTER or KeyEvent.KEYCODE_ENTER is released, if the view is enabled and clickable.
+boolean onKeyDown(int keyCode, KeyEvent event)
+invoke-virtual {v0, v1, v2}, Landroid/widget/TextView;->onKeyDown(ILandroid/view/KeyEvent;)Z
+
+Default implementation of KeyEvent.Callback.onKeyMultiple(): always returns false (doesn't handle the event).
+boolean onKeyMultiple(int keyCode, int repeatCount, KeyEvent event)
+invoke-virtual {v0, v1, v2, v3}, Landroid/widget/TextView;->onKeyMultiple(IILandroid/view/KeyEvent;)Z
+
+Handle a key event before it is processed by any input method associated with the view hierarchy.
+boolean onKeyPreIme(int keyCode, KeyEvent event)
+invoke-virtual {v0, v1, v2}, Landroid/widget/TextView;->onKeyPreIme(ILandroid/view/KeyEvent;)Z
+
+Called on the focused view when a key shortcut event is not handled.
+boolean onKeyShortcut(int keyCode, KeyEvent event)
+invoke-virtual {v0, v1, v2}, Landroid/widget/TextView;->onKeyShortcut(ILandroid/view/KeyEvent;)Z
+
+Default implementation of KeyEvent.Callback.onKeyUp(): perform clicking of the view when KeyEvent.KEYCODE_DPAD_CENTER, KeyEvent.KEYCODE_ENTER or KeyEvent.KEYCODE_SPACE is released.
+boolean onKeyUp(int keyCode, KeyEvent event)
+invoke-virtual {v0, v1, v2}, Landroid/widget/TextView;->onKeyUp(ILandroid/view/KeyEvent;)Z
+
+Callback method to be invoked when the view tree is about to be drawn.
+boolean onPreDraw()
+invoke-virtual {v0}, Landroid/widget/TextView;->onPreDraw()Z
+
+Called by the framework in response to a private command from the current method, provided by it calling InputConnection.performPrivateCommand().
+boolean onPrivateIMECommand(String action, Bundle data)
+invoke-virtual {v0, v1, v2}, Landroid/widget/TextView;->onPrivateIMECommand(Ljava/lang/String;Landroid/os/Bundle;)Z
+
+Populates a ViewStructure to fullfil an autofill request.
+void onProvideAutofillStructure(ViewStructure structure, int flags)
+invoke-virtual {v0, v1, v2}, Landroid/widget/TextView;->onProvideAutofillStructure(Landroid/view/ViewStructure;I)V
+
+Called when assist structure is being retrieved from a view as part of Activity.onProvideAssistData.
+void onProvideStructure(ViewStructure structure)
+invoke-virtual {v0, v1}, Landroid/widget/TextView;->onProvideStructure(Landroid/view/ViewStructure;)V
+
+Returns the pointer icon for the motion event, or null if it doesn't specify the icon.
+PointerIcon onResolvePointerIcon(MotionEvent event, int pointerIndex)
+invoke-virtual {v0, v1, v2}, Landroid/widget/TextView;->onResolvePointerIcon(Landroid/view/MotionEvent;I)Landroid/view/PointerIcon;
+
+Hook allowing a view to re-apply a representation of its internal state that had previously been generated by onSaveInstanceState().
+void onRestoreInstanceState(Parcelable state)
+invoke-virtual {v0, v1}, Landroid/widget/TextView;->onRestoreInstanceState(Landroid/os/Parcelable;)V
+
+Called when any RTL property (layout direction or text direction or text alignment) has been changed.
+void onRtlPropertiesChanged(int layoutDirection)
+invoke-virtual {v0, v1}, Landroid/widget/TextView;->onRtlPropertiesChanged(I)V
+
+Hook allowing a view to generate a representation of its internal state that can later be used to create a new instance with that same state.
+Parcelable onSaveInstanceState()
+invoke-virtual {v0}, Landroid/widget/TextView;->onSaveInstanceState()Landroid/os/Parcelable;
+
+This method is called whenever the state of the screen this view is attached to changes.
+void onScreenStateChanged(int screenState)
+invoke-virtual {v0, v1}, Landroid/widget/TextView;->onScreenStateChanged(I)V
+
+Called when a context menu option for the text view is selected.
+boolean onTextContextMenuItem(int id)
+invoke-virtual {v0, v1}, Landroid/widget/TextView;->onTextContextMenuItem(I)Z
+
+Implement this method to handle touch screen motion events.
+boolean onTouchEvent(MotionEvent event)
+invoke-virtual {v0, v1}, Landroid/widget/TextView;->onTouchEvent(Landroid/view/MotionEvent;)Z
+
+Implement this method to handle trackball motion events.
+boolean onTrackballEvent(MotionEvent event)
+invoke-virtual {v0, v1}, Landroid/widget/TextView;->onTrackballEvent(Landroid/view/MotionEvent;)Z
+
+Called when the window containing this view gains or loses focus.
+void onWindowFocusChanged(boolean hasWindowFocus)
+invoke-virtual {v0, v1}, Landroid/widget/TextView;->onWindowFocusChanged(Z)V
+
+Calls this view's OnLongClickListener, if it is defined.
+boolean performLongClick()
+invoke-virtual {v0}, Landroid/widget/TextView;->performLongClick()Z
+
+Removes the specified TextWatcher from the list of those whose methods are called whenever this TextView's text changes.
+void removeTextChangedListener(TextWatcher watcher)
+invoke-virtual {v0, v1}, Landroid/widget/TextView;->removeTextChangedListener(Landroid/text/TextWatcher;)V
+
+This method behaves exactly as sendAccessibilityEvent(int) but takes as an argument an empty AccessibilityEvent and does not perform a check whether accessibility is enabled.
+void sendAccessibilityEventUnchecked(AccessibilityEvent event)
+invoke-virtual {v0, v1}, Landroid/widget/TextView;->sendAccessibilityEventUnchecked(Landroid/view/accessibility/AccessibilityEvent;)V
+
+Sets the properties of this field to transform input to ALL CAPS display.
+void setAllCaps(boolean allCaps)
+invoke-virtual {v0, v1}, Landroid/widget/TextView;->setAllCaps(Z)V
+
+Sets the autolink mask of the text.
+final void setAutoLinkMask(int mask)
+invoke-virtual {v0, v1}, Landroid/widget/TextView;->setAutoLinkMask(I)V
+
+Specify whether this widget should automatically scale the text to try to perfectly fit within the layout bounds.
+void setAutoSizeTextTypeUniformWithConfiguration(int autoSizeMinTextSize, int autoSizeMaxTextSize, int autoSizeStepGranularity, int unit)
+invoke-virtual {v0, v1, v2, v3, v4}, Landroid/widget/TextView;->setAutoSizeTextTypeUniformWithConfiguration(IIII)V
+
+Specify whether this widget should automatically scale the text to try to perfectly fit within the layout bounds.
+void setAutoSizeTextTypeUniformWithPresetSizes(int[] presetSizes, int unit)
+invoke-virtual {v0, v1, v2}, Landroid/widget/TextView;->setAutoSizeTextTypeUniformWithPresetSizes([II)V
+
+Specify whether this widget should automatically scale the text to try to perfectly fit within the layout bounds by using the default auto-size configuration.
+void setAutoSizeTextTypeWithDefaults(int autoSizeTextType)
+invoke-virtual {v0, v1}, Landroid/widget/TextView;->setAutoSizeTextTypeWithDefaults(I)V
+
+Sets the break strategy for breaking paragraphs into lines.
+void setBreakStrategy(int breakStrategy)
+invoke-virtual {v0, v1}, Landroid/widget/TextView;->setBreakStrategy(I)V
+
+Sets the size of the padding between the compound drawables and the text.
+void setCompoundDrawablePadding(int pad)
+invoke-virtual {v0, v1}, Landroid/widget/TextView;->setCompoundDrawablePadding(I)V
+
+Applies a tint to the compound drawables.
+void setCompoundDrawableTintList(ColorStateList tint)
+invoke-virtual {v0, v1}, Landroid/widget/TextView;->setCompoundDrawableTintList(Landroid/content/res/ColorStateList;)V
+
+Specifies the blending mode used to apply the tint specified by setCompoundDrawableTintList(ColorStateList) to the compound drawables.
+void setCompoundDrawableTintMode(PorterDuff.Mode tintMode)
+invoke-virtual {v0, v1}, Landroid/widget/TextView;->setCompoundDrawableTintMode(Landroid/graphics/PorterDuff$Mode;)V
+
+Sets the Drawables (if any) to appear to the left of, above, to the right of, and below the text.
+void setCompoundDrawables(Drawable left, Drawable top, Drawable right, Drawable bottom)
+invoke-virtual {v0, v1, v2, v3, v4}, Landroid/widget/TextView;->setCompoundDrawables(Landroid/graphics/drawable/Drawable;Landroid/graphics/drawable/Drawable;Landroid/graphics/drawable/Drawable;Landroid/graphics/drawable/Drawable;)V
+
+Sets the Drawables (if any) to appear to the start of, above, to the end of, and below the text.
+void setCompoundDrawablesRelative(Drawable start, Drawable top, Drawable end, Drawable bottom)
+invoke-virtual {v0, v1, v2, v3, v4}, Landroid/widget/TextView;->setCompoundDrawablesRelative(Landroid/graphics/drawable/Drawable;Landroid/graphics/drawable/Drawable;Landroid/graphics/drawable/Drawable;Landroid/graphics/drawable/Drawable;)V
+
+Sets the Drawables (if any) to appear to the start of, above, to the end of, and below the text.
+void setCompoundDrawablesRelativeWithIntrinsicBounds(Drawable start, Drawable top, Drawable end, Drawable bottom)
+invoke-virtual {v0, v1, v2, v3, v4}, Landroid/widget/TextView;->setCompoundDrawablesRelativeWithIntrinsicBounds(Landroid/graphics/drawable/Drawable;Landroid/graphics/drawable/Drawable;Landroid/graphics/drawable/Drawable;Landroid/graphics/drawable/Drawable;)V
+
+Sets the Drawables (if any) to appear to the start of, above, to the end of, and below the text.
+void setCompoundDrawablesRelativeWithIntrinsicBounds(int start, int top, int end, int bottom)
+invoke-virtual {v0, v1, v2, v3, v4}, Landroid/widget/TextView;->setCompoundDrawablesRelativeWithIntrinsicBounds(IIII)V
+
+Sets the Drawables (if any) to appear to the left of, above, to the right of, and below the text.
+void setCompoundDrawablesWithIntrinsicBounds(Drawable left, Drawable top, Drawable right, Drawable bottom)
+invoke-virtual {v0, v1, v2, v3, v4}, Landroid/widget/TextView;->setCompoundDrawablesWithIntrinsicBounds(Landroid/graphics/drawable/Drawable;Landroid/graphics/drawable/Drawable;Landroid/graphics/drawable/Drawable;Landroid/graphics/drawable/Drawable;)V
+
+Sets the Drawables (if any) to appear to the left of, above, to the right of, and below the text.
+void setCompoundDrawablesWithIntrinsicBounds(int left, int top, int right, int bottom)
+invoke-virtual {v0, v1, v2, v3, v4}, Landroid/widget/TextView;->setCompoundDrawablesWithIntrinsicBounds(IIII)V
+
+Set whether the cursor is visible.
+void setCursorVisible(boolean visible)
+invoke-virtual {v0, v1}, Landroid/widget/TextView;->setCursorVisible(Z)V
+
+If provided, this ActionMode.Callback will be used to create the ActionMode when text insertion is initiated in this View.
+void setCustomInsertionActionModeCallback(ActionMode.Callback actionModeCallback)
+invoke-virtual {v0, v1}, Landroid/widget/TextView;->setCustomInsertionActionModeCallback(Landroid/view/ActionMode$Callback;)V
+
+If provided, this ActionMode.Callback will be used to create the ActionMode when text selection is initiated in this View.
+void setCustomSelectionActionModeCallback(ActionMode.Callback actionModeCallback)
+invoke-virtual {v0, v1}, Landroid/widget/TextView;->setCustomSelectionActionModeCallback(Landroid/view/ActionMode$Callback;)V
+
+Sets the Factory used to create new Editables.
+final void setEditableFactory(Editable.Factory factory)
+invoke-virtual {v0, v1}, Landroid/widget/TextView;->setEditableFactory(Landroid/text/Editable$Factory;)V
+
+Set the TextView's elegant height metrics flag.
+void setElegantTextHeight(boolean elegant)
+invoke-virtual {v0, v1}, Landroid/widget/TextView;->setElegantTextHeight(Z)V
+
+Causes words in the text that are longer than the view's width to be ellipsized instead of broken in the middle.
+void setEllipsize(TextUtils.TruncateAt where)
+invoke-virtual {v0, v1}, Landroid/widget/TextView;->setEllipsize(Landroid/text/TextUtils$TruncateAt;)V
+
+Sets the width of the TextView to be exactly ems wide.
+void setEms(int ems)
+invoke-virtual {v0, v1}, Landroid/widget/TextView;->setEms(I)V
+
+Set the enabled state of this view.
+void setEnabled(boolean enabled)
+invoke-virtual {v0, v1}, Landroid/widget/TextView;->setEnabled(Z)V
+
+Sets the right-hand compound drawable of the TextView to the "error" icon and sets an error message that will be displayed in a popup when the TextView has focus.
+void setError(CharSequence error)
+invoke-virtual {v0, v1}, Landroid/widget/TextView;->setError(Ljava/lang/CharSequence;)V
+
+Sets the right-hand compound drawable of the TextView to the specified icon and sets an error message that will be displayed in a popup when the TextView has focus.
+void setError(CharSequence error, Drawable icon)
+invoke-virtual {v0, v1, v2}, Landroid/widget/TextView;->setError(Ljava/lang/CharSequence;Landroid/graphics/drawable/Drawable;)V
+
+Apply to this text view the given extracted text, as previously returned by extractText(ExtractedTextRequest, ExtractedText).
+void setExtractedText(ExtractedText text)
+invoke-virtual {v0, v1}, Landroid/widget/TextView;->setExtractedText(Landroid/view/inputmethod/ExtractedText;)V
+
+Set whether to respect the ascent and descent of the fallback fonts that are used in displaying the text (which is needed to avoid text from consecutive lines running into each other).
+void setFallbackLineSpacing(boolean enabled)
+invoke-virtual {v0, v1}, Landroid/widget/TextView;->setFallbackLineSpacing(Z)V
+
+Sets the list of input filters that will be used if the buffer is Editable.
+void setFilters(InputFilter[] filters)
+invoke-virtual {v0, v1}, Landroid/widget/TextView;->setFilters([Landroid/text/InputFilter;)V
+
+Updates the top padding of the TextView so that firstBaselineToTopHeight is equal to the distance between the firt text baseline and the top of this TextView.
+void setFirstBaselineToTopHeight(int firstBaselineToTopHeight)
+invoke-virtual {v0, v1}, Landroid/widget/TextView;->setFirstBaselineToTopHeight(I)V
+
+Sets font feature settings.
+void setFontFeatureSettings(String fontFeatureSettings)
+invoke-virtual {v0, v1}, Landroid/widget/TextView;->setFontFeatureSettings(Ljava/lang/String;)V
+
+Sets TrueType or OpenType font variation settings.
+boolean setFontVariationSettings(String fontVariationSettings)
+invoke-virtual {v0, v1}, Landroid/widget/TextView;->setFontVariationSettings(Ljava/lang/String;)Z
+
+Control whether this text view saves its entire text contents when freezing to an icicle, in addition to dynamic state such as cursor position.
+void setFreezesText(boolean freezesText)
+invoke-virtual {v0, v1}, Landroid/widget/TextView;->setFreezesText(Z)V
+
+Sets the horizontal alignment of the text and the vertical gravity that will be used when there is extra space in the TextView beyond what is required for the text itself.
+void setGravity(int gravity)
+invoke-virtual {v0, v1}, Landroid/widget/TextView;->setGravity(I)V
+
+Sets the height of the TextView to be exactly pixels tall.
+void setHeight(int pixels)
+invoke-virtual {v0, v1}, Landroid/widget/TextView;->setHeight(I)V
+
+Sets the color used to display the selection highlight.
+void setHighlightColor(int color)
+invoke-virtual {v0, v1}, Landroid/widget/TextView;->setHighlightColor(I)V
+
+Sets the text to be displayed when the text of the TextView is empty.
+final void setHint(CharSequence hint)
+invoke-virtual {v0, v1}, Landroid/widget/TextView;->setHint(Ljava/lang/CharSequence;)V
+
+Sets the text to be displayed when the text of the TextView is empty, from a resource.
+final void setHint(int resid)
+invoke-virtual {v0, v1}, Landroid/widget/TextView;->setHint(I)V
+
+Sets the color of the hint text.
+final void setHintTextColor(ColorStateList colors)
+invoke-virtual {v0, v1}, Landroid/widget/TextView;->setHintTextColor(Landroid/content/res/ColorStateList;)V
+
+Sets the color of the hint text for all the states (disabled, focussed, selected...) of this TextView.
+final void setHintTextColor(int color)
+invoke-virtual {v0, v1}, Landroid/widget/TextView;->setHintTextColor(I)V
+
+Sets whether the text should be allowed to be wider than the View is.
+void setHorizontallyScrolling(boolean whether)
+invoke-virtual {v0, v1}, Landroid/widget/TextView;->setHorizontallyScrolling(Z)V
+
+Sets the frequency of automatic hyphenation to use when determining word breaks.
+void setHyphenationFrequency(int hyphenationFrequency)
+invoke-virtual {v0, v1}, Landroid/widget/TextView;->setHyphenationFrequency(I)V
+
+Change the custom IME action associated with the text view, which will be reported to an IME with EditorInfo.actionLabel and EditorInfo.actionId when it has focus.
+void setImeActionLabel(CharSequence label, int actionId)
+invoke-virtual {v0, v1, v2}, Landroid/widget/TextView;->setImeActionLabel(Ljava/lang/CharSequence;I)V
+
+Change "hint" locales associated with the text view, which will be reported to an IME with EditorInfo.hintLocales when it has focus.
+void setImeHintLocales(LocaleList hintLocales)
+invoke-virtual {v0, v1}, Landroid/widget/TextView;->setImeHintLocales(Landroid/os/LocaleList;)V
+
+Change the editor type integer associated with the text view, which is reported to an Input Method Editor (IME) with EditorInfo.imeOptions when it has focus.
+void setImeOptions(int imeOptions)
+invoke-virtual {v0, v1}, Landroid/widget/TextView;->setImeOptions(I)V
+
+Set whether the TextView includes extra top and bottom padding to make room for accents that go above the normal ascent and descent.
+void setIncludeFontPadding(boolean includepad)
+invoke-virtual {v0, v1}, Landroid/widget/TextView;->setIncludeFontPadding(Z)V
+
+Set the extra input data of the text, which is the TextBoxAttribute.extras Bundle that will be filled in when creating an input connection.
+void setInputExtras(int xmlResId)
+invoke-virtual {v0, v1}, Landroid/widget/TextView;->setInputExtras(I)V
+
+Set the type of the content with a constant as defined for EditorInfo.inputType.
+void setInputType(int type)
+invoke-virtual {v0, v1}, Landroid/widget/TextView;->setInputType(I)V
+
+Set justification mode.
+void setJustificationMode(int justificationMode)
+invoke-virtual {v0, v1}, Landroid/widget/TextView;->setJustificationMode(I)V
+
+Sets the key listener to be used with this TextView.
+void setKeyListener(KeyListener input)
+invoke-virtual {v0, v1}, Landroid/widget/TextView;->setKeyListener(Landroid/text/method$KeyListener;)V
+
+Updates the bottom padding of the TextView so that lastBaselineToBottomHeight is equal to the distance between the last text baseline and the bottom of this TextView.
+void setLastBaselineToBottomHeight(int lastBaselineToBottomHeight)
+invoke-virtual {v0, v1}, Landroid/widget/TextView;->setLastBaselineToBottomHeight(I)V
+
+Sets text letter-spacing in em units.
+void setLetterSpacing(float letterSpacing)
+invoke-virtual {v0, v1}, Landroid/widget/TextView;->setLetterSpacing(F)V
+
+Sets an explicit line height for this TextView.
+void setLineHeight(int lineHeight)
+invoke-virtual {v0, v1}, Landroid/widget/TextView;->setLineHeight(I)V
+
+Sets line spacing for this TextView.
+void setLineSpacing(float add, float mult)
+invoke-virtual {v0, v1, v2}, Landroid/widget/TextView;->setLineSpacing(FF)V
+
+Sets the height of the TextView to be exactly lines tall.
+void setLines(int lines)
+invoke-virtual {v0, v1}, Landroid/widget/TextView;->setLines(I)V
+
+Sets the color of links in the text.
+final void setLinkTextColor(ColorStateList colors)
+invoke-virtual {v0, v1}, Landroid/widget/TextView;->setLinkTextColor(Landroid/content/res/ColorStateList;)V
+
+Sets the color of links in the text.
+final void setLinkTextColor(int color)
+invoke-virtual {v0, v1}, Landroid/widget/TextView;->setLinkTextColor(I)V
+
+Sets whether the movement method will automatically be set to LinkMovementMethod if setAutoLinkMask(int) has been set to nonzero and links are detected in setText(char[], int, int).
+final void setLinksClickable(boolean whether)
+invoke-virtual {v0, v1}, Landroid/widget/TextView;->setLinksClickable(Z)V
+
+Sets how many times to repeat the marquee animation.
+void setMarqueeRepeatLimit(int marqueeLimit)
+invoke-virtual {v0, v1}, Landroid/widget/TextView;->setMarqueeRepeatLimit(I)V
+
+Sets the width of the TextView to be at most maxEms wide.
+void setMaxEms(int maxEms)
+invoke-virtual {v0, v1}, Landroid/widget/TextView;->setMaxEms(I)V
+
+Sets the height of the TextView to be at most maxPixels tall.
+void setMaxHeight(int maxPixels)
+invoke-virtual {v0, v1}, Landroid/widget/TextView;->setMaxHeight(I)V
+
+Sets the height of the TextView to be at most maxLines tall.
+void setMaxLines(int maxLines)
+invoke-virtual {v0, v1}, Landroid/widget/TextView;->setMaxLines(I)V
+
+Sets the width of the TextView to be at most maxPixels wide.
+void setMaxWidth(int maxPixels)
+invoke-virtual {v0, v1}, Landroid/widget/TextView;->setMaxWidth(I)V
+
+Sets the width of the TextView to be at least minEms wide.
+void setMinEms(int minEms)
+invoke-virtual {v0, v1}, Landroid/widget/TextView;->setMinEms(I)V
+
+Sets the height of the TextView to be at least minPixels tall.
+void setMinHeight(int minPixels)
+invoke-virtual {v0, v1}, Landroid/widget/TextView;->setMinHeight(I)V
+
+Sets the height of the TextView to be at least minLines tall.
+void setMinLines(int minLines)
+invoke-virtual {v0, v1}, Landroid/widget/TextView;->setMinLines(I)V
+
+Sets the width of the TextView to be at least minPixels wide.
+void setMinWidth(int minPixels)
+invoke-virtual {v0, v1}, Landroid/widget/TextView;->setMinWidth(I)V
+
+Sets the MovementMethod for handling arrow key movement for this TextView.
+final void setMovementMethod(MovementMethod movement)
+invoke-virtual {v0, v1}, Landroid/widget/TextView;->setMovementMethod(Landroid/text/method$MovementMethod;)V
+
+Set a special listener to be called when an action is performed on the text view.
+void setOnEditorActionListener(TextView.OnEditorActionListener l)
+invoke-virtual {v0, v1}, Landroid/widget/TextView;->setOnEditorActionListener(Landroid/widget/TextView$OnEditorActionListener;)V
+
+Sets the padding.
+void setPadding(int left, int top, int right, int bottom)
+invoke-virtual {v0, v1, v2, v3, v4}, Landroid/widget/TextView;->setPadding(IIII)V
+
+Sets the relative padding.
+void setPaddingRelative(int start, int top, int end, int bottom)
+invoke-virtual {v0, v1, v2, v3, v4}, Landroid/widget/TextView;->setPaddingRelative(IIII)V
+
+Sets flags on the Paint being used to display the text and reflows the text if they are different from the old flags.
+void setPaintFlags(int flags)
+invoke-virtual {v0, v1}, Landroid/widget/TextView;->setPaintFlags(I)V
+
+Set the private content type of the text, which is the EditorInfo.privateImeOptions field that will be filled in when creating an input connection.
+void setPrivateImeOptions(String type)
+invoke-virtual {v0, v1}, Landroid/widget/TextView;->setPrivateImeOptions(Ljava/lang/String;)V
+
+Directly change the content type integer of the text view, without modifying any other state.
+void setRawInputType(int type)
+invoke-virtual {v0, v1}, Landroid/widget/TextView;->setRawInputType(I)V
+
+Sets the Scroller used for producing a scrolling animation
+void setScroller(Scroller s)
+invoke-virtual {v0, v1}, Landroid/widget/TextView;->setScroller(Landroid/widget/Scroller;)V
+
+Set the TextView so that when it takes focus, all the text is selected.
+void setSelectAllOnFocus(boolean selectAllOnFocus)
+invoke-virtual {v0, v1}, Landroid/widget/TextView;->setSelectAllOnFocus(Z)V
+
+Changes the selection state of this view.
+void setSelected(boolean selected)
+invoke-virtual {v0, v1}, Landroid/widget/TextView;->setSelected(Z)V
+
+Gives the text a shadow of the specified blur radius and color, the specified distance from its drawn position.
+void setShadowLayer(float radius, float dx, float dy, int color)
+invoke-virtual {v0, v1, v2, v3, v4}, Landroid/widget/TextView;->setShadowLayer(FFFI)V
+
+Sets whether the soft input method will be made visible when this TextView gets focused.
+final void setShowSoftInputOnFocus(boolean show)
+invoke-virtual {v0, v1}, Landroid/widget/TextView;->setShowSoftInputOnFocus(Z)V
+
+If true, sets the properties of this field (number of lines, horizontally scrolling, transformation method) to be for a single-line input; if false, restores these to the default conditions.
+void setSingleLine(boolean singleLine)
+invoke-virtual {v0, v1}, Landroid/widget/TextView;->setSingleLine(Z)V
+
+Sets the properties of this field (lines, horizontally scrolling, transformation method) to be for a single-line input.
+void setSingleLine()
+invoke-virtual {v0}, Landroid/widget/TextView;->setSingleLine()V
+
+Sets the Factory used to create new Spannables.
+final void setSpannableFactory(Spannable.Factory factory)
+invoke-virtual {v0, v1}, Landroid/widget/TextView;->setSpannableFactory(Landroid/text/Spannable$Factory;)V
+
+Sets the text to be displayed using a string resource identifier.
+final void setText(int resid)
+invoke-virtual {v0, v1}, Landroid/widget/TextView;->setText(I)V
+
+Sets the text to be displayed.
+final void setText(CharSequence text)
+invoke-virtual {v0, v1}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
+
+Sets the text to be displayed and the TextView.BufferType.
+void setText(CharSequence text, TextView.BufferType type)
+invoke-virtual {v0, v1, v2}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;Landroid/widget/TextView$BufferType;)V
+
+Sets the text to be displayed using a string resource identifier and the TextView.BufferType.
+final void setText(int resid, TextView.BufferType type)
+invoke-virtual {v0, v1, v2}, Landroid/widget/TextView;->setText(ILandroid/widget/TextView$BufferType;)V
+
+Sets the TextView to display the specified slice of the specified char array.
+final void setText(char[] text, int start, int len)
+invoke-virtual {v0, v1, v2, v3}, Landroid/widget/TextView;->setText([CII)V
+
+This method was deprecated in API level 23. Use setTextAppearance(int) instead.
+void setTextAppearance(Context context, int resId)
+invoke-virtual {v0, v1, v2}, Landroid/widget/TextView;->setTextAppearance(Landroid/content/Context;I)V
+
+Sets the text appearance from the specified style resource.
+void setTextAppearance(int resId)
+invoke-virtual {v0, v1}, Landroid/widget/TextView;->setTextAppearance(I)V
+
+Sets the TextClassifier for this TextView.
+void setTextClassifier(TextClassifier textClassifier)
+invoke-virtual {v0, v1}, Landroid/widget/TextView;->setTextClassifier(Landroid/view/textclassifier$TextClassifier;)V
+
+Sets the text color for all the states (normal, selected, focused) to be this color.
+void setTextColor(int color)
+invoke-virtual {v0, v1}, Landroid/widget/TextView;->setTextColor(I)V
+
+Sets the text color.
+void setTextColor(ColorStateList colors)
+invoke-virtual {v0, v1}, Landroid/widget/TextView;->setTextColor(Landroid/content/res/ColorStateList;)V
+
+Sets whether the content of this view is selectable by the user.
+void setTextIsSelectable(boolean selectable)
+invoke-virtual {v0, v1}, Landroid/widget/TextView;->setTextIsSelectable(Z)V
+
+Sets the text to be displayed but retains the cursor position.
+final void setTextKeepState(CharSequence text)
+invoke-virtual {v0, v1}, Landroid/widget/TextView;->setTextKeepState(Ljava/lang/CharSequence;)V
+
+Sets the text to be displayed and the TextView.BufferType but retains the cursor position.
+final void setTextKeepState(CharSequence text, TextView.BufferType type)
+invoke-virtual {v0, v1, v2}, Landroid/widget/TextView;->setTextKeepState(Ljava/lang/CharSequence;Landroid/widget/TextView$BufferType;)V
+
+Set the default Locale of the text in this TextView to a one-member LocaleList containing just the given Locale.
+void setTextLocale(Locale locale)
+invoke-virtual {v0, v1}, Landroid/widget/TextView;->setTextLocale(Ljava/util/Locale;)V
+
+Set the default LocaleList of the text in this TextView to the given value.
+void setTextLocales(LocaleList locales)
+invoke-virtual {v0, v1}, Landroid/widget/TextView;->setTextLocales(Landroid/os/LocaleList;)V
+
+Apply the text layout parameter.
+void setTextMetricsParams(PrecomputedText.Params params)
+invoke-virtual {v0, v1}, Landroid/widget/TextView;->setTextMetricsParams(Landroid/text/PrecomputedText$Params;)V
+
+Sets the horizontal scale factor for text.
+void setTextScaleX(float size)
+invoke-virtual {v0, v1}, Landroid/widget/TextView;->setTextScaleX(F)V
+
+Set the default text size to a given unit and value.
+void setTextSize(int unit, float size)
+invoke-virtual {v0, v1, v2}, Landroid/widget/TextView;->setTextSize(IF)V
+
+Set the default text size to the given value, interpreted as "scaled pixel" units.
+void setTextSize(float size)
+invoke-virtual {v0, v1}, Landroid/widget/TextView;->setTextSize(F)V
+
+Sets the transformation that is applied to the text that this TextView is displaying.
+final void setTransformationMethod(TransformationMethod method)
+invoke-virtual {v0, v1}, Landroid/widget/TextView;->setTransformationMethod(Landroid/text/method$TransformationMethod;)V
+
+Sets the typeface and style in which the text should be displayed.
+void setTypeface(Typeface tf)
+invoke-virtual {v0, v1}, Landroid/widget/TextView;->setTypeface(Landroid/graphics/Typeface;)V
+
+Sets the typeface and style in which the text should be displayed, and turns on the fake bold and italic bits in the Paint if the Typeface that you provided does not have all the bits in the style that you specified.
+void setTypeface(Typeface tf, int style)
+invoke-virtual {v0, v1, v2}, Landroid/widget/TextView;->setTypeface(Landroid/graphics/Typeface;I)V
+
+Sets the width of the TextView to be exactly pixels wide.
+void setWidth(int pixels)
+invoke-virtual {v0, v1}, Landroid/widget/TextView;->setWidth(I)V
+
+Shows the context menu for this view.
+boolean showContextMenu()
+invoke-virtual {v0}, Landroid/widget/TextView;->showContextMenu()Z
+
+Shows the context menu for this view anchored to the specified view-relative coordinate.%Return%Protected methods
+boolean showContextMenu(float x, float y)
+invoke-virtual {v0, v1, v2}, Landroid/widget/TextView;->showContextMenu(FF)Z
+
+Compute the horizontal range that the horizontal scrollbar represents.
+int computeHorizontalScrollRange()
+invoke-virtual {v0}, Landroid/widget/TextView;->computeHorizontalScrollRange()I
+
+Compute the vertical extent of the vertical scrollbar's thumb within the vertical range.
+int computeVerticalScrollExtent()
+invoke-virtual {v0}, Landroid/widget/TextView;->computeVerticalScrollExtent()I
+
+Compute the vertical range that the vertical scrollbar represents.
+int computeVerticalScrollRange()
+invoke-virtual {v0}, Landroid/widget/TextView;->computeVerticalScrollRange()I
+
+This function is called whenever the state of the view changes in such a way that it impacts the state of drawables being shown.
+void drawableStateChanged()
+invoke-virtual {v0}, Landroid/widget/TextView;->drawableStateChanged()V
+
+Amount by which to extend the bottom fading region.
+int getBottomPaddingOffset()
+invoke-virtual {v0}, Landroid/widget/TextView;->getBottomPaddingOffset()I
+
+Subclasses override this to specify that they have a KeyListener by default even if not specifically called for in the XML options.
+boolean getDefaultEditable()
+invoke-virtual {v0}, Landroid/widget/TextView;->getDefaultEditable()Z
+
+Subclasses override this to specify a default movement method.
+MovementMethod getDefaultMovementMethod()
+invoke-virtual {v0}, Landroid/widget/TextView;->getDefaultMovementMethod()Landroid/text/method$MovementMethod;
+
+Returns the strength, or intensity, of the left faded edge.
+float getLeftFadingEdgeStrength()
+invoke-virtual {v0}, Landroid/widget/TextView;->getLeftFadingEdgeStrength()F
+
+Amount by which to extend the left fading region.
+int getLeftPaddingOffset()
+invoke-virtual {v0}, Landroid/widget/TextView;->getLeftPaddingOffset()I
+
+Returns the strength, or intensity, of the right faded edge.
+float getRightFadingEdgeStrength()
+invoke-virtual {v0}, Landroid/widget/TextView;->getRightFadingEdgeStrength()F
+
+Amount by which to extend the right fading region.
+int getRightPaddingOffset()
+invoke-virtual {v0}, Landroid/widget/TextView;->getRightPaddingOffset()I
+
+Amount by which to extend the top fading region.
+int getTopPaddingOffset()
+invoke-virtual {v0}, Landroid/widget/TextView;->getTopPaddingOffset()I
+
+If the View draws content inside its padding and enables fading edges, it needs to support padding offsets.
+boolean isPaddingOffsetRequired()
+invoke-virtual {v0}, Landroid/widget/TextView;->isPaddingOffsetRequired()Z
+
+This is called when the view is attached to a window.
+void onAttachedToWindow()
+invoke-virtual {v0}, Landroid/widget/TextView;->onAttachedToWindow()V
+
+Called when the current configuration of the resources being used by the application have changed.
+void onConfigurationChanged(Configuration newConfig)
+invoke-virtual {v0, v1}, Landroid/widget/TextView;->onConfigurationChanged(Landroid/content/res/Configuration;)V
+
+Views should implement this if the view itself is going to add items to the context menu.
+void onCreateContextMenu(ContextMenu menu)
+invoke-virtual {v0, v1}, Landroid/widget/TextView;->onCreateContextMenu(Landroid/view/ContextMenu;)V
+
+Generate the new Drawable state for this view.
+int[] onCreateDrawableState(int extraSpace)
+invoke-virtual {v0, v1}, Landroid/widget/TextView;->onCreateDrawableState(I)[I
+
+Implement this to do your drawing.
+void onDraw(Canvas canvas)
+invoke-virtual {v0, v1}, Landroid/widget/TextView;->onDraw(Landroid/graphics/Canvas;)V
+
+Called by the view system when the focus state of this view changes.
+void onFocusChanged(boolean focused, int direction, Rect previouslyFocusedRect)
+invoke-virtual {v0, v1, v2, v3}, Landroid/widget/TextView;->onFocusChanged(ZILandroid/graphics/Rect;)V
+
+Called from layout when this view should assign a size and position to each of its children.
+void onLayout(boolean changed, int left, int top, int right, int bottom)
+invoke-virtual/range {v0 .. v5}, Landroid/widget/TextView;->onLayout(ZIIII)V
+
+Measure the view and its content to determine the measured width and the measured height.
+void onMeasure(int widthMeasureSpec, int heightMeasureSpec)
+invoke-virtual {v0, v1, v2}, Landroid/widget/TextView;->onMeasure(II)V
+
+This is called in response to an internal scroll in this view (i.e., the view scrolled its own contents).
+void onScrollChanged(int horiz, int vert, int oldHoriz, int oldVert)
+invoke-virtual {v0, v1, v2, v3, v4}, Landroid/widget/TextView;->onScrollChanged(IIII)V
+
+This method is called when the selection has changed, in case any subclasses would like to know.
+void onSelectionChanged(int selStart, int selEnd)
+invoke-virtual {v0, v1, v2}, Landroid/widget/TextView;->onSelectionChanged(II)V
+
+This method is called when the text is changed, in case any subclasses would like to know.
+void onTextChanged(CharSequence text, int start, int lengthBefore, int lengthAfter)
+invoke-virtual {v0, v1, v2, v3, v4}, Landroid/widget/TextView;->onTextChanged(Ljava/lang/CharSequence;III)V
+
+Called when the visibility of the view or an ancestor of the view has changed.
+void onVisibilityChanged(View changedView, int visibility)
+invoke-virtual {v0, v1, v2}, Landroid/widget/TextView;->onVisibilityChanged(Landroid/view/View;I)V
+
+Assign a size and position to this view.
+boolean setFrame(int l, int t, int r, int b)
+invoke-virtual {v0, v1, v2, v3, v4}, Landroid/widget/TextView;->setFrame(IIII)Z
+
+If your view subclass is displaying its own Drawable objects, it should override this function and return true for any Drawable it is displaying.
+boolean verifyDrawable(Drawable who)
+invoke-virtual {v0, v1}, Landroid/widget/TextView;->verifyDrawable(Landroid/graphics/drawable/Drawable;)Z

@@ -5,7 +5,7 @@ local tSkillLevel = getConfigItemByKey("SkillLevelCfg", "skillID")
 local tSkill = getConfigItemByKey("SkillCfg", "skillID")
 -- 获取一个特定等级的技能的所有信息
 local skillLvItem = function(id, lv)
-	cclog("技能等级id " .. tostring(id * 1000 + lv))
+	--cclog("技能等级id " .. id)
 	return tSkillLevel[id * 1000 + lv]
 end
 -----------------------------------------------------------------------------------
@@ -38,7 +38,7 @@ end
 -- 技能冷却值
 skillCoolTime = function(self, id, lv)
 	local item = skillLvItem(id, lv)
-	return  0
+	return (item and item.coolTime) or 0
 end
 
 --------------------------------------------------------------------------------------
@@ -189,9 +189,8 @@ end
 allSkills = function(self)
 	local skills = {}
 	for k,v in pairs(tSkill) do
-		if v.job and v.useType and v.jnfenlie and v.job == G_ROLE_MAIN.school and 1 == v.useType and (1 == v.jnfenlie or  10 == v.jnfenlie) then
+		if v.job and v.useType and v.jnfenlie and v.job == G_ROLE_MAIN.school and 1 == v.useType and 1 == v.jnfenlie then --and 1 == v.q_jieduan then
 			table.insert(skills,{v.skillID,v.q_order})
-			cclog("当前职业技能：" .. v.name)
 		end
 	end
 	return skills

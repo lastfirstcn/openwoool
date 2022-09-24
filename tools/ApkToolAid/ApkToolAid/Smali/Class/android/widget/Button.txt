@@ -1,0 +1,31 @@
+A user interface element the user can tap or click to perform an action.
+class android.widget.Button
+.class Landroid/widget/Button;
+
+继承
+inherit android.widget.TextView
+.super Landroid/widget/TextView;
+
+构造方法：Simple constructor to use when creating a button from code.
+constructor Button(Context context)
+invoke-direct {v0, v1}, Landroid/widget/Button;-><init>(Landroid/content/Context;)V
+
+构造方法：LayoutInflater calls this constructor when inflating a Button from XML.
+constructor Button(Context context, AttributeSet attrs)
+invoke-direct {v0, v1, v2}, Landroid/widget/Button;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
+
+构造方法：This constructor allows a Button subclass to use its own class-specific base style from a theme attribute when inflating.
+constructor Button(Context context, AttributeSet attrs, int defStyleAttr)
+invoke-direct {v0, v1, v2, v3}, Landroid/widget/Button;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;I)V
+
+构造方法：This constructor allows a Button subclass to use its own class-specific base style from either a theme attribute or style resource when inflating.
+constructor Button(Context context, AttributeSet attrs, int defStyleAttr, int defStyleRes)
+invoke-direct {v0, v1, v2, v3, v4}, Landroid/widget/Button;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;II)V
+
+Return the class name of this object to be used for accessibility purposes.
+CharSequence getAccessibilityClassName()
+invoke-virtual {v0}, Landroid/widget/Button;->getAccessibilityClassName()Ljava/lang/CharSequence;
+
+Returns the pointer icon for the motion event, or null if it doesn't specify the icon.
+PointerIcon onResolvePointerIcon(MotionEvent event, int pointerIndex)
+invoke-virtual {v0, v1, v2}, Landroid/widget/Button;->onResolvePointerIcon(Landroid/view/MotionEvent;I)Landroid/view/PointerIcon;

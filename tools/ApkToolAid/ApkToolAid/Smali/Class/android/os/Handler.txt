@@ -1,0 +1,159 @@
+A Handler allows you to send and process Message and Runnable objects associated with a thread's MessageQueue. Each Handler instance is associated with a single thread and that thread's message queue. When you create a new Handler, it is bound to the thread / message queue of the thread that is creating it -- from that point on, it will deliver messages and runnables to that message queue and execute them as they come out of the message queue.
+class android.os.Handler
+.class Landroid/os/Handler;
+
+继承
+inherit java.lang.Object
+.super Ljava/lang/Object;
+
+构造方法：Default constructor associates this handler with the Looper for the current thread.
+constructor Handler()
+invoke-direct {v0}, Landroid/os/Handler;-><init>()V
+
+构造方法：Constructor associates this handler with the Looper for the current thread and takes a callback interface in which you can handle messages.
+constructor Handler(Handler.Callback callback)
+invoke-direct {v0, v1}, Landroid/os/Handler;-><init>(Landroid/os/Handler$Callback;)V
+
+构造方法：Use the provided Looper instead of the default one.
+constructor Handler(Looper looper)
+invoke-direct {v0, v1}, Landroid/os/Handler;-><init>(Landroid/os/Looper;)V
+
+构造方法：Use the provided Looper instead of the default one and take a callback interface in which to handle messages.
+constructor Handler(Looper looper, Handler.Callback callback)
+invoke-direct {v0, v1, v2}, Landroid/os/Handler;-><init>(Landroid/os/Looper;Landroid/os/Handler$Callback;)V
+
+Create a new Handler whose posted messages and runnables are not subject to synchronization barriers such as display vsync.
+Handler createAsync(Looper looper, Handler.Callback callback)
+invoke-static {v0, v1}, Landroid/os/Handler;->createAsync(Landroid/os/Looper;Landroid/os/Handler$Callback;)Landroid/os/Handler;
+
+Create a new Handler whose posted messages and runnables are not subject to synchronization barriers such as display vsync.
+Handler createAsync(Looper looper)
+invoke-static {v0}, Landroid/os/Handler;->createAsync(Landroid/os/Looper;)Landroid/os/Handler;
+
+Handle system messages here.
+void dispatchMessage(Message msg)
+invoke-virtual {v0, v1}, Landroid/os/Handler;->dispatchMessage(Landroid/os/Message;)V
+
+没有帮助内容
+final void dump(Printer pw, String prefix)
+invoke-virtual {v0, v1, v2}, Landroid/os/Handler;->dump(Landroid/util/Printer;Ljava/lang/String;)V
+
+没有帮助内容
+final Looper getLooper()
+invoke-virtual {v0}, Landroid/os/Handler;->getLooper()Landroid/os/Looper;
+
+Returns a string representing the name of the specified message.
+String getMessageName(Message message)
+invoke-virtual {v0, v1}, Landroid/os/Handler;->getMessageName(Landroid/os/Message;)Ljava/lang/String;
+
+Subclasses must implement this to receive messages.
+void handleMessage(Message msg)
+invoke-virtual {v0, v1}, Landroid/os/Handler;->handleMessage(Landroid/os/Message;)V
+
+Check if there are any pending posts of messages with callback r in the message queue.
+final boolean hasCallbacks(Runnable r)
+invoke-virtual {v0, v1}, Landroid/os/Handler;->hasCallbacks(Ljava/lang/Runnable;)Z
+
+Check if there are any pending posts of messages with code 'what' in the message queue.
+final boolean hasMessages(int what)
+invoke-virtual {v0, v1}, Landroid/os/Handler;->hasMessages(I)Z
+
+Check if there are any pending posts of messages with code 'what' and whose obj is 'object' in the message queue.
+final boolean hasMessages(int what, Object object)
+invoke-virtual {v0, v1, v2}, Landroid/os/Handler;->hasMessages(ILjava/lang/Object;)Z
+
+Same as obtainMessage(), except that it also sets the what and obj members of the returned Message.
+final Message obtainMessage(int what, Object obj)
+invoke-virtual {v0, v1, v2}, Landroid/os/Handler;->obtainMessage(ILjava/lang/Object;)Landroid/os/Message;
+
+Returns a new Message from the global message pool.
+final Message obtainMessage()
+invoke-virtual {v0}, Landroid/os/Handler;->obtainMessage()Landroid/os/Message;
+
+Same as obtainMessage(), except that it also sets the what, arg1 and arg2 members of the returned Message.
+final Message obtainMessage(int what, int arg1, int arg2)
+invoke-virtual {v0, v1, v2, v3}, Landroid/os/Handler;->obtainMessage(III)Landroid/os/Message;
+
+Same as obtainMessage(), except that it also sets the what, obj, arg1,and arg2 values on the returned Message.
+final Message obtainMessage(int what, int arg1, int arg2, Object obj)
+invoke-virtual {v0, v1, v2, v3, v4}, Landroid/os/Handler;->obtainMessage(IIILjava/lang/Object;)Landroid/os/Message;
+
+Same as obtainMessage(), except that it also sets the what member of the returned Message.
+final Message obtainMessage(int what)
+invoke-virtual {v0, v1}, Landroid/os/Handler;->obtainMessage(I)Landroid/os/Message;
+
+Causes the Runnable r to be added to the message queue.
+final boolean post(Runnable r)
+invoke-virtual {v0, v1}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
+
+Posts a message to an object that implements Runnable.
+final boolean postAtFrontOfQueue(Runnable r)
+invoke-virtual {v0, v1}, Landroid/os/Handler;->postAtFrontOfQueue(Ljava/lang/Runnable;)Z
+
+Causes the Runnable r to be added to the message queue, to be run at a specific time given by uptimeMillis.
+final boolean postAtTime(Runnable r, long uptimeMillis)
+invoke-virtual {v0, v1, v2, v3}, Landroid/os/Handler;->postAtTime(Ljava/lang/Runnable;J)Z
+
+Causes the Runnable r to be added to the message queue, to be run at a specific time given by uptimeMillis.
+final boolean postAtTime(Runnable r, Object token, long uptimeMillis)
+invoke-virtual {v0, v1, v2, v3, v4}, Landroid/os/Handler;->postAtTime(Ljava/lang/Runnable;Ljava/lang/Object;J)Z
+
+Causes the Runnable r to be added to the message queue, to be run after the specified amount of time elapses.
+final boolean postDelayed(Runnable r, long delayMillis)
+invoke-virtual {v0, v1, v2, v3}, Landroid/os/Handler;->postDelayed(Ljava/lang/Runnable;J)Z
+
+Causes the Runnable r to be added to the message queue, to be run after the specified amount of time elapses.
+final boolean postDelayed(Runnable r, Object token, long delayMillis)
+invoke-virtual {v0, v1, v2, v3, v4}, Landroid/os/Handler;->postDelayed(Ljava/lang/Runnable;Ljava/lang/Object;J)Z
+
+Remove any pending posts of Runnable r that are in the message queue.
+final void removeCallbacks(Runnable r)
+invoke-virtual {v0, v1}, Landroid/os/Handler;->removeCallbacks(Ljava/lang/Runnable;)V
+
+Remove any pending posts of Runnable r with Object token that are in the message queue.
+final void removeCallbacks(Runnable r, Object token)
+invoke-virtual {v0, v1, v2}, Landroid/os/Handler;->removeCallbacks(Ljava/lang/Runnable;Ljava/lang/Object;)V
+
+Remove any pending posts of callbacks and sent messages whose obj is token.
+final void removeCallbacksAndMessages(Object token)
+invoke-virtual {v0, v1}, Landroid/os/Handler;->removeCallbacksAndMessages(Ljava/lang/Object;)V
+
+Remove any pending posts of messages with code 'what' that are in the message queue.
+final void removeMessages(int what)
+invoke-virtual {v0, v1}, Landroid/os/Handler;->removeMessages(I)V
+
+Remove any pending posts of messages with code 'what' and whose obj is 'object' that are in the message queue.
+final void removeMessages(int what, Object object)
+invoke-virtual {v0, v1, v2}, Landroid/os/Handler;->removeMessages(ILjava/lang/Object;)V
+
+Sends a Message containing only the what value.
+final boolean sendEmptyMessage(int what)
+invoke-virtual {v0, v1}, Landroid/os/Handler;->sendEmptyMessage(I)Z
+
+Sends a Message containing only the what value, to be delivered at a specific time.
+final boolean sendEmptyMessageAtTime(int what, long uptimeMillis)
+invoke-virtual {v0, v1, v2, v3}, Landroid/os/Handler;->sendEmptyMessageAtTime(IJ)Z
+
+Sends a Message containing only the what value, to be delivered after the specified amount of time elapses.
+final boolean sendEmptyMessageDelayed(int what, long delayMillis)
+invoke-virtual {v0, v1, v2, v3}, Landroid/os/Handler;->sendEmptyMessageDelayed(IJ)Z
+
+Pushes a message onto the end of the message queue after all pending messages before the current time.
+final boolean sendMessage(Message msg)
+invoke-virtual {v0, v1}, Landroid/os/Handler;->sendMessage(Landroid/os/Message;)Z
+
+Enqueue a message at the front of the message queue, to be processed on the next iteration of the message loop.
+final boolean sendMessageAtFrontOfQueue(Message msg)
+invoke-virtual {v0, v1}, Landroid/os/Handler;->sendMessageAtFrontOfQueue(Landroid/os/Message;)Z
+
+Enqueue a message into the message queue after all pending messages before the absolute time (in milliseconds) uptimeMillis.
+boolean sendMessageAtTime(Message msg, long uptimeMillis)
+invoke-virtual {v0, v1, v2, v3}, Landroid/os/Handler;->sendMessageAtTime(Landroid/os/Message;J)Z
+
+Enqueue a message into the message queue after all pending messages before (current time + delayMillis).
+final boolean sendMessageDelayed(Message msg, long delayMillis)
+invoke-virtual {v0, v1, v2, v3}, Landroid/os/Handler;->sendMessageDelayed(Landroid/os/Message;J)Z
+
+Returns a string representation of the object.
+String toString()
+invoke-virtual {v0}, Landroid/os/Handler;->toString()Ljava/lang/String;

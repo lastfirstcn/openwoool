@@ -1,0 +1,279 @@
+This class represents a popup window that can be used to display an arbitrary view. The popup window is a floating container that appears on top of the current activity.
+class android.widget.PopupWindow
+.class Landroid/widget/PopupWindow;
+
+继承
+inherit java.lang.Object
+.super Ljava/lang/Object;
+
+Mode for setInputMethodMode(int): the requirements for the input method should be based on the focusability of the popup.
+public static final int INPUT_METHOD_FROM_FOCUSABLE
+sget v0, Landroid/widget/PopupWindow;->INPUT_METHOD_FROM_FOCUSABLE:I
+
+Mode for setInputMethodMode(int): this popup always needs to work with an input method, regardless of whether it is focusable.
+public static final int INPUT_METHOD_NEEDED
+sget v0, Landroid/widget/PopupWindow;->INPUT_METHOD_NEEDED:I
+
+Mode for setInputMethodMode(int): this popup never needs to work with an input method, regardless of whether it is focusable.
+public static final int INPUT_METHOD_NOT_NEEDED
+sget v0, Landroid/widget/PopupWindow;->INPUT_METHOD_NOT_NEEDED:I
+
+构造方法：Create a new empty, non focusable popup window of dimension (0,0).
+constructor PopupWindow(Context context)
+invoke-direct {v0, v1}, Landroid/widget/PopupWindow;-><init>(Landroid/content/Context;)V
+
+构造方法：Create a new empty, non focusable popup window of dimension (0,0).
+constructor PopupWindow(Context context, AttributeSet attrs)
+invoke-direct {v0, v1, v2}, Landroid/widget/PopupWindow;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
+
+构造方法：Create a new empty, non focusable popup window of dimension (0,0).
+constructor PopupWindow(Context context, AttributeSet attrs, int defStyleAttr)
+invoke-direct {v0, v1, v2, v3}, Landroid/widget/PopupWindow;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;I)V
+
+构造方法：Create a new, empty, non focusable popup window of dimension (0,0).
+constructor PopupWindow(Context context, AttributeSet attrs, int defStyleAttr, int defStyleRes)
+invoke-direct {v0, v1, v2, v3, v4}, Landroid/widget/PopupWindow;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;II)V
+
+构造方法：Create a new empty, non focusable popup window of dimension (0,0).
+constructor PopupWindow()
+invoke-direct {v0}, Landroid/widget/PopupWindow;-><init>()V
+
+构造方法：Create a new non focusable popup window which can display the contentView.
+constructor PopupWindow(View contentView)
+invoke-direct {v0, v1}, Landroid/widget/PopupWindow;-><init>(Landroid/view/View;)V
+
+构造方法：Create a new empty, non focusable popup window.
+constructor PopupWindow(int width, int height)
+invoke-direct {v0, v1, v2}, Landroid/widget/PopupWindow;-><init>(II)V
+
+构造方法：Create a new non focusable popup window which can display the contentView.
+constructor PopupWindow(View contentView, int width, int height)
+invoke-direct {v0, v1, v2, v3}, Landroid/widget/PopupWindow;-><init>(Landroid/view/View;II)V
+
+构造方法：Create a new popup window which can display the contentView.
+constructor PopupWindow(View contentView, int width, int height, boolean focusable)
+invoke-direct {v0, v1, v2, v3, v4}, Landroid/widget/PopupWindow;-><init>(Landroid/view/View;IIZ)V
+
+Disposes of the popup window.
+void dismiss()
+invoke-virtual {v0}, Landroid/widget/PopupWindow;->dismiss()V
+
+Return the animation style to use the popup appears and disappears
+int getAnimationStyle()
+invoke-virtual {v0}, Landroid/widget/PopupWindow;->getAnimationStyle()I
+
+Return the drawable used as the popup window's background.
+Drawable getBackground()
+invoke-virtual {v0}, Landroid/widget/PopupWindow;->getBackground()Landroid/graphics/drawable/Drawable;
+
+Return the view used as the content of the popup window.
+View getContentView()
+invoke-virtual {v0}, Landroid/widget/PopupWindow;->getContentView()Landroid/view/View;
+
+没有帮助内容
+float getElevation()
+invoke-virtual {v0}, Landroid/widget/PopupWindow;->getElevation()F
+
+Returns the enter transition to be used when the popup window is shown.
+Transition getEnterTransition()
+invoke-virtual {v0}, Landroid/widget/PopupWindow;->getEnterTransition()Landroid/transition/Transition;
+
+Returns the exit transition to be used when the popup window is dismissed.
+Transition getExitTransition()
+invoke-virtual {v0}, Landroid/widget/PopupWindow;->getExitTransition()Landroid/transition/Transition;
+
+Returns the popup's requested height.
+int getHeight()
+invoke-virtual {v0}, Landroid/widget/PopupWindow;->getHeight()I
+
+Return the current value in setInputMethodMode(int).
+int getInputMethodMode()
+invoke-virtual {v0}, Landroid/widget/PopupWindow;->getInputMethodMode()I
+
+Returns the maximum height that is available for the popup to be completely shown.
+int getMaxAvailableHeight(View anchor)
+invoke-virtual {v0, v1}, Landroid/widget/PopupWindow;->getMaxAvailableHeight(Landroid/view/View;)I
+
+Returns the maximum height that is available for the popup to be completely shown.
+int getMaxAvailableHeight(View anchor, int yOffset)
+invoke-virtual {v0, v1, v2}, Landroid/widget/PopupWindow;->getMaxAvailableHeight(Landroid/view/View;I)I
+
+Returns the maximum height that is available for the popup to be completely shown, optionally ignoring any bottom decorations such as the input method.
+int getMaxAvailableHeight(View anchor, int yOffset, boolean ignoreBottomDecorations)
+invoke-virtual {v0, v1, v2, v3}, Landroid/widget/PopupWindow;->getMaxAvailableHeight(Landroid/view/View;IZ)I
+
+Returns whether the popup window should overlap its anchor view when displayed as a drop-down.
+boolean getOverlapAnchor()
+invoke-virtual {v0}, Landroid/widget/PopupWindow;->getOverlapAnchor()Z
+
+Returns the current value in setSoftInputMode(int).
+int getSoftInputMode()
+invoke-virtual {v0}, Landroid/widget/PopupWindow;->getSoftInputMode()I
+
+Returns the popup's requested width.
+int getWidth()
+invoke-virtual {v0}, Landroid/widget/PopupWindow;->getWidth()I
+
+Returns the layout type for this window.
+int getWindowLayoutType()
+invoke-virtual {v0}, Landroid/widget/PopupWindow;->getWindowLayoutType()I
+
+Indicates whether the popup is showing above (the y coordinate of the popup's bottom is less than the y coordinate of the anchor) or below the anchor view (the y coordinate of the popup is greater than y coordinate of the anchor's bottom).
+boolean isAboveAnchor()
+invoke-virtual {v0}, Landroid/widget/PopupWindow;->isAboveAnchor()Z
+
+Indicates whether the popup window will be attached in the decor frame of its parent window.
+boolean isAttachedInDecor()
+invoke-virtual {v0}, Landroid/widget/PopupWindow;->isAttachedInDecor()Z
+
+Indicates whether clipping of the popup window is enabled.
+boolean isClippingEnabled()
+invoke-virtual {v0}, Landroid/widget/PopupWindow;->isClippingEnabled()Z
+
+Indicate whether the popup window can grab the focus.
+boolean isFocusable()
+invoke-virtual {v0}, Landroid/widget/PopupWindow;->isFocusable()Z
+
+Indicates whether the popup window will be informed of touch events outside of its window.
+boolean isOutsideTouchable()
+invoke-virtual {v0}, Landroid/widget/PopupWindow;->isOutsideTouchable()Z
+
+Indicate whether this popup window is showing on screen.
+boolean isShowing()
+invoke-virtual {v0}, Landroid/widget/PopupWindow;->isShowing()Z
+
+Indicates whether the popup window supports splitting touches.
+boolean isSplitTouchEnabled()
+invoke-virtual {v0}, Landroid/widget/PopupWindow;->isSplitTouchEnabled()Z
+
+Indicates whether the popup window receives touch events.
+boolean isTouchable()
+invoke-virtual {v0}, Landroid/widget/PopupWindow;->isTouchable()Z
+
+Change the animation style resource for this popup.
+void setAnimationStyle(int animationStyle)
+invoke-virtual {v0, v1}, Landroid/widget/PopupWindow;->setAnimationStyle(I)V
+
+This will attach the popup window to the decor frame of the parent window to avoid overlaping with screen decorations like the navigation bar.
+void setAttachedInDecor(boolean enabled)
+invoke-virtual {v0, v1}, Landroid/widget/PopupWindow;->setAttachedInDecor(Z)V
+
+Specifies the background drawable for this popup window.
+void setBackgroundDrawable(Drawable background)
+invoke-virtual {v0, v1}, Landroid/widget/PopupWindow;->setBackgroundDrawable(Landroid/graphics/drawable/Drawable;)V
+
+Allows the popup window to extend beyond the bounds of the screen.
+void setClippingEnabled(boolean enabled)
+invoke-virtual {v0, v1}, Landroid/widget/PopupWindow;->setClippingEnabled(Z)V
+
+Change the popup's content.
+void setContentView(View contentView)
+invoke-virtual {v0, v1}, Landroid/widget/PopupWindow;->setContentView(Landroid/view/View;)V
+
+Specifies the elevation for this popup window.
+void setElevation(float elevation)
+invoke-virtual {v0, v1}, Landroid/widget/PopupWindow;->setElevation(F)V
+
+Sets the enter transition to be used when the popup window is shown.
+void setEnterTransition(Transition enterTransition)
+invoke-virtual {v0, v1}, Landroid/widget/PopupWindow;->setEnterTransition(Landroid/transition/Transition;)V
+
+Sets the exit transition to be used when the popup window is dismissed.
+void setExitTransition(Transition exitTransition)
+invoke-virtual {v0, v1}, Landroid/widget/PopupWindow;->setExitTransition(Landroid/transition/Transition;)V
+
+Changes the focusability of the popup window.
+void setFocusable(boolean focusable)
+invoke-virtual {v0, v1}, Landroid/widget/PopupWindow;->setFocusable(Z)V
+
+Sets the popup's requested height.
+void setHeight(int height)
+invoke-virtual {v0, v1}, Landroid/widget/PopupWindow;->setHeight(I)V
+
+Set the flag on popup to ignore cheek press events; by default this flag is set to false which means the popup will not ignore cheek press dispatch events.
+void setIgnoreCheekPress()
+invoke-virtual {v0}, Landroid/widget/PopupWindow;->setIgnoreCheekPress()V
+
+Control how the popup operates with an input method: one of INPUT_METHOD_FROM_FOCUSABLE, INPUT_METHOD_NEEDED, or INPUT_METHOD_NOT_NEEDED.
+void setInputMethodMode(int mode)
+invoke-virtual {v0, v1}, Landroid/widget/PopupWindow;->setInputMethodMode(I)V
+
+Sets the listener to be called when the window is dismissed.
+void setOnDismissListener(PopupWindow.OnDismissListener onDismissListener)
+invoke-virtual {v0, v1}, Landroid/widget/PopupWindow;->setOnDismissListener(Landroid/widget/PopupWindow$OnDismissListener;)V
+
+Controls whether the pop-up will be informed of touch events outside of its window.
+void setOutsideTouchable(boolean touchable)
+invoke-virtual {v0, v1}, Landroid/widget/PopupWindow;->setOutsideTouchable(Z)V
+
+Sets whether the popup window should overlap its anchor view when displayed as a drop-down.
+void setOverlapAnchor(boolean overlapAnchor)
+invoke-virtual {v0, v1}, Landroid/widget/PopupWindow;->setOverlapAnchor(Z)V
+
+Sets the operating mode for the soft input area.
+void setSoftInputMode(int mode)
+invoke-virtual {v0, v1}, Landroid/widget/PopupWindow;->setSoftInputMode(I)V
+
+Allows the popup window to split touches across other windows that also support split touch.
+void setSplitTouchEnabled(boolean enabled)
+invoke-virtual {v0, v1}, Landroid/widget/PopupWindow;->setSplitTouchEnabled(Z)V
+
+Set a callback for all touch events being dispatched to the popup window.
+void setTouchInterceptor(View.OnTouchListener l)
+invoke-virtual {v0, v1}, Landroid/widget/PopupWindow;->setTouchInterceptor(Landroid/view/View$OnTouchListener;)V
+
+Changes the touchability of the popup window.
+void setTouchable(boolean touchable)
+invoke-virtual {v0, v1}, Landroid/widget/PopupWindow;->setTouchable(Z)V
+
+Sets the popup's requested width.
+void setWidth(int width)
+invoke-virtual {v0, v1}, Landroid/widget/PopupWindow;->setWidth(I)V
+
+This method was deprecated in API level 23. Use setWidth(int) and setHeight(int).
+void setWindowLayoutMode(int widthSpec, int heightSpec)
+invoke-virtual {v0, v1, v2}, Landroid/widget/PopupWindow;->setWindowLayoutMode(II)V
+
+Set the layout type for this window.
+void setWindowLayoutType(int layoutType)
+invoke-virtual {v0, v1}, Landroid/widget/PopupWindow;->setWindowLayoutType(I)V
+
+Display the content view in a popup window anchored to the bottom-left corner of the anchor view.
+void showAsDropDown(View anchor)
+invoke-virtual {v0, v1}, Landroid/widget/PopupWindow;->showAsDropDown(Landroid/view/View;)V
+
+Displays the content view in a popup window anchored to the corner of another view.
+void showAsDropDown(View anchor, int xoff, int yoff, int gravity)
+invoke-virtual {v0, v1, v2, v3, v4}, Landroid/widget/PopupWindow;->showAsDropDown(Landroid/view/View;III)V
+
+Display the content view in a popup window anchored to the bottom-left corner of the anchor view offset by the specified x and y coordinates.
+void showAsDropDown(View anchor, int xoff, int yoff)
+invoke-virtual {v0, v1, v2, v3}, Landroid/widget/PopupWindow;->showAsDropDown(Landroid/view/View;II)V
+
+Display the content view in a popup window at the specified location.
+void showAtLocation(View parent, int gravity, int x, int y)
+invoke-virtual {v0, v1, v2, v3, v4}, Landroid/widget/PopupWindow;->showAtLocation(Landroid/view/View;III)V
+
+Updates the position and the dimension of the popup window.
+void update(View anchor, int width, int height)
+invoke-virtual {v0, v1, v2, v3}, Landroid/widget/PopupWindow;->update(Landroid/view/View;II)V
+
+Updates the position and the dimension of the popup window.
+void update(View anchor, int xoff, int yoff, int width, int height)
+invoke-virtual/range {v0 .. v5}, Landroid/widget/PopupWindow;->update(Landroid/view/View;IIII)V
+
+Updates the dimension of the popup window.
+void update(int width, int height)
+invoke-virtual {v0, v1, v2}, Landroid/widget/PopupWindow;->update(II)V
+
+Updates the state of the popup window, if it is currently being displayed, from the currently set state.
+void update()
+invoke-virtual {v0}, Landroid/widget/PopupWindow;->update()V
+
+Updates the position and the dimension of the popup window.
+void update(int x, int y, int width, int height, boolean force)
+invoke-virtual/range {v0 .. v5}, Landroid/widget/PopupWindow;->update(IIIIZ)V
+
+Updates the position and the dimension of the popup window.
+void update(int x, int y, int width, int height)
+invoke-virtual {v0, v1, v2, v3, v4}, Landroid/widget/PopupWindow;->update(IIII)V

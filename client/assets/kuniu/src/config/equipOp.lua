@@ -22,13 +22,14 @@ end
 --[[
 佩戴部位:
 武器：1  
-戒指：2  
+戒指：2--  
 项链：3  
 鞋子：4  
 衣服：5  
-手镯：6  
+手镯：6--  
 头盔：7  
 腰带：8
+特戒：13
 --]]
 kind = function(id)
 	-- 没有默认值
@@ -218,7 +219,7 @@ qiangHuaJiHuo = function(protoId)
 	return unserialize(record and record.jihuo)
 end
 
--- 极品属性相关
+-- 极品属性相关--洗练
 
 -- 极品属性类型
 specialAttrCate = function(protoId)
@@ -403,6 +404,7 @@ local tStrengthCost =  getConfigItemByKeys("equipStrengthen", {
 	"q_level",
 })
 local strengthCostItem = function(id, strengthLevel)
+   print (id, "强化等级")
 	return tStrengthCost[kind(id)][strengthLevel]
 end
 -----------------------------------------------------------------------------------
@@ -420,6 +422,7 @@ isStrengthRUL = function(id, strengthLv, quality)
 	if id >= 30004 and id <= 30006 then return true end -- 勋章
 	return strengthLv >= (tQuality2StrengthRUL[quality] or 0)
 end
+
 
 -- 强化等级上限
 upStrengthRUL = function(id, quality)

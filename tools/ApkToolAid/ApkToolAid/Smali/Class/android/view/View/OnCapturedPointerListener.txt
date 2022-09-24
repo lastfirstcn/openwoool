@@ -1,0 +1,7 @@
+Interface definition for a callback to be invoked when a captured pointer event is being dispatched this view.
+interface View.OnCapturedPointerListener
+.class interface Landroid/view/View$OnCapturedPointerListener;
+
+Called when a captured pointer event is dispatched to a view.
+abstract boolean onCapturedPointer(View view, MotionEvent event)
+event onCapturedPointer(Landroid/view/View;Landroid/view/MotionEvent;)Z

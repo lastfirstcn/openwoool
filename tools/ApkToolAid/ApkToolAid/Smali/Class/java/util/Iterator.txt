@@ -1,0 +1,15 @@
+对 collection 进行迭代的迭代器。迭代器取代了 Java Collections Framework 中的 Enumeration。
+interface java.util.Iterator
+.class interface Ljava/util/Iterator;
+
+如果仍有元素可以迭代，则返回 true。
+boolean hasNext()
+invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
+
+返回迭代的下一个元素。
+E next()
+invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+从迭代器指向的 collection 中移除迭代器返回的最后一个元素（可选操作）。
+void remove()
+invoke-interface {v0}, Ljava/util/Iterator;->remove()V

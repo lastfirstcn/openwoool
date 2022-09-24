@@ -1,5 +1,5 @@
 local Items = {
-	{id = 5,showname = '寻宝',level = 22,key = 'a11',},
+	{id = 5,showname = '寻宝',level = 22,key = 'a36',},
 	{id = 7,showname = '战神试炼',level = 24,key = 'a7',},
 	{id = 8,showname = '战神试炼-抓住偷金贼',level = 24,key = 'a7',},
 	{id = 9,showname = '战神试炼-强化的技巧',level = 31,key = 'a7',},

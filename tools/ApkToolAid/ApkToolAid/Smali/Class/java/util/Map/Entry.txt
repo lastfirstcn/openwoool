@@ -1,0 +1,23 @@
+映射项（键-值对）。Map.entrySet 方法返回映射的 collection 视图，其中的元素属于此类。获得映射项引用的唯一 方法是通过此 collection 视图的迭代器来实现。这些 Map.Entry 对象仅 在迭代期间有效；更确切地讲，如果在迭代器返回项之后修改了底层映射，则某些映射项的行为是不确定的，除了通过 setValue 在映射项上执行操作之外。
+interface java.util.Map.Entry
+.class interface Ljava/util/Map$Entry;
+
+比较指定对象与此项的相等性。
+boolean equals(Object o)
+invoke-interface {v0, v1}, Ljava/util/Map$Entry;->equals(Ljava/lang/Object;)Z
+
+返回与此项对应的键。
+K getKey()
+invoke-interface {v0}, Ljava/util/Map$Entry;->getKey()Ljava/lang/Object;
+
+返回与此项对应的值。
+V getValue()
+invoke-interface {v0}, Ljava/util/Map$Entry;->getValue()Ljava/lang/Object;
+
+返回此映射项的哈希码值。
+int hashCode()
+invoke-interface {v0}, Ljava/util/Map$Entry;->hashCode()I
+
+用指定的值替换与此项对应的值（可选操作）。
+V setValue(V value)
+invoke-interface {v0, v1}, Ljava/util/Map$Entry;->setValue(Ljava/lang/Object;)Ljava/lang/Object;

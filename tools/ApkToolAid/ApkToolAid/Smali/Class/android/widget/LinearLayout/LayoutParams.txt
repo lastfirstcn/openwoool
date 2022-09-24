@@ -1,0 +1,43 @@
+Per-child layout information associated with ViewLinearLayout.
+class android.widget.LinearLayout.LayoutParams
+.class Landroid/widget/LinearLayout$LayoutParams;
+
+继承
+inherit android.view.ViewGroup.MarginLayoutParams
+.super Landroid/view/ViewGroup$MarginLayoutParams;
+
+Gravity for the view associated with these LayoutParams.
+public int gravity
+iget v0, v1, Landroid/widget/LinearLayout$LayoutParams;->gravity:I
+
+Indicates how much of the extra space in the LinearLayout will be allocated to the view associated with these LayoutParams.
+public float weight
+iget v0, v1, Landroid/widget/LinearLayout$LayoutParams;->weight:F
+
+构造方法：没有帮助内容
+constructor LinearLayout.LayoutParams(Context c, AttributeSet attrs)
+invoke-direct {v0, v1, v2}, Landroid/widget/LinearLayout$LayoutParams;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
+
+构造方法：没有帮助内容
+constructor LinearLayout.LayoutParams(int width, int height)
+invoke-direct {v0, v1, v2}, Landroid/widget/LinearLayout$LayoutParams;-><init>(II)V
+
+构造方法：Creates a new set of layout parameters with the specified width, height and weight.
+constructor LinearLayout.LayoutParams(int width, int height, float weight)
+invoke-direct {v0, v1, v2, v3}, Landroid/widget/LinearLayout$LayoutParams;-><init>(IIF)V
+
+构造方法：没有帮助内容
+constructor LinearLayout.LayoutParams(ViewGroup.LayoutParams p)
+invoke-direct {v0, v1}, Landroid/widget/LinearLayout$LayoutParams;-><init>(Landroid/view/ViewGroup$LayoutParams;)V
+
+构造方法：没有帮助内容
+constructor LinearLayout.LayoutParams(ViewGroup.MarginLayoutParams source)
+invoke-direct {v0, v1}, Landroid/widget/LinearLayout$LayoutParams;-><init>(Landroid/view/ViewGroup$MarginLayoutParams;)V
+
+构造方法：Copy constructor.
+constructor LinearLayout.LayoutParams(LinearLayout.LayoutParams source)
+invoke-direct {v0, v1}, Landroid/widget/LinearLayout$LayoutParams;-><init>(Landroid/widget/LinearLayout$LayoutParams;)V
+
+没有帮助内容
+String debug(String output)
+invoke-virtual {v0, v1}, Landroid/widget/LinearLayout$LayoutParams;->debug(Ljava/lang/String;)Ljava/lang/String;

@@ -1,0 +1,91 @@
+扩展的 SortedMap，具有了针对给定搜索目标返回最接近匹配项的导航方法。方法 lowerEntry、floorEntry、ceilingEntry 和 higherEntry 分别返回与小于、小于等于、大于等于、大于给定键的键关联的 Map.Entry 对象，如果不存在这样的键，则返回 null。类似地，方法 lowerKey、floorKey、ceilingKey 和 higherKey 只返回关联的键。所有这些方法是为查找条目而不是遍历条目而设计的。
+interface java.util.NavigableMap
+.class interface Ljava/util/NavigableMap;
+
+继承
+inherit java.util.SortedMap
+.super Ljava/util/SortedMap;
+
+返回一个键-值映射关系，它与大于等于给定键的最小键关联；如果不存在这样的键，则返回 null。
+Map.Entry<K,V> ceilingEntry(K key)
+invoke-interface {v0, v1}, Ljava/util/NavigableMap;->ceilingEntry(Ljava/lang/Object;)Ljava/util/Map$Entry;
+
+返回大于等于给定键的最小键；如果不存在这样的键，则返回 null。
+K ceilingKey(K key)
+invoke-interface {v0, v1}, Ljava/util/NavigableMap;->ceilingKey(Ljava/lang/Object;)Ljava/lang/Object;
+
+返回此映射中所包含键的逆序 NavigableSet 视图。
+NavigableSet<K> descendingKeySet()
+invoke-interface {v0}, Ljava/util/NavigableMap;->descendingKeySet()Ljava/util/NavigableSet;
+
+返回此映射中所包含映射关系的逆序视图。
+NavigableMap<K,V> descendingMap()
+invoke-interface {v0}, Ljava/util/NavigableMap;->descendingMap()Ljava/util/NavigableMap;
+
+返回一个与此映射中的最小键关联的键-值映射关系；如果映射为空，则返回 null。
+Map.Entry<K,V> firstEntry()
+invoke-interface {v0}, Ljava/util/NavigableMap;->firstEntry()Ljava/util/Map$Entry;
+
+返回一个键-值映射关系，它与小于等于给定键的最大键关联；如果不存在这样的键，则返回 null。
+Map.Entry<K,V> floorEntry(K key)
+invoke-interface {v0, v1}, Ljava/util/NavigableMap;->floorEntry(Ljava/lang/Object;)Ljava/util/Map$Entry;
+
+返回小于等于给定键的最大键；如果不存在这样的键，则返回 null。
+K floorKey(K key)
+invoke-interface {v0, v1}, Ljava/util/NavigableMap;->floorKey(Ljava/lang/Object;)Ljava/lang/Object;
+
+返回此映射的部分视图，其键值严格小于 toKey。
+SortedMap<K,V> headMap(K toKey)
+invoke-interface {v0, v1}, Ljava/util/NavigableMap;->headMap(Ljava/lang/Object;)Ljava/util/SortedMap;
+
+返回此映射的部分视图，其键小于（或等于，如果 inclusive 为 true）toKey。
+NavigableMap<K,V> headMap(K toKey, boolean inclusive)
+invoke-interface {v0, v1, v2}, Ljava/util/NavigableMap;->headMap(Ljava/lang/Object;Z)Ljava/util/NavigableMap;
+
+返回一个键-值映射关系，它与严格大于给定键的最小键关联；如果不存在这样的键，则返回 null。
+Map.Entry<K,V> higherEntry(K key)
+invoke-interface {v0, v1}, Ljava/util/NavigableMap;->higherEntry(Ljava/lang/Object;)Ljava/util/Map$Entry;
+
+返回严格大于给定键的最小键；如果不存在这样的键，则返回 null。
+K higherKey(K key)
+invoke-interface {v0, v1}, Ljava/util/NavigableMap;->higherKey(Ljava/lang/Object;)Ljava/lang/Object;
+
+返回与此映射中的最大键关联的键-值映射关系；如果映射为空，则返回 null。
+Map.Entry<K,V> lastEntry()
+invoke-interface {v0}, Ljava/util/NavigableMap;->lastEntry()Ljava/util/Map$Entry;
+
+返回一个键-值映射关系，它与严格小于给定键的最大键关联；如果不存在这样的键，则返回 null。
+Map.Entry<K,V> lowerEntry(K key)
+invoke-interface {v0, v1}, Ljava/util/NavigableMap;->lowerEntry(Ljava/lang/Object;)Ljava/util/Map$Entry;
+
+返回严格小于给定键的最大键；如果不存在这样的键，则返回 null。
+K lowerKey(K key)
+invoke-interface {v0, v1}, Ljava/util/NavigableMap;->lowerKey(Ljava/lang/Object;)Ljava/lang/Object;
+
+返回此映射中所包含键的 NavigableSet 视图。
+NavigableSet<K> navigableKeySet()
+invoke-interface {v0}, Ljava/util/NavigableMap;->navigableKeySet()Ljava/util/NavigableSet;
+
+移除并返回与此映射中的最小键关联的键-值映射关系；如果映射为空，则返回 null。
+Map.Entry<K,V> pollFirstEntry()
+invoke-interface {v0}, Ljava/util/NavigableMap;->pollFirstEntry()Ljava/util/Map$Entry;
+
+移除并返回与此映射中的最大键关联的键-值映射关系；如果映射为空，则返回 null。
+Map.Entry<K,V> pollLastEntry()
+invoke-interface {v0}, Ljava/util/NavigableMap;->pollLastEntry()Ljava/util/Map$Entry;
+
+返回此映射的部分视图，其键的范围从 fromKey 到 toKey。
+NavigableMap<K,V> subMap(K fromKey, boolean fromInclusive, K toKey, boolean toInclusive)
+invoke-interface {v0, v1, v2, v3, v4}, Ljava/util/NavigableMap;->subMap(Ljava/lang/Object;ZLjava/lang/Object;Z)Ljava/util/NavigableMap;
+
+返回此映射的部分视图，其键值的范围从 fromKey（包括）到 toKey（不包括）。
+SortedMap<K,V> subMap(K fromKey, K toKey)
+invoke-interface {v0, v1, v2}, Ljava/util/NavigableMap;->subMap(Ljava/lang/Object;Ljava/lang/Object;)Ljava/util/SortedMap;
+
+返回此映射的部分视图，其键大于等于 fromKey。
+SortedMap<K,V> tailMap(K fromKey)
+invoke-interface {v0, v1}, Ljava/util/NavigableMap;->tailMap(Ljava/lang/Object;)Ljava/util/SortedMap;
+
+返回此映射的部分视图，其键大于（或等于，如果 inclusive 为 true）fromKey。
+NavigableMap<K,V> tailMap(K fromKey, boolean inclusive)
+invoke-interface {v0, v1, v2}, Ljava/util/NavigableMap;->tailMap(Ljava/lang/Object;Z)Ljava/util/NavigableMap;

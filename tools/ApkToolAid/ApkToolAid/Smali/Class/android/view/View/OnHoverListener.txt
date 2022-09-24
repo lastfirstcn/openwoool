@@ -1,0 +1,7 @@
+Interface definition for a callback to be invoked when a hover event is dispatched to this view.
+interface View.OnHoverListener
+.class interface Landroid/view/View$OnHoverListener;
+
+Called when a hover event is dispatched to a view.
+abstract boolean onHover(View v, MotionEvent event)
+event onHover(Landroid/view/View;Landroid/view/MotionEvent;)Z

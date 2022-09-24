@@ -1,0 +1,37 @@
+指令提示的配置文件
+文件按照类名依次存放在子目录中
+文件名：类名
+文件扩展名：.txt
+文件内容将会呈现在指令帮助的Class下
+可以使用类名->自动弹出指令提示，也可以使用Ctrl+J手动弹出指令提示
+
+第1行：注释内容
+第2行：原型
+第3行：smali语法：
+       原型：class xxx.yyy.zzz
+       语法：.class Lxxx/yyy/zzz;
+
+       原型：interface xxx.yyy.zzz
+       语法：.class interface Lxxx/yyy/zzz;
+
+       原型：inherit xxx.yyy.zzz
+       语法：.super Lxxx/yyy/zzz;
+
+       原型：int test
+       语法：iget-object v0, v1, Lxxx/yyy/zzz;->test:I
+
+       原型：constructor zzz()
+       语法：invoke-direct {}, Lxxx/yyy/zzz;-><init>()V
+
+       原型：boolean test(float)
+       语法：invoke-virtual {v0}, Lxxx/yyy/zzz;->test(F)Z
+
+       事件：interface中的纯虚方法
+       原型：abstract void onTest(int i)
+       语法：event onTest(I)V
+第4行：空行
+第5行：重复前4行
+
+可使用的宏定义，有以下几种：
+%Return%：回车换行
+%Tab%：Tab转空格

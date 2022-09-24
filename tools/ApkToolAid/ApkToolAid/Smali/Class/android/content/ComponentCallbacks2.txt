@@ -1,0 +1,11 @@
+Interface definition for android.content.ComponentCallbacks2
+interface ComponentCallbacks2
+.class interface Landroid/content/ComponentCallbacks2;
+
+ผฬณะ
+inherit android.content.ComponentCallbacks
+.super Landroid/content/ComponentCallbacks;
+
+Called when the operating system has determined that it is a good time for a process to trim unneeded memory from its process.
+abstract void onTrimMemory(int level)
+event onTrimMemory(I)V

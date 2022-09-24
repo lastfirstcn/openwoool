@@ -1,0 +1,35 @@
+抽象类 Number 是 BigDecimal、BigInteger、Byte、Double、Float、Integer、Long 和 Short 类的超类。Number 的子类必须提供将表示的数值转换为 byte、double、float、int、long 和 short 的方法。
+class java.lang.Number
+.class Ljava/lang/Number;
+
+继承
+inherit java.lang.Object
+.super Ljava/lang/Object;
+
+构造方法：没有帮助内容
+constructor Number()
+invoke-direct {v0}, Ljava/lang/Number;-><init>()V
+
+以 byte 形式返回指定的数值。
+byte byteValue()
+invoke-virtual {v0}, Ljava/lang/Number;->byteValue()B
+
+以 double 形式返回指定的数值。
+abstract double doubleValue()
+invoke-virtual {v0}, Ljava/lang/Number;->doubleValue()D
+
+以 float 形式返回指定的数值。
+abstract float floatValue()
+invoke-virtual {v0}, Ljava/lang/Number;->floatValue()F
+
+以 int 形式返回指定的数值。
+abstract int intValue()
+invoke-virtual {v0}, Ljava/lang/Number;->intValue()I
+
+以 long 形式返回指定的数值。
+abstract long longValue()
+invoke-virtual {v0}, Ljava/lang/Number;->longValue()J
+
+以 short 形式返回指定的数值。
+short shortValue()
+invoke-virtual {v0}, Ljava/lang/Number;->shortValue()S

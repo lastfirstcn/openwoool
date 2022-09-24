@@ -1,0 +1,31 @@
+进一步提供关于元素的总体排序 的 Set。这些元素使用其自然顺序进行排序，或者根据通常在创建有序 set 时提供的 Comparator 进行排序。该 set 的迭代器将按元素升序遍历 set。提供了一些附加的操作来利用这种排序。（此接口是 SortedMap 的 set 对应接口）。
+interface java.util.SortedSet
+.class interface Ljava/util/SortedSet;
+
+继承
+inherit java.util.Set
+.super Ljava/util/Set;
+
+返回对此 set 中的元素进行排序的比较器；如果此 set 使用其元素的自然顺序，则返回 null。
+Comparator<? super E> comparator()
+invoke-interface {v0}, Ljava/util/SortedSet;->comparator()Ljava/util/Comparator;
+
+返回此 set 中当前第一个（最低）元素。
+E first()
+invoke-interface {v0}, Ljava/util/SortedSet;->first()Ljava/lang/Object;
+
+返回此 set 的部分视图，其元素严格小于 toElement。
+SortedSet<E> headSet(E toElement)
+invoke-interface {v0, v1}, Ljava/util/SortedSet;->headSet(Ljava/lang/Object;)Ljava/util/SortedSet;
+
+返回此 set 中当前最后一个（最高）元素。
+E last()
+invoke-interface {v0}, Ljava/util/SortedSet;->last()Ljava/lang/Object;
+
+返回此 set 的部分视图，其元素从 fromElement（包括）到 toElement（不包括）。
+SortedSet<E> subSet(E fromElement, E toElement)
+invoke-interface {v0, v1, v2}, Ljava/util/SortedSet;->subSet(Ljava/lang/Object;Ljava/lang/Object;)Ljava/util/SortedSet;
+
+返回此 set 的部分视图，其元素大于等于 fromElement。
+SortedSet<E> tailSet(E fromElement)
+invoke-interface {v0, v1}, Ljava/util/SortedSet;->tailSet(Ljava/lang/Object;)Ljava/util/SortedSet;

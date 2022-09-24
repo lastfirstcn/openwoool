@@ -7,13 +7,12 @@ eWhole = 0      -- 全系
 eWarrior = 1    -- 战士
 eEnchanter = 2  -- 法师
 eTaoist = 3     -- 道士
-eTaois = 4     -- 灵枪
+
 tSchool = {
 	[eWhole] = game.getStrByKey("general"),
 	[eWarrior] = game.getStrByKey("zhanshi"),
 	[eEnchanter] = game.getStrByKey("fashi"),
 	[eTaoist] = game.getStrByKey("daoshi"),
-	[eTaois] = "灵枪",
 }
 
 school = function(self, id)
@@ -30,19 +29,15 @@ tRoleHead = {
 		[eMale] = 1,
 		[eFemale] = 4,
 	},
-
+	
 	[eEnchanter] = {
 		[eMale] = 2,
 		[eFemale] = 5,
 	},
-
+	
 	[eTaoist] = {
 		[eMale] = 3,
 		[eFemale] = 6,
-	},
-	[eTaois] = {
-		[eMale] = 4,
-		[eFemale] = 7,
 	},
 }
 
@@ -76,8 +71,9 @@ eChuanTou = 12 -- "穿透"
 eMianShang = 13 -- "免伤"
 eLuck = 14 -- "幸运"
 eMoveSpeed = 15 -- "移动速度"
+eFreeze = 16 -- "冰冻"
 
-local tAttrIdToName =
+local tAttrIdToName = 
 {
 	-- 属性代号
 	[eHP] = game.getStrByKey("hp"),
@@ -95,6 +91,7 @@ local tAttrIdToName =
 	[eMianShang] = game.getStrByKey("hu_shen"),
 	[eLuck] = game.getStrByKey("luck"),
 	[eMoveSpeed] = game.getStrByKey("move") .. game.getStrByKey("speed"),
+	[eFreeze] = game.getStrByKey("freeze"),
 }
 
 attrName = function(id)
@@ -159,15 +156,11 @@ eHelmet = 7	    -- 头盔
 eBelt = 8	    -- 腰带
 eSuit = 9	    -- 时装
 eMedal = 12	    -- 勋章
-eFlag = 13 --战旗
-eSpecialRingBase = 15	-- 特戒
-eSpecialRingWedding = 16	-- 官印
-eSpecialRingProtect = 17	-- 灵珠
-eSpecialRingKill = 18	-- 玉佩
-eShield = 19 --盾牌
-eSpecialRingKing = 20 --法宝
-eSpecialRingHoly = 21 --法阵
-eSpecialRingYaqiang = 30 --神器
+eTering = 13    -- 特戒
+eDunshield = 14	-- 盾牌
+eWeaponsb = 15	-- 战旗
+eWeapons = 16   -- 武器
+eWeaponxz = 17   -- 武
 
 
 local tEquipName = {
@@ -181,16 +174,12 @@ local tEquipName = {
 	[eBelt] = game.getStrByKey("belt"),
 	[eSuit] = game.getStrByKey("suit"),
 	[eMedal] = game.getStrByKey("medal"),
-	[eFlag] = game.getStrByKey("flag"),
-	[eSpecialRingBase] = game.getStrByKey("specialRingBase"),
-	[eSpecialRingWedding] = game.getStrByKey("specialRingWedding"),
-	[eSpecialRingProtect] = game.getStrByKey("specialRingProtect"),
-	[eSpecialRingKill] = game.getStrByKey("specialRingKill"),
-	[eShield] = game.getStrByKey("shield"),
-	[eSpecialRingKing] = game.getStrByKey("specialRingKing"),
-	[eSpecialRingHoly] = game.getStrByKey("specialRingHoly"),
-	[eSpecialRingYaqiang] = "神器",
-	
+	[eTering] = game.getStrByKey("tering"),
+	[eDunshield] = game.getStrByKey("dunshield"),	
+	[eWeaponsb] = game.getStrByKey("zhanqi"),	
+	[eWeapons] = game.getStrByKey("weapons"),
+	[eWeaponxz] = game.getStrByKey("weaponxz"),	
+
 }
 
 equipName = function(self, id)

@@ -216,8 +216,6 @@ local Items=
   {q_id=5130807.0,q_needMatID=7330008.0,q_needMatNum=24.0,q_needLevel=70.0,q_needMoney=10800000.0,F6='60级套装道士腰带',},
   {q_id=5130808.0,q_needMatID=7330008.0,q_needMatNum=36.0,q_needLevel=80.0,q_needMoney=19200000.0,F6='70级套装道士腰带',},
   {q_id=5130809.0,q_needMatID=7330008.0,q_needMatNum=48.0,q_needLevel=90.0,q_needMoney=28800000.0,F6='80级套装道士腰带',},
-
-  {q_id=8300040.0,q_needMatID=7330008.0,q_needMatNum=48.0,q_needLevel=90.0,q_needMoney=28800000.0,F6='战旗套装',},
 }
 
 return Items

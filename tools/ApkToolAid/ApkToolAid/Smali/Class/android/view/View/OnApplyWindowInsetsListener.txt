@@ -1,0 +1,7 @@
+Listener for applying window insets on a view in a custom way.
+interface View.OnApplyWindowInsetsListener
+.class interface Landroid/view/View$OnApplyWindowInsetsListener;
+
+When set on a View, this listener method will be called instead of the view's own onApplyWindowInsets method.
+abstract WindowInsets onApplyWindowInsets(View v, WindowInsets insets)
+event onApplyWindowInsets(Landroid/view/View;Landroid/view/WindowInsets;)Landroid/view/WindowInsets;

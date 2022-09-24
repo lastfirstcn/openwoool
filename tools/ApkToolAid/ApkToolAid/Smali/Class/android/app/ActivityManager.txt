@@ -1,0 +1,179 @@
+This class gives information about, and interacts with, activities, services, and the containing process.
+class android.app.ActivityManager
+.class Landroid/app/ActivityManager;
+
+ผฬณะ
+inherit java.lang.Object
+.super Ljava/lang/Object;
+
+Action an app can implement to handle reports from setWatchHeapLimit(long).
+public static final String ACTION_REPORT_HEAP_LIMIT
+sget-object v0, Landroid/app/ActivityManager;->ACTION_REPORT_HEAP_LIMIT:Ljava/lang/String;
+
+Full lock task mode is active.
+public static final int LOCK_TASK_MODE_LOCKED
+sget v0, Landroid/app/ActivityManager;->LOCK_TASK_MODE_LOCKED:I
+
+Lock task mode is not active.
+public static final int LOCK_TASK_MODE_NONE
+sget v0, Landroid/app/ActivityManager;->LOCK_TASK_MODE_NONE:I
+
+App pinning mode is active.
+public static final int LOCK_TASK_MODE_PINNED
+sget v0, Landroid/app/ActivityManager;->LOCK_TASK_MODE_PINNED:I
+
+<meta-data> name for a 'home' Activity that declares a package that is to be uninstalled in lieu of the declaring one.
+public static final String META_HOME_ALTERNATE
+sget-object v0, Landroid/app/ActivityManager;->META_HOME_ALTERNATE:Ljava/lang/String;
+
+Flag for moveTaskToFront(int, int): don't count this as a user-instigated action, so the current activity will not receive a hint that the user is leaving.
+public static final int MOVE_TASK_NO_USER_ACTION
+sget v0, Landroid/app/ActivityManager;->MOVE_TASK_NO_USER_ACTION:I
+
+Flag for moveTaskToFront(int, int): also move the "home" activity along with the task, so it is positioned immediately behind the task.
+public static final int MOVE_TASK_WITH_HOME
+sget v0, Landroid/app/ActivityManager;->MOVE_TASK_WITH_HOME:I
+
+Provides a list that does not contain any recent tasks that currently are not available to the user.
+public static final int RECENT_IGNORE_UNAVAILABLE
+sget v0, Landroid/app/ActivityManager;->RECENT_IGNORE_UNAVAILABLE:I
+
+Flag for use with getRecentTasks(int, int): return all tasks, even those that have set their Intent.FLAG_ACTIVITY_EXCLUDE_FROM_RECENTS flag.
+public static final int RECENT_WITH_EXCLUDED
+sget v0, Landroid/app/ActivityManager;->RECENT_WITH_EXCLUDED:I
+
+Add a new AppTask for the calling application.
+int addAppTask(Activity activity, Intent intent, ActivityManager.TaskDescription description, Bitmap thumbnail)
+invoke-virtual {v0, v1, v2, v3, v4}, Landroid/app/ActivityManager;->addAppTask(Landroid/app/Activity;Landroid/content/Intent;Landroid/app/ActivityManager$TaskDescription;Landroid/graphics/Bitmap;)I
+
+Permits an application to erase its own data from disk.
+boolean clearApplicationUserData()
+invoke-virtual {v0}, Landroid/app/ActivityManager;->clearApplicationUserData()Z
+
+Clear a heap watch limit previously set by setWatchHeapLimit(long).
+void clearWatchHeapLimit()
+invoke-virtual {v0}, Landroid/app/ActivityManager;->clearWatchHeapLimit()V
+
+Perform a system dump of various state associated with the given application package name.
+void dumpPackageState(FileDescriptor fd, String packageName)
+invoke-virtual {v0, v1, v2}, Landroid/app/ActivityManager;->dumpPackageState(Ljava/io/FileDescriptor;Ljava/lang/String;)V
+
+Return the current design dimensions for AppTask thumbnails, for use with addAppTask(Activity, Intent, ActivityManager.TaskDescription, Bitmap).
+Size getAppTaskThumbnailSize()
+invoke-virtual {v0}, Landroid/app/ActivityManager;->getAppTaskThumbnailSize()Landroid/util/Size;
+
+Get the list of tasks associated with the calling application.
+List<ActivityManager.AppTask> getAppTasks()
+invoke-virtual {v0}, Landroid/app/ActivityManager;->getAppTasks()Ljava/util/List;
+
+Get the device configuration attributes.
+ConfigurationInfo getDeviceConfigurationInfo()
+invoke-virtual {v0}, Landroid/app/ActivityManager;->getDeviceConfigurationInfo()Landroid/content/pm/ConfigurationInfo;
+
+Return the approximate per-application memory class of the current device when an application is running with a large heap.
+int getLargeMemoryClass()
+invoke-virtual {v0}, Landroid/app/ActivityManager;->getLargeMemoryClass()I
+
+Get the preferred density of icons for the launcher.
+int getLauncherLargeIconDensity()
+invoke-virtual {v0}, Landroid/app/ActivityManager;->getLauncherLargeIconDensity()I
+
+Get the preferred launcher icon size.
+int getLauncherLargeIconSize()
+invoke-virtual {v0}, Landroid/app/ActivityManager;->getLauncherLargeIconSize()I
+
+Return the current state of task locking.
+int getLockTaskModeState()
+invoke-virtual {v0}, Landroid/app/ActivityManager;->getLockTaskModeState()I
+
+Return the approximate per-application memory class of the current device.
+int getMemoryClass()
+invoke-virtual {v0}, Landroid/app/ActivityManager;->getMemoryClass()I
+
+Return general information about the memory state of the system.
+void getMemoryInfo(ActivityManager.MemoryInfo outInfo)
+invoke-virtual {v0, v1}, Landroid/app/ActivityManager;->getMemoryInfo(Landroid/app/ActivityManager$MemoryInfo;)V
+
+Return global memory state information for the calling process.
+void getMyMemoryState(ActivityManager.RunningAppProcessInfo outState)
+invoke-static {v0}, Landroid/app/ActivityManager;->getMyMemoryState(Landroid/app/ActivityManager$RunningAppProcessInfo;)V
+
+Return information about the memory usage of one or more processes.
+MemoryInfo[] getProcessMemoryInfo(int[] pids)
+invoke-virtual {v0, v1}, Landroid/app/ActivityManager;->getProcessMemoryInfo([I)[Landroid/os/Debug$MemoryInfo;
+
+Returns a list of any processes that are currently in an error condition.
+List<ActivityManager.ProcessErrorStateInfo> getProcessesInErrorState()
+invoke-virtual {v0}, Landroid/app/ActivityManager;->getProcessesInErrorState()Ljava/util/List;
+
+This method was deprecated in API level 21. As of Build.VERSION_CODES.LOLLIPOP, this method is no longer available to third party applications: the introduction of document-centric recents means it can leak personal information to the caller. For backwards compatibility, it will still return a small subset of its data: at least the caller's own tasks (though see getAppTasks() for the correct supported way to retrieve that information), and possibly some other tasks such as home that are known to not be sensitive.
+List<ActivityManager.RecentTaskInfo> getRecentTasks(int maxNum, int flags)
+invoke-virtual {v0, v1, v2}, Landroid/app/ActivityManager;->getRecentTasks(II)Ljava/util/List;
+
+Returns a list of application processes that are running on the device.
+List<ActivityManager.RunningAppProcessInfo> getRunningAppProcesses()
+invoke-virtual {v0}, Landroid/app/ActivityManager;->getRunningAppProcesses()Ljava/util/List;
+
+Returns a PendingIntent you can start to show a control panel for the given running service.
+PendingIntent getRunningServiceControlPanel(ComponentName service)
+invoke-virtual {v0, v1}, Landroid/app/ActivityManager;->getRunningServiceControlPanel(Landroid/content/ComponentName;)Landroid/app/PendingIntent;
+
+This method was deprecated in API level 26. As of Build.VERSION_CODES.O, this method is no longer available to third party applications. For backwards compatibility, it will still return the caller's own services.
+List<ActivityManager.RunningServiceInfo> getRunningServices(int maxNum)
+invoke-virtual {v0, v1}, Landroid/app/ActivityManager;->getRunningServices(I)Ljava/util/List;
+
+This method was deprecated in API level 21. As of Build.VERSION_CODES.LOLLIPOP, this method is no longer available to third party applications: the introduction of document-centric recents means it can leak person information to the caller. For backwards compatibility, it will still return a small subset of its data: at least the caller's own tasks, and possibly some other tasks such as home that are known to not be sensitive.
+List<ActivityManager.RunningTaskInfo> getRunningTasks(int maxNum)
+invoke-virtual {v0, v1}, Landroid/app/ActivityManager;->getRunningTasks(I)Ljava/util/List;
+
+Check if the context is allowed to start an activity on specified display.
+boolean isActivityStartAllowedOnDisplay(Context context, int displayId, Intent intent)
+invoke-virtual {v0, v1, v2, v3}, Landroid/app/ActivityManager;->isActivityStartAllowedOnDisplay(Landroid/content/Context;ILandroid/content/Intent;)Z
+
+Query whether the user has enabled background restrictions for this app.
+boolean isBackgroundRestricted()
+invoke-virtual {v0}, Landroid/app/ActivityManager;->isBackgroundRestricted()Z
+
+This method was deprecated in API level 23. Use getLockTaskModeState() instead.
+boolean isInLockTaskMode()
+invoke-virtual {v0}, Landroid/app/ActivityManager;->isInLockTaskMode()Z
+
+Returns true if this is a low-RAM device.
+boolean isLowRamDevice()
+invoke-virtual {v0}, Landroid/app/ActivityManager;->isLowRamDevice()Z
+
+This method was deprecated in API level Q. this method is false for all user builds. Users looking to check if their device is running in a device farm should see isRunningInUserTestHarness().
+boolean isRunningInTestHarness()
+invoke-static {}, Landroid/app/ActivityManager;->isRunningInTestHarness()Z
+
+Returns "true" if the device is running in Test Harness Mode.
+boolean isRunningInUserTestHarness()
+invoke-static {}, Landroid/app/ActivityManager;->isRunningInUserTestHarness()Z
+
+Returns "true" if the user interface is currently being messed with by a monkey.
+boolean isUserAMonkey()
+invoke-static {}, Landroid/app/ActivityManager;->isUserAMonkey()Z
+
+Have the system immediately kill all background processes associated with the given package.
+void killBackgroundProcesses(String packageName)
+invoke-virtual {v0, v1}, Landroid/app/ActivityManager;->killBackgroundProcesses(Ljava/lang/String;)V
+
+Ask that the task associated with a given task ID be moved to the front of the stack, so it is now visible to the user.
+void moveTaskToFront(int taskId, int flags, Bundle options)
+invoke-virtual {v0, v1, v2, v3}, Landroid/app/ActivityManager;->moveTaskToFront(IILandroid/os/Bundle;)V
+
+Equivalent to calling moveTaskToFront(int, int, android.os.Bundle) with a null options argument.
+void moveTaskToFront(int taskId, int flags)
+invoke-virtual {v0, v1, v2}, Landroid/app/ActivityManager;->moveTaskToFront(II)V
+
+This method was deprecated in API level 15. This is now just a wrapper for killBackgroundProcesses(java.lang.String); the previous behavior here is no longer available to applications because it allows them to break other applications by removing their alarms, stopping their services, etc.
+void restartPackage(String packageName)
+invoke-virtual {v0, v1}, Landroid/app/ActivityManager;->restartPackage(Ljava/lang/String;)V
+
+Enable more aggressive scheduling for latency-sensitive low-runtime VR threads.
+void setVrThread(int tid)
+invoke-static {v0}, Landroid/app/ActivityManager;->setVrThread(I)V
+
+Request that the system start watching for the calling process to exceed a pss size as given here.
+void setWatchHeapLimit(long pssSize)
+invoke-virtual {v0, v1, v2}, Landroid/app/ActivityManager;->setWatchHeapLimit(J)V

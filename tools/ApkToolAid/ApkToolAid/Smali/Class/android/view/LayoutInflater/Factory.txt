@@ -1,0 +1,7 @@
+Interface definition for android.view.LayoutInflater.Factory
+interface LayoutInflater.Factory
+.class interface Landroid/view/LayoutInflater$Factory;
+
+Hook you can supply that is called when inflating from a LayoutInflater.
+abstract View onCreateView(String name, Context context, AttributeSet attrs)
+event onCreateView(Ljava/lang/String;Landroid/content/Context;Landroid/util/AttributeSet;)Landroid/view/View;

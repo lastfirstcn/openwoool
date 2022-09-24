@@ -1,0 +1,331 @@
+String 类代表字符串。Java 程序中的所有字符串字面值（如 "abc" ）都作为此类的实例实现。
+class java.lang.String
+.class Ljava/lang/String;
+
+继承
+inherit java.lang.Object
+.super Ljava/lang/Object;
+
+一个对 String 对象进行排序的 Comparator，作用与 compareToIgnoreCase 相同。
+public static final Comparator<String> CASE_INSENSITIVE_ORDER
+sget-object v0, Ljava/lang/String;->CASE_INSENSITIVE_ORDER:Ljava/util/Comparator;
+
+构造方法：初始化一个新创建的 String 对象，使其表示一个空字符序列。
+constructor String()
+invoke-direct {v0}, Ljava/lang/String;-><init>()V
+
+构造方法：通过使用平台的默认字符集解码指定的 byte 数组，构造一个新的 String。
+constructor String(byte[] bytes)
+invoke-direct {v0, v1}, Ljava/lang/String;-><init>([B)V
+
+构造方法：通过使用指定的 charset 解码指定的 byte 数组，构造一个新的 String。
+constructor String(byte[] bytes, Charset charset)
+invoke-direct {v0, v1, v2}, Ljava/lang/String;-><init>([BLjava/nio/charset;)V
+
+构造方法：已过时。 该方法无法将字节正确地转换为字符。从 JDK 1.1 开始，完成该转换的首选方法是使用带有 Charset、字符集名称，或使用平台默认字符集的 String 构造方法。
+constructor String(byte[] ascii, int hibyte)
+invoke-direct {v0, v1, v2}, Ljava/lang/String;-><init>([BI)V
+
+构造方法：通过使用平台的默认字符集解码指定的 byte 子数组，构造一个新的 String。
+constructor String(byte[] bytes, int offset, int length)
+invoke-direct {v0, v1, v2, v3}, Ljava/lang/String;-><init>([BII)V
+
+构造方法：通过使用指定的 charset 解码指定的 byte 子数组，构造一个新的 String。
+constructor String(byte[] bytes, int offset, int length, Charset charset)
+invoke-direct {v0, v1, v2, v3, v4}, Ljava/lang/String;-><init>([BIILjava/nio/charset;)V
+
+构造方法：已过时。 该方法无法将字节正确地转换为字符。从 JDK 1.1 开始，完成该转换的首选方法是使用带有 Charset、字符集名称，或使用平台默认字符集的 String 构造方法。
+constructor String(byte[] ascii, int hibyte, int offset, int count)
+invoke-direct {v0, v1, v2, v3, v4}, Ljava/lang/String;-><init>([BIII)V
+
+构造方法：通过使用指定的字符集解码指定的 byte 子数组，构造一个新的 String。
+constructor String(byte[] bytes, int offset, int length, String charsetName)
+invoke-direct {v0, v1, v2, v3, v4}, Ljava/lang/String;-><init>([BIILjava/lang/String;)V
+
+构造方法：通过使用指定的 charset 解码指定的 byte 数组，构造一个新的 String。
+constructor String(byte[] bytes, String charsetName)
+invoke-direct {v0, v1, v2}, Ljava/lang/String;-><init>([BLjava/lang/String;)V
+
+构造方法：分配一个新的 String，使其表示字符数组参数中当前包含的字符序列。
+constructor String(char[] value)
+invoke-direct {v0, v1}, Ljava/lang/String;-><init>([C)V
+
+构造方法：分配一个新的 String，它包含取自字符数组参数一个子数组的字符。
+constructor String(char[] value, int offset, int count)
+invoke-direct {v0, v1, v2, v3}, Ljava/lang/String;-><init>([CII)V
+
+构造方法：分配一个新的 String，它包含 Unicode 代码点数组参数一个子数组的字符。
+constructor String(int[] codePoints, int offset, int count)
+invoke-direct {v0, v1, v2, v3}, Ljava/lang/String;-><init>([III)V
+
+构造方法：初始化一个新创建的 String 对象，使其表示一个与参数相同的字符序列；换句话说，新创建的字符串是该参数字符串的副本。
+constructor String(String original)
+invoke-direct {v0, v1}, Ljava/lang/String;-><init>(Ljava/lang/String;)V
+
+构造方法：分配一个新的字符串，它包含字符串缓冲区参数中当前包含的字符序列。
+constructor String(StringBuffer buffer)
+invoke-direct {v0, v1}, Ljava/lang/String;-><init>(Ljava/lang/StringBuffer;)V
+
+构造方法：分配一个新的字符串，它包含字符串生成器参数中当前包含的字符序列。
+constructor String(StringBuilder builder)
+invoke-direct {v0, v1}, Ljava/lang/String;-><init>(Ljava/lang/StringBuilder;)V
+
+返回指定索引处的 char 值。
+char charAt(int index)
+invoke-virtual {v0, v1}, Ljava/lang/String;->charAt(I)C
+
+返回指定索引处的字符（Unicode 代码点）。
+int codePointAt(int index)
+invoke-virtual {v0, v1}, Ljava/lang/String;->codePointAt(I)I
+
+返回指定索引之前的字符（Unicode 代码点）。
+int codePointBefore(int index)
+invoke-virtual {v0, v1}, Ljava/lang/String;->codePointBefore(I)I
+
+返回此 String 的指定文本范围中的 Unicode 代码点数。
+int codePointCount(int beginIndex, int endIndex)
+invoke-virtual {v0, v1, v2}, Ljava/lang/String;->codePointCount(II)I
+
+按字典顺序比较两个字符串。
+int compareTo(String anotherString)
+invoke-virtual {v0, v1}, Ljava/lang/String;->compareTo(Ljava/lang/String;)I
+
+按字典顺序比较两个字符串，不考虑大小写。
+int compareToIgnoreCase(String str)
+invoke-virtual {v0, v1}, Ljava/lang/String;->compareToIgnoreCase(Ljava/lang/String;)I
+
+将指定字符串连接到此字符串的结尾。
+String concat(String str)
+invoke-virtual {v0, v1}, Ljava/lang/String;->concat(Ljava/lang/String;)Ljava/lang/String;
+
+当且仅当此字符串包含指定的 char 值序列时，返回 true。
+boolean contains(CharSequence s)
+invoke-virtual {v0, v1}, Ljava/lang/String;->contains(Ljava/lang/CharSequence;)Z
+
+将此字符串与指定的 CharSequence 比较。
+boolean contentEquals(CharSequence cs)
+invoke-virtual {v0, v1}, Ljava/lang/String;->contentEquals(Ljava/lang/CharSequence;)Z
+
+将此字符串与指定的 StringBuffer 比较。
+boolean contentEquals(StringBuffer sb)
+invoke-virtual {v0, v1}, Ljava/lang/String;->contentEquals(Ljava/lang/StringBuffer;)Z
+
+返回指定数组中表示该字符序列的 String。
+String copyValueOf(char[] data)
+invoke-static {v0}, Ljava/lang/String;->copyValueOf([C)Ljava/lang/String;
+
+返回指定数组中表示该字符序列的 String。
+String copyValueOf(char[] data, int offset, int count)
+invoke-static {v0, v1, v2}, Ljava/lang/String;->copyValueOf([CII)Ljava/lang/String;
+
+测试此字符串是否以指定的后缀结束。
+boolean endsWith(String suffix)
+invoke-virtual {v0, v1}, Ljava/lang/String;->endsWith(Ljava/lang/String;)Z
+
+将此字符串与指定的对象比较。
+boolean equals(Object anObject)
+invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+将此 String 与另一个 String 比较，不考虑大小写。
+boolean equalsIgnoreCase(String anotherString)
+invoke-virtual {v0, v1}, Ljava/lang/String;->equalsIgnoreCase(Ljava/lang/String;)Z
+
+使用指定的语言环境、格式字符串和参数返回一个格式化字符串。
+String format(Locale l, String format, Object... args)
+invoke-static {v0, v1, v2}, Ljava/lang/String;->format(Ljava/util/Locale;Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
+
+使用指定的格式字符串和参数返回一个格式化字符串。
+String format(String format, Object... args)
+invoke-static {v0, v1}, Ljava/lang/String;->format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
+
+使用平台的默认字符集将此 String 编码为 byte 序列，并将结果存储到一个新的 byte 数组中。
+byte[] getBytes()
+invoke-virtual {v0}, Ljava/lang/String;->getBytes()[B
+
+使用给定的 charset 将此 String 编码到 byte 序列，并将结果存储到新的 byte 数组。
+byte[] getBytes(Charset charset)
+invoke-virtual {v0, v1}, Ljava/lang/String;->getBytes(Ljava/nio/charset;)[B
+
+已过时。 该方法无法将字符正确转换为字节。从 JDK 1.1 起，完成该转换的首选方法是通过 getBytes() 方法，该方法使用平台的默认字符集。
+void getBytes(int srcBegin, int srcEnd, byte[] dst, int dstBegin)
+invoke-virtual {v0, v1, v2, v3, v4}, Ljava/lang/String;->getBytes(II[BI)V
+
+使用指定的字符集将此 String 编码为 byte 序列，并将结果存储到一个新的 byte 数组中。
+byte[] getBytes(String charsetName)
+invoke-virtual {v0, v1}, Ljava/lang/String;->getBytes(Ljava/lang/String;)[B
+
+将字符从此字符串复制到目标字符数组。
+void getChars(int srcBegin, int srcEnd, char[] dst, int dstBegin)
+invoke-virtual {v0, v1, v2, v3, v4}, Ljava/lang/String;->getChars(II[CI)V
+
+返回此字符串的哈希码。
+int hashCode()
+invoke-virtual {v0}, Ljava/lang/String;->hashCode()I
+
+返回指定字符在此字符串中第一次出现处的索引。
+int indexOf(int ch)
+invoke-virtual {v0, v1}, Ljava/lang/String;->indexOf(I)I
+
+返回在此字符串中第一次出现指定字符处的索引，从指定的索引开始搜索。
+int indexOf(int ch, int fromIndex)
+invoke-virtual {v0, v1, v2}, Ljava/lang/String;->indexOf(II)I
+
+返回指定子字符串在此字符串中第一次出现处的索引。
+int indexOf(String str)
+invoke-virtual {v0, v1}, Ljava/lang/String;->indexOf(Ljava/lang/String;)I
+
+返回指定子字符串在此字符串中第一次出现处的索引，从指定的索引开始。
+int indexOf(String str, int fromIndex)
+invoke-virtual {v0, v1, v2}, Ljava/lang/String;->indexOf(Ljava/lang/String;I)I
+
+返回字符串对象的规范化表示形式。
+String intern()
+invoke-virtual {v0}, Ljava/lang/String;->intern()Ljava/lang/String;
+
+当且仅当 length() 为 0 时返回 true。
+boolean isEmpty()
+invoke-virtual {v0}, Ljava/lang/String;->isEmpty()Z
+
+返回指定字符在此字符串中最后一次出现处的索引。
+int lastIndexOf(int ch)
+invoke-virtual {v0, v1}, Ljava/lang/String;->lastIndexOf(I)I
+
+返回指定字符在此字符串中最后一次出现处的索引，从指定的索引处开始进行反向搜索。
+int lastIndexOf(int ch, int fromIndex)
+invoke-virtual {v0, v1, v2}, Ljava/lang/String;->lastIndexOf(II)I
+
+返回指定子字符串在此字符串中最右边出现处的索引。
+int lastIndexOf(String str)
+invoke-virtual {v0, v1}, Ljava/lang/String;->lastIndexOf(Ljava/lang/String;)I
+
+返回指定子字符串在此字符串中最后一次出现处的索引，从指定的索引开始反向搜索。
+int lastIndexOf(String str, int fromIndex)
+invoke-virtual {v0, v1, v2}, Ljava/lang/String;->lastIndexOf(Ljava/lang/String;I)I
+
+返回此字符串的长度。
+int length()
+invoke-virtual {v0}, Ljava/lang/String;->length()I
+
+告知此字符串是否匹配给定的正则表达式。
+boolean matches(String regex)
+invoke-virtual {v0, v1}, Ljava/lang/String;->matches(Ljava/lang/String;)Z
+
+返回此 String 中从给定的 index 处偏移 codePointOffset 个代码点的索引。
+int offsetByCodePoints(int index, int codePointOffset)
+invoke-virtual {v0, v1, v2}, Ljava/lang/String;->offsetByCodePoints(II)I
+
+测试两个字符串区域是否相等。
+boolean regionMatches(boolean ignoreCase, int toffset, String other, int ooffset, int len)
+invoke-virtual/range {v0 .. v5}, Ljava/lang/String;->regionMatches(ZILjava/lang/String;II)Z
+
+测试两个字符串区域是否相等。
+boolean regionMatches(int toffset, String other, int ooffset, int len)
+invoke-virtual {v0, v1, v2, v3, v4}, Ljava/lang/String;->regionMatches(ILjava/lang/String;II)Z
+
+返回一个新的字符串，它是通过用 newChar 替换此字符串中出现的所有 oldChar 得到的。
+String replace(char oldChar, char newChar)
+invoke-virtual {v0, v1, v2}, Ljava/lang/String;->replace(CC)Ljava/lang/String;
+
+使用指定的字面值替换序列替换此字符串所有匹配字面值目标序列的子字符串。
+String replace(CharSequence target, CharSequence replacement)
+invoke-virtual {v0, v1, v2}, Ljava/lang/String;->replace(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Ljava/lang/String;
+
+使用给定的 replacement 替换此字符串所有匹配给定的正则表达式的子字符串。
+String replaceAll(String regex, String replacement)
+invoke-virtual {v0, v1, v2}, Ljava/lang/String;->replaceAll(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+
+使用给定的 replacement 替换此字符串匹配给定的正则表达式的第一个子字符串。
+String replaceFirst(String regex, String replacement)
+invoke-virtual {v0, v1, v2}, Ljava/lang/String;->replaceFirst(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+
+根据给定正则表达式的匹配拆分此字符串。
+String[] split(String regex)
+invoke-virtual {v0, v1}, Ljava/lang/String;->split(Ljava/lang/String;)[Ljava/lang/String;
+
+根据匹配给定的正则表达式来拆分此字符串。
+String[] split(String regex, int limit)
+invoke-virtual {v0, v1, v2}, Ljava/lang/String;->split(Ljava/lang/String;I)[Ljava/lang/String;
+
+测试此字符串是否以指定的前缀开始。
+boolean startsWith(String prefix)
+invoke-virtual {v0, v1}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
+
+测试此字符串从指定索引开始的子字符串是否以指定前缀开始。
+boolean startsWith(String prefix, int toffset)
+invoke-virtual {v0, v1, v2}, Ljava/lang/String;->startsWith(Ljava/lang/String;I)Z
+
+返回一个新的字符序列，它是此序列的一个子序列。
+CharSequence subSequence(int beginIndex, int endIndex)
+invoke-virtual {v0, v1, v2}, Ljava/lang/String;->subSequence(II)Ljava/lang/CharSequence;
+
+返回一个新的字符串，它是此字符串的一个子字符串。
+String substring(int beginIndex)
+invoke-virtual {v0, v1}, Ljava/lang/String;->substring(I)Ljava/lang/String;
+
+返回一个新字符串，它是此字符串的一个子字符串。
+String substring(int beginIndex, int endIndex)
+invoke-virtual {v0, v1, v2}, Ljava/lang/String;->substring(II)Ljava/lang/String;
+
+将此字符串转换为一个新的字符数组。
+char[] toCharArray()
+invoke-virtual {v0}, Ljava/lang/String;->toCharArray()[C
+
+使用默认语言环境的规则将此 String 中的所有字符都转换为小写。
+String toLowerCase()
+invoke-virtual {v0}, Ljava/lang/String;->toLowerCase()Ljava/lang/String;
+
+使用给定 Locale 的规则将此 String 中的所有字符都转换为小写。
+String toLowerCase(Locale locale)
+invoke-virtual {v0, v1}, Ljava/lang/String;->toLowerCase(Ljava/util/Locale;)Ljava/lang/String;
+
+返回此对象本身（它已经是一个字符串！）。
+String toString()
+invoke-virtual {v0}, Ljava/lang/String;->toString()Ljava/lang/String;
+
+使用默认语言环境的规则将此 String 中的所有字符都转换为大写。
+String toUpperCase()
+invoke-virtual {v0}, Ljava/lang/String;->toUpperCase()Ljava/lang/String;
+
+使用给定 Locale 的规则将此 String 中的所有字符都转换为大写。
+String toUpperCase(Locale locale)
+invoke-virtual {v0, v1}, Ljava/lang/String;->toUpperCase(Ljava/util/Locale;)Ljava/lang/String;
+
+返回字符串的副本，忽略前导空白和尾部空白。
+String trim()
+invoke-virtual {v0}, Ljava/lang/String;->trim()Ljava/lang/String;
+
+返回 boolean 参数的字符串表示形式。
+String valueOf(boolean b)
+invoke-static {v0}, Ljava/lang/String;->valueOf(Z)Ljava/lang/String;
+
+返回 char 参数的字符串表示形式。
+String valueOf(char c)
+invoke-static {v0}, Ljava/lang/String;->valueOf(C)Ljava/lang/String;
+
+返回 char 数组参数的字符串表示形式。
+String valueOf(char[] data)
+invoke-static {v0}, Ljava/lang/String;->valueOf([C)Ljava/lang/String;
+
+返回 char 数组参数的特定子数组的字符串表示形式。
+String valueOf(char[] data, int offset, int count)
+invoke-static {v0, v1, v2}, Ljava/lang/String;->valueOf([CII)Ljava/lang/String;
+
+返回 double 参数的字符串表示形式。
+String valueOf(double d)
+invoke-static {v0, v1}, Ljava/lang/String;->valueOf(D)Ljava/lang/String;
+
+返回 float 参数的字符串表示形式。
+String valueOf(float f)
+invoke-static {v0}, Ljava/lang/String;->valueOf(F)Ljava/lang/String;
+
+返回 int 参数的字符串表示形式。
+String valueOf(int i)
+invoke-static {v0}, Ljava/lang/String;->valueOf(I)Ljava/lang/String;
+
+返回 long 参数的字符串表示形式。
+String valueOf(long l)
+invoke-static {v0, v1}, Ljava/lang/String;->valueOf(J)Ljava/lang/String;
+
+返回 Object 参数的字符串表示形式。
+String valueOf(Object obj)
+invoke-static {v0}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;

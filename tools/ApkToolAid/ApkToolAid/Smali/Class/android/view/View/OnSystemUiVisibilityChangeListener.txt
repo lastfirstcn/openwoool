@@ -1,0 +1,7 @@
+Interface definition for a callback to be invoked when the status bar changes visibility.
+interface View.OnSystemUiVisibilityChangeListener
+.class interface Landroid/view/View$OnSystemUiVisibilityChangeListener;
+
+Called when the status bar changes visibility because of a call to View.setSystemUiVisibility(int).
+abstract void onSystemUiVisibilityChange(int visibility)
+event onSystemUiVisibilityChange(I)V

@@ -1,0 +1,139 @@
+A subclass of Dialog that can display one, two or three buttons. If you only want to display a String in this dialog box, use the setMessage() method. If you want to display a more complex view, look up the FrameLayout called "custom" and add your view to it:
+class android.app.AlertDialog
+.class Landroid/app/AlertDialog;
+
+继承
+inherit android.content.DialogInterface
+.super Landroid/content/DialogInterface;
+
+继承
+inherit android.view.Window.Callback
+.super Landroid/view/Window$Callback;
+
+继承
+inherit android.view.KeyEvent.Callback
+.super Landroid/view/KeyEvent$Callback;
+
+继承
+inherit android.view.View.OnCreateContextMenuListener
+.super Landroid/view/View$OnCreateContextMenuListener;
+
+This constant was deprecated in API level 23. Use R.style.Theme_DeviceDefault_Dialog_Alert.
+public static final int THEME_DEVICE_DEFAULT_DARK
+sget v0, Landroid/app/AlertDialog;->THEME_DEVICE_DEFAULT_DARK:I
+
+This constant was deprecated in API level 23. Use R.style.Theme_DeviceDefault_Light_Dialog_Alert.
+public static final int THEME_DEVICE_DEFAULT_LIGHT
+sget v0, Landroid/app/AlertDialog;->THEME_DEVICE_DEFAULT_LIGHT:I
+
+This constant was deprecated in API level 23. Use R.style.Theme_Material_Dialog_Alert.
+public static final int THEME_HOLO_DARK
+sget v0, Landroid/app/AlertDialog;->THEME_HOLO_DARK:I
+
+This constant was deprecated in API level 23. Use R.style.Theme_Material_Light_Dialog_Alert.
+public static final int THEME_HOLO_LIGHT
+sget v0, Landroid/app/AlertDialog;->THEME_HOLO_LIGHT:I
+
+This constant was deprecated in API level 23. Use R.style.Theme_Material_Dialog_Alert.
+public static final int THEME_TRADITIONAL
+sget v0, Landroid/app/AlertDialog;->THEME_TRADITIONAL:I
+
+构造方法：Creates an alert dialog that uses the default alert dialog theme.
+constructor protected AlertDialog(Context context)
+invoke-direct {v0, v1}, Landroid/app/AlertDialog;-><init>(Landroid/content/Context;)V
+
+构造方法：Creates an alert dialog that uses the default alert dialog theme and a custom cancel listener.
+constructor protected AlertDialog(Context context, boolean cancelable, DialogInterface.OnCancelListener cancelListener)
+invoke-direct {v0, v1, v2, v3}, Landroid/app/AlertDialog;-><init>(Landroid/content/Context;ZLandroid/content/DialogInterface$OnCancelListener;)V
+
+构造方法：Creates an alert dialog that uses an explicit theme resource.
+constructor protected AlertDialog(Context context, int themeResId)
+invoke-direct {v0, v1, v2}, Landroid/app/AlertDialog;-><init>(Landroid/content/Context;I)V
+
+Gets one of the buttons used in the dialog.
+Button getButton(int whichButton)
+invoke-virtual {v0, v1}, Landroid/app/AlertDialog;->getButton(I)Landroid/widget/Button;
+
+Gets the list view used in the dialog.
+ListView getListView()
+invoke-virtual {v0}, Landroid/app/AlertDialog;->getListView()Landroid/widget/ListView;
+
+A key was pressed down.
+boolean onKeyDown(int keyCode, KeyEvent event)
+invoke-virtual {v0, v1, v2}, Landroid/app/AlertDialog;->onKeyDown(ILandroid/view/KeyEvent;)Z
+
+A key was released.
+boolean onKeyUp(int keyCode, KeyEvent event)
+invoke-virtual {v0, v1, v2}, Landroid/app/AlertDialog;->onKeyUp(ILandroid/view/KeyEvent;)Z
+
+This method was deprecated in API level 15. Use setButton(int, java.lang.CharSequence, android.content.DialogInterface.OnClickListener) with DialogInterface#BUTTON_POSITIVE
+void setButton(CharSequence text, DialogInterface.OnClickListener listener)
+invoke-virtual {v0, v1, v2}, Landroid/app/AlertDialog;->setButton(Ljava/lang/CharSequence;Landroid/content/DialogInterface$OnClickListener;)V
+
+Set a listener to be invoked when the positive button of the dialog is pressed.
+void setButton(int whichButton, CharSequence text, DialogInterface.OnClickListener listener)
+invoke-virtual {v0, v1, v2, v3}, Landroid/app/AlertDialog;->setButton(ILjava/lang/CharSequence;Landroid/content/DialogInterface$OnClickListener;)V
+
+This method was deprecated in API level 15. Use setButton(int, java.lang.CharSequence, android.os.Message) with DialogInterface#BUTTON_POSITIVE.
+void setButton(CharSequence text, Message msg)
+invoke-virtual {v0, v1, v2}, Landroid/app/AlertDialog;->setButton(Ljava/lang/CharSequence;Landroid/os/Message;)V
+
+Set a message to be sent when a button is pressed.
+void setButton(int whichButton, CharSequence text, Message msg)
+invoke-virtual {v0, v1, v2, v3}, Landroid/app/AlertDialog;->setButton(ILjava/lang/CharSequence;Landroid/os/Message;)V
+
+This method was deprecated in API level 15. Use setButton(int, java.lang.CharSequence, android.os.Message) with DialogInterface#BUTTON_NEGATIVE.
+void setButton2(CharSequence text, Message msg)
+invoke-virtual {v0, v1, v2}, Landroid/app/AlertDialog;->setButton2(Ljava/lang/CharSequence;Landroid/os/Message;)V
+
+This method was deprecated in API level 15. Use setButton(int, java.lang.CharSequence, android.content.DialogInterface.OnClickListener) with DialogInterface#BUTTON_NEGATIVE
+void setButton2(CharSequence text, DialogInterface.OnClickListener listener)
+invoke-virtual {v0, v1, v2}, Landroid/app/AlertDialog;->setButton2(Ljava/lang/CharSequence;Landroid/content/DialogInterface$OnClickListener;)V
+
+This method was deprecated in API level 15. Use setButton(int, java.lang.CharSequence, android.os.Message) with DialogInterface#BUTTON_NEUTRAL.
+void setButton3(CharSequence text, Message msg)
+invoke-virtual {v0, v1, v2}, Landroid/app/AlertDialog;->setButton3(Ljava/lang/CharSequence;Landroid/os/Message;)V
+
+This method was deprecated in API level 15. Use setButton(int, java.lang.CharSequence, android.content.DialogInterface.OnClickListener) with DialogInterface#BUTTON_NEUTRAL
+void setButton3(CharSequence text, DialogInterface.OnClickListener listener)
+invoke-virtual {v0, v1, v2}, Landroid/app/AlertDialog;->setButton3(Ljava/lang/CharSequence;Landroid/content/DialogInterface$OnClickListener;)V
+
+没有帮助内容
+void setCustomTitle(View customTitleView)
+invoke-virtual {v0, v1}, Landroid/app/AlertDialog;->setCustomTitle(Landroid/view/View;)V
+
+没有帮助内容
+void setIcon(Drawable icon)
+invoke-virtual {v0, v1}, Landroid/app/AlertDialog;->setIcon(Landroid/graphics/drawable/Drawable;)V
+
+Set resId to 0 if you don't want an icon.
+void setIcon(int resId)
+invoke-virtual {v0, v1}, Landroid/app/AlertDialog;->setIcon(I)V
+
+Set an icon as supplied by a theme attribute.
+void setIconAttribute(int attrId)
+invoke-virtual {v0, v1}, Landroid/app/AlertDialog;->setIconAttribute(I)V
+
+没有帮助内容
+void setInverseBackgroundForced(boolean forceInverseBackground)
+invoke-virtual {v0, v1}, Landroid/app/AlertDialog;->setInverseBackgroundForced(Z)V
+
+没有帮助内容
+void setMessage(CharSequence message)
+invoke-virtual {v0, v1}, Landroid/app/AlertDialog;->setMessage(Ljava/lang/CharSequence;)V
+
+Set the title text for this dialog's window.
+void setTitle(CharSequence title)
+invoke-virtual {v0, v1}, Landroid/app/AlertDialog;->setTitle(Ljava/lang/CharSequence;)V
+
+Set the view to display in that dialog, specifying the spacing to appear around that view.
+void setView(View view, int viewSpacingLeft, int viewSpacingTop, int viewSpacingRight, int viewSpacingBottom)
+invoke-virtual/range {v0 .. v5}, Landroid/app/AlertDialog;->setView(Landroid/view/View;IIII)V
+
+Set the view to display in that dialog.
+void setView(View view)
+invoke-virtual {v0, v1}, Landroid/app/AlertDialog;->setView(Landroid/view/View;)V
+
+Similar to Activity#onCreate, you should initialize your dialog in this method, including calling setContentView(View).
+protected void onCreate(Bundle savedInstanceState)
+invoke-virtual {v0, v1}, Landroid/app/AlertDialog;->onCreate(Landroid/os/Bundle;)V

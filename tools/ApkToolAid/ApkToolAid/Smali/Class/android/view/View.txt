@@ -1,0 +1,3011 @@
+This class represents the basic building block for user interface components. A View occupies a rectangular area on the screen and is responsible for drawing and event handling. View is the base class for widgets, which are used to create interactive UI components (buttons, text fields, etc.). The ViewGroup subclass is the base class for layouts, which are invisible containers that hold other Views (or other ViewGroups) and define their layout properties.
+class android.view.View
+.class Landroid/view/View;
+
+继承
+inherit java.lang.Object
+.super Ljava/lang/Object;
+
+继承
+inherit android.graphics.drawable.Drawable.Callback
+.super Landroid/graphics/drawable/Drawable$Callback;
+
+继承
+inherit android.view.KeyEvent.Callback
+.super Landroid/view/KeyEvent$Callback;
+
+继承
+inherit android.view.accessibility.AccessibilityEventSource
+.super Landroid/view/accessibility$AccessibilityEventSource;
+
+Live region mode specifying that accessibility services should interrupt ongoing speech to immediately announce changes to this view.
+public static final int ACCESSIBILITY_LIVE_REGION_ASSERTIVE
+sget v0, Landroid/view/View;->ACCESSIBILITY_LIVE_REGION_ASSERTIVE:I
+
+Live region mode specifying that accessibility services should not automatically announce changes to this view.
+public static final int ACCESSIBILITY_LIVE_REGION_NONE
+sget v0, Landroid/view/View;->ACCESSIBILITY_LIVE_REGION_NONE:I
+
+Live region mode specifying that accessibility services should announce changes to this view.
+public static final int ACCESSIBILITY_LIVE_REGION_POLITE
+sget v0, Landroid/view/View;->ACCESSIBILITY_LIVE_REGION_POLITE:I
+
+Flag requesting you to add views that are marked as not important for autofill (see setImportantForAutofill(int)) to a ViewStructure.
+public static final int AUTOFILL_FLAG_INCLUDE_NOT_IMPORTANT_VIEWS
+sget v0, Landroid/view/View;->AUTOFILL_FLAG_INCLUDE_NOT_IMPORTANT_VIEWS:I
+
+Hint indicating that this view can be autofilled with a credit card expiration date.
+public static final String AUTOFILL_HINT_CREDIT_CARD_EXPIRATION_DATE
+sget-object v0, Landroid/view/View;->AUTOFILL_HINT_CREDIT_CARD_EXPIRATION_DATE:Ljava/lang/String;
+
+Hint indicating that this view can be autofilled with a credit card expiration day.
+public static final String AUTOFILL_HINT_CREDIT_CARD_EXPIRATION_DAY
+sget-object v0, Landroid/view/View;->AUTOFILL_HINT_CREDIT_CARD_EXPIRATION_DAY:Ljava/lang/String;
+
+Hint indicating that this view can be autofilled with a credit card expiration month.
+public static final String AUTOFILL_HINT_CREDIT_CARD_EXPIRATION_MONTH
+sget-object v0, Landroid/view/View;->AUTOFILL_HINT_CREDIT_CARD_EXPIRATION_MONTH:Ljava/lang/String;
+
+Hint indicating that this view can be autofilled with a credit card expiration year.
+public static final String AUTOFILL_HINT_CREDIT_CARD_EXPIRATION_YEAR
+sget-object v0, Landroid/view/View;->AUTOFILL_HINT_CREDIT_CARD_EXPIRATION_YEAR:Ljava/lang/String;
+
+Hint indicating that this view can be autofilled with a credit card number.
+public static final String AUTOFILL_HINT_CREDIT_CARD_NUMBER
+sget-object v0, Landroid/view/View;->AUTOFILL_HINT_CREDIT_CARD_NUMBER:Ljava/lang/String;
+
+Hint indicating that this view can be autofilled with a credit card security code.
+public static final String AUTOFILL_HINT_CREDIT_CARD_SECURITY_CODE
+sget-object v0, Landroid/view/View;->AUTOFILL_HINT_CREDIT_CARD_SECURITY_CODE:Ljava/lang/String;
+
+Hint indicating that this view can be autofilled with an email address.
+public static final String AUTOFILL_HINT_EMAIL_ADDRESS
+sget-object v0, Landroid/view/View;->AUTOFILL_HINT_EMAIL_ADDRESS:Ljava/lang/String;
+
+Hint indicating that this view can be autofilled with a user's real name.
+public static final String AUTOFILL_HINT_NAME
+sget-object v0, Landroid/view/View;->AUTOFILL_HINT_NAME:Ljava/lang/String;
+
+Hint indicating that this view can be autofilled with a password.
+public static final String AUTOFILL_HINT_PASSWORD
+sget-object v0, Landroid/view/View;->AUTOFILL_HINT_PASSWORD:Ljava/lang/String;
+
+Hint indicating that this view can be autofilled with a phone number.
+public static final String AUTOFILL_HINT_PHONE
+sget-object v0, Landroid/view/View;->AUTOFILL_HINT_PHONE:Ljava/lang/String;
+
+Hint indicating that this view can be autofilled with a postal address.
+public static final String AUTOFILL_HINT_POSTAL_ADDRESS
+sget-object v0, Landroid/view/View;->AUTOFILL_HINT_POSTAL_ADDRESS:Ljava/lang/String;
+
+Hint indicating that this view can be autofilled with a postal code.
+public static final String AUTOFILL_HINT_POSTAL_CODE
+sget-object v0, Landroid/view/View;->AUTOFILL_HINT_POSTAL_CODE:Ljava/lang/String;
+
+Hint indicating that this view can be autofilled with a username.
+public static final String AUTOFILL_HINT_USERNAME
+sget-object v0, Landroid/view/View;->AUTOFILL_HINT_USERNAME:Ljava/lang/String;
+
+Autofill type for a field that contains a date, which is represented by a long representing the number of milliseconds since the standard base time known as "the epoch", namely January 1, 1970, 00:00:00 GMT (see Date.getTime().
+public static final int AUTOFILL_TYPE_DATE
+sget v0, Landroid/view/View;->AUTOFILL_TYPE_DATE:I
+
+Autofill type for a selection list field, which is filled by an int representing the element index inside the list (starting at 0).
+public static final int AUTOFILL_TYPE_LIST
+sget v0, Landroid/view/View;->AUTOFILL_TYPE_LIST:I
+
+Autofill type for views that cannot be autofilled.
+public static final int AUTOFILL_TYPE_NONE
+sget v0, Landroid/view/View;->AUTOFILL_TYPE_NONE:I
+
+Autofill type for a text field, which is filled by a CharSequence.
+public static final int AUTOFILL_TYPE_TEXT
+sget v0, Landroid/view/View;->AUTOFILL_TYPE_TEXT:I
+
+Autofill type for a togglable field, which is filled by a boolean.
+public static final int AUTOFILL_TYPE_TOGGLE
+sget v0, Landroid/view/View;->AUTOFILL_TYPE_TOGGLE:I
+
+Flag indicating that a drag can cross window boundaries.
+public static final int DRAG_FLAG_GLOBAL
+sget v0, Landroid/view/View;->DRAG_FLAG_GLOBAL:I
+
+When this flag is used with DRAG_FLAG_GLOBAL_URI_READ and/or DRAG_FLAG_GLOBAL_URI_WRITE, the URI permission grant can be persisted across device reboots until explicitly revoked with Context.revokeUriPermission(Uri, int) Context.revokeUriPermission}.
+public static final int DRAG_FLAG_GLOBAL_PERSISTABLE_URI_PERMISSION
+sget v0, Landroid/view/View;->DRAG_FLAG_GLOBAL_PERSISTABLE_URI_PERMISSION:I
+
+When this flag is used with DRAG_FLAG_GLOBAL_URI_READ and/or DRAG_FLAG_GLOBAL_URI_WRITE, the URI permission grant applies to any URI that is a prefix match against the original granted URI.
+public static final int DRAG_FLAG_GLOBAL_PREFIX_URI_PERMISSION
+sget v0, Landroid/view/View;->DRAG_FLAG_GLOBAL_PREFIX_URI_PERMISSION:I
+
+When this flag is used with DRAG_FLAG_GLOBAL, the drag recipient will be able to request read access to the content URI(s) contained in the ClipData object.
+public static final int DRAG_FLAG_GLOBAL_URI_READ
+sget v0, Landroid/view/View;->DRAG_FLAG_GLOBAL_URI_READ:I
+
+When this flag is used with DRAG_FLAG_GLOBAL, the drag recipient will be able to request write access to the content URI(s) contained in the ClipData object.
+public static final int DRAG_FLAG_GLOBAL_URI_WRITE
+sget v0, Landroid/view/View;->DRAG_FLAG_GLOBAL_URI_WRITE:I
+
+Flag indicating that the drag shadow will be opaque.
+public static final int DRAG_FLAG_OPAQUE
+sget v0, Landroid/view/View;->DRAG_FLAG_OPAQUE:I
+
+This constant was deprecated in API level 28. The view drawing cache was largely made obsolete with the introduction of hardware-accelerated rendering in API 11. With hardware-acceleration, intermediate cache layers are largely unnecessary and can easily result in a net loss in performance due to the cost of creating and updating the layer. In the rare cases where caching layers are useful, such as for alpha animations, setLayerType(int, android.graphics.Paint) handles this with hardware rendering. For software-rendered snapshots of a small part of the View hierarchy or individual Views it is recommended to create a Canvas from either a Bitmap or Picture and call draw(android.graphics.Canvas) on the View. However these software-rendered usages are discouraged and have compatibility issues with hardware-only rendering features such as Config.HARDWARE bitmaps, real-time shadows, and outline clipping. For screenshots of the UI for feedback reports or unit testing the PixelCopy API is recommended.
+public static final int DRAWING_CACHE_QUALITY_AUTO
+sget v0, Landroid/view/View;->DRAWING_CACHE_QUALITY_AUTO:I
+
+This constant was deprecated in API level 28. The view drawing cache was largely made obsolete with the introduction of hardware-accelerated rendering in API 11. With hardware-acceleration, intermediate cache layers are largely unnecessary and can easily result in a net loss in performance due to the cost of creating and updating the layer. In the rare cases where caching layers are useful, such as for alpha animations, setLayerType(int, android.graphics.Paint) handles this with hardware rendering. For software-rendered snapshots of a small part of the View hierarchy or individual Views it is recommended to create a Canvas from either a Bitmap or Picture and call draw(android.graphics.Canvas) on the View. However these software-rendered usages are discouraged and have compatibility issues with hardware-only rendering features such as Config.HARDWARE bitmaps, real-time shadows, and outline clipping. For screenshots of the UI for feedback reports or unit testing the PixelCopy API is recommended.
+public static final int DRAWING_CACHE_QUALITY_HIGH
+sget v0, Landroid/view/View;->DRAWING_CACHE_QUALITY_HIGH:I
+
+This constant was deprecated in API level 28. The view drawing cache was largely made obsolete with the introduction of hardware-accelerated rendering in API 11. With hardware-acceleration, intermediate cache layers are largely unnecessary and can easily result in a net loss in performance due to the cost of creating and updating the layer. In the rare cases where caching layers are useful, such as for alpha animations, setLayerType(int, android.graphics.Paint) handles this with hardware rendering. For software-rendered snapshots of a small part of the View hierarchy or individual Views it is recommended to create a Canvas from either a Bitmap or Picture and call draw(android.graphics.Canvas) on the View. However these software-rendered usages are discouraged and have compatibility issues with hardware-only rendering features such as Config.HARDWARE bitmaps, real-time shadows, and outline clipping. For screenshots of the UI for feedback reports or unit testing the PixelCopy API is recommended.
+public static final int DRAWING_CACHE_QUALITY_LOW
+sget v0, Landroid/view/View;->DRAWING_CACHE_QUALITY_LOW:I
+
+Find find views that contain the specified content description.
+public static final int FIND_VIEWS_WITH_CONTENT_DESCRIPTION
+sget v0, Landroid/view/View;->FIND_VIEWS_WITH_CONTENT_DESCRIPTION:I
+
+Find views that render the specified text.
+public static final int FIND_VIEWS_WITH_TEXT
+sget v0, Landroid/view/View;->FIND_VIEWS_WITH_TEXT:I
+
+This view wants keystrokes.
+public static final int FOCUSABLE
+sget v0, Landroid/view/View;->FOCUSABLE:I
+
+View flag indicating whether addFocusables(java.util.ArrayList, int, int) should add all focusable Views regardless if they are focusable in touch mode.
+public static final int FOCUSABLES_ALL
+sget v0, Landroid/view/View;->FOCUSABLES_ALL:I
+
+View flag indicating whether addFocusables(java.util.ArrayList, int, int) should add only Views focusable in touch mode.
+public static final int FOCUSABLES_TOUCH_MODE
+sget v0, Landroid/view/View;->FOCUSABLES_TOUCH_MODE:I
+
+This view determines focusability automatically.
+public static final int FOCUSABLE_AUTO
+sget v0, Landroid/view/View;->FOCUSABLE_AUTO:I
+
+Use with focusSearch(int).
+public static final int FOCUS_BACKWARD
+sget v0, Landroid/view/View;->FOCUS_BACKWARD:I
+
+Use with focusSearch(int).
+public static final int FOCUS_DOWN
+sget v0, Landroid/view/View;->FOCUS_DOWN:I
+
+Use with focusSearch(int).
+public static final int FOCUS_FORWARD
+sget v0, Landroid/view/View;->FOCUS_FORWARD:I
+
+Use with focusSearch(int).
+public static final int FOCUS_LEFT
+sget v0, Landroid/view/View;->FOCUS_LEFT:I
+
+Use with focusSearch(int).
+public static final int FOCUS_RIGHT
+sget v0, Landroid/view/View;->FOCUS_RIGHT:I
+
+Use with focusSearch(int).
+public static final int FOCUS_UP
+sget v0, Landroid/view/View;->FOCUS_UP:I
+
+This view is invisible, and it doesn't take any space for layout purposes.
+public static final int GONE
+sget v0, Landroid/view/View;->GONE:I
+
+View flag indicating whether this view should have haptic feedback enabled for events such as long presses.
+public static final int HAPTIC_FEEDBACK_ENABLED
+sget v0, Landroid/view/View;->HAPTIC_FEEDBACK_ENABLED:I
+
+Automatically determine whether a view is important for accessibility.
+public static final int IMPORTANT_FOR_ACCESSIBILITY_AUTO
+sget v0, Landroid/view/View;->IMPORTANT_FOR_ACCESSIBILITY_AUTO:I
+
+The view is not important for accessibility.
+public static final int IMPORTANT_FOR_ACCESSIBILITY_NO
+sget v0, Landroid/view/View;->IMPORTANT_FOR_ACCESSIBILITY_NO:I
+
+The view is not important for accessibility, nor are any of its descendant views.
+public static final int IMPORTANT_FOR_ACCESSIBILITY_NO_HIDE_DESCENDANTS
+sget v0, Landroid/view/View;->IMPORTANT_FOR_ACCESSIBILITY_NO_HIDE_DESCENDANTS:I
+
+The view is important for accessibility.
+public static final int IMPORTANT_FOR_ACCESSIBILITY_YES
+sget v0, Landroid/view/View;->IMPORTANT_FOR_ACCESSIBILITY_YES:I
+
+Automatically determine whether a view is important for autofill.
+public static final int IMPORTANT_FOR_AUTOFILL_AUTO
+sget v0, Landroid/view/View;->IMPORTANT_FOR_AUTOFILL_AUTO:I
+
+The view is not important for autofill, but its children (if any) will be traversed.
+public static final int IMPORTANT_FOR_AUTOFILL_NO
+sget v0, Landroid/view/View;->IMPORTANT_FOR_AUTOFILL_NO:I
+
+The view is not important for autofill, and its children (if any) will not be traversed.
+public static final int IMPORTANT_FOR_AUTOFILL_NO_EXCLUDE_DESCENDANTS
+sget v0, Landroid/view/View;->IMPORTANT_FOR_AUTOFILL_NO_EXCLUDE_DESCENDANTS:I
+
+The view is important for autofill, and its children (if any) will be traversed.
+public static final int IMPORTANT_FOR_AUTOFILL_YES
+sget v0, Landroid/view/View;->IMPORTANT_FOR_AUTOFILL_YES:I
+
+The view is important for autofill, but its children (if any) will not be traversed.
+public static final int IMPORTANT_FOR_AUTOFILL_YES_EXCLUDE_DESCENDANTS
+sget v0, Landroid/view/View;->IMPORTANT_FOR_AUTOFILL_YES_EXCLUDE_DESCENDANTS:I
+
+This view is invisible, but it still takes up space for layout purposes.
+public static final int INVISIBLE
+sget v0, Landroid/view/View;->INVISIBLE:I
+
+View flag indicating that the screen should remain on while the window containing this view is visible to the user.
+public static final int KEEP_SCREEN_ON
+sget v0, Landroid/view/View;->KEEP_SCREEN_ON:I
+
+Indicates that the view has a hardware layer.
+public static final int LAYER_TYPE_HARDWARE
+sget v0, Landroid/view/View;->LAYER_TYPE_HARDWARE:I
+
+Indicates that the view does not have a layer.
+public static final int LAYER_TYPE_NONE
+sget v0, Landroid/view/View;->LAYER_TYPE_NONE:I
+
+Indicates that the view has a software layer.
+public static final int LAYER_TYPE_SOFTWARE
+sget v0, Landroid/view/View;->LAYER_TYPE_SOFTWARE:I
+
+Horizontal layout direction of this view is inherited from its parent.
+public static final int LAYOUT_DIRECTION_INHERIT
+sget v0, Landroid/view/View;->LAYOUT_DIRECTION_INHERIT:I
+
+Horizontal layout direction of this view is from deduced from the default language script for the locale.
+public static final int LAYOUT_DIRECTION_LOCALE
+sget v0, Landroid/view/View;->LAYOUT_DIRECTION_LOCALE:I
+
+Horizontal layout direction of this view is from Left to Right.
+public static final int LAYOUT_DIRECTION_LTR
+sget v0, Landroid/view/View;->LAYOUT_DIRECTION_LTR:I
+
+Horizontal layout direction of this view is from Right to Left.
+public static final int LAYOUT_DIRECTION_RTL
+sget v0, Landroid/view/View;->LAYOUT_DIRECTION_RTL:I
+
+Bit shift of MEASURED_STATE_MASK to get to the height bits for functions that combine both width and height into a single int, such as getMeasuredState() and the childState argument of resolveSizeAndState(int, int, int).
+public static final int MEASURED_HEIGHT_STATE_SHIFT
+sget v0, Landroid/view/View;->MEASURED_HEIGHT_STATE_SHIFT:I
+
+Bits of getMeasuredWidthAndState() and getMeasuredWidthAndState() that provide the actual measured size.
+public static final int MEASURED_SIZE_MASK
+sget v0, Landroid/view/View;->MEASURED_SIZE_MASK:I
+
+Bits of getMeasuredWidthAndState() and getMeasuredWidthAndState() that provide the additional state bits.
+public static final int MEASURED_STATE_MASK
+sget v0, Landroid/view/View;->MEASURED_STATE_MASK:I
+
+Bit of getMeasuredWidthAndState() and getMeasuredWidthAndState() that indicates the measured size is smaller that the space the view would like to have.
+public static final int MEASURED_STATE_TOO_SMALL
+sget v0, Landroid/view/View;->MEASURED_STATE_TOO_SMALL:I
+
+This view does not want keystrokes.
+public static final int NOT_FOCUSABLE
+sget v0, Landroid/view/View;->NOT_FOCUSABLE:I
+
+Used to mark a View that has no ID.
+public static final int NO_ID
+sget v0, Landroid/view/View;->NO_ID:I
+
+Always allow a user to over-scroll this view, provided it is a view that can scroll.
+public static final int OVER_SCROLL_ALWAYS
+sget v0, Landroid/view/View;->OVER_SCROLL_ALWAYS:I
+
+Allow a user to over-scroll this view only if the content is large enough to meaningfully scroll, provided it is a view that can scroll.
+public static final int OVER_SCROLL_IF_CONTENT_SCROLLS
+sget v0, Landroid/view/View;->OVER_SCROLL_IF_CONTENT_SCROLLS:I
+
+Never allow a user to over-scroll this view.
+public static final int OVER_SCROLL_NEVER
+sget v0, Landroid/view/View;->OVER_SCROLL_NEVER:I
+
+Indicates that the screen has changed state and is now off.
+public static final int SCREEN_STATE_OFF
+sget v0, Landroid/view/View;->SCREEN_STATE_OFF:I
+
+Indicates that the screen has changed state and is now on.
+public static final int SCREEN_STATE_ON
+sget v0, Landroid/view/View;->SCREEN_STATE_ON:I
+
+The scrollbar style to display the scrollbars inside the padded area, increasing the padding of the view.
+public static final int SCROLLBARS_INSIDE_INSET
+sget v0, Landroid/view/View;->SCROLLBARS_INSIDE_INSET:I
+
+The scrollbar style to display the scrollbars inside the content area, without increasing the padding.
+public static final int SCROLLBARS_INSIDE_OVERLAY
+sget v0, Landroid/view/View;->SCROLLBARS_INSIDE_OVERLAY:I
+
+The scrollbar style to display the scrollbars at the edge of the view, increasing the padding of the view.
+public static final int SCROLLBARS_OUTSIDE_INSET
+sget v0, Landroid/view/View;->SCROLLBARS_OUTSIDE_INSET:I
+
+The scrollbar style to display the scrollbars at the edge of the view, without increasing the padding.
+public static final int SCROLLBARS_OUTSIDE_OVERLAY
+sget v0, Landroid/view/View;->SCROLLBARS_OUTSIDE_OVERLAY:I
+
+Position the scroll bar at the default position as determined by the system.
+public static final int SCROLLBAR_POSITION_DEFAULT
+sget v0, Landroid/view/View;->SCROLLBAR_POSITION_DEFAULT:I
+
+Position the scroll bar along the left edge.
+public static final int SCROLLBAR_POSITION_LEFT
+sget v0, Landroid/view/View;->SCROLLBAR_POSITION_LEFT:I
+
+Position the scroll bar along the right edge.
+public static final int SCROLLBAR_POSITION_RIGHT
+sget v0, Landroid/view/View;->SCROLLBAR_POSITION_RIGHT:I
+
+Indicates scrolling along the horizontal axis.
+public static final int SCROLL_AXIS_HORIZONTAL
+sget v0, Landroid/view/View;->SCROLL_AXIS_HORIZONTAL:I
+
+Indicates no axis of view scrolling.
+public static final int SCROLL_AXIS_NONE
+sget v0, Landroid/view/View;->SCROLL_AXIS_NONE:I
+
+Indicates scrolling along the vertical axis.
+public static final int SCROLL_AXIS_VERTICAL
+sget v0, Landroid/view/View;->SCROLL_AXIS_VERTICAL:I
+
+Scroll indicator direction for the bottom edge of the view.
+public static final int SCROLL_INDICATOR_BOTTOM
+sget v0, Landroid/view/View;->SCROLL_INDICATOR_BOTTOM:I
+
+Scroll indicator direction for the ending edge of the view.
+public static final int SCROLL_INDICATOR_END
+sget v0, Landroid/view/View;->SCROLL_INDICATOR_END:I
+
+Scroll indicator direction for the left edge of the view.
+public static final int SCROLL_INDICATOR_LEFT
+sget v0, Landroid/view/View;->SCROLL_INDICATOR_LEFT:I
+
+Scroll indicator direction for the right edge of the view.
+public static final int SCROLL_INDICATOR_RIGHT
+sget v0, Landroid/view/View;->SCROLL_INDICATOR_RIGHT:I
+
+Scroll indicator direction for the starting edge of the view.
+public static final int SCROLL_INDICATOR_START
+sget v0, Landroid/view/View;->SCROLL_INDICATOR_START:I
+
+Scroll indicator direction for the top edge of the view.
+public static final int SCROLL_INDICATOR_TOP
+sget v0, Landroid/view/View;->SCROLL_INDICATOR_TOP:I
+
+View flag indicating whether this view should have sound effects enabled for events such as clicking and touching.
+public static final int SOUND_EFFECTS_ENABLED
+sget v0, Landroid/view/View;->SOUND_EFFECTS_ENABLED:I
+
+This constant was deprecated in API level 15. Use SYSTEM_UI_FLAG_LOW_PROFILE instead.
+public static final int STATUS_BAR_HIDDEN
+sget v0, Landroid/view/View;->STATUS_BAR_HIDDEN:I
+
+This constant was deprecated in API level 15. Use SYSTEM_UI_FLAG_VISIBLE instead.
+public static final int STATUS_BAR_VISIBLE
+sget v0, Landroid/view/View;->STATUS_BAR_VISIBLE:I
+
+Flag for setSystemUiVisibility(int): View has requested to go into the normal fullscreen mode so that its content can take over the screen while still allowing the user to interact with the application.
+public static final int SYSTEM_UI_FLAG_FULLSCREEN
+sget v0, Landroid/view/View;->SYSTEM_UI_FLAG_FULLSCREEN:I
+
+Flag for setSystemUiVisibility(int): View has requested that the system navigation be temporarily hidden.
+public static final int SYSTEM_UI_FLAG_HIDE_NAVIGATION
+sget v0, Landroid/view/View;->SYSTEM_UI_FLAG_HIDE_NAVIGATION:I
+
+Flag for setSystemUiVisibility(int): View would like to remain interactive when hiding the navigation bar with SYSTEM_UI_FLAG_HIDE_NAVIGATION.
+public static final int SYSTEM_UI_FLAG_IMMERSIVE
+sget v0, Landroid/view/View;->SYSTEM_UI_FLAG_IMMERSIVE:I
+
+Flag for setSystemUiVisibility(int): View would like to remain interactive when hiding the status bar with SYSTEM_UI_FLAG_FULLSCREEN and/or hiding the navigation bar with SYSTEM_UI_FLAG_HIDE_NAVIGATION.
+public static final int SYSTEM_UI_FLAG_IMMERSIVE_STICKY
+sget v0, Landroid/view/View;->SYSTEM_UI_FLAG_IMMERSIVE_STICKY:I
+
+Flag for setSystemUiVisibility(int): View would like its window to be laid out as if it has requested SYSTEM_UI_FLAG_FULLSCREEN, even if it currently hasn't.
+public static final int SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN
+sget v0, Landroid/view/View;->SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN:I
+
+Flag for setSystemUiVisibility(int): View would like its window to be laid out as if it has requested SYSTEM_UI_FLAG_HIDE_NAVIGATION, even if it currently hasn't.
+public static final int SYSTEM_UI_FLAG_LAYOUT_HIDE_NAVIGATION
+sget v0, Landroid/view/View;->SYSTEM_UI_FLAG_LAYOUT_HIDE_NAVIGATION:I
+
+Flag for setSystemUiVisibility(int): When using other layout flags, we would like a stable view of the content insets given to fitSystemWindows(android.graphics.Rect).
+public static final int SYSTEM_UI_FLAG_LAYOUT_STABLE
+sget v0, Landroid/view/View;->SYSTEM_UI_FLAG_LAYOUT_STABLE:I
+
+Flag for setSystemUiVisibility(int): Requests the navigation bar to draw in a mode that is compatible with light navigation bar backgrounds.
+public static final int SYSTEM_UI_FLAG_LIGHT_NAVIGATION_BAR
+sget v0, Landroid/view/View;->SYSTEM_UI_FLAG_LIGHT_NAVIGATION_BAR:I
+
+Flag for setSystemUiVisibility(int): Requests the status bar to draw in a mode that is compatible with light status bar backgrounds.
+public static final int SYSTEM_UI_FLAG_LIGHT_STATUS_BAR
+sget v0, Landroid/view/View;->SYSTEM_UI_FLAG_LIGHT_STATUS_BAR:I
+
+Flag for setSystemUiVisibility(int): View has requested the system UI to enter an unobtrusive "low profile" mode.
+public static final int SYSTEM_UI_FLAG_LOW_PROFILE
+sget v0, Landroid/view/View;->SYSTEM_UI_FLAG_LOW_PROFILE:I
+
+Special constant for setSystemUiVisibility(int): View has requested the system UI (status bar) to be visible (the default).
+public static final int SYSTEM_UI_FLAG_VISIBLE
+sget v0, Landroid/view/View;->SYSTEM_UI_FLAG_VISIBLE:I
+
+Flags that can impact the layout in relation to system UI.
+public static final int SYSTEM_UI_LAYOUT_FLAGS
+sget v0, Landroid/view/View;->SYSTEM_UI_LAYOUT_FLAGS:I
+
+Center the paragraph, e.g.
+public static final int TEXT_ALIGNMENT_CENTER
+sget v0, Landroid/view/View;->TEXT_ALIGNMENT_CENTER:I
+
+Default for the root view.
+public static final int TEXT_ALIGNMENT_GRAVITY
+sget v0, Landroid/view/View;->TEXT_ALIGNMENT_GRAVITY:I
+
+Default text alignment.
+public static final int TEXT_ALIGNMENT_INHERIT
+sget v0, Landroid/view/View;->TEXT_ALIGNMENT_INHERIT:I
+
+Align to the end of the paragraph, e.g.
+public static final int TEXT_ALIGNMENT_TEXT_END
+sget v0, Landroid/view/View;->TEXT_ALIGNMENT_TEXT_END:I
+
+Align to the start of the paragraph, e.g.
+public static final int TEXT_ALIGNMENT_TEXT_START
+sget v0, Landroid/view/View;->TEXT_ALIGNMENT_TEXT_START:I
+
+Align to the end of the view, which is ALIGN_RIGHT if the view’s resolved layoutDirection is LTR, and ALIGN_LEFT otherwise.
+public static final int TEXT_ALIGNMENT_VIEW_END
+sget v0, Landroid/view/View;->TEXT_ALIGNMENT_VIEW_END:I
+
+Align to the start of the view, which is ALIGN_LEFT if the view’s resolved layoutDirection is LTR, and ALIGN_RIGHT otherwise.
+public static final int TEXT_ALIGNMENT_VIEW_START
+sget v0, Landroid/view/View;->TEXT_ALIGNMENT_VIEW_START:I
+
+Text direction is using "any-RTL" algorithm.
+public static final int TEXT_DIRECTION_ANY_RTL
+sget v0, Landroid/view/View;->TEXT_DIRECTION_ANY_RTL:I
+
+Text direction is using "first strong algorithm".
+public static final int TEXT_DIRECTION_FIRST_STRONG
+sget v0, Landroid/view/View;->TEXT_DIRECTION_FIRST_STRONG:I
+
+Text direction is using "first strong algorithm".
+public static final int TEXT_DIRECTION_FIRST_STRONG_LTR
+sget v0, Landroid/view/View;->TEXT_DIRECTION_FIRST_STRONG_LTR:I
+
+Text direction is using "first strong algorithm".
+public static final int TEXT_DIRECTION_FIRST_STRONG_RTL
+sget v0, Landroid/view/View;->TEXT_DIRECTION_FIRST_STRONG_RTL:I
+
+Text direction is inherited through ViewGroup
+public static final int TEXT_DIRECTION_INHERIT
+sget v0, Landroid/view/View;->TEXT_DIRECTION_INHERIT:I
+
+Text direction is coming from the system Locale.
+public static final int TEXT_DIRECTION_LOCALE
+sget v0, Landroid/view/View;->TEXT_DIRECTION_LOCALE:I
+
+Text direction is forced to LTR.
+public static final int TEXT_DIRECTION_LTR
+sget v0, Landroid/view/View;->TEXT_DIRECTION_LTR:I
+
+Text direction is forced to RTL.
+public static final int TEXT_DIRECTION_RTL
+sget v0, Landroid/view/View;->TEXT_DIRECTION_RTL:I
+
+The logging tag used by this class with android.util.Log.
+public static final String VIEW_LOG_TAG
+sget-object v0, Landroid/view/View;->VIEW_LOG_TAG:Ljava/lang/String;
+
+This view is visible.
+public static final int VISIBLE
+sget v0, Landroid/view/View;->VISIBLE:I
+
+A Property wrapper around the alpha functionality handled by the setAlpha(float) and getAlpha() methods.
+public static final Property<View, Float> ALPHA
+sget-object v0, Landroid/view/View;->ALPHA:Landroid/util/Property;
+
+Indicates the view has no states set.
+protected static final int[] EMPTY_STATE_SET
+sget-object v0, Landroid/view/View;->EMPTY_STATE_SET:[I
+
+Indicates the view is enabled, focused and selected.
+protected static final int[] ENABLED_FOCUSED_SELECTED_STATE_SET
+sget-object v0, Landroid/view/View;->ENABLED_FOCUSED_SELECTED_STATE_SET:[I
+
+Indicates the view is enabled, focused, selected and its window has the focus.
+protected static final int[] ENABLED_FOCUSED_SELECTED_WINDOW_FOCUSED_STATE_SET
+sget-object v0, Landroid/view/View;->ENABLED_FOCUSED_SELECTED_WINDOW_FOCUSED_STATE_SET:[I
+
+Indicates the view is enabled and has the focus.
+protected static final int[] ENABLED_FOCUSED_STATE_SET
+sget-object v0, Landroid/view/View;->ENABLED_FOCUSED_STATE_SET:[I
+
+Indicates the view is enabled, focused and its window has the focus.
+protected static final int[] ENABLED_FOCUSED_WINDOW_FOCUSED_STATE_SET
+sget-object v0, Landroid/view/View;->ENABLED_FOCUSED_WINDOW_FOCUSED_STATE_SET:[I
+
+Indicates the view is enabled and selected.
+protected static final int[] ENABLED_SELECTED_STATE_SET
+sget-object v0, Landroid/view/View;->ENABLED_SELECTED_STATE_SET:[I
+
+Indicates the view is enabled, selected and its window has the focus.
+protected static final int[] ENABLED_SELECTED_WINDOW_FOCUSED_STATE_SET
+sget-object v0, Landroid/view/View;->ENABLED_SELECTED_WINDOW_FOCUSED_STATE_SET:[I
+
+Indicates the view is enabled.
+protected static final int[] ENABLED_STATE_SET
+sget-object v0, Landroid/view/View;->ENABLED_STATE_SET:[I
+
+Indicates the view is enabled and that its window has focus.
+protected static final int[] ENABLED_WINDOW_FOCUSED_STATE_SET
+sget-object v0, Landroid/view/View;->ENABLED_WINDOW_FOCUSED_STATE_SET:[I
+
+Indicates the view is focused and selected.
+protected static final int[] FOCUSED_SELECTED_STATE_SET
+sget-object v0, Landroid/view/View;->FOCUSED_SELECTED_STATE_SET:[I
+
+Indicates the view is focused, selected and its window has the focus.
+protected static final int[] FOCUSED_SELECTED_WINDOW_FOCUSED_STATE_SET
+sget-object v0, Landroid/view/View;->FOCUSED_SELECTED_WINDOW_FOCUSED_STATE_SET:[I
+
+Indicates the view is focused.
+protected static final int[] FOCUSED_STATE_SET
+sget-object v0, Landroid/view/View;->FOCUSED_STATE_SET:[I
+
+Indicates the view has the focus and that its window has the focus.
+protected static final int[] FOCUSED_WINDOW_FOCUSED_STATE_SET
+sget-object v0, Landroid/view/View;->FOCUSED_WINDOW_FOCUSED_STATE_SET:[I
+
+Indicates the view is pressed, enabled, focused and selected.
+protected static final int[] PRESSED_ENABLED_FOCUSED_SELECTED_STATE_SET
+sget-object v0, Landroid/view/View;->PRESSED_ENABLED_FOCUSED_SELECTED_STATE_SET:[I
+
+Indicates the view is pressed, enabled, focused, selected and its window has the focus.
+protected static final int[] PRESSED_ENABLED_FOCUSED_SELECTED_WINDOW_FOCUSED_STATE_SET
+sget-object v0, Landroid/view/View;->PRESSED_ENABLED_FOCUSED_SELECTED_WINDOW_FOCUSED_STATE_SET:[I
+
+Indicates the view is pressed, enabled and focused.
+protected static final int[] PRESSED_ENABLED_FOCUSED_STATE_SET
+sget-object v0, Landroid/view/View;->PRESSED_ENABLED_FOCUSED_STATE_SET:[I
+
+Indicates the view is pressed, enabled, focused and its window has the focus.
+protected static final int[] PRESSED_ENABLED_FOCUSED_WINDOW_FOCUSED_STATE_SET
+sget-object v0, Landroid/view/View;->PRESSED_ENABLED_FOCUSED_WINDOW_FOCUSED_STATE_SET:[I
+
+Indicates the view is pressed, enabled and selected.
+protected static final int[] PRESSED_ENABLED_SELECTED_STATE_SET
+sget-object v0, Landroid/view/View;->PRESSED_ENABLED_SELECTED_STATE_SET:[I
+
+Indicates the view is pressed, enabled, selected and its window has the focus.
+protected static final int[] PRESSED_ENABLED_SELECTED_WINDOW_FOCUSED_STATE_SET
+sget-object v0, Landroid/view/View;->PRESSED_ENABLED_SELECTED_WINDOW_FOCUSED_STATE_SET:[I
+
+Indicates the view is pressed and enabled.
+protected static final int[] PRESSED_ENABLED_STATE_SET
+sget-object v0, Landroid/view/View;->PRESSED_ENABLED_STATE_SET:[I
+
+Indicates the view is pressed, enabled and its window has the focus.
+protected static final int[] PRESSED_ENABLED_WINDOW_FOCUSED_STATE_SET
+sget-object v0, Landroid/view/View;->PRESSED_ENABLED_WINDOW_FOCUSED_STATE_SET:[I
+
+Indicates the view is pressed, focused and selected.
+protected static final int[] PRESSED_FOCUSED_SELECTED_STATE_SET
+sget-object v0, Landroid/view/View;->PRESSED_FOCUSED_SELECTED_STATE_SET:[I
+
+Indicates the view is pressed, focused, selected and its window has the focus.
+protected static final int[] PRESSED_FOCUSED_SELECTED_WINDOW_FOCUSED_STATE_SET
+sget-object v0, Landroid/view/View;->PRESSED_FOCUSED_SELECTED_WINDOW_FOCUSED_STATE_SET:[I
+
+Indicates the view is pressed and focused.
+protected static final int[] PRESSED_FOCUSED_STATE_SET
+sget-object v0, Landroid/view/View;->PRESSED_FOCUSED_STATE_SET:[I
+
+Indicates the view is pressed, focused and its window has the focus.
+protected static final int[] PRESSED_FOCUSED_WINDOW_FOCUSED_STATE_SET
+sget-object v0, Landroid/view/View;->PRESSED_FOCUSED_WINDOW_FOCUSED_STATE_SET:[I
+
+Indicates the view is pressed and selected.
+protected static final int[] PRESSED_SELECTED_STATE_SET
+sget-object v0, Landroid/view/View;->PRESSED_SELECTED_STATE_SET:[I
+
+Indicates the view is pressed, selected and its window has the focus.
+protected static final int[] PRESSED_SELECTED_WINDOW_FOCUSED_STATE_SET
+sget-object v0, Landroid/view/View;->PRESSED_SELECTED_WINDOW_FOCUSED_STATE_SET:[I
+
+Indicates the view is pressed.
+protected static final int[] PRESSED_STATE_SET
+sget-object v0, Landroid/view/View;->PRESSED_STATE_SET:[I
+
+Indicates the view is pressed and its window has the focus.
+protected static final int[] PRESSED_WINDOW_FOCUSED_STATE_SET
+sget-object v0, Landroid/view/View;->PRESSED_WINDOW_FOCUSED_STATE_SET:[I
+
+A Property wrapper around the rotation functionality handled by the setRotation(float) and getRotation() methods.
+public static final Property<View, Float> ROTATION
+sget-object v0, Landroid/view/View;->ROTATION:Landroid/util/Property;
+
+A Property wrapper around the rotationX functionality handled by the setRotationX(float) and getRotationX() methods.
+public static final Property<View, Float> ROTATION_X
+sget-object v0, Landroid/view/View;->ROTATION_X:Landroid/util/Property;
+
+A Property wrapper around the rotationY functionality handled by the setRotationY(float) and getRotationY() methods.
+public static final Property<View, Float> ROTATION_Y
+sget-object v0, Landroid/view/View;->ROTATION_Y:Landroid/util/Property;
+
+A Property wrapper around the scaleX functionality handled by the setScaleX(float) and getScaleX() methods.
+public static final Property<View, Float> SCALE_X
+sget-object v0, Landroid/view/View;->SCALE_X:Landroid/util/Property;
+
+A Property wrapper around the scaleY functionality handled by the setScaleY(float) and getScaleY() methods.
+public static final Property<View, Float> SCALE_Y
+sget-object v0, Landroid/view/View;->SCALE_Y:Landroid/util/Property;
+
+Indicates the view is selected.
+protected static final int[] SELECTED_STATE_SET
+sget-object v0, Landroid/view/View;->SELECTED_STATE_SET:[I
+
+Indicates the view is selected and that its window has the focus.
+protected static final int[] SELECTED_WINDOW_FOCUSED_STATE_SET
+sget-object v0, Landroid/view/View;->SELECTED_WINDOW_FOCUSED_STATE_SET:[I
+
+A Property wrapper around the translationX functionality handled by the setTranslationX(float) and getTranslationX() methods.
+public static final Property<View, Float> TRANSLATION_X
+sget-object v0, Landroid/view/View;->TRANSLATION_X:Landroid/util/Property;
+
+A Property wrapper around the translationY functionality handled by the setTranslationY(float) and getTranslationY() methods.
+public static final Property<View, Float> TRANSLATION_Y
+sget-object v0, Landroid/view/View;->TRANSLATION_Y:Landroid/util/Property;
+
+A Property wrapper around the translationZ functionality handled by the setTranslationZ(float) and getTranslationZ() methods.
+public static final Property<View, Float> TRANSLATION_Z
+sget-object v0, Landroid/view/View;->TRANSLATION_Z:Landroid/util/Property;
+
+Indicates the view's window has focus.
+protected static final int[] WINDOW_FOCUSED_STATE_SET
+sget-object v0, Landroid/view/View;->WINDOW_FOCUSED_STATE_SET:[I
+
+A Property wrapper around the x functionality handled by the setX(float) and getX() methods.
+public static final Property<View, Float> X
+sget-object v0, Landroid/view/View;->X:Landroid/util/Property;
+
+A Property wrapper around the y functionality handled by the setY(float) and getY() methods.
+public static final Property<View, Float> Y
+sget-object v0, Landroid/view/View;->Y:Landroid/util/Property;
+
+A Property wrapper around the z functionality handled by the setZ(float) and getZ() methods.
+public static final Property<View, Float> Z
+sget-object v0, Landroid/view/View;->Z:Landroid/util/Property;
+
+构造方法：Simple constructor to use when creating a view from code.
+constructor View(Context context)
+invoke-direct {v0, v1}, Landroid/view/View;-><init>(Landroid/content/Context;)V
+
+构造方法：Constructor that is called when inflating a view from XML.
+constructor View(Context context, AttributeSet attrs)
+invoke-direct {v0, v1, v2}, Landroid/view/View;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
+
+构造方法：Perform inflation from XML and apply a class-specific base style from a theme attribute.
+constructor View(Context context, AttributeSet attrs, int defStyleAttr)
+invoke-direct {v0, v1, v2, v3}, Landroid/view/View;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;I)V
+
+构造方法：Perform inflation from XML and apply a class-specific base style from a theme attribute or style resource.
+constructor View(Context context, AttributeSet attrs, int defStyleAttr, int defStyleRes)
+invoke-direct {v0, v1, v2, v3, v4}, Landroid/view/View;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;II)V
+
+Adds the children of this View relevant for accessibility to the given list as output.
+void addChildrenForAccessibility(ArrayList<View> outChildren)
+invoke-virtual {v0, v1}, Landroid/view/View;->addChildrenForAccessibility(Ljava/util/ArrayList;)V
+
+Adds extra data to an AccessibilityNodeInfo based on an explicit request for the additional data.
+void addExtraDataToAccessibilityNodeInfo(AccessibilityNodeInfo info, String extraDataKey, Bundle arguments)
+invoke-virtual {v0, v1, v2, v3}, Landroid/view/View;->addExtraDataToAccessibilityNodeInfo(Landroid/view/accessibility/AccessibilityNodeInfo;Ljava/lang/String;Landroid/os/Bundle;)V
+
+Add any focusable views that are descendants of this view (possibly including this view if it is focusable itself) to views.
+void addFocusables(ArrayList<View> views, int direction)
+invoke-virtual {v0, v1, v2}, Landroid/view/View;->addFocusables(Ljava/util/ArrayList;I)V
+
+Adds any focusable views that are descendants of this view (possibly including this view if it is focusable itself) to views.
+void addFocusables(ArrayList<View> views, int direction, int focusableMode)
+invoke-virtual {v0, v1, v2, v3}, Landroid/view/View;->addFocusables(Ljava/util/ArrayList;II)V
+
+Adds any keyboard navigation cluster roots that are descendants of this view (possibly including this view if it is a cluster root itself) to views.
+void addKeyboardNavigationClusters(Collection<View> views, int direction)
+invoke-virtual {v0, v1, v2}, Landroid/view/View;->addKeyboardNavigationClusters(Ljava/util/Collection;I)V
+
+Add a listener for attach state changes.
+void addOnAttachStateChangeListener(View.OnAttachStateChangeListener listener)
+invoke-virtual {v0, v1}, Landroid/view/View;->addOnAttachStateChangeListener(Landroid/view/View$OnAttachStateChangeListener;)V
+
+Add a listener that will be called when the bounds of the view change due to layout processing.
+void addOnLayoutChangeListener(View.OnLayoutChangeListener listener)
+invoke-virtual {v0, v1}, Landroid/view/View;->addOnLayoutChangeListener(Landroid/view/View$OnLayoutChangeListener;)V
+
+Adds a listener which will receive unhandled KeyEvents.
+void addOnUnhandledKeyEventListener(View.OnUnhandledKeyEventListener listener)
+invoke-virtual {v0, v1}, Landroid/view/View;->addOnUnhandledKeyEventListener(Landroid/view/View$OnUnhandledKeyEventListener;)V
+
+Add any touchable views that are descendants of this view (possibly including this view if it is touchable itself) to views.
+void addTouchables(ArrayList<View> views)
+invoke-virtual {v0, v1}, Landroid/view/View;->addTouchables(Ljava/util/ArrayList;)V
+
+This method returns a ViewPropertyAnimator object, which can be used to animate specific properties on this View.
+ViewPropertyAnimator animate()
+invoke-virtual {v0}, Landroid/view/View;->animate()Landroid/view/ViewPropertyAnimator;
+
+Convenience method for sending a AccessibilityEvent.TYPE_ANNOUNCEMENT AccessibilityEvent to make an announcement which is related to some sort of a context change for which none of the events representing UI transitions is a good fit.
+void announceForAccessibility(CharSequence text)
+invoke-virtual {v0, v1}, Landroid/view/View;->announceForAccessibility(Ljava/lang/CharSequence;)V
+
+Automatically fills the content of this view with the value.
+void autofill(AutofillValue value)
+invoke-virtual {v0, v1}, Landroid/view/View;->autofill(Landroid/view/autofill/AutofillValue;)V
+
+Automatically fills the content of the virtual children within this view.
+void autofill(SparseArray<AutofillValue> values)
+invoke-virtual {v0, v1}, Landroid/view/View;->autofill(Landroid/util/SparseArray;)V
+
+Change the view's z order in the tree, so it's on top of other sibling views.
+void bringToFront()
+invoke-virtual {v0}, Landroid/view/View;->bringToFront()V
+
+This method was deprecated in API level 28. The view drawing cache was largely made obsolete with the introduction of hardware-accelerated rendering in API 11. With hardware-acceleration, intermediate cache layers are largely unnecessary and can easily result in a net loss in performance due to the cost of creating and updating the layer. In the rare cases where caching layers are useful, such as for alpha animations, setLayerType(int, Paint) handles this with hardware rendering. For software-rendered snapshots of a small part of the View hierarchy or individual Views it is recommended to create a Canvas from either a Bitmap or Picture and call draw(Canvas) on the View. However these software-rendered usages are discouraged and have compatibility issues with hardware-only rendering features such as Config.HARDWARE bitmaps, real-time shadows, and outline clipping. For screenshots of the UI for feedback reports or unit testing the PixelCopy API is recommended.
+void buildDrawingCache(boolean autoScale)
+invoke-virtual {v0, v1}, Landroid/view/View;->buildDrawingCache(Z)V
+
+This method was deprecated in API level 28. The view drawing cache was largely made obsolete with the introduction of hardware-accelerated rendering in API 11. With hardware-acceleration, intermediate cache layers are largely unnecessary and can easily result in a net loss in performance due to the cost of creating and updating the layer. In the rare cases where caching layers are useful, such as for alpha animations, setLayerType(int, Paint) handles this with hardware rendering. For software-rendered snapshots of a small part of the View hierarchy or individual Views it is recommended to create a Canvas from either a Bitmap or Picture and call draw(Canvas) on the View. However these software-rendered usages are discouraged and have compatibility issues with hardware-only rendering features such as Config.HARDWARE bitmaps, real-time shadows, and outline clipping. For screenshots of the UI for feedback reports or unit testing the PixelCopy API is recommended.
+void buildDrawingCache()
+invoke-virtual {v0}, Landroid/view/View;->buildDrawingCache()V
+
+Forces this view's layer to be created and this view to be rendered into its layer.
+void buildLayer()
+invoke-virtual {v0}, Landroid/view/View;->buildLayer()V
+
+Directly call any attached OnClickListener.
+boolean callOnClick()
+invoke-virtual {v0}, Landroid/view/View;->callOnClick()Z
+
+Check if layout direction resolution can be done.
+boolean canResolveLayoutDirection()
+invoke-virtual {v0}, Landroid/view/View;->canResolveLayoutDirection()Z
+
+Check if text alignment resolution can be done.
+boolean canResolveTextAlignment()
+invoke-virtual {v0}, Landroid/view/View;->canResolveTextAlignment()Z
+
+Check if text direction resolution can be done.
+boolean canResolveTextDirection()
+invoke-virtual {v0}, Landroid/view/View;->canResolveTextDirection()Z
+
+Check if this view can be scrolled horizontally in a certain direction.
+boolean canScrollHorizontally(int direction)
+invoke-virtual {v0, v1}, Landroid/view/View;->canScrollHorizontally(I)Z
+
+Check if this view can be scrolled vertically in a certain direction.
+boolean canScrollVertically(int direction)
+invoke-virtual {v0, v1}, Landroid/view/View;->canScrollVertically(I)Z
+
+Cancels an ongoing drag and drop operation.
+final void cancelDragAndDrop()
+invoke-virtual {v0}, Landroid/view/View;->cancelDragAndDrop()V
+
+Cancels a pending long press.
+void cancelLongPress()
+invoke-virtual {v0}, Landroid/view/View;->cancelLongPress()V
+
+Cancel any deferred high-level input events that were previously posted to the event queue.
+final void cancelPendingInputEvents()
+invoke-virtual {v0}, Landroid/view/View;->cancelPendingInputEvents()V
+
+Called by the InputMethodManager when a view who is not the current input connection target is trying to make a call on the manager.
+boolean checkInputConnectionProxy(View view)
+invoke-virtual {v0, v1}, Landroid/view/View;->checkInputConnectionProxy(Landroid/view/View;)Z
+
+Cancels any animations for this view.
+void clearAnimation()
+invoke-virtual {v0}, Landroid/view/View;->clearAnimation()V
+
+Called when this view wants to give up focus.
+void clearFocus()
+invoke-virtual {v0}, Landroid/view/View;->clearFocus()V
+
+Merge two states as returned by getMeasuredState().
+int combineMeasuredStates(int curState, int newState)
+invoke-static {v0, v1}, Landroid/view/View;->combineMeasuredStates(II)I
+
+Called by a parent to request that a child update its values for mScrollX and mScrollY if necessary.
+void computeScroll()
+invoke-virtual {v0}, Landroid/view/View;->computeScroll()V
+
+Compute insets that should be consumed by this view and the ones that should propagate to those under it.
+WindowInsets computeSystemWindowInsets(WindowInsets in, Rect outLocalInsets)
+invoke-virtual {v0, v1, v2}, Landroid/view/View;->computeSystemWindowInsets(Landroid/view/WindowInsets;Landroid/graphics/Rect;)Landroid/view/WindowInsets;
+
+Returns an AccessibilityNodeInfo representing this view from the point of view of an AccessibilityService.
+AccessibilityNodeInfo createAccessibilityNodeInfo()
+invoke-virtual {v0}, Landroid/view/View;->createAccessibilityNodeInfo()Landroid/view/accessibility/AccessibilityNodeInfo;
+
+Show the context menu for this view.
+void createContextMenu(ContextMenu menu)
+invoke-virtual {v0, v1}, Landroid/view/View;->createContextMenu(Landroid/view/ContextMenu;)V
+
+This method was deprecated in API level 28. The view drawing cache was largely made obsolete with the introduction of hardware-accelerated rendering in API 11. With hardware-acceleration, intermediate cache layers are largely unnecessary and can easily result in a net loss in performance due to the cost of creating and updating the layer. In the rare cases where caching layers are useful, such as for alpha animations, setLayerType(int, Paint) handles this with hardware rendering. For software-rendered snapshots of a small part of the View hierarchy or individual Views it is recommended to create a Canvas from either a Bitmap or Picture and call draw(Canvas) on the View. However these software-rendered usages are discouraged and have compatibility issues with hardware-only rendering features such as Config.HARDWARE bitmaps, real-time shadows, and outline clipping. For screenshots of the UI for feedback reports or unit testing the PixelCopy API is recommended.
+void destroyDrawingCache()
+invoke-virtual {v0}, Landroid/view/View;->destroyDrawingCache()V
+
+Request to apply the given window insets to this view or another view in its subtree.
+WindowInsets dispatchApplyWindowInsets(WindowInsets insets)
+invoke-virtual {v0, v1}, Landroid/view/View;->dispatchApplyWindowInsets(Landroid/view/WindowInsets;)Landroid/view/WindowInsets;
+
+Pass a captured pointer event down to the focused view.
+boolean dispatchCapturedPointerEvent(MotionEvent event)
+invoke-virtual {v0, v1}, Landroid/view/View;->dispatchCapturedPointerEvent(Landroid/view/MotionEvent;)Z
+
+Dispatch a notification about a resource configuration change down the view hierarchy.
+void dispatchConfigurationChanged(Configuration newConfig)
+invoke-virtual {v0, v1}, Landroid/view/View;->dispatchConfigurationChanged(Landroid/content/res/Configuration;)V
+
+Dispatch a hint about whether this view is displayed.
+void dispatchDisplayHint(int hint)
+invoke-virtual {v0, v1}, Landroid/view/View;->dispatchDisplayHint(I)V
+
+Detects if this View is enabled and has a drag event listener.
+boolean dispatchDragEvent(DragEvent event)
+invoke-virtual {v0, v1}, Landroid/view/View;->dispatchDragEvent(Landroid/view/DragEvent;)Z
+
+Dispatches drawableHotspotChanged to all of this View's children.
+void dispatchDrawableHotspotChanged(float x, float y)
+invoke-virtual {v0, v1, v2}, Landroid/view/View;->dispatchDrawableHotspotChanged(FF)V
+
+Dispatch onFinishTemporaryDetach() to this View and its direct children if this is a container View.
+void dispatchFinishTemporaryDetach()
+invoke-virtual {v0}, Landroid/view/View;->dispatchFinishTemporaryDetach()V
+
+Dispatch a generic motion event.
+boolean dispatchGenericMotionEvent(MotionEvent event)
+invoke-virtual {v0, v1}, Landroid/view/View;->dispatchGenericMotionEvent(Landroid/view/MotionEvent;)Z
+
+Dispatch a key event to the next view on the focus path.
+boolean dispatchKeyEvent(KeyEvent event)
+invoke-virtual {v0, v1}, Landroid/view/View;->dispatchKeyEvent(Landroid/view/KeyEvent;)Z
+
+Dispatch a key event before it is processed by any input method associated with the view hierarchy.
+boolean dispatchKeyEventPreIme(KeyEvent event)
+invoke-virtual {v0, v1}, Landroid/view/View;->dispatchKeyEventPreIme(Landroid/view/KeyEvent;)Z
+
+Dispatches a key shortcut event.
+boolean dispatchKeyShortcutEvent(KeyEvent event)
+invoke-virtual {v0, v1}, Landroid/view/View;->dispatchKeyShortcutEvent(Landroid/view/KeyEvent;)Z
+
+Dispatch a fling to a nested scrolling parent.
+boolean dispatchNestedFling(float velocityX, float velocityY, boolean consumed)
+invoke-virtual {v0, v1, v2, v3}, Landroid/view/View;->dispatchNestedFling(FFZ)Z
+
+Dispatch a fling to a nested scrolling parent before it is processed by this view.
+boolean dispatchNestedPreFling(float velocityX, float velocityY)
+invoke-virtual {v0, v1, v2}, Landroid/view/View;->dispatchNestedPreFling(FF)Z
+
+Report an accessibility action to this view's parents for delegated processing.
+boolean dispatchNestedPrePerformAccessibilityAction(int action, Bundle arguments)
+invoke-virtual {v0, v1, v2}, Landroid/view/View;->dispatchNestedPrePerformAccessibilityAction(ILandroid/os/Bundle;)Z
+
+Dispatch one step of a nested scroll in progress before this view consumes any portion of it.
+boolean dispatchNestedPreScroll(int dx, int dy, int[] consumed, int[] offsetInWindow)
+invoke-virtual {v0, v1, v2, v3, v4}, Landroid/view/View;->dispatchNestedPreScroll(II[I[I)Z
+
+Dispatch one step of a nested scroll in progress.
+boolean dispatchNestedScroll(int dxConsumed, int dyConsumed, int dxUnconsumed, int dyUnconsumed, int[] offsetInWindow)
+invoke-virtual/range {v0 .. v5}, Landroid/view/View;->dispatchNestedScroll(IIII[I)Z
+
+没有帮助内容
+void dispatchPointerCaptureChanged(boolean hasCapture)
+invoke-virtual {v0, v1}, Landroid/view/View;->dispatchPointerCaptureChanged(Z)V
+
+Dispatches an AccessibilityEvent to the View first and then to its children for adding their text content to the event.
+boolean dispatchPopulateAccessibilityEvent(AccessibilityEvent event)
+invoke-virtual {v0, v1}, Landroid/view/View;->dispatchPopulateAccessibilityEvent(Landroid/view/accessibility/AccessibilityEvent;)Z
+
+Dispatches creation of a ViewStructures for autofill purposes down the hierarchy, when an Assist structure is being created as part of an autofill request.
+void dispatchProvideAutofillStructure(ViewStructure structure, int flags)
+invoke-virtual {v0, v1, v2}, Landroid/view/View;->dispatchProvideAutofillStructure(Landroid/view/ViewStructure;I)V
+
+Dispatch creation of ViewStructure down the hierarchy.
+void dispatchProvideStructure(ViewStructure structure)
+invoke-virtual {v0, v1}, Landroid/view/View;->dispatchProvideStructure(Landroid/view/ViewStructure;)V
+
+Dispatch onStartTemporaryDetach() to this View and its direct children if this is a container View.
+void dispatchStartTemporaryDetach()
+invoke-virtual {v0}, Landroid/view/View;->dispatchStartTemporaryDetach()V
+
+Dispatch callbacks to setOnSystemUiVisibilityChangeListener(View.OnSystemUiVisibilityChangeListener) down the view hierarchy.
+void dispatchSystemUiVisibilityChanged(int visibility)
+invoke-virtual {v0, v1}, Landroid/view/View;->dispatchSystemUiVisibilityChanged(I)V
+
+Pass the touch screen motion event down to the target view, or this view if it is the target.
+boolean dispatchTouchEvent(MotionEvent event)
+invoke-virtual {v0, v1}, Landroid/view/View;->dispatchTouchEvent(Landroid/view/MotionEvent;)Z
+
+Pass a trackball motion event down to the focused view.
+boolean dispatchTrackballEvent(MotionEvent event)
+invoke-virtual {v0, v1}, Landroid/view/View;->dispatchTrackballEvent(Landroid/view/MotionEvent;)Z
+
+This method is the last chance for the focused view and its ancestors to respond to an arrow key.
+boolean dispatchUnhandledMove(View focused, int direction)
+invoke-virtual {v0, v1, v2}, Landroid/view/View;->dispatchUnhandledMove(Landroid/view/View;I)Z
+
+Called when the window containing this view gains or loses window focus.
+void dispatchWindowFocusChanged(boolean hasFocus)
+invoke-virtual {v0, v1}, Landroid/view/View;->dispatchWindowFocusChanged(Z)V
+
+Dispatch callbacks to onWindowSystemUiVisibilityChanged(int) down the view hierarchy.
+void dispatchWindowSystemUiVisiblityChanged(int visible)
+invoke-virtual {v0, v1}, Landroid/view/View;->dispatchWindowSystemUiVisiblityChanged(I)V
+
+Dispatch a window visibility change down the view hierarchy.
+void dispatchWindowVisibilityChanged(int visibility)
+invoke-virtual {v0, v1}, Landroid/view/View;->dispatchWindowVisibilityChanged(I)V
+
+Manually render this view (and all of its children) to the given Canvas.
+void draw(Canvas canvas)
+invoke-virtual {v0, v1}, Landroid/view/View;->draw(Landroid/graphics/Canvas;)V
+
+This function is called whenever the view hotspot changes and needs to be propagated to drawables or child views managed by the view.
+void drawableHotspotChanged(float x, float y)
+invoke-virtual {v0, v1, v2}, Landroid/view/View;->drawableHotspotChanged(FF)V
+
+Find the view in the hierarchy rooted at this view that currently has focus.
+View findFocus()
+invoke-virtual {v0}, Landroid/view/View;->findFocus()Landroid/view/View;
+
+Finds the first descendant view with the given ID, the view itself if the ID matches getId(), or null if the ID is invalid (< 0) or there is no matching view in the hierarchy.
+final <T extends View> T findViewById(int id)
+invoke-virtual {v0, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
+
+Look for a child view with the given tag.
+final <T extends View> T findViewWithTag(Object tag)
+invoke-virtual {v0, v1}, Landroid/view/View;->findViewWithTag(Ljava/lang/Object;)Landroid/view/View;
+
+Finds the Views that contain given text.
+void findViewsWithText(ArrayList<View> outViews, CharSequence searched, int flags)
+invoke-virtual {v0, v1, v2, v3}, Landroid/view/View;->findViewsWithText(Ljava/util/ArrayList;Ljava/lang/CharSequence;I)V
+
+Find the nearest view in the specified direction that can take focus.
+View focusSearch(int direction)
+invoke-virtual {v0, v1}, Landroid/view/View;->focusSearch(I)Landroid/view/View;
+
+Sets the behavior for overlapping rendering for this view (see hasOverlappingRendering() for more details on this behavior).
+void forceHasOverlappingRendering(boolean hasOverlappingRendering)
+invoke-virtual {v0, v1}, Landroid/view/View;->forceHasOverlappingRendering(Z)V
+
+Forces this view to be laid out during the next layout pass.
+void forceLayout()
+invoke-virtual {v0}, Landroid/view/View;->forceLayout()V
+
+Generate a value suitable for use in setId(int).
+int generateViewId()
+invoke-static {}, Landroid/view/View;->generateViewId()I
+
+Return the class name of this object to be used for accessibility purposes.
+CharSequence getAccessibilityClassName()
+invoke-virtual {v0}, Landroid/view/View;->getAccessibilityClassName()Ljava/lang/CharSequence;
+
+Gets the live region mode for this View.
+int getAccessibilityLiveRegion()
+invoke-virtual {v0}, Landroid/view/View;->getAccessibilityLiveRegion()I
+
+Gets the provider for managing a virtual view hierarchy rooted at this View and reported to AccessibilityServices that explore the window content.
+AccessibilityNodeProvider getAccessibilityNodeProvider()
+invoke-virtual {v0}, Landroid/view/View;->getAccessibilityNodeProvider()Landroid/view/accessibility/AccessibilityNodeProvider;
+
+Get the title of the pane for purposes of accessibility.
+CharSequence getAccessibilityPaneTitle()
+invoke-virtual {v0}, Landroid/view/View;->getAccessibilityPaneTitle()Ljava/lang/CharSequence;
+
+Gets the id of a view after which this one is visited in accessibility traversal.
+int getAccessibilityTraversalAfter()
+invoke-virtual {v0}, Landroid/view/View;->getAccessibilityTraversalAfter()I
+
+Gets the id of a view before which this one is visited in accessibility traversal.
+int getAccessibilityTraversalBefore()
+invoke-virtual {v0}, Landroid/view/View;->getAccessibilityTraversalBefore()I
+
+The opacity of the view.
+float getAlpha()
+invoke-virtual {v0}, Landroid/view/View;->getAlpha()F
+
+Get the animation currently associated with this view.
+Animation getAnimation()
+invoke-virtual {v0}, Landroid/view/View;->getAnimation()Landroid/view/animation/Animation;
+
+Retrieve a unique token identifying the top-level "real" window of the window that this view is attached to.
+IBinder getApplicationWindowToken()
+invoke-virtual {v0}, Landroid/view/View;->getApplicationWindowToken()Landroid/os/IBinder;
+
+Gets the hints that help an AutofillService determine how to autofill the view with the user's data.
+String[] getAutofillHints()
+invoke-virtual {v0}, Landroid/view/View;->getAutofillHints()[Ljava/lang/String;
+
+Gets the unique, logical identifier of this view in the activity, for autofill purposes.
+final AutofillId getAutofillId()
+invoke-virtual {v0}, Landroid/view/View;->getAutofillId()Landroid/view/autofill/AutofillId;
+
+Describes the autofill type of this view, so an AutofillService can create the proper AutofillValue when autofilling the view.
+int getAutofillType()
+invoke-virtual {v0}, Landroid/view/View;->getAutofillType()I
+
+Gets the View's current autofill value.
+AutofillValue getAutofillValue()
+invoke-virtual {v0}, Landroid/view/View;->getAutofillValue()Landroid/view/autofill/AutofillValue;
+
+Gets the background drawable
+Drawable getBackground()
+invoke-virtual {v0}, Landroid/view/View;->getBackground()Landroid/graphics/drawable/Drawable;
+
+Return the tint applied to the background drawable, if specified.
+ColorStateList getBackgroundTintList()
+invoke-virtual {v0}, Landroid/view/View;->getBackgroundTintList()Landroid/content/res/ColorStateList;
+
+Return the blending mode used to apply the tint to the background drawable, if specified.
+PorterDuff.Mode getBackgroundTintMode()
+invoke-virtual {v0}, Landroid/view/View;->getBackgroundTintMode()Landroid/graphics/PorterDuff$Mode;
+
+Return the offset of the widget's text baseline from the widget's top boundary.
+int getBaseline()
+invoke-virtual {v0}, Landroid/view/View;->getBaseline()I
+
+Bottom position of this view relative to its parent.
+final int getBottom()
+invoke-virtual {v0}, Landroid/view/View;->getBottom()I
+
+Gets the distance along the Z axis from the camera to this view.
+float getCameraDistance()
+invoke-virtual {v0}, Landroid/view/View;->getCameraDistance()F
+
+Populates an output rectangle with the clip bounds of the view, returning true if successful or false if the view's clip bounds are null.
+boolean getClipBounds(Rect outRect)
+invoke-virtual {v0, v1}, Landroid/view/View;->getClipBounds(Landroid/graphics/Rect;)Z
+
+Returns a copy of the current clipBounds.
+Rect getClipBounds()
+invoke-virtual {v0}, Landroid/view/View;->getClipBounds()Landroid/graphics/Rect;
+
+Returns whether the Outline should be used to clip the contents of the View.
+final boolean getClipToOutline()
+invoke-virtual {v0}, Landroid/view/View;->getClipToOutline()Z
+
+Returns the View's content description.
+CharSequence getContentDescription()
+invoke-virtual {v0}, Landroid/view/View;->getContentDescription()Ljava/lang/CharSequence;
+
+Returns the context the view is running in, through which it can access the current theme, resources, etc.
+final Context getContext()
+invoke-virtual {v0}, Landroid/view/View;->getContext()Landroid/content/Context;
+
+/** Returns whether this View should use a default focus highlight when it gets focused but doesn't have R.attr.state_focused defined in its background.
+final boolean getDefaultFocusHighlightEnabled()
+invoke-virtual {v0}, Landroid/view/View;->getDefaultFocusHighlightEnabled()Z
+
+Utility to return a default size.
+int getDefaultSize(int size, int measureSpec)
+invoke-static {v0, v1}, Landroid/view/View;->getDefaultSize(II)I
+
+Gets the logical display to which the view's window has been attached.
+Display getDisplay()
+invoke-virtual {v0}, Landroid/view/View;->getDisplay()Landroid/view/Display;
+
+Return an array of resource IDs of the drawable states representing the current state of the view.
+final int[] getDrawableState()
+invoke-virtual {v0}, Landroid/view/View;->getDrawableState()[I
+
+This method was deprecated in API level 28. The view drawing cache was largely made obsolete with the introduction of hardware-accelerated rendering in API 11. With hardware-acceleration, intermediate cache layers are largely unnecessary and can easily result in a net loss in performance due to the cost of creating and updating the layer. In the rare cases where caching layers are useful, such as for alpha animations, setLayerType(int, Paint) handles this with hardware rendering. For software-rendered snapshots of a small part of the View hierarchy or individual Views it is recommended to create a Canvas from either a Bitmap or Picture and call draw(Canvas) on the View. However these software-rendered usages are discouraged and have compatibility issues with hardware-only rendering features such as Config.HARDWARE bitmaps, real-time shadows, and outline clipping. For screenshots of the UI for feedback reports or unit testing the PixelCopy API is recommended.
+Bitmap getDrawingCache()
+invoke-virtual {v0}, Landroid/view/View;->getDrawingCache()Landroid/graphics/Bitmap;
+
+This method was deprecated in API level 28. The view drawing cache was largely made obsolete with the introduction of hardware-accelerated rendering in API 11. With hardware-acceleration, intermediate cache layers are largely unnecessary and can easily result in a net loss in performance due to the cost of creating and updating the layer. In the rare cases where caching layers are useful, such as for alpha animations, setLayerType(int, Paint) handles this with hardware rendering. For software-rendered snapshots of a small part of the View hierarchy or individual Views it is recommended to create a Canvas from either a Bitmap or Picture and call draw(Canvas) on the View. However these software-rendered usages are discouraged and have compatibility issues with hardware-only rendering features such as Config.HARDWARE bitmaps, real-time shadows, and outline clipping. For screenshots of the UI for feedback reports or unit testing the PixelCopy API is recommended.
+Bitmap getDrawingCache(boolean autoScale)
+invoke-virtual {v0, v1}, Landroid/view/View;->getDrawingCache(Z)Landroid/graphics/Bitmap;
+
+This method was deprecated in API level 28. The view drawing cache was largely made obsolete with the introduction of hardware-accelerated rendering in API 11. With hardware-acceleration, intermediate cache layers are largely unnecessary and can easily result in a net loss in performance due to the cost of creating and updating the layer. In the rare cases where caching layers are useful, such as for alpha animations, setLayerType(int, Paint) handles this with hardware rendering. For software-rendered snapshots of a small part of the View hierarchy or individual Views it is recommended to create a Canvas from either a Bitmap or Picture and call draw(Canvas) on the View. However these software-rendered usages are discouraged and have compatibility issues with hardware-only rendering features such as Config.HARDWARE bitmaps, real-time shadows, and outline clipping. For screenshots of the UI for feedback reports or unit testing the PixelCopy API is recommended.
+int getDrawingCacheBackgroundColor()
+invoke-virtual {v0}, Landroid/view/View;->getDrawingCacheBackgroundColor()I
+
+This method was deprecated in API level 28. The view drawing cache was largely made obsolete with the introduction of hardware-accelerated rendering in API 11. With hardware-acceleration, intermediate cache layers are largely unnecessary and can easily result in a net loss in performance due to the cost of creating and updating the layer. In the rare cases where caching layers are useful, such as for alpha animations, setLayerType(int, Paint) handles this with hardware rendering. For software-rendered snapshots of a small part of the View hierarchy or individual Views it is recommended to create a Canvas from either a Bitmap or Picture and call draw(Canvas) on the View. However these software-rendered usages are discouraged and have compatibility issues with hardware-only rendering features such as Config.HARDWARE bitmaps, real-time shadows, and outline clipping. For screenshots of the UI for feedback reports or unit testing the PixelCopy API is recommended.
+int getDrawingCacheQuality()
+invoke-virtual {v0}, Landroid/view/View;->getDrawingCacheQuality()I
+
+Return the visible drawing bounds of your view.
+void getDrawingRect(Rect outRect)
+invoke-virtual {v0, v1}, Landroid/view/View;->getDrawingRect(Landroid/graphics/Rect;)V
+
+Return the time at which the drawing of the view hierarchy started.
+long getDrawingTime()
+invoke-virtual {v0}, Landroid/view/View;->getDrawingTime()J
+
+The base elevation of this view relative to its parent, in pixels.
+float getElevation()
+invoke-virtual {v0}, Landroid/view/View;->getElevation()F
+
+Gets whether the framework should discard touches when the view's window is obscured by another visible window.
+boolean getFilterTouchesWhenObscured()
+invoke-virtual {v0}, Landroid/view/View;->getFilterTouchesWhenObscured()Z
+
+Check for state of setFitsSystemWindows(boolean).
+boolean getFitsSystemWindows()
+invoke-virtual {v0}, Landroid/view/View;->getFitsSystemWindows()Z
+
+Returns the focusable setting for this view.
+int getFocusable()
+invoke-virtual {v0}, Landroid/view/View;->getFocusable()I
+
+Find and return all focusable views that are descendants of this view, possibly including this view if it is focusable itself.
+ArrayList<View> getFocusables(int direction)
+invoke-virtual {v0, v1}, Landroid/view/View;->getFocusables(I)Ljava/util/ArrayList;
+
+When a view has focus and the user navigates away from it, the next view is searched for starting from the rectangle filled in by this method.
+void getFocusedRect(Rect r)
+invoke-virtual {v0, v1}, Landroid/view/View;->getFocusedRect(Landroid/graphics/Rect;)V
+
+Returns the drawable used as the foreground of this View.
+Drawable getForeground()
+invoke-virtual {v0}, Landroid/view/View;->getForeground()Landroid/graphics/drawable/Drawable;
+
+Describes how the foreground is positioned.
+int getForegroundGravity()
+invoke-virtual {v0}, Landroid/view/View;->getForegroundGravity()I
+
+Return the tint applied to the foreground drawable, if specified.
+ColorStateList getForegroundTintList()
+invoke-virtual {v0}, Landroid/view/View;->getForegroundTintList()Landroid/content/res/ColorStateList;
+
+Return the blending mode used to apply the tint to the foreground drawable, if specified.
+PorterDuff.Mode getForegroundTintMode()
+invoke-virtual {v0}, Landroid/view/View;->getForegroundTintMode()Landroid/graphics/PorterDuff$Mode;
+
+没有帮助内容
+final boolean getGlobalVisibleRect(Rect r)
+invoke-virtual {v0, v1}, Landroid/view/View;->getGlobalVisibleRect(Landroid/graphics/Rect;)Z
+
+If some part of this view is not clipped by any of its parents, then return that area in r in global (root) coordinates.
+boolean getGlobalVisibleRect(Rect r, Point globalOffset)
+invoke-virtual {v0, v1, v2}, Landroid/view/View;->getGlobalVisibleRect(Landroid/graphics/Rect;Landroid/graphics/Point;)Z
+
+没有帮助内容
+Handler getHandler()
+invoke-virtual {v0}, Landroid/view/View;->getHandler()Landroid/os/Handler;
+
+Returns the value for overlapping rendering that is used internally.
+final boolean getHasOverlappingRendering()
+invoke-virtual {v0}, Landroid/view/View;->getHasOverlappingRendering()Z
+
+Return the height of your view.
+final int getHeight()
+invoke-virtual {v0}, Landroid/view/View;->getHeight()I
+
+Hit rectangle in parent's coordinates
+void getHitRect(Rect outRect)
+invoke-virtual {v0, v1}, Landroid/view/View;->getHitRect(Landroid/graphics/Rect;)V
+
+Returns the size of the horizontal faded edges used to indicate that more content in this view is visible.
+int getHorizontalFadingEdgeLength()
+invoke-virtual {v0}, Landroid/view/View;->getHorizontalFadingEdgeLength()I
+
+Returns this view's identifier.
+int getId()
+invoke-virtual {v0}, Landroid/view/View;->getId()I
+
+Gets the mode for determining whether this View is important for accessibility.
+int getImportantForAccessibility()
+invoke-virtual {v0}, Landroid/view/View;->getImportantForAccessibility()I
+
+Gets the mode for determining whether this view is important for autofill.
+int getImportantForAutofill()
+invoke-virtual {v0}, Landroid/view/View;->getImportantForAutofill()I
+
+Returns whether the screen should remain on, corresponding to the current value of KEEP_SCREEN_ON.
+boolean getKeepScreenOn()
+invoke-virtual {v0}, Landroid/view/View;->getKeepScreenOn()Z
+
+Return the global KeyEvent.DispatcherState for this view's window.
+KeyEvent.DispatcherState getKeyDispatcherState()
+invoke-virtual {v0}, Landroid/view/View;->getKeyDispatcherState()Landroid/view/KeyEvent$DispatcherState;
+
+Gets the id of a view for which this view serves as a label for accessibility purposes.
+int getLabelFor()
+invoke-virtual {v0}, Landroid/view/View;->getLabelFor()I
+
+Indicates what type of layer is currently associated with this view.
+int getLayerType()
+invoke-virtual {v0}, Landroid/view/View;->getLayerType()I
+
+Returns the resolved layout direction for this view.
+int getLayoutDirection()
+invoke-virtual {v0}, Landroid/view/View;->getLayoutDirection()I
+
+Get the LayoutParams associated with this view.
+ViewGroup.LayoutParams getLayoutParams()
+invoke-virtual {v0}, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
+
+Left position of this view relative to its parent.
+final int getLeft()
+invoke-virtual {v0}, Landroid/view/View;->getLeft()I
+
+没有帮助内容
+final boolean getLocalVisibleRect(Rect r)
+invoke-virtual {v0, v1}, Landroid/view/View;->getLocalVisibleRect(Landroid/graphics/Rect;)Z
+
+Computes the coordinates of this view in its window.
+void getLocationInWindow(int[] outLocation)
+invoke-virtual {v0, v1}, Landroid/view/View;->getLocationInWindow([I)V
+
+Computes the coordinates of this view on the screen.
+void getLocationOnScreen(int[] outLocation)
+invoke-virtual {v0, v1}, Landroid/view/View;->getLocationOnScreen([I)V
+
+The transform matrix of this view, which is calculated based on the current rotation, scale, and pivot properties.
+Matrix getMatrix()
+invoke-virtual {v0}, Landroid/view/View;->getMatrix()Landroid/graphics/Matrix;
+
+Like getMeasuredHeightAndState(), but only returns the raw height component (that is the result is masked by MEASURED_SIZE_MASK).
+final int getMeasuredHeight()
+invoke-virtual {v0}, Landroid/view/View;->getMeasuredHeight()I
+
+Return the full height measurement information for this view as computed by the most recent call to measure(int, int).
+final int getMeasuredHeightAndState()
+invoke-virtual {v0}, Landroid/view/View;->getMeasuredHeightAndState()I
+
+Return only the state bits of getMeasuredWidthAndState() and getMeasuredHeightAndState(), combined into one integer.
+final int getMeasuredState()
+invoke-virtual {v0}, Landroid/view/View;->getMeasuredState()I
+
+Like getMeasuredWidthAndState(), but only returns the raw width component (that is the result is masked by MEASURED_SIZE_MASK).
+final int getMeasuredWidth()
+invoke-virtual {v0}, Landroid/view/View;->getMeasuredWidth()I
+
+Return the full width measurement information for this view as computed by the most recent call to measure(int, int).
+final int getMeasuredWidthAndState()
+invoke-virtual {v0}, Landroid/view/View;->getMeasuredWidthAndState()I
+
+Returns the minimum height of the view.
+int getMinimumHeight()
+invoke-virtual {v0}, Landroid/view/View;->getMinimumHeight()I
+
+Returns the minimum width of the view.
+int getMinimumWidth()
+invoke-virtual {v0}, Landroid/view/View;->getMinimumWidth()I
+
+Gets the id of the root of the next keyboard navigation cluster.
+int getNextClusterForwardId()
+invoke-virtual {v0}, Landroid/view/View;->getNextClusterForwardId()I
+
+Gets the id of the view to use when the next focus is FOCUS_DOWN.
+int getNextFocusDownId()
+invoke-virtual {v0}, Landroid/view/View;->getNextFocusDownId()I
+
+Gets the id of the view to use when the next focus is FOCUS_FORWARD.
+int getNextFocusForwardId()
+invoke-virtual {v0}, Landroid/view/View;->getNextFocusForwardId()I
+
+Gets the id of the view to use when the next focus is FOCUS_LEFT.
+int getNextFocusLeftId()
+invoke-virtual {v0}, Landroid/view/View;->getNextFocusLeftId()I
+
+Gets the id of the view to use when the next focus is FOCUS_RIGHT.
+int getNextFocusRightId()
+invoke-virtual {v0}, Landroid/view/View;->getNextFocusRightId()I
+
+Gets the id of the view to use when the next focus is FOCUS_UP.
+int getNextFocusUpId()
+invoke-virtual {v0}, Landroid/view/View;->getNextFocusUpId()I
+
+Returns the focus-change callback registered for this view.
+View.OnFocusChangeListener getOnFocusChangeListener()
+invoke-virtual {v0}, Landroid/view/View;->getOnFocusChangeListener()Landroid/view/View$OnFocusChangeListener;
+
+没有帮助内容
+int getOutlineAmbientShadowColor()
+invoke-virtual {v0}, Landroid/view/View;->getOutlineAmbientShadowColor()I
+
+Returns the current ViewOutlineProvider of the view, which generates the Outline that defines the shape of the shadow it casts, and enables outline clipping.
+ViewOutlineProvider getOutlineProvider()
+invoke-virtual {v0}, Landroid/view/View;->getOutlineProvider()Landroid/view/ViewOutlineProvider;
+
+没有帮助内容
+int getOutlineSpotShadowColor()
+invoke-virtual {v0}, Landroid/view/View;->getOutlineSpotShadowColor()I
+
+Returns the over-scroll mode for this view.
+int getOverScrollMode()
+invoke-virtual {v0}, Landroid/view/View;->getOverScrollMode()I
+
+Returns the overlay for this view, creating it if it does not yet exist.
+ViewOverlay getOverlay()
+invoke-virtual {v0}, Landroid/view/View;->getOverlay()Landroid/view/ViewOverlay;
+
+Returns the bottom padding of this view.
+int getPaddingBottom()
+invoke-virtual {v0}, Landroid/view/View;->getPaddingBottom()I
+
+Returns the end padding of this view depending on its resolved layout direction.
+int getPaddingEnd()
+invoke-virtual {v0}, Landroid/view/View;->getPaddingEnd()I
+
+Returns the left padding of this view.
+int getPaddingLeft()
+invoke-virtual {v0}, Landroid/view/View;->getPaddingLeft()I
+
+Returns the right padding of this view.
+int getPaddingRight()
+invoke-virtual {v0}, Landroid/view/View;->getPaddingRight()I
+
+Returns the start padding of this view depending on its resolved layout direction.
+int getPaddingStart()
+invoke-virtual {v0}, Landroid/view/View;->getPaddingStart()I
+
+Returns the top padding of this view.
+int getPaddingTop()
+invoke-virtual {v0}, Landroid/view/View;->getPaddingTop()I
+
+Gets the parent of this view.
+final ViewParent getParent()
+invoke-virtual {v0}, Landroid/view/View;->getParent()Landroid/view/ViewParent;
+
+Gets the parent for accessibility purposes.
+ViewParent getParentForAccessibility()
+invoke-virtual {v0}, Landroid/view/View;->getParentForAccessibility()Landroid/view/ViewParent;
+
+The x location of the point around which the view is rotated and scaled.
+float getPivotX()
+invoke-virtual {v0}, Landroid/view/View;->getPivotX()F
+
+The y location of the point around which the view is rotated and scaled.
+float getPivotY()
+invoke-virtual {v0}, Landroid/view/View;->getPivotY()F
+
+Gets the pointer icon for the current view.
+PointerIcon getPointerIcon()
+invoke-virtual {v0}, Landroid/view/View;->getPointerIcon()Landroid/view/PointerIcon;
+
+Returns the resources associated with this view.
+Resources getResources()
+invoke-virtual {v0}, Landroid/view/View;->getResources()Landroid/content/res/Resources;
+
+Returns this view's preference for reveal behavior when it gains focus.
+final boolean getRevealOnFocusHint()
+invoke-virtual {v0}, Landroid/view/View;->getRevealOnFocusHint()Z
+
+Right position of this view relative to its parent.
+final int getRight()
+invoke-virtual {v0}, Landroid/view/View;->getRight()I
+
+Finds the topmost view in the current view hierarchy.
+View getRootView()
+invoke-virtual {v0}, Landroid/view/View;->getRootView()Landroid/view/View;
+
+Provide original WindowInsets that are dispatched to the view hierarchy.
+WindowInsets getRootWindowInsets()
+invoke-virtual {v0}, Landroid/view/View;->getRootWindowInsets()Landroid/view/WindowInsets;
+
+The degrees that the view is rotated around the pivot point.
+float getRotation()
+invoke-virtual {v0}, Landroid/view/View;->getRotation()F
+
+The degrees that the view is rotated around the horizontal axis through the pivot point.
+float getRotationX()
+invoke-virtual {v0}, Landroid/view/View;->getRotationX()F
+
+The degrees that the view is rotated around the vertical axis through the pivot point.
+float getRotationY()
+invoke-virtual {v0}, Landroid/view/View;->getRotationY()F
+
+The amount that the view is scaled in x around the pivot point, as a proportion of the view's unscaled width.
+float getScaleX()
+invoke-virtual {v0}, Landroid/view/View;->getScaleX()F
+
+The amount that the view is scaled in y around the pivot point, as a proportion of the view's unscaled height.
+float getScaleY()
+invoke-virtual {v0}, Landroid/view/View;->getScaleY()F
+
+Returns the delay before scrollbars fade.
+int getScrollBarDefaultDelayBeforeFade()
+invoke-virtual {v0}, Landroid/view/View;->getScrollBarDefaultDelayBeforeFade()I
+
+Returns the scrollbar fade duration.
+int getScrollBarFadeDuration()
+invoke-virtual {v0}, Landroid/view/View;->getScrollBarFadeDuration()I
+
+Returns the scrollbar size.
+int getScrollBarSize()
+invoke-virtual {v0}, Landroid/view/View;->getScrollBarSize()I
+
+Returns the current scrollbar style.
+int getScrollBarStyle()
+invoke-virtual {v0}, Landroid/view/View;->getScrollBarStyle()I
+
+Returns a bitmask representing the enabled scroll indicators.
+int getScrollIndicators()
+invoke-virtual {v0}, Landroid/view/View;->getScrollIndicators()I
+
+Return the scrolled left position of this view.
+final int getScrollX()
+invoke-virtual {v0}, Landroid/view/View;->getScrollX()I
+
+Return the scrolled top position of this view.
+final int getScrollY()
+invoke-virtual {v0}, Landroid/view/View;->getScrollY()I
+
+Override this if your view is known to always be drawn on top of a solid color background, and needs to draw fading edges.
+int getSolidColor()
+invoke-virtual {v0}, Landroid/view/View;->getSolidColor()I
+
+Returns the current StateListAnimator if exists.
+StateListAnimator getStateListAnimator()
+invoke-virtual {v0}, Landroid/view/View;->getStateListAnimator()Landroid/animation/StateListAnimator;
+
+Returns the last setSystemUiVisibility(int) that this view has requested.
+int getSystemUiVisibility()
+invoke-virtual {v0}, Landroid/view/View;->getSystemUiVisibility()I
+
+Returns this view's tag.
+Object getTag()
+invoke-virtual {v0}, Landroid/view/View;->getTag()Ljava/lang/Object;
+
+Returns the tag associated with this view and the specified key.
+Object getTag(int key)
+invoke-virtual {v0, v1}, Landroid/view/View;->getTag(I)Ljava/lang/Object;
+
+Return the resolved text alignment.
+int getTextAlignment()
+invoke-virtual {v0}, Landroid/view/View;->getTextAlignment()I
+
+Return the resolved text direction.
+int getTextDirection()
+invoke-virtual {v0}, Landroid/view/View;->getTextDirection()I
+
+Returns the view's tooltip text.
+CharSequence getTooltipText()
+invoke-virtual {v0}, Landroid/view/View;->getTooltipText()Ljava/lang/CharSequence;
+
+Top position of this view relative to its parent.
+final int getTop()
+invoke-virtual {v0}, Landroid/view/View;->getTop()I
+
+Gets the TouchDelegate for this View.
+TouchDelegate getTouchDelegate()
+invoke-virtual {v0}, Landroid/view/View;->getTouchDelegate()Landroid/view/TouchDelegate;
+
+Find and return all touchable views that are descendants of this view, possibly including this view if it is touchable itself.
+ArrayList<View> getTouchables()
+invoke-virtual {v0}, Landroid/view/View;->getTouchables()Ljava/util/ArrayList;
+
+Returns the name of the View to be used to identify Views in Transitions.
+String getTransitionName()
+invoke-virtual {v0}, Landroid/view/View;->getTransitionName()Ljava/lang/String;
+
+The horizontal location of this view relative to its left position.
+float getTranslationX()
+invoke-virtual {v0}, Landroid/view/View;->getTranslationX()F
+
+The vertical location of this view relative to its top position.
+float getTranslationY()
+invoke-virtual {v0}, Landroid/view/View;->getTranslationY()F
+
+The depth location of this view relative to its elevation.
+float getTranslationZ()
+invoke-virtual {v0}, Landroid/view/View;->getTranslationZ()F
+
+Returns the size of the vertical faded edges used to indicate that more content in this view is visible.
+int getVerticalFadingEdgeLength()
+invoke-virtual {v0}, Landroid/view/View;->getVerticalFadingEdgeLength()I
+
+没有帮助内容
+int getVerticalScrollbarPosition()
+invoke-virtual {v0}, Landroid/view/View;->getVerticalScrollbarPosition()I
+
+Returns the width of the vertical scrollbar.
+int getVerticalScrollbarWidth()
+invoke-virtual {v0}, Landroid/view/View;->getVerticalScrollbarWidth()I
+
+Returns the ViewTreeObserver for this view's hierarchy.
+ViewTreeObserver getViewTreeObserver()
+invoke-virtual {v0}, Landroid/view/View;->getViewTreeObserver()Landroid/view/ViewTreeObserver;
+
+Returns the visibility status for this view.
+int getVisibility()
+invoke-virtual {v0}, Landroid/view/View;->getVisibility()I
+
+Return the width of your view.
+final int getWidth()
+invoke-virtual {v0}, Landroid/view/View;->getWidth()I
+
+Retrieve the WindowId for the window this view is currently attached to.
+WindowId getWindowId()
+invoke-virtual {v0}, Landroid/view/View;->getWindowId()Landroid/view/WindowId;
+
+Returns the current system UI visibility that is currently set for the entire window.
+int getWindowSystemUiVisibility()
+invoke-virtual {v0}, Landroid/view/View;->getWindowSystemUiVisibility()I
+
+Retrieve a unique token identifying the window this view is attached to.
+IBinder getWindowToken()
+invoke-virtual {v0}, Landroid/view/View;->getWindowToken()Landroid/os/IBinder;
+
+Returns the current visibility of the window this view is attached to (either GONE, INVISIBLE, or VISIBLE).
+int getWindowVisibility()
+invoke-virtual {v0}, Landroid/view/View;->getWindowVisibility()I
+
+Retrieve the overall visible display size in which the window this view is attached to has been positioned in.
+void getWindowVisibleDisplayFrame(Rect outRect)
+invoke-virtual {v0, v1}, Landroid/view/View;->getWindowVisibleDisplayFrame(Landroid/graphics/Rect;)V
+
+The visual x position of this view, in pixels.
+float getX()
+invoke-virtual {v0}, Landroid/view/View;->getX()F
+
+The visual y position of this view, in pixels.
+float getY()
+invoke-virtual {v0}, Landroid/view/View;->getY()F
+
+The visual z position of this view, in pixels.
+float getZ()
+invoke-virtual {v0}, Landroid/view/View;->getZ()F
+
+Returns true if this view is focusable or if it contains a reachable View for which hasExplicitFocusable() returns true.
+boolean hasExplicitFocusable()
+invoke-virtual {v0}, Landroid/view/View;->hasExplicitFocusable()Z
+
+Returns true if this view has focus itself, or is the ancestor of the view that has focus.
+boolean hasFocus()
+invoke-virtual {v0}, Landroid/view/View;->hasFocus()Z
+
+Returns true if this view is focusable or if it contains a reachable View for which hasFocusable() returns true.
+boolean hasFocusable()
+invoke-virtual {v0}, Landroid/view/View;->hasFocusable()Z
+
+Returns true if this view has a nested scrolling parent.
+boolean hasNestedScrollingParent()
+invoke-virtual {v0}, Landroid/view/View;->hasNestedScrollingParent()Z
+
+Return whether this view has an attached OnClickListener.
+boolean hasOnClickListeners()
+invoke-virtual {v0}, Landroid/view/View;->hasOnClickListeners()Z
+
+Returns whether this View has content which overlaps.
+boolean hasOverlappingRendering()
+invoke-virtual {v0}, Landroid/view/View;->hasOverlappingRendering()Z
+
+Checks pointer capture status.
+boolean hasPointerCapture()
+invoke-virtual {v0}, Landroid/view/View;->hasPointerCapture()Z
+
+Indicates whether the view is currently tracking transient state that the app should not need to concern itself with saving and restoring, but that the framework should take special note to preserve when possible.
+boolean hasTransientState()
+invoke-virtual {v0}, Landroid/view/View;->hasTransientState()Z
+
+Returns true if this view is in a window that currently has window focus.
+boolean hasWindowFocus()
+invoke-virtual {v0}, Landroid/view/View;->hasWindowFocus()Z
+
+Inflate a view from an XML resource.
+View inflate(Context context, int resource, ViewGroup root)
+invoke-static {v0, v1, v2}, Landroid/view/View;->inflate(Landroid/content/Context;ILandroid/view/ViewGroup;)Landroid/view/View;
+
+Invalidate the whole view.
+void invalidate()
+invoke-virtual {v0}, Landroid/view/View;->invalidate()V
+
+This method was deprecated in API level 28. The switch to hardware accelerated rendering in API 14 reduced the importance of the dirty rectangle. In API 21 the given rectangle is ignored entirely in favor of an internally-calculated area instead. Because of this, clients are encouraged to just call invalidate().
+void invalidate(Rect dirty)
+invoke-virtual {v0, v1}, Landroid/view/View;->invalidate(Landroid/graphics/Rect;)V
+
+This method was deprecated in API level 28. The switch to hardware accelerated rendering in API 14 reduced the importance of the dirty rectangle. In API 21 the given rectangle is ignored entirely in favor of an internally-calculated area instead. Because of this, clients are encouraged to just call invalidate().
+void invalidate(int l, int t, int r, int b)
+invoke-virtual {v0, v1, v2, v3, v4}, Landroid/view/View;->invalidate(IIII)V
+
+Invalidates the specified Drawable.
+void invalidateDrawable(Drawable drawable)
+invoke-virtual {v0, v1}, Landroid/view/View;->invalidateDrawable(Landroid/graphics/drawable/Drawable;)V
+
+Called to rebuild this View's Outline from its outline provider
+void invalidateOutline()
+invoke-virtual {v0}, Landroid/view/View;->invalidateOutline()V
+
+Returns whether this View is accessibility focused.
+boolean isAccessibilityFocused()
+invoke-virtual {v0}, Landroid/view/View;->isAccessibilityFocused()Z
+
+Gets whether this view is a heading for accessibility purposes.
+boolean isAccessibilityHeading()
+invoke-virtual {v0}, Landroid/view/View;->isAccessibilityHeading()Z
+
+Indicates the activation state of this view.
+boolean isActivated()
+invoke-virtual {v0}, Landroid/view/View;->isActivated()Z
+
+Returns true if this view is currently attached to a window.
+boolean isAttachedToWindow()
+invoke-virtual {v0}, Landroid/view/View;->isAttachedToWindow()Z
+
+Indicates whether this view reacts to click events or not.
+boolean isClickable()
+invoke-virtual {v0}, Landroid/view/View;->isClickable()Z
+
+Indicates whether this view reacts to context clicks or not.
+boolean isContextClickable()
+invoke-virtual {v0}, Landroid/view/View;->isContextClickable()Z
+
+True if this view has changed since the last time being drawn.
+boolean isDirty()
+invoke-virtual {v0}, Landroid/view/View;->isDirty()Z
+
+This method was deprecated in API level 28. The view drawing cache was largely made obsolete with the introduction of hardware-accelerated rendering in API 11. With hardware-acceleration, intermediate cache layers are largely unnecessary and can easily result in a net loss in performance due to the cost of creating and updating the layer. In the rare cases where caching layers are useful, such as for alpha animations, setLayerType(int, Paint) handles this with hardware rendering. For software-rendered snapshots of a small part of the View hierarchy or individual Views it is recommended to create a Canvas from either a Bitmap or Picture and call draw(Canvas) on the View. However these software-rendered usages are discouraged and have compatibility issues with hardware-only rendering features such as Config.HARDWARE bitmaps, real-time shadows, and outline clipping. For screenshots of the UI for feedback reports or unit testing the PixelCopy API is recommended.
+boolean isDrawingCacheEnabled()
+invoke-virtual {v0}, Landroid/view/View;->isDrawingCacheEnabled()Z
+
+Indicates whether this duplicates its drawable state from its parent.
+boolean isDuplicateParentStateEnabled()
+invoke-virtual {v0}, Landroid/view/View;->isDuplicateParentStateEnabled()Z
+
+Returns the enabled status for this view.
+boolean isEnabled()
+invoke-virtual {v0}, Landroid/view/View;->isEnabled()Z
+
+Returns whether this View is currently able to take focus.
+final boolean isFocusable()
+invoke-virtual {v0}, Landroid/view/View;->isFocusable()Z
+
+When a view is focusable, it may not want to take focus when in touch mode.
+final boolean isFocusableInTouchMode()
+invoke-virtual {v0}, Landroid/view/View;->isFocusableInTouchMode()Z
+
+Returns true if this view has focus
+boolean isFocused()
+invoke-virtual {v0}, Landroid/view/View;->isFocused()Z
+
+Returns whether this View should receive focus when the focus is restored for the view hierarchy containing this view.
+final boolean isFocusedByDefault()
+invoke-virtual {v0}, Landroid/view/View;->isFocusedByDefault()Z
+
+没有帮助内容
+boolean isHapticFeedbackEnabled()
+invoke-virtual {v0}, Landroid/view/View;->isHapticFeedbackEnabled()Z
+
+Indicates whether this view is attached to a hardware accelerated window or not.
+boolean isHardwareAccelerated()
+invoke-virtual {v0}, Landroid/view/View;->isHardwareAccelerated()Z
+
+Indicate whether the horizontal edges are faded when the view is scrolled horizontally.
+boolean isHorizontalFadingEdgeEnabled()
+invoke-virtual {v0}, Landroid/view/View;->isHorizontalFadingEdgeEnabled()Z
+
+Indicate whether the horizontal scrollbar should be drawn or not.
+boolean isHorizontalScrollBarEnabled()
+invoke-virtual {v0}, Landroid/view/View;->isHorizontalScrollBarEnabled()Z
+
+Returns true if the view is currently hovered.
+boolean isHovered()
+invoke-virtual {v0}, Landroid/view/View;->isHovered()Z
+
+Computes whether this view should be exposed for accessibility.
+boolean isImportantForAccessibility()
+invoke-virtual {v0}, Landroid/view/View;->isImportantForAccessibility()Z
+
+Hints the Android System whether the AssistStructure.ViewNode associated with this view is considered important for autofill purposes.
+final boolean isImportantForAutofill()
+invoke-virtual {v0}, Landroid/view/View;->isImportantForAutofill()Z
+
+Indicates whether this View is currently in edit mode.
+boolean isInEditMode()
+invoke-virtual {v0}, Landroid/view/View;->isInEditMode()Z
+
+Returns whether the view hierarchy is currently undergoing a layout pass.
+boolean isInLayout()
+invoke-virtual {v0}, Landroid/view/View;->isInLayout()Z
+
+Returns whether the device is currently in touch mode.
+boolean isInTouchMode()
+invoke-virtual {v0}, Landroid/view/View;->isInTouchMode()Z
+
+Returns whether this View is a root of a keyboard navigation cluster.
+final boolean isKeyboardNavigationCluster()
+invoke-virtual {v0}, Landroid/view/View;->isKeyboardNavigationCluster()Z
+
+Returns true if this view has been through at least one layout since it was last attached to or detached from a window.
+boolean isLaidOut()
+invoke-virtual {v0}, Landroid/view/View;->isLaidOut()Z
+
+没有帮助内容
+boolean isLayoutDirectionResolved()
+invoke-virtual {v0}, Landroid/view/View;->isLayoutDirectionResolved()Z
+
+Indicates whether or not this view's layout will be requested during the next hierarchy layout pass.
+boolean isLayoutRequested()
+invoke-virtual {v0}, Landroid/view/View;->isLayoutRequested()Z
+
+Indicates whether this view reacts to long click events or not.
+boolean isLongClickable()
+invoke-virtual {v0}, Landroid/view/View;->isLongClickable()Z
+
+Returns true if nested scrolling is enabled for this view.
+boolean isNestedScrollingEnabled()
+invoke-virtual {v0}, Landroid/view/View;->isNestedScrollingEnabled()Z
+
+Indicates whether this View is opaque.
+boolean isOpaque()
+invoke-virtual {v0}, Landroid/view/View;->isOpaque()Z
+
+Return if the padding has been set through relative values setPaddingRelative(int, int, int, int) or through
+boolean isPaddingRelative()
+invoke-virtual {v0}, Landroid/view/View;->isPaddingRelative()Z
+
+Returns whether or not a pivot has been set by a call to setPivotX(float) or setPivotY(float).
+boolean isPivotSet()
+invoke-virtual {v0}, Landroid/view/View;->isPivotSet()Z
+
+Indicates whether the view is currently in pressed state.
+boolean isPressed()
+invoke-virtual {v0}, Landroid/view/View;->isPressed()Z
+
+Indicates whether this view will save its state (that is, whether its onSaveInstanceState() method will be called).
+boolean isSaveEnabled()
+invoke-virtual {v0}, Landroid/view/View;->isSaveEnabled()Z
+
+Indicates whether the entire hierarchy under this view will save its state when a state saving traversal occurs from its parent.
+boolean isSaveFromParentEnabled()
+invoke-virtual {v0}, Landroid/view/View;->isSaveFromParentEnabled()Z
+
+Returns whether the view should be treated as a focusable unit by screen reader accessibility tools.
+boolean isScreenReaderFocusable()
+invoke-virtual {v0}, Landroid/view/View;->isScreenReaderFocusable()Z
+
+Indicates whether this view is one of the set of scrollable containers in its window.
+boolean isScrollContainer()
+invoke-virtual {v0}, Landroid/view/View;->isScrollContainer()Z
+
+Returns true if scrollbars will fade when this view is not scrolling
+boolean isScrollbarFadingEnabled()
+invoke-virtual {v0}, Landroid/view/View;->isScrollbarFadingEnabled()Z
+
+Indicates the selection state of this view.
+boolean isSelected()
+invoke-virtual {v0}, Landroid/view/View;->isSelected()Z
+
+Returns the visibility of this view and all of its ancestors
+boolean isShown()
+invoke-virtual {v0}, Landroid/view/View;->isShown()Z
+
+没有帮助内容
+boolean isSoundEffectsEnabled()
+invoke-virtual {v0}, Landroid/view/View;->isSoundEffectsEnabled()Z
+
+Tells whether the View is in the state between onStartTemporaryDetach() and onFinishTemporaryDetach().
+final boolean isTemporarilyDetached()
+invoke-virtual {v0}, Landroid/view/View;->isTemporarilyDetached()Z
+
+没有帮助内容
+boolean isTextAlignmentResolved()
+invoke-virtual {v0}, Landroid/view/View;->isTextAlignmentResolved()Z
+
+没有帮助内容
+boolean isTextDirectionResolved()
+invoke-virtual {v0}, Landroid/view/View;->isTextDirectionResolved()Z
+
+Indicate whether the vertical edges are faded when the view is scrolled horizontally.
+boolean isVerticalFadingEdgeEnabled()
+invoke-virtual {v0}, Landroid/view/View;->isVerticalFadingEdgeEnabled()Z
+
+Indicate whether the vertical scrollbar should be drawn or not.
+boolean isVerticalScrollBarEnabled()
+invoke-virtual {v0}, Landroid/view/View;->isVerticalScrollBarEnabled()Z
+
+Computes whether this virtual autofill view is visible to the user.
+boolean isVisibleToUserForAutofill(int virtualId)
+invoke-virtual {v0, v1}, Landroid/view/View;->isVisibleToUserForAutofill(I)Z
+
+Call Drawable.jumpToCurrentState() on all Drawable objects associated with this view.
+void jumpDrawablesToCurrentState()
+invoke-virtual {v0}, Landroid/view/View;->jumpDrawablesToCurrentState()V
+
+Find the nearest keyboard navigation cluster in the specified direction.
+View keyboardNavigationClusterSearch(View currentCluster, int direction)
+invoke-virtual {v0, v1, v2}, Landroid/view/View;->keyboardNavigationClusterSearch(Landroid/view/View;I)Landroid/view/View;
+
+Assign a size and position to a view and all of its descendants%Return%This is the second phase of the layout mechanism.
+void layout(int l, int t, int r, int b)
+invoke-virtual {v0, v1, v2, v3, v4}, Landroid/view/View;->layout(IIII)V
+
+This is called to find out how big a view should be.
+final void measure(int widthMeasureSpec, int heightMeasureSpec)
+invoke-virtual {v0, v1, v2}, Landroid/view/View;->measure(II)V
+
+Offset this view's horizontal location by the specified amount of pixels.
+void offsetLeftAndRight(int offset)
+invoke-virtual {v0, v1}, Landroid/view/View;->offsetLeftAndRight(I)V
+
+Offset this view's vertical location by the specified number of pixels.
+void offsetTopAndBottom(int offset)
+invoke-virtual {v0, v1}, Landroid/view/View;->offsetTopAndBottom(I)V
+
+Called when the view should apply WindowInsets according to its internal policy.
+WindowInsets onApplyWindowInsets(WindowInsets insets)
+invoke-virtual {v0, v1}, Landroid/view/View;->onApplyWindowInsets(Landroid/view/WindowInsets;)Landroid/view/WindowInsets;
+
+Called as the result of a call to cancelPendingInputEvents() on this view or a parent view.
+void onCancelPendingInputEvents()
+invoke-virtual {v0}, Landroid/view/View;->onCancelPendingInputEvents()V
+
+Implement this method to handle captured pointer events
+boolean onCapturedPointerEvent(MotionEvent event)
+invoke-virtual {v0, v1}, Landroid/view/View;->onCapturedPointerEvent(Landroid/view/MotionEvent;)Z
+
+Check whether the called view is a text editor, in which case it would make sense to automatically display a soft input window for it.
+boolean onCheckIsTextEditor()
+invoke-virtual {v0}, Landroid/view/View;->onCheckIsTextEditor()Z
+
+Create a new InputConnection for an InputMethod to interact with the view.
+InputConnection onCreateInputConnection(EditorInfo outAttrs)
+invoke-virtual {v0, v1}, Landroid/view/View;->onCreateInputConnection(Landroid/view/inputmethod/EditorInfo;)Landroid/view/inputmethod$InputConnection;
+
+Handles drag events sent by the system following a call to startDragAndDrop().
+boolean onDragEvent(DragEvent event)
+invoke-virtual {v0, v1}, Landroid/view/View;->onDragEvent(Landroid/view/DragEvent;)Z
+
+Draw any foreground content for this view.
+void onDrawForeground(Canvas canvas)
+invoke-virtual {v0, v1}, Landroid/view/View;->onDrawForeground(Landroid/graphics/Canvas;)V
+
+Filter the touch event to apply security policies.
+boolean onFilterTouchEventForSecurity(MotionEvent event)
+invoke-virtual {v0, v1}, Landroid/view/View;->onFilterTouchEventForSecurity(Landroid/view/MotionEvent;)Z
+
+Called after onStartTemporaryDetach() when the container is done changing the view.
+void onFinishTemporaryDetach()
+invoke-virtual {v0}, Landroid/view/View;->onFinishTemporaryDetach()V
+
+Implement this method to handle generic motion events.
+boolean onGenericMotionEvent(MotionEvent event)
+invoke-virtual {v0, v1}, Landroid/view/View;->onGenericMotionEvent(Landroid/view/MotionEvent;)Z
+
+Implement this method to handle hover state changes.
+void onHoverChanged(boolean hovered)
+invoke-virtual {v0, v1}, Landroid/view/View;->onHoverChanged(Z)V
+
+Implement this method to handle hover events.
+boolean onHoverEvent(MotionEvent event)
+invoke-virtual {v0, v1}, Landroid/view/View;->onHoverEvent(Landroid/view/MotionEvent;)Z
+
+Initializes an AccessibilityEvent with information about this View which is the event source.
+void onInitializeAccessibilityEvent(AccessibilityEvent event)
+invoke-virtual {v0, v1}, Landroid/view/View;->onInitializeAccessibilityEvent(Landroid/view/accessibility/AccessibilityEvent;)V
+
+Initializes an AccessibilityNodeInfo with information about this view.
+void onInitializeAccessibilityNodeInfo(AccessibilityNodeInfo info)
+invoke-virtual {v0, v1}, Landroid/view/View;->onInitializeAccessibilityNodeInfo(Landroid/view/accessibility/AccessibilityNodeInfo;)V
+
+Default implementation of KeyEvent.Callback.onKeyDown(): perform press of the view when KeyEvent.KEYCODE_DPAD_CENTER or KeyEvent.KEYCODE_ENTER is released, if the view is enabled and clickable.
+boolean onKeyDown(int keyCode, KeyEvent event)
+invoke-virtual {v0, v1, v2}, Landroid/view/View;->onKeyDown(ILandroid/view/KeyEvent;)Z
+
+Default implementation of KeyEvent.Callback.onKeyLongPress(): always returns false (doesn't handle the event).
+boolean onKeyLongPress(int keyCode, KeyEvent event)
+invoke-virtual {v0, v1, v2}, Landroid/view/View;->onKeyLongPress(ILandroid/view/KeyEvent;)Z
+
+Default implementation of KeyEvent.Callback.onKeyMultiple(): always returns false (doesn't handle the event).
+boolean onKeyMultiple(int keyCode, int repeatCount, KeyEvent event)
+invoke-virtual {v0, v1, v2, v3}, Landroid/view/View;->onKeyMultiple(IILandroid/view/KeyEvent;)Z
+
+Handle a key event before it is processed by any input method associated with the view hierarchy.
+boolean onKeyPreIme(int keyCode, KeyEvent event)
+invoke-virtual {v0, v1, v2}, Landroid/view/View;->onKeyPreIme(ILandroid/view/KeyEvent;)Z
+
+Called on the focused view when a key shortcut event is not handled.
+boolean onKeyShortcut(int keyCode, KeyEvent event)
+invoke-virtual {v0, v1, v2}, Landroid/view/View;->onKeyShortcut(ILandroid/view/KeyEvent;)Z
+
+Default implementation of KeyEvent.Callback.onKeyUp(): perform clicking of the view when KeyEvent.KEYCODE_DPAD_CENTER, KeyEvent.KEYCODE_ENTER or KeyEvent.KEYCODE_SPACE is released.
+boolean onKeyUp(int keyCode, KeyEvent event)
+invoke-virtual {v0, v1, v2}, Landroid/view/View;->onKeyUp(ILandroid/view/KeyEvent;)Z
+
+Called when the window has just acquired or lost pointer capture.
+void onPointerCaptureChange(boolean hasCapture)
+invoke-virtual {v0, v1}, Landroid/view/View;->onPointerCaptureChange(Z)V
+
+Called from dispatchPopulateAccessibilityEvent(AccessibilityEvent) giving a chance to this View to populate the accessibility event with its text content.
+void onPopulateAccessibilityEvent(AccessibilityEvent event)
+invoke-virtual {v0, v1}, Landroid/view/View;->onPopulateAccessibilityEvent(Landroid/view/accessibility/AccessibilityEvent;)V
+
+Populates a ViewStructure to fullfil an autofill request.
+void onProvideAutofillStructure(ViewStructure structure, int flags)
+invoke-virtual {v0, v1, v2}, Landroid/view/View;->onProvideAutofillStructure(Landroid/view/ViewStructure;I)V
+
+Populates a ViewStructure containing virtual children to fullfil an autofill request.
+void onProvideAutofillVirtualStructure(ViewStructure structure, int flags)
+invoke-virtual {v0, v1, v2}, Landroid/view/View;->onProvideAutofillVirtualStructure(Landroid/view/ViewStructure;I)V
+
+Called when assist structure is being retrieved from a view as part of Activity.onProvideAssistData.
+void onProvideStructure(ViewStructure structure)
+invoke-virtual {v0, v1}, Landroid/view/View;->onProvideStructure(Landroid/view/ViewStructure;)V
+
+Called when assist structure is being retrieved from a view as part of Activity.onProvideAssistData to generate additional virtual structure under this view.
+void onProvideVirtualStructure(ViewStructure structure)
+invoke-virtual {v0, v1}, Landroid/view/View;->onProvideVirtualStructure(Landroid/view/ViewStructure;)V
+
+Returns the pointer icon for the motion event, or null if it doesn't specify the icon.
+PointerIcon onResolvePointerIcon(MotionEvent event, int pointerIndex)
+invoke-virtual {v0, v1, v2}, Landroid/view/View;->onResolvePointerIcon(Landroid/view/MotionEvent;I)Landroid/view/PointerIcon;
+
+Called when any RTL property (layout direction or text direction or text alignment) has been changed.
+void onRtlPropertiesChanged(int layoutDirection)
+invoke-virtual {v0, v1}, Landroid/view/View;->onRtlPropertiesChanged(I)V
+
+This method is called whenever the state of the screen this view is attached to changes.
+void onScreenStateChanged(int screenState)
+invoke-virtual {v0, v1}, Landroid/view/View;->onScreenStateChanged(I)V
+
+This is called when a container is going to temporarily detach a child, with ViewGroup.detachViewFromParent.
+void onStartTemporaryDetach()
+invoke-virtual {v0}, Landroid/view/View;->onStartTemporaryDetach()V
+
+Implement this method to handle touch screen motion events.
+boolean onTouchEvent(MotionEvent event)
+invoke-virtual {v0, v1}, Landroid/view/View;->onTouchEvent(Landroid/view/MotionEvent;)Z
+
+Implement this method to handle trackball motion events.
+boolean onTrackballEvent(MotionEvent event)
+invoke-virtual {v0, v1}, Landroid/view/View;->onTrackballEvent(Landroid/view/MotionEvent;)Z
+
+Called when the user-visibility of this View is potentially affected by a change to this view itself, an ancestor view or the window this view is attached to.
+void onVisibilityAggregated(boolean isVisible)
+invoke-virtual {v0, v1}, Landroid/view/View;->onVisibilityAggregated(Z)V
+
+Called when the window containing this view gains or loses focus.
+void onWindowFocusChanged(boolean hasWindowFocus)
+invoke-virtual {v0, v1}, Landroid/view/View;->onWindowFocusChanged(Z)V
+
+Override to find out when the window's requested system UI visibility has changed, that is the value returned by getWindowSystemUiVisibility().
+void onWindowSystemUiVisibilityChanged(int visible)
+invoke-virtual {v0, v1}, Landroid/view/View;->onWindowSystemUiVisibilityChanged(I)V
+
+Performs the specified accessibility action on the view.
+boolean performAccessibilityAction(int action, Bundle arguments)
+invoke-virtual {v0, v1, v2}, Landroid/view/View;->performAccessibilityAction(ILandroid/os/Bundle;)Z
+
+Call this view's OnClickListener, if it is defined.
+boolean performClick()
+invoke-virtual {v0}, Landroid/view/View;->performClick()Z
+
+Call this view's OnContextClickListener, if it is defined.
+boolean performContextClick(float x, float y)
+invoke-virtual {v0, v1, v2}, Landroid/view/View;->performContextClick(FF)Z
+
+Call this view's OnContextClickListener, if it is defined.
+boolean performContextClick()
+invoke-virtual {v0}, Landroid/view/View;->performContextClick()Z
+
+BZZZTT!!1!%Return%Provide haptic feedback to the user for this view.
+boolean performHapticFeedback(int feedbackConstant)
+invoke-virtual {v0, v1}, Landroid/view/View;->performHapticFeedback(I)Z
+
+BZZZTT!!1!%Return%Like performHapticFeedback(int), with additional options.
+boolean performHapticFeedback(int feedbackConstant, int flags)
+invoke-virtual {v0, v1, v2}, Landroid/view/View;->performHapticFeedback(II)Z
+
+Calls this view's OnLongClickListener, if it is defined.
+boolean performLongClick(float x, float y)
+invoke-virtual {v0, v1, v2}, Landroid/view/View;->performLongClick(FF)Z
+
+Calls this view's OnLongClickListener, if it is defined.
+boolean performLongClick()
+invoke-virtual {v0}, Landroid/view/View;->performLongClick()Z
+
+Play a sound effect for this view.
+void playSoundEffect(int soundConstant)
+invoke-virtual {v0, v1}, Landroid/view/View;->playSoundEffect(I)V
+
+Causes the Runnable to be added to the message queue.
+boolean post(Runnable action)
+invoke-virtual {v0, v1}, Landroid/view/View;->post(Ljava/lang/Runnable;)Z
+
+Causes the Runnable to be added to the message queue, to be run after the specified amount of time elapses.
+boolean postDelayed(Runnable action, long delayMillis)
+invoke-virtual {v0, v1, v2, v3}, Landroid/view/View;->postDelayed(Ljava/lang/Runnable;J)Z
+
+Cause an invalidate to happen on a subsequent cycle through the event loop.
+void postInvalidate()
+invoke-virtual {v0}, Landroid/view/View;->postInvalidate()V
+
+Cause an invalidate of the specified area to happen on a subsequent cycle through the event loop.
+void postInvalidate(int left, int top, int right, int bottom)
+invoke-virtual {v0, v1, v2, v3, v4}, Landroid/view/View;->postInvalidate(IIII)V
+
+Cause an invalidate of the specified area to happen on a subsequent cycle through the event loop.
+void postInvalidateDelayed(long delayMilliseconds, int left, int top, int right, int bottom)
+invoke-virtual/range {v0 .. v6}, Landroid/view/View;->postInvalidateDelayed(JIIII)V
+
+Cause an invalidate to happen on a subsequent cycle through the event loop.
+void postInvalidateDelayed(long delayMilliseconds)
+invoke-virtual {v0, v1, v2}, Landroid/view/View;->postInvalidateDelayed(J)V
+
+Cause an invalidate of the specified area to happen on the next animation time step, typically the next display frame.
+void postInvalidateOnAnimation(int left, int top, int right, int bottom)
+invoke-virtual {v0, v1, v2, v3, v4}, Landroid/view/View;->postInvalidateOnAnimation(IIII)V
+
+Cause an invalidate to happen on the next animation time step, typically the next display frame.
+void postInvalidateOnAnimation()
+invoke-virtual {v0}, Landroid/view/View;->postInvalidateOnAnimation()V
+
+Causes the Runnable to execute on the next animation time step.
+void postOnAnimation(Runnable action)
+invoke-virtual {v0, v1}, Landroid/view/View;->postOnAnimation(Ljava/lang/Runnable;)V
+
+Causes the Runnable to execute on the next animation time step, after the specified amount of time elapses.
+void postOnAnimationDelayed(Runnable action, long delayMillis)
+invoke-virtual {v0, v1, v2, v3}, Landroid/view/View;->postOnAnimationDelayed(Ljava/lang/Runnable;J)V
+
+Call this to force a view to update its drawable state.
+void refreshDrawableState()
+invoke-virtual {v0}, Landroid/view/View;->refreshDrawableState()V
+
+Releases the pointer capture.
+void releasePointerCapture()
+invoke-virtual {v0}, Landroid/view/View;->releasePointerCapture()V
+
+Removes the specified Runnable from the message queue.
+boolean removeCallbacks(Runnable action)
+invoke-virtual {v0, v1}, Landroid/view/View;->removeCallbacks(Ljava/lang/Runnable;)Z
+
+Remove a listener for attach state changes.
+void removeOnAttachStateChangeListener(View.OnAttachStateChangeListener listener)
+invoke-virtual {v0, v1}, Landroid/view/View;->removeOnAttachStateChangeListener(Landroid/view/View$OnAttachStateChangeListener;)V
+
+Remove a listener for layout changes.
+void removeOnLayoutChangeListener(View.OnLayoutChangeListener listener)
+invoke-virtual {v0, v1}, Landroid/view/View;->removeOnLayoutChangeListener(Landroid/view/View$OnLayoutChangeListener;)V
+
+Removes a listener which will receive unhandled KeyEvents.
+void removeOnUnhandledKeyEventListener(View.OnUnhandledKeyEventListener listener)
+invoke-virtual {v0, v1}, Landroid/view/View;->removeOnUnhandledKeyEventListener(Landroid/view/View$OnUnhandledKeyEventListener;)V
+
+Ask that a new dispatch of onApplyWindowInsets(WindowInsets) be performed.
+void requestApplyInsets()
+invoke-virtual {v0}, Landroid/view/View;->requestApplyInsets()V
+
+This method was deprecated in API level 20. Use requestApplyInsets() for newer platform versions.
+void requestFitSystemWindows()
+invoke-virtual {v0}, Landroid/view/View;->requestFitSystemWindows()V
+
+Call this to try to give focus to a specific view or to one of its descendants and give it a hint about what direction focus is heading.
+final boolean requestFocus(int direction)
+invoke-virtual {v0, v1}, Landroid/view/View;->requestFocus(I)Z
+
+Call this to try to give focus to a specific view or to one of its descendants.
+final boolean requestFocus()
+invoke-virtual {v0}, Landroid/view/View;->requestFocus()Z
+
+Call this to try to give focus to a specific view or to one of its descendants and give it hints about the direction and a specific rectangle that the focus is coming from.
+boolean requestFocus(int direction, Rect previouslyFocusedRect)
+invoke-virtual {v0, v1, v2}, Landroid/view/View;->requestFocus(ILandroid/graphics/Rect;)Z
+
+Call this to try to give focus to a specific view or to one of its descendants.
+final boolean requestFocusFromTouch()
+invoke-virtual {v0}, Landroid/view/View;->requestFocusFromTouch()Z
+
+Call this when something has changed which has invalidated the layout of this view.
+void requestLayout()
+invoke-virtual {v0}, Landroid/view/View;->requestLayout()V
+
+Requests pointer capture mode.
+void requestPointerCapture()
+invoke-virtual {v0}, Landroid/view/View;->requestPointerCapture()V
+
+Request that a rectangle of this view be visible on the screen, scrolling if necessary just enough.
+boolean requestRectangleOnScreen(Rect rectangle)
+invoke-virtual {v0, v1}, Landroid/view/View;->requestRectangleOnScreen(Landroid/graphics/Rect;)Z
+
+Request that a rectangle of this view be visible on the screen, scrolling if necessary just enough.
+boolean requestRectangleOnScreen(Rect rectangle, boolean immediate)
+invoke-virtual {v0, v1, v2}, Landroid/view/View;->requestRectangleOnScreen(Landroid/graphics/Rect;Z)Z
+
+Request unbuffered dispatch of the given stream of MotionEvents to this View.
+final void requestUnbufferedDispatch(MotionEvent event)
+invoke-virtual {v0, v1}, Landroid/view/View;->requestUnbufferedDispatch(Landroid/view/MotionEvent;)V
+
+Finds the first descendant view with the given ID, the view itself if the ID matches getId(), or throws an IllegalArgumentException if the ID is invalid or there is no matching view in the hierarchy.
+final <T extends View> T requireViewById(int id)
+invoke-virtual {v0, v1}, Landroid/view/View;->requireViewById(I)Landroid/view/View;
+
+Clears any pivot previously set by a call to setPivotX(float) or setPivotY(float).
+void resetPivot()
+invoke-virtual {v0}, Landroid/view/View;->resetPivot()V
+
+Version of resolveSizeAndState(int, int, int) returning only the MEASURED_SIZE_MASK bits of the result.
+int resolveSize(int size, int measureSpec)
+invoke-static {v0, v1}, Landroid/view/View;->resolveSize(II)I
+
+Utility to reconcile a desired size and state, with constraints imposed by a MeasureSpec.
+int resolveSizeAndState(int size, int measureSpec, int childMeasuredState)
+invoke-static {v0, v1, v2}, Landroid/view/View;->resolveSizeAndState(III)I
+
+Gives focus to the default-focus view in the view hierarchy that has this view as a root.
+boolean restoreDefaultFocus()
+invoke-virtual {v0}, Landroid/view/View;->restoreDefaultFocus()Z
+
+Restore this view hierarchy's frozen state from the given container.
+void restoreHierarchyState(SparseArray<Parcelable> container)
+invoke-virtual {v0, v1}, Landroid/view/View;->restoreHierarchyState(Landroid/util/SparseArray;)V
+
+Store this view hierarchy's frozen state into the given container.
+void saveHierarchyState(SparseArray<Parcelable> container)
+invoke-virtual {v0, v1}, Landroid/view/View;->saveHierarchyState(Landroid/util/SparseArray;)V
+
+Schedules an action on a drawable to occur at a specified time.
+void scheduleDrawable(Drawable who, Runnable what, long when)
+invoke-virtual {v0, v1, v2, v3, v4}, Landroid/view/View;->scheduleDrawable(Landroid/graphics/drawable/Drawable;Ljava/lang/Runnable;J)V
+
+Move the scrolled position of your view.
+void scrollBy(int x, int y)
+invoke-virtual {v0, v1, v2}, Landroid/view/View;->scrollBy(II)V
+
+Set the scrolled position of your view.
+void scrollTo(int x, int y)
+invoke-virtual {v0, v1, v2}, Landroid/view/View;->scrollTo(II)V
+
+Sends an accessibility event of the given type.
+void sendAccessibilityEvent(int eventType)
+invoke-virtual {v0, v1}, Landroid/view/View;->sendAccessibilityEvent(I)V
+
+This method behaves exactly as sendAccessibilityEvent(int) but takes as an argument an empty AccessibilityEvent and does not perform a check whether accessibility is enabled.
+void sendAccessibilityEventUnchecked(AccessibilityEvent event)
+invoke-virtual {v0, v1}, Landroid/view/View;->sendAccessibilityEventUnchecked(Landroid/view/accessibility/AccessibilityEvent;)V
+
+Sets a delegate for implementing accessibility support via composition (as opposed to inheritance).
+void setAccessibilityDelegate(View.AccessibilityDelegate delegate)
+invoke-virtual {v0, v1}, Landroid/view/View;->setAccessibilityDelegate(Landroid/view/View$AccessibilityDelegate;)V
+
+Set if view is a heading for a section of content for accessibility purposes.
+void setAccessibilityHeading(boolean isHeading)
+invoke-virtual {v0, v1}, Landroid/view/View;->setAccessibilityHeading(Z)V
+
+Sets the live region mode for this view.
+void setAccessibilityLiveRegion(int mode)
+invoke-virtual {v0, v1}, Landroid/view/View;->setAccessibilityLiveRegion(I)V
+
+Visually distinct portion of a window with window-like semantics are considered panes for accessibility purposes.
+void setAccessibilityPaneTitle(CharSequence accessibilityPaneTitle)
+invoke-virtual {v0, v1}, Landroid/view/View;->setAccessibilityPaneTitle(Ljava/lang/CharSequence;)V
+
+Sets the id of a view after which this one is visited in accessibility traversal.
+void setAccessibilityTraversalAfter(int afterId)
+invoke-virtual {v0, v1}, Landroid/view/View;->setAccessibilityTraversalAfter(I)V
+
+Sets the id of a view before which this one is visited in accessibility traversal.
+void setAccessibilityTraversalBefore(int beforeId)
+invoke-virtual {v0, v1}, Landroid/view/View;->setAccessibilityTraversalBefore(I)V
+
+Changes the activated state of this view.
+void setActivated(boolean activated)
+invoke-virtual {v0, v1}, Landroid/view/View;->setActivated(Z)V
+
+Sets the opacity of the view to a value from 0 to 1, where 0 means the view is completely transparent and 1 means the view is completely opaque.
+void setAlpha(float alpha)
+invoke-virtual {v0, v1}, Landroid/view/View;->setAlpha(F)V
+
+Sets the next animation to play for this view.
+void setAnimation(Animation animation)
+invoke-virtual {v0, v1}, Landroid/view/View;->setAnimation(Landroid/view/animation/Animation;)V
+
+Sets the hints that help an AutofillService determine how to autofill the view with the user's data.
+void setAutofillHints(String... autofillHints)
+invoke-virtual {v0, v1}, Landroid/view/View;->setAutofillHints(Ljava/lang/String;)V
+
+Sets the unique, logical identifier of this view in the activity, for autofill purposes.
+void setAutofillId(AutofillId id)
+invoke-virtual {v0, v1}, Landroid/view/View;->setAutofillId(Landroid/view/autofill/AutofillId;)V
+
+Set the background to a given Drawable, or remove the background.
+void setBackground(Drawable background)
+invoke-virtual {v0, v1}, Landroid/view/View;->setBackground(Landroid/graphics/drawable/Drawable;)V
+
+Sets the background color for this view.
+void setBackgroundColor(int color)
+invoke-virtual {v0, v1}, Landroid/view/View;->setBackgroundColor(I)V
+
+This method was deprecated in API level 16. use setBackground(Drawable) instead
+void setBackgroundDrawable(Drawable background)
+invoke-virtual {v0, v1}, Landroid/view/View;->setBackgroundDrawable(Landroid/graphics/drawable/Drawable;)V
+
+Set the background to a given resource.
+void setBackgroundResource(int resid)
+invoke-virtual {v0, v1}, Landroid/view/View;->setBackgroundResource(I)V
+
+Applies a tint to the background drawable.
+void setBackgroundTintList(ColorStateList tint)
+invoke-virtual {v0, v1}, Landroid/view/View;->setBackgroundTintList(Landroid/content/res/ColorStateList;)V
+
+Specifies the blending mode used to apply the tint specified by setBackgroundTintList(ColorStateList)} to the background drawable.
+void setBackgroundTintMode(PorterDuff.Mode tintMode)
+invoke-virtual {v0, v1}, Landroid/view/View;->setBackgroundTintMode(Landroid/graphics/PorterDuff$Mode;)V
+
+Sets the bottom position of this view relative to its parent.
+final void setBottom(int bottom)
+invoke-virtual {v0, v1}, Landroid/view/View;->setBottom(I)V
+
+Sets the distance along the Z axis (orthogonal to the X/Y plane on which views are drawn) from the camera to this view.
+void setCameraDistance(float distance)
+invoke-virtual {v0, v1}, Landroid/view/View;->setCameraDistance(F)V
+
+Enables or disables click events for this view.
+void setClickable(boolean clickable)
+invoke-virtual {v0, v1}, Landroid/view/View;->setClickable(Z)V
+
+Sets a rectangular area on this view to which the view will be clipped when it is drawn.
+void setClipBounds(Rect clipBounds)
+invoke-virtual {v0, v1}, Landroid/view/View;->setClipBounds(Landroid/graphics/Rect;)V
+
+Sets whether the View's Outline should be used to clip the contents of the View.
+void setClipToOutline(boolean clipToOutline)
+invoke-virtual {v0, v1}, Landroid/view/View;->setClipToOutline(Z)V
+
+Sets the View's content description.
+void setContentDescription(CharSequence contentDescription)
+invoke-virtual {v0, v1}, Landroid/view/View;->setContentDescription(Ljava/lang/CharSequence;)V
+
+Enables or disables context clicking for this view.
+void setContextClickable(boolean contextClickable)
+invoke-virtual {v0, v1}, Landroid/view/View;->setContextClickable(Z)V
+
+Sets whether this View should use a default focus highlight when it gets focused but doesn't have R.attr.state_focused defined in its background.
+void setDefaultFocusHighlightEnabled(boolean defaultFocusHighlightEnabled)
+invoke-virtual {v0, v1}, Landroid/view/View;->setDefaultFocusHighlightEnabled(Z)V
+
+This method was deprecated in API level 28. The view drawing cache was largely made obsolete with the introduction of hardware-accelerated rendering in API 11. With hardware-acceleration, intermediate cache layers are largely unnecessary and can easily result in a net loss in performance due to the cost of creating and updating the layer. In the rare cases where caching layers are useful, such as for alpha animations, setLayerType(int, Paint) handles this with hardware rendering. For software-rendered snapshots of a small part of the View hierarchy or individual Views it is recommended to create a Canvas from either a Bitmap or Picture and call draw(Canvas) on the View. However these software-rendered usages are discouraged and have compatibility issues with hardware-only rendering features such as Config.HARDWARE bitmaps, real-time shadows, and outline clipping. For screenshots of the UI for feedback reports or unit testing the PixelCopy API is recommended.
+void setDrawingCacheBackgroundColor(int color)
+invoke-virtual {v0, v1}, Landroid/view/View;->setDrawingCacheBackgroundColor(I)V
+
+This method was deprecated in API level 28. The view drawing cache was largely made obsolete with the introduction of hardware-accelerated rendering in API 11. With hardware-acceleration, intermediate cache layers are largely unnecessary and can easily result in a net loss in performance due to the cost of creating and updating the layer. In the rare cases where caching layers are useful, such as for alpha animations, setLayerType(int, Paint) handles this with hardware rendering. For software-rendered snapshots of a small part of the View hierarchy or individual Views it is recommended to create a Canvas from either a Bitmap or Picture and call draw(Canvas) on the View. However these software-rendered usages are discouraged and have compatibility issues with hardware-only rendering features such as Config.HARDWARE bitmaps, real-time shadows, and outline clipping. For screenshots of the UI for feedback reports or unit testing the PixelCopy API is recommended.
+void setDrawingCacheEnabled(boolean enabled)
+invoke-virtual {v0, v1}, Landroid/view/View;->setDrawingCacheEnabled(Z)V
+
+This method was deprecated in API level 28. The view drawing cache was largely made obsolete with the introduction of hardware-accelerated rendering in API 11. With hardware-acceleration, intermediate cache layers are largely unnecessary and can easily result in a net loss in performance due to the cost of creating and updating the layer. In the rare cases where caching layers are useful, such as for alpha animations, setLayerType(int, Paint) handles this with hardware rendering. For software-rendered snapshots of a small part of the View hierarchy or individual Views it is recommended to create a Canvas from either a Bitmap or Picture and call draw(Canvas) on the View. However these software-rendered usages are discouraged and have compatibility issues with hardware-only rendering features such as Config.HARDWARE bitmaps, real-time shadows, and outline clipping. For screenshots of the UI for feedback reports or unit testing the PixelCopy API is recommended.
+void setDrawingCacheQuality(int quality)
+invoke-virtual {v0, v1}, Landroid/view/View;->setDrawingCacheQuality(I)V
+
+Enables or disables the duplication of the parent's state into this view.
+void setDuplicateParentStateEnabled(boolean enabled)
+invoke-virtual {v0, v1}, Landroid/view/View;->setDuplicateParentStateEnabled(Z)V
+
+Sets the base elevation of this view, in pixels.
+void setElevation(float elevation)
+invoke-virtual {v0, v1}, Landroid/view/View;->setElevation(F)V
+
+Set the enabled state of this view.
+void setEnabled(boolean enabled)
+invoke-virtual {v0, v1}, Landroid/view/View;->setEnabled(Z)V
+
+Set the size of the faded edge used to indicate that more content in this view is available.
+void setFadingEdgeLength(int length)
+invoke-virtual {v0, v1}, Landroid/view/View;->setFadingEdgeLength(I)V
+
+Sets whether the framework should discard touches when the view's window is obscured by another visible window.
+void setFilterTouchesWhenObscured(boolean enabled)
+invoke-virtual {v0, v1}, Landroid/view/View;->setFilterTouchesWhenObscured(Z)V
+
+Sets whether or not this view should account for system screen decorations such as the status bar and inset its content; that is, controlling whether the default implementation of fitSystemWindows(Rect) will be executed.
+void setFitsSystemWindows(boolean fitSystemWindows)
+invoke-virtual {v0, v1}, Landroid/view/View;->setFitsSystemWindows(Z)V
+
+Set whether this view can receive the focus.
+void setFocusable(boolean focusable)
+invoke-virtual {v0, v1}, Landroid/view/View;->setFocusable(Z)V
+
+Sets whether this view can receive focus.
+void setFocusable(int focusable)
+invoke-virtual {v0, v1}, Landroid/view/View;->setFocusable(I)V
+
+Set whether this view can receive focus while in touch mode.
+void setFocusableInTouchMode(boolean focusableInTouchMode)
+invoke-virtual {v0, v1}, Landroid/view/View;->setFocusableInTouchMode(Z)V
+
+Sets whether this View should receive focus when the focus is restored for the view hierarchy containing this view.
+void setFocusedByDefault(boolean isFocusedByDefault)
+invoke-virtual {v0, v1}, Landroid/view/View;->setFocusedByDefault(Z)V
+
+Supply a Drawable that is to be rendered on top of all of the content in the view.
+void setForeground(Drawable foreground)
+invoke-virtual {v0, v1}, Landroid/view/View;->setForeground(Landroid/graphics/drawable/Drawable;)V
+
+Describes how the foreground is positioned.
+void setForegroundGravity(int gravity)
+invoke-virtual {v0, v1}, Landroid/view/View;->setForegroundGravity(I)V
+
+Applies a tint to the foreground drawable.
+void setForegroundTintList(ColorStateList tint)
+invoke-virtual {v0, v1}, Landroid/view/View;->setForegroundTintList(Landroid/content/res/ColorStateList;)V
+
+Specifies the blending mode used to apply the tint specified by setForegroundTintList(ColorStateList)} to the background drawable.
+void setForegroundTintMode(PorterDuff.Mode tintMode)
+invoke-virtual {v0, v1}, Landroid/view/View;->setForegroundTintMode(Landroid/graphics/PorterDuff$Mode;)V
+
+Set whether this view should have haptic feedback for events such as long presses.
+void setHapticFeedbackEnabled(boolean hapticFeedbackEnabled)
+invoke-virtual {v0, v1}, Landroid/view/View;->setHapticFeedbackEnabled(Z)V
+
+Set whether this view is currently tracking transient state that the framework should attempt to preserve when possible.
+void setHasTransientState(boolean hasTransientState)
+invoke-virtual {v0, v1}, Landroid/view/View;->setHasTransientState(Z)V
+
+Define whether the horizontal edges should be faded when this view is scrolled horizontally.
+void setHorizontalFadingEdgeEnabled(boolean horizontalFadingEdgeEnabled)
+invoke-virtual {v0, v1}, Landroid/view/View;->setHorizontalFadingEdgeEnabled(Z)V
+
+Define whether the horizontal scrollbar should be drawn or not.
+void setHorizontalScrollBarEnabled(boolean horizontalScrollBarEnabled)
+invoke-virtual {v0, v1}, Landroid/view/View;->setHorizontalScrollBarEnabled(Z)V
+
+Sets whether the view is currently hovered.
+void setHovered(boolean hovered)
+invoke-virtual {v0, v1}, Landroid/view/View;->setHovered(Z)V
+
+Sets the identifier for this view.
+void setId(int id)
+invoke-virtual {v0, v1}, Landroid/view/View;->setId(I)V
+
+Sets how to determine whether this view is important for accessibility which is if it fires accessibility events and if it is reported to accessibility services that query the screen.
+void setImportantForAccessibility(int mode)
+invoke-virtual {v0, v1}, Landroid/view/View;->setImportantForAccessibility(I)V
+
+Sets the mode for determining whether this view is considered important for autofill.
+void setImportantForAutofill(int mode)
+invoke-virtual {v0, v1}, Landroid/view/View;->setImportantForAutofill(I)V
+
+Controls whether the screen should remain on, modifying the value of KEEP_SCREEN_ON.
+void setKeepScreenOn(boolean keepScreenOn)
+invoke-virtual {v0, v1}, Landroid/view/View;->setKeepScreenOn(Z)V
+
+Set whether this view is a root of a keyboard navigation cluster.
+void setKeyboardNavigationCluster(boolean isCluster)
+invoke-virtual {v0, v1}, Landroid/view/View;->setKeyboardNavigationCluster(Z)V
+
+Sets the id of a view for which this view serves as a label for accessibility purposes.
+void setLabelFor(int id)
+invoke-virtual {v0, v1}, Landroid/view/View;->setLabelFor(I)V
+
+Updates the Paint object used with the current layer (used only if the current layer type is not set to LAYER_TYPE_NONE).
+void setLayerPaint(Paint paint)
+invoke-virtual {v0, v1}, Landroid/view/View;->setLayerPaint(Landroid/graphics/Paint;)V
+
+Specifies the type of layer backing this view.
+void setLayerType(int layerType, Paint paint)
+invoke-virtual {v0, v1, v2}, Landroid/view/View;->setLayerType(ILandroid/graphics/Paint;)V
+
+Set the layout direction for this view.
+void setLayoutDirection(int layoutDirection)
+invoke-virtual {v0, v1}, Landroid/view/View;->setLayoutDirection(I)V
+
+Set the layout parameters associated with this view.
+void setLayoutParams(ViewGroup.LayoutParams params)
+invoke-virtual {v0, v1}, Landroid/view/View;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
+
+Sets the left position of this view relative to its parent.
+final void setLeft(int left)
+invoke-virtual {v0, v1}, Landroid/view/View;->setLeft(I)V
+
+Enables or disables long click events for this view.
+void setLongClickable(boolean longClickable)
+invoke-virtual {v0, v1}, Landroid/view/View;->setLongClickable(Z)V
+
+Sets the minimum height of the view.
+void setMinimumHeight(int minHeight)
+invoke-virtual {v0, v1}, Landroid/view/View;->setMinimumHeight(I)V
+
+Sets the minimum width of the view.
+void setMinimumWidth(int minWidth)
+invoke-virtual {v0, v1}, Landroid/view/View;->setMinimumWidth(I)V
+
+Enable or disable nested scrolling for this view.
+void setNestedScrollingEnabled(boolean enabled)
+invoke-virtual {v0, v1}, Landroid/view/View;->setNestedScrollingEnabled(Z)V
+
+Sets the id of the view to use as the root of the next keyboard navigation cluster.
+void setNextClusterForwardId(int nextClusterForwardId)
+invoke-virtual {v0, v1}, Landroid/view/View;->setNextClusterForwardId(I)V
+
+Sets the id of the view to use when the next focus is FOCUS_DOWN.
+void setNextFocusDownId(int nextFocusDownId)
+invoke-virtual {v0, v1}, Landroid/view/View;->setNextFocusDownId(I)V
+
+Sets the id of the view to use when the next focus is FOCUS_FORWARD.
+void setNextFocusForwardId(int nextFocusForwardId)
+invoke-virtual {v0, v1}, Landroid/view/View;->setNextFocusForwardId(I)V
+
+Sets the id of the view to use when the next focus is FOCUS_LEFT.
+void setNextFocusLeftId(int nextFocusLeftId)
+invoke-virtual {v0, v1}, Landroid/view/View;->setNextFocusLeftId(I)V
+
+Sets the id of the view to use when the next focus is FOCUS_RIGHT.
+void setNextFocusRightId(int nextFocusRightId)
+invoke-virtual {v0, v1}, Landroid/view/View;->setNextFocusRightId(I)V
+
+Sets the id of the view to use when the next focus is FOCUS_UP.
+void setNextFocusUpId(int nextFocusUpId)
+invoke-virtual {v0, v1}, Landroid/view/View;->setNextFocusUpId(I)V
+
+Set an View.OnApplyWindowInsetsListener to take over the policy for applying window insets to this view.
+void setOnApplyWindowInsetsListener(View.OnApplyWindowInsetsListener listener)
+invoke-virtual {v0, v1}, Landroid/view/View;->setOnApplyWindowInsetsListener(Landroid/view/View$OnApplyWindowInsetsListener;)V
+
+Set a listener to receive callbacks when the pointer capture state of a view changes.
+void setOnCapturedPointerListener(View.OnCapturedPointerListener l)
+invoke-virtual {v0, v1}, Landroid/view/View;->setOnCapturedPointerListener(Landroid/view/View$OnCapturedPointerListener;)V
+
+Register a callback to be invoked when this view is clicked.
+void setOnClickListener(View.OnClickListener l)
+invoke-virtual {v0, v1}, Landroid/view/View;->setOnClickListener(Landroid/view/View$OnClickListener;)V
+
+Register a callback to be invoked when this view is context clicked.
+void setOnContextClickListener(View.OnContextClickListener l)
+invoke-virtual {v0, v1}, Landroid/view/View;->setOnContextClickListener(Landroid/view/View$OnContextClickListener;)V
+
+Register a callback to be invoked when the context menu for this view is being built.
+void setOnCreateContextMenuListener(View.OnCreateContextMenuListener l)
+invoke-virtual {v0, v1}, Landroid/view/View;->setOnCreateContextMenuListener(Landroid/view/View$OnCreateContextMenuListener;)V
+
+Register a drag event listener callback object for this View.
+void setOnDragListener(View.OnDragListener l)
+invoke-virtual {v0, v1}, Landroid/view/View;->setOnDragListener(Landroid/view/View$OnDragListener;)V
+
+Register a callback to be invoked when focus of this view changed.
+void setOnFocusChangeListener(View.OnFocusChangeListener l)
+invoke-virtual {v0, v1}, Landroid/view/View;->setOnFocusChangeListener(Landroid/view/View$OnFocusChangeListener;)V
+
+Register a callback to be invoked when a generic motion event is sent to this view.
+void setOnGenericMotionListener(View.OnGenericMotionListener l)
+invoke-virtual {v0, v1}, Landroid/view/View;->setOnGenericMotionListener(Landroid/view/View$OnGenericMotionListener;)V
+
+Register a callback to be invoked when a hover event is sent to this view.
+void setOnHoverListener(View.OnHoverListener l)
+invoke-virtual {v0, v1}, Landroid/view/View;->setOnHoverListener(Landroid/view/View$OnHoverListener;)V
+
+Register a callback to be invoked when a hardware key is pressed in this view.
+void setOnKeyListener(View.OnKeyListener l)
+invoke-virtual {v0, v1}, Landroid/view/View;->setOnKeyListener(Landroid/view/View$OnKeyListener;)V
+
+Register a callback to be invoked when this view is clicked and held.
+void setOnLongClickListener(View.OnLongClickListener l)
+invoke-virtual {v0, v1}, Landroid/view/View;->setOnLongClickListener(Landroid/view/View$OnLongClickListener;)V
+
+Register a callback to be invoked when the scroll X or Y positions of this view change.
+void setOnScrollChangeListener(View.OnScrollChangeListener l)
+invoke-virtual {v0, v1}, Landroid/view/View;->setOnScrollChangeListener(Landroid/view/View$OnScrollChangeListener;)V
+
+Set a listener to receive callbacks when the visibility of the system bar changes.
+void setOnSystemUiVisibilityChangeListener(View.OnSystemUiVisibilityChangeListener l)
+invoke-virtual {v0, v1}, Landroid/view/View;->setOnSystemUiVisibilityChangeListener(Landroid/view/View$OnSystemUiVisibilityChangeListener;)V
+
+Register a callback to be invoked when a touch event is sent to this view.
+void setOnTouchListener(View.OnTouchListener l)
+invoke-virtual {v0, v1}, Landroid/view/View;->setOnTouchListener(Landroid/view/View$OnTouchListener;)V
+
+Sets the color of the ambient shadow that is drawn when the view has a positive Z or elevation value.
+void setOutlineAmbientShadowColor(int color)
+invoke-virtual {v0, v1}, Landroid/view/View;->setOutlineAmbientShadowColor(I)V
+
+Sets the ViewOutlineProvider of the view, which generates the Outline that defines the shape of the shadow it casts, and enables outline clipping.
+void setOutlineProvider(ViewOutlineProvider provider)
+invoke-virtual {v0, v1}, Landroid/view/View;->setOutlineProvider(Landroid/view/ViewOutlineProvider;)V
+
+Sets the color of the spot shadow that is drawn when the view has a positive Z or elevation value.
+void setOutlineSpotShadowColor(int color)
+invoke-virtual {v0, v1}, Landroid/view/View;->setOutlineSpotShadowColor(I)V
+
+Set the over-scroll mode for this view.
+void setOverScrollMode(int overScrollMode)
+invoke-virtual {v0, v1}, Landroid/view/View;->setOverScrollMode(I)V
+
+Sets the padding.
+void setPadding(int left, int top, int right, int bottom)
+invoke-virtual {v0, v1, v2, v3, v4}, Landroid/view/View;->setPadding(IIII)V
+
+Sets the relative padding.
+void setPaddingRelative(int start, int top, int end, int bottom)
+invoke-virtual {v0, v1, v2, v3, v4}, Landroid/view/View;->setPaddingRelative(IIII)V
+
+Sets the x location of the point around which the view is rotated and scaled.
+void setPivotX(float pivotX)
+invoke-virtual {v0, v1}, Landroid/view/View;->setPivotX(F)V
+
+Sets the y location of the point around which the view is rotated and scaled.
+void setPivotY(float pivotY)
+invoke-virtual {v0, v1}, Landroid/view/View;->setPivotY(F)V
+
+Set the pointer icon for the current view.
+void setPointerIcon(PointerIcon pointerIcon)
+invoke-virtual {v0, v1}, Landroid/view/View;->setPointerIcon(Landroid/view/PointerIcon;)V
+
+Sets the pressed state for this view.
+void setPressed(boolean pressed)
+invoke-virtual {v0, v1}, Landroid/view/View;->setPressed(Z)V
+
+Sets this view's preference for reveal behavior when it gains focus.
+final void setRevealOnFocusHint(boolean revealOnFocus)
+invoke-virtual {v0, v1}, Landroid/view/View;->setRevealOnFocusHint(Z)V
+
+Sets the right position of this view relative to its parent.
+final void setRight(int right)
+invoke-virtual {v0, v1}, Landroid/view/View;->setRight(I)V
+
+Sets the degrees that the view is rotated around the pivot point.
+void setRotation(float rotation)
+invoke-virtual {v0, v1}, Landroid/view/View;->setRotation(F)V
+
+Sets the degrees that the view is rotated around the horizontal axis through the pivot point.
+void setRotationX(float rotationX)
+invoke-virtual {v0, v1}, Landroid/view/View;->setRotationX(F)V
+
+Sets the degrees that the view is rotated around the vertical axis through the pivot point.
+void setRotationY(float rotationY)
+invoke-virtual {v0, v1}, Landroid/view/View;->setRotationY(F)V
+
+Controls whether the saving of this view's state is enabled (that is, whether its onSaveInstanceState() method will be called).
+void setSaveEnabled(boolean enabled)
+invoke-virtual {v0, v1}, Landroid/view/View;->setSaveEnabled(Z)V
+
+Controls whether the entire hierarchy under this view will save its state when a state saving traversal occurs from its parent.
+void setSaveFromParentEnabled(boolean enabled)
+invoke-virtual {v0, v1}, Landroid/view/View;->setSaveFromParentEnabled(Z)V
+
+Sets the amount that the view is scaled in x around the pivot point, as a proportion of the view's unscaled width.
+void setScaleX(float scaleX)
+invoke-virtual {v0, v1}, Landroid/view/View;->setScaleX(F)V
+
+Sets the amount that the view is scaled in Y around the pivot point, as a proportion of the view's unscaled width.
+void setScaleY(float scaleY)
+invoke-virtual {v0, v1}, Landroid/view/View;->setScaleY(F)V
+
+When screen readers (one type of accessibility tool) decide what should be read to the user, they typically look for input focusable (isFocusable()) parents of non-focusable text items, and read those focusable parents and their non-focusable children as a unit.
+void setScreenReaderFocusable(boolean screenReaderFocusable)
+invoke-virtual {v0, v1}, Landroid/view/View;->setScreenReaderFocusable(Z)V
+
+Define the delay before scrollbars fade.
+void setScrollBarDefaultDelayBeforeFade(int scrollBarDefaultDelayBeforeFade)
+invoke-virtual {v0, v1}, Landroid/view/View;->setScrollBarDefaultDelayBeforeFade(I)V
+
+Define the scrollbar fade duration.
+void setScrollBarFadeDuration(int scrollBarFadeDuration)
+invoke-virtual {v0, v1}, Landroid/view/View;->setScrollBarFadeDuration(I)V
+
+Define the scrollbar size.
+void setScrollBarSize(int scrollBarSize)
+invoke-virtual {v0, v1}, Landroid/view/View;->setScrollBarSize(I)V
+
+Specify the style of the scrollbars.
+void setScrollBarStyle(int style)
+invoke-virtual {v0, v1}, Landroid/view/View;->setScrollBarStyle(I)V
+
+Change whether this view is one of the set of scrollable containers in its window.
+void setScrollContainer(boolean isScrollContainer)
+invoke-virtual {v0, v1}, Landroid/view/View;->setScrollContainer(Z)V
+
+Sets the state of the scroll indicators specified by the mask.
+void setScrollIndicators(int indicators, int mask)
+invoke-virtual {v0, v1, v2}, Landroid/view/View;->setScrollIndicators(II)V
+
+Sets the state of all scroll indicators.
+void setScrollIndicators(int indicators)
+invoke-virtual {v0, v1}, Landroid/view/View;->setScrollIndicators(I)V
+
+Set the horizontal scrolled position of your view.
+void setScrollX(int value)
+invoke-virtual {v0, v1}, Landroid/view/View;->setScrollX(I)V
+
+Set the vertical scrolled position of your view.
+void setScrollY(int value)
+invoke-virtual {v0, v1}, Landroid/view/View;->setScrollY(I)V
+
+Define whether scrollbars will fade when the view is not scrolling.
+void setScrollbarFadingEnabled(boolean fadeScrollbars)
+invoke-virtual {v0, v1}, Landroid/view/View;->setScrollbarFadingEnabled(Z)V
+
+Changes the selection state of this view.
+void setSelected(boolean selected)
+invoke-virtual {v0, v1}, Landroid/view/View;->setSelected(Z)V
+
+Set whether this view should have sound effects enabled for events such as clicking and touching.
+void setSoundEffectsEnabled(boolean soundEffectsEnabled)
+invoke-virtual {v0, v1}, Landroid/view/View;->setSoundEffectsEnabled(Z)V
+
+Attaches the provided StateListAnimator to this View.
+void setStateListAnimator(StateListAnimator stateListAnimator)
+invoke-virtual {v0, v1}, Landroid/view/View;->setStateListAnimator(Landroid/animation/StateListAnimator;)V
+
+Request that the visibility of the status bar or other screen/window decorations be changed.
+void setSystemUiVisibility(int visibility)
+invoke-virtual {v0, v1}, Landroid/view/View;->setSystemUiVisibility(I)V
+
+Sets a tag associated with this view and a key.
+void setTag(int key, Object tag)
+invoke-virtual {v0, v1, v2}, Landroid/view/View;->setTag(ILjava/lang/Object;)V
+
+Sets the tag associated with this view.
+void setTag(Object tag)
+invoke-virtual {v0, v1}, Landroid/view/View;->setTag(Ljava/lang/Object;)V
+
+Set the text alignment.
+void setTextAlignment(int textAlignment)
+invoke-virtual {v0, v1}, Landroid/view/View;->setTextAlignment(I)V
+
+Set the text direction.
+void setTextDirection(int textDirection)
+invoke-virtual {v0, v1}, Landroid/view/View;->setTextDirection(I)V
+
+Sets the tooltip text which will be displayed in a small popup next to the view.
+void setTooltipText(CharSequence tooltipText)
+invoke-virtual {v0, v1}, Landroid/view/View;->setTooltipText(Ljava/lang/CharSequence;)V
+
+Sets the top position of this view relative to its parent.
+final void setTop(int top)
+invoke-virtual {v0, v1}, Landroid/view/View;->setTop(I)V
+
+Sets the TouchDelegate for this View.
+void setTouchDelegate(TouchDelegate delegate)
+invoke-virtual {v0, v1}, Landroid/view/View;->setTouchDelegate(Landroid/view/TouchDelegate;)V
+
+Sets the name of the View to be used to identify Views in Transitions.
+final void setTransitionName(String transitionName)
+invoke-virtual {v0, v1}, Landroid/view/View;->setTransitionName(Ljava/lang/String;)V
+
+Sets the horizontal location of this view relative to its left position.
+void setTranslationX(float translationX)
+invoke-virtual {v0, v1}, Landroid/view/View;->setTranslationX(F)V
+
+Sets the vertical location of this view relative to its top position.
+void setTranslationY(float translationY)
+invoke-virtual {v0, v1}, Landroid/view/View;->setTranslationY(F)V
+
+Sets the depth location of this view relative to its elevation.
+void setTranslationZ(float translationZ)
+invoke-virtual {v0, v1}, Landroid/view/View;->setTranslationZ(F)V
+
+Define whether the vertical edges should be faded when this view is scrolled vertically.
+void setVerticalFadingEdgeEnabled(boolean verticalFadingEdgeEnabled)
+invoke-virtual {v0, v1}, Landroid/view/View;->setVerticalFadingEdgeEnabled(Z)V
+
+Define whether the vertical scrollbar should be drawn or not.
+void setVerticalScrollBarEnabled(boolean verticalScrollBarEnabled)
+invoke-virtual {v0, v1}, Landroid/view/View;->setVerticalScrollBarEnabled(Z)V
+
+Set the position of the vertical scroll bar.
+void setVerticalScrollbarPosition(int position)
+invoke-virtual {v0, v1}, Landroid/view/View;->setVerticalScrollbarPosition(I)V
+
+Set the visibility state of this view.
+void setVisibility(int visibility)
+invoke-virtual {v0, v1}, Landroid/view/View;->setVisibility(I)V
+
+This method was deprecated in API level 28. The view drawing cache was largely made obsolete with the introduction of hardware-accelerated rendering in API 11. With hardware-acceleration, intermediate cache layers are largely unnecessary and can easily result in a net loss in performance due to the cost of creating and updating the layer. In the rare cases where caching layers are useful, such as for alpha animations, setLayerType(int, Paint) handles this with hardware rendering. For software-rendered snapshots of a small part of the View hierarchy or individual Views it is recommended to create a Canvas from either a Bitmap or Picture and call draw(Canvas) on the View. However these software-rendered usages are discouraged and have compatibility issues with hardware-only rendering features such as Config.HARDWARE bitmaps, real-time shadows, and outline clipping. For screenshots of the UI for feedback reports or unit testing the PixelCopy API is recommended.
+void setWillNotCacheDrawing(boolean willNotCacheDrawing)
+invoke-virtual {v0, v1}, Landroid/view/View;->setWillNotCacheDrawing(Z)V
+
+If this view doesn't do any drawing on its own, set this flag to allow further optimizations.
+void setWillNotDraw(boolean willNotDraw)
+invoke-virtual {v0, v1}, Landroid/view/View;->setWillNotDraw(Z)V
+
+Sets the visual x position of this view, in pixels.
+void setX(float x)
+invoke-virtual {v0, v1}, Landroid/view/View;->setX(F)V
+
+Sets the visual y position of this view, in pixels.
+void setY(float y)
+invoke-virtual {v0, v1}, Landroid/view/View;->setY(F)V
+
+Sets the visual z position of this view, in pixels.
+void setZ(float z)
+invoke-virtual {v0, v1}, Landroid/view/View;->setZ(F)V
+
+Shows the context menu for this view.
+boolean showContextMenu()
+invoke-virtual {v0}, Landroid/view/View;->showContextMenu()Z
+
+Shows the context menu for this view anchored to the specified view-relative coordinate.
+boolean showContextMenu(float x, float y)
+invoke-virtual {v0, v1, v2}, Landroid/view/View;->showContextMenu(FF)Z
+
+Start an action mode with the given type.
+ActionMode startActionMode(ActionMode.Callback callback, int type)
+invoke-virtual {v0, v1, v2}, Landroid/view/View;->startActionMode(Landroid/view/ActionMode$Callback;I)Landroid/view/ActionMode;
+
+Start an action mode with the default type ActionMode.TYPE_PRIMARY.
+ActionMode startActionMode(ActionMode.Callback callback)
+invoke-virtual {v0, v1}, Landroid/view/View;->startActionMode(Landroid/view/ActionMode$Callback;)Landroid/view/ActionMode;
+
+Start the specified animation now.
+void startAnimation(Animation animation)
+invoke-virtual {v0, v1}, Landroid/view/View;->startAnimation(Landroid/view/animation/Animation;)V
+
+This method was deprecated in API level 24. Use startDragAndDrop() for newer platform versions.
+final boolean startDrag(ClipData data, View.DragShadowBuilder shadowBuilder, Object myLocalState, int flags)
+invoke-virtual {v0, v1, v2, v3, v4}, Landroid/view/View;->startDrag(Landroid/content/ClipData;Landroid/view/View$DragShadowBuilder;Ljava/lang/Object;I)Z
+
+Starts a drag and drop operation.
+final boolean startDragAndDrop(ClipData data, View.DragShadowBuilder shadowBuilder, Object myLocalState, int flags)
+invoke-virtual {v0, v1, v2, v3, v4}, Landroid/view/View;->startDragAndDrop(Landroid/content/ClipData;Landroid/view/View$DragShadowBuilder;Ljava/lang/Object;I)Z
+
+Begin a nestable scroll operation along the given axes.
+boolean startNestedScroll(int axes)
+invoke-virtual {v0, v1}, Landroid/view/View;->startNestedScroll(I)Z
+
+Stop a nested scroll in progress.
+void stopNestedScroll()
+invoke-virtual {v0}, Landroid/view/View;->stopNestedScroll()V
+
+Returns a string representation of the object.
+String toString()
+invoke-virtual {v0}, Landroid/view/View;->toString()Ljava/lang/String;
+
+Cancels a scheduled action on a drawable.
+void unscheduleDrawable(Drawable who, Runnable what)
+invoke-virtual {v0, v1, v2}, Landroid/view/View;->unscheduleDrawable(Landroid/graphics/drawable/Drawable;Ljava/lang/Runnable;)V
+
+Unschedule any events associated with the given Drawable.
+void unscheduleDrawable(Drawable who)
+invoke-virtual {v0, v1}, Landroid/view/View;->unscheduleDrawable(Landroid/graphics/drawable/Drawable;)V
+
+Updates the drag shadow for the ongoing drag and drop operation.
+final void updateDragShadow(View.DragShadowBuilder shadowBuilder)
+invoke-virtual {v0, v1}, Landroid/view/View;->updateDragShadow(Landroid/view/View$DragShadowBuilder;)V
+
+This method was deprecated in API level 28. The view drawing cache was largely made obsolete with the introduction of hardware-accelerated rendering in API 11. With hardware-acceleration, intermediate cache layers are largely unnecessary and can easily result in a net loss in performance due to the cost of creating and updating the layer. In the rare cases where caching layers are useful, such as for alpha animations, setLayerType(int, Paint) handles this with hardware rendering. For software-rendered snapshots of a small part of the View hierarchy or individual Views it is recommended to create a Canvas from either a Bitmap or Picture and call draw(Canvas) on the View. However these software-rendered usages are discouraged and have compatibility issues with hardware-only rendering features such as Config.HARDWARE bitmaps, real-time shadows, and outline clipping. For screenshots of the UI for feedback reports or unit testing the PixelCopy API is recommended.
+boolean willNotCacheDrawing()
+invoke-virtual {v0}, Landroid/view/View;->willNotCacheDrawing()Z
+
+Returns whether or not this View draws on its own.%Return%Protected methods
+boolean willNotDraw()
+invoke-virtual {v0}, Landroid/view/View;->willNotDraw()Z
+
+Trigger the scrollbars to draw.
+protected boolean awakenScrollBars(int startDelay, boolean invalidate)
+invoke-virtual {v0, v1, v2}, Landroid/view/View;->awakenScrollBars(IZ)Z
+
+Trigger the scrollbars to draw.
+protected boolean awakenScrollBars(int startDelay)
+invoke-virtual {v0, v1}, Landroid/view/View;->awakenScrollBars(I)Z
+
+Trigger the scrollbars to draw.
+protected boolean awakenScrollBars()
+invoke-virtual {v0}, Landroid/view/View;->awakenScrollBars()Z
+
+Compute the horizontal extent of the horizontal scrollbar's thumb within the horizontal range.
+protected int computeHorizontalScrollExtent()
+invoke-virtual {v0}, Landroid/view/View;->computeHorizontalScrollExtent()I
+
+Compute the horizontal offset of the horizontal scrollbar's thumb within the horizontal range.
+protected int computeHorizontalScrollOffset()
+invoke-virtual {v0}, Landroid/view/View;->computeHorizontalScrollOffset()I
+
+Compute the horizontal range that the horizontal scrollbar represents.
+protected int computeHorizontalScrollRange()
+invoke-virtual {v0}, Landroid/view/View;->computeHorizontalScrollRange()I
+
+Compute the vertical extent of the vertical scrollbar's thumb within the vertical range.
+protected int computeVerticalScrollExtent()
+invoke-virtual {v0}, Landroid/view/View;->computeVerticalScrollExtent()I
+
+Compute the vertical offset of the vertical scrollbar's thumb within the horizontal range.
+protected int computeVerticalScrollOffset()
+invoke-virtual {v0}, Landroid/view/View;->computeVerticalScrollOffset()I
+
+Compute the vertical range that the vertical scrollbar represents.
+protected int computeVerticalScrollRange()
+invoke-virtual {v0}, Landroid/view/View;->computeVerticalScrollRange()I
+
+Called by draw to draw the child views.
+protected void dispatchDraw(Canvas canvas)
+invoke-virtual {v0, v1}, Landroid/view/View;->dispatchDraw(Landroid/graphics/Canvas;)V
+
+Dispatch a generic motion event to the currently focused view.
+protected boolean dispatchGenericFocusedEvent(MotionEvent event)
+invoke-virtual {v0, v1}, Landroid/view/View;->dispatchGenericFocusedEvent(Landroid/view/MotionEvent;)Z
+
+Dispatch a generic motion event to the view under the first pointer.
+protected boolean dispatchGenericPointerEvent(MotionEvent event)
+invoke-virtual {v0, v1}, Landroid/view/View;->dispatchGenericPointerEvent(Landroid/view/MotionEvent;)Z
+
+Dispatch a hover event.
+protected boolean dispatchHoverEvent(MotionEvent event)
+invoke-virtual {v0, v1}, Landroid/view/View;->dispatchHoverEvent(Landroid/view/MotionEvent;)Z
+
+Called by restoreHierarchyState(android.util.SparseArray) to retrieve the state for this view and its children.
+protected void dispatchRestoreInstanceState(SparseArray<Parcelable> container)
+invoke-virtual {v0, v1}, Landroid/view/View;->dispatchRestoreInstanceState(Landroid/util/SparseArray;)V
+
+Called by saveHierarchyState(android.util.SparseArray) to store the state for this view and its children.
+protected void dispatchSaveInstanceState(SparseArray<Parcelable> container)
+invoke-virtual {v0, v1}, Landroid/view/View;->dispatchSaveInstanceState(Landroid/util/SparseArray;)V
+
+Dispatch setActivated to all of this View's children.
+protected void dispatchSetActivated(boolean activated)
+invoke-virtual {v0, v1}, Landroid/view/View;->dispatchSetActivated(Z)V
+
+Dispatch setPressed to all of this View's children.
+protected void dispatchSetPressed(boolean pressed)
+invoke-virtual {v0, v1}, Landroid/view/View;->dispatchSetPressed(Z)V
+
+Dispatch setSelected to all of this View's children.
+protected void dispatchSetSelected(boolean selected)
+invoke-virtual {v0, v1}, Landroid/view/View;->dispatchSetSelected(Z)V
+
+Dispatch a view visibility change down the view hierarchy.
+protected void dispatchVisibilityChanged(View changedView, int visibility)
+invoke-virtual {v0, v1, v2}, Landroid/view/View;->dispatchVisibilityChanged(Landroid/view/View;I)V
+
+This function is called whenever the state of the view changes in such a way that it impacts the state of drawables being shown.
+protected void drawableStateChanged()
+invoke-virtual {v0}, Landroid/view/View;->drawableStateChanged()V
+
+This method was deprecated in API level 20. As of API 20 use dispatchApplyWindowInsets(WindowInsets) to apply insets to views. Views should override onApplyWindowInsets(WindowInsets) or use setOnApplyWindowInsetsListener(android.view.View.OnApplyWindowInsetsListener) to implement handling their own insets.
+protected boolean fitSystemWindows(Rect insets)
+invoke-virtual {v0, v1}, Landroid/view/View;->fitSystemWindows(Landroid/graphics/Rect;)Z
+
+Returns the strength, or intensity, of the bottom faded edge.
+protected float getBottomFadingEdgeStrength()
+invoke-virtual {v0}, Landroid/view/View;->getBottomFadingEdgeStrength()F
+
+Amount by which to extend the bottom fading region.
+protected int getBottomPaddingOffset()
+invoke-virtual {v0}, Landroid/view/View;->getBottomPaddingOffset()I
+
+Views should implement this if they have extra information to associate with the context menu.
+protected ContextMenu.ContextMenuInfo getContextMenuInfo()
+invoke-virtual {v0}, Landroid/view/View;->getContextMenuInfo()Landroid/view/ContextMenu$ContextMenuInfo;
+
+Returns the height of the horizontal scrollbar.
+protected int getHorizontalScrollbarHeight()
+invoke-virtual {v0}, Landroid/view/View;->getHorizontalScrollbarHeight()I
+
+Returns the strength, or intensity, of the left faded edge.
+protected float getLeftFadingEdgeStrength()
+invoke-virtual {v0}, Landroid/view/View;->getLeftFadingEdgeStrength()F
+
+Amount by which to extend the left fading region.
+protected int getLeftPaddingOffset()
+invoke-virtual {v0}, Landroid/view/View;->getLeftPaddingOffset()I
+
+Returns the strength, or intensity, of the right faded edge.
+protected float getRightFadingEdgeStrength()
+invoke-virtual {v0}, Landroid/view/View;->getRightFadingEdgeStrength()F
+
+Amount by which to extend the right fading region.
+protected int getRightPaddingOffset()
+invoke-virtual {v0}, Landroid/view/View;->getRightPaddingOffset()I
+
+Returns the suggested minimum height that the view should use.
+protected int getSuggestedMinimumHeight()
+invoke-virtual {v0}, Landroid/view/View;->getSuggestedMinimumHeight()I
+
+Returns the suggested minimum width that the view should use.
+protected int getSuggestedMinimumWidth()
+invoke-virtual {v0}, Landroid/view/View;->getSuggestedMinimumWidth()I
+
+Returns the strength, or intensity, of the top faded edge.
+protected float getTopFadingEdgeStrength()
+invoke-virtual {v0}, Landroid/view/View;->getTopFadingEdgeStrength()F
+
+Amount by which to extend the top fading region.
+protected int getTopPaddingOffset()
+invoke-virtual {v0}, Landroid/view/View;->getTopPaddingOffset()I
+
+没有帮助内容
+protected int getWindowAttachCount()
+invoke-virtual {v0}, Landroid/view/View;->getWindowAttachCount()I
+
+If the View draws content inside its padding and enables fading edges, it needs to support padding offsets.
+protected boolean isPaddingOffsetRequired()
+invoke-virtual {v0}, Landroid/view/View;->isPaddingOffsetRequired()Z
+
+Merge your own state values in additionalState into the base state values baseState that were returned by onCreateDrawableState(int).
+protected int[] mergeDrawableStates(int[] baseState, int[] additionalState)
+invoke-static {v0, v1}, Landroid/view/View;->mergeDrawableStates([I[I)[I
+
+Invoked by a parent ViewGroup to notify the end of the animation currently associated with this view.
+protected void onAnimationEnd()
+invoke-virtual {v0}, Landroid/view/View;->onAnimationEnd()V
+
+Invoked by a parent ViewGroup to notify the start of the animation currently associated with this view.
+protected void onAnimationStart()
+invoke-virtual {v0}, Landroid/view/View;->onAnimationStart()V
+
+This is called when the view is attached to a window.
+protected void onAttachedToWindow()
+invoke-virtual {v0}, Landroid/view/View;->onAttachedToWindow()V
+
+Called when the current configuration of the resources being used by the application have changed.
+protected void onConfigurationChanged(Configuration newConfig)
+invoke-virtual {v0, v1}, Landroid/view/View;->onConfigurationChanged(Landroid/content/res/Configuration;)V
+
+Views should implement this if the view itself is going to add items to the context menu.
+protected void onCreateContextMenu(ContextMenu menu)
+invoke-virtual {v0, v1}, Landroid/view/View;->onCreateContextMenu(Landroid/view/ContextMenu;)V
+
+Generate the new Drawable state for this view.
+protected int[] onCreateDrawableState(int extraSpace)
+invoke-virtual {v0, v1}, Landroid/view/View;->onCreateDrawableState(I)[I
+
+This is called when the view is detached from a window.
+protected void onDetachedFromWindow()
+invoke-virtual {v0}, Landroid/view/View;->onDetachedFromWindow()V
+
+Gives this view a hint about whether is displayed or not.
+protected void onDisplayHint(int hint)
+invoke-virtual {v0, v1}, Landroid/view/View;->onDisplayHint(I)V
+
+Implement this to do your drawing.
+protected void onDraw(Canvas canvas)
+invoke-virtual {v0, v1}, Landroid/view/View;->onDraw(Landroid/graphics/Canvas;)V
+
+Request the drawing of the horizontal and the vertical scrollbar.
+protected final void onDrawScrollBars(Canvas canvas)
+invoke-virtual {v0, v1}, Landroid/view/View;->onDrawScrollBars(Landroid/graphics/Canvas;)V
+
+Finalize inflating a view from XML.
+protected void onFinishInflate()
+invoke-virtual {v0}, Landroid/view/View;->onFinishInflate()V
+
+Called by the view system when the focus state of this view changes.
+protected void onFocusChanged(boolean gainFocus, int direction, Rect previouslyFocusedRect)
+invoke-virtual {v0, v1, v2, v3}, Landroid/view/View;->onFocusChanged(ZILandroid/graphics/Rect;)V
+
+Called from layout when this view should assign a size and position to each of its children.
+protected void onLayout(boolean changed, int left, int top, int right, int bottom)
+invoke-virtual/range {v0 .. v5}, Landroid/view/View;->onLayout(ZIIII)V
+
+Measure the view and its content to determine the measured width and the measured height.
+protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec)
+invoke-virtual {v0, v1, v2}, Landroid/view/View;->onMeasure(II)V
+
+Called by overScrollBy(int, int, int, int, int, int, int, int, boolean) to respond to the results of an over-scroll operation.
+protected void onOverScrolled(int scrollX, int scrollY, boolean clampedX, boolean clampedY)
+invoke-virtual {v0, v1, v2, v3, v4}, Landroid/view/View;->onOverScrolled(IIZZ)V
+
+Hook allowing a view to re-apply a representation of its internal state that had previously been generated by onSaveInstanceState().
+protected void onRestoreInstanceState(Parcelable state)
+invoke-virtual {v0, v1}, Landroid/view/View;->onRestoreInstanceState(Landroid/os/Parcelable;)V
+
+Hook allowing a view to generate a representation of its internal state that can later be used to create a new instance with that same state.
+protected Parcelable onSaveInstanceState()
+invoke-virtual {v0}, Landroid/view/View;->onSaveInstanceState()Landroid/os/Parcelable;
+
+This is called in response to an internal scroll in this view (i.e., the view scrolled its own contents).
+protected void onScrollChanged(int l, int t, int oldl, int oldt)
+invoke-virtual {v0, v1, v2, v3, v4}, Landroid/view/View;->onScrollChanged(IIII)V
+
+Invoked if there is a Transform that involves alpha.
+protected boolean onSetAlpha(int alpha)
+invoke-virtual {v0, v1}, Landroid/view/View;->onSetAlpha(I)Z
+
+This is called during layout when the size of this view has changed.
+protected void onSizeChanged(int w, int h, int oldw, int oldh)
+invoke-virtual {v0, v1, v2, v3, v4}, Landroid/view/View;->onSizeChanged(IIII)V
+
+Called when the visibility of the view or an ancestor of the view has changed.
+protected void onVisibilityChanged(View changedView, int visibility)
+invoke-virtual {v0, v1, v2}, Landroid/view/View;->onVisibilityChanged(Landroid/view/View;I)V
+
+Called when the window containing has change its visibility (between GONE, INVISIBLE, and VISIBLE).
+protected void onWindowVisibilityChanged(int visibility)
+invoke-virtual {v0, v1}, Landroid/view/View;->onWindowVisibilityChanged(I)V
+
+Scroll the view with standard behavior for scrolling beyond the normal content boundaries.
+protected boolean overScrollBy(int deltaX, int deltaY, int scrollX, int scrollY, int scrollRangeX, int scrollRangeY, int maxOverScrollX, int maxOverScrollY, boolean isTouchEvent)
+invoke-virtual/range {v0 .. v9}, Landroid/view/View;->overScrollBy(IIIIIIIIZ)Z
+
+This method must be called by onMeasure(int, int) to store the measured width and measured height.
+protected final void setMeasuredDimension(int measuredWidth, int measuredHeight)
+invoke-virtual {v0, v1, v2}, Landroid/view/View;->setMeasuredDimension(II)V
+
+If your view subclass is displaying its own Drawable objects, it should override this function and return true for any Drawable it is displaying.
+protected boolean verifyDrawable(Drawable who)
+invoke-virtual {v0, v1}, Landroid/view/View;->verifyDrawable(Landroid/graphics/drawable/Drawable;)Z

@@ -1,0 +1,191 @@
+A modifiable set of name/value mappings. Names are unique, non-null strings. Values may be any mix of JSONObject, JSONArray, Strings, Booleans, Integers, Longs, Doubles or NULL. Values may not be null, Double#isNaN(), Double#isInfinite(), or of any type not listed here.
+class org.json.JSONObject
+.class Lorg/json/JSONObject;
+
+继承
+inherit java.lang.Object
+.super Ljava/lang/Object;
+
+A sentinel value used to explicitly define a name with no value.
+public static final Object NULL
+sget-object v0, Lorg/json/JSONObject;->NULL:Ljava/lang/Object;
+
+构造方法：Creates a JSONObject with no name/value mappings.
+constructor JSONObject()
+invoke-direct {v0}, Lorg/json/JSONObject;-><init>()V
+
+构造方法：Creates a new JSONObject by copying all name/value mappings from the given map.
+constructor JSONObject(Map copyFrom)
+invoke-direct {v0, v1}, Lorg/json/JSONObject;-><init>(Ljava/util/Map;)V
+
+构造方法：Creates a new JSONObject with name/value mappings from the next object in the tokener.
+constructor JSONObject(JSONTokener readFrom)
+invoke-direct {v0, v1}, Lorg/json/JSONObject;-><init>(Lorg/json/JSONTokener;)V
+
+构造方法：Creates a new JSONObject with name/value mappings from the JSON string.
+constructor JSONObject(String json)
+invoke-direct {v0, v1}, Lorg/json/JSONObject;-><init>(Ljava/lang/String;)V
+
+构造方法：Creates a new JSONObject by copying mappings for the listed names from the given object.
+constructor JSONObject(JSONObject copyFrom, String[] names)
+invoke-direct {v0, v1, v2}, Lorg/json/JSONObject;-><init>(Lorg/json/JSONObject;[Ljava/lang/String;)V
+
+Appends value to the array already mapped to name.
+JSONObject accumulate(String name, Object value)
+invoke-virtual {v0, v1, v2}, Lorg/json/JSONObject;->accumulate(Ljava/lang/String;Ljava/lang/Object;)Lorg/json/JSONObject;
+
+Returns the value mapped by name, or throws if no such mapping exists.
+Object get(String name)
+invoke-virtual {v0, v1}, Lorg/json/JSONObject;->get(Ljava/lang/String;)Ljava/lang/Object;
+
+Returns the value mapped by name if it exists and is a boolean or can be coerced to a boolean, or throws otherwise.
+boolean getBoolean(String name)
+invoke-virtual {v0, v1}, Lorg/json/JSONObject;->getBoolean(Ljava/lang/String;)Z
+
+Returns the value mapped by name if it exists and is a double or can be coerced to a double, or throws otherwise.
+double getDouble(String name)
+invoke-virtual {v0, v1}, Lorg/json/JSONObject;->getDouble(Ljava/lang/String;)D
+
+Returns the value mapped by name if it exists and is an int or can be coerced to an int, or throws otherwise.
+int getInt(String name)
+invoke-virtual {v0, v1}, Lorg/json/JSONObject;->getInt(Ljava/lang/String;)I
+
+Returns the value mapped by name if it exists and is a JSONArray, or throws otherwise.
+JSONArray getJSONArray(String name)
+invoke-virtual {v0, v1}, Lorg/json/JSONObject;->getJSONArray(Ljava/lang/String;)Lorg/json/JSONArray;
+
+Returns the value mapped by name if it exists and is a JSONObject, or throws otherwise.
+JSONObject getJSONObject(String name)
+invoke-virtual {v0, v1}, Lorg/json/JSONObject;->getJSONObject(Ljava/lang/String;)Lorg/json/JSONObject;
+
+Returns the value mapped by name if it exists and is a long or can be coerced to a long, or throws otherwise.
+long getLong(String name)
+invoke-virtual {v0, v1}, Lorg/json/JSONObject;->getLong(Ljava/lang/String;)J
+
+Returns the value mapped by name if it exists, coercing it if necessary, or throws if no such mapping exists.
+String getString(String name)
+invoke-virtual {v0, v1}, Lorg/json/JSONObject;->getString(Ljava/lang/String;)Ljava/lang/String;
+
+Returns true if this object has a mapping for name.
+boolean has(String name)
+invoke-virtual {v0, v1}, Lorg/json/JSONObject;->has(Ljava/lang/String;)Z
+
+Returns true if this object has no mapping for name or if it has a mapping whose value is NULL.
+boolean isNull(String name)
+invoke-virtual {v0, v1}, Lorg/json/JSONObject;->isNull(Ljava/lang/String;)Z
+
+Returns an iterator of the String names in this object.
+Iterator<String> keys()
+invoke-virtual {v0}, Lorg/json/JSONObject;->keys()Ljava/util/Iterator;
+
+Returns the number of name/value mappings in this object.
+int length()
+invoke-virtual {v0}, Lorg/json/JSONObject;->length()I
+
+Returns an array containing the string names in this object.
+JSONArray names()
+invoke-virtual {v0}, Lorg/json/JSONObject;->names()Lorg/json/JSONArray;
+
+Encodes the number as a JSON string.
+String numberToString(Number number)
+invoke-static {v0}, Lorg/json/JSONObject;->numberToString(Ljava/lang/Number;)Ljava/lang/String;
+
+Returns the value mapped by name, or null if no such mapping exists.
+Object opt(String name)
+invoke-virtual {v0, v1}, Lorg/json/JSONObject;->opt(Ljava/lang/String;)Ljava/lang/Object;
+
+Returns the value mapped by name if it exists and is a boolean or can be coerced to a boolean, or fallback otherwise.
+boolean optBoolean(String name, boolean fallback)
+invoke-virtual {v0, v1, v2}, Lorg/json/JSONObject;->optBoolean(Ljava/lang/String;Z)Z
+
+Returns the value mapped by name if it exists and is a boolean or can be coerced to a boolean, or false otherwise.
+boolean optBoolean(String name)
+invoke-virtual {v0, v1}, Lorg/json/JSONObject;->optBoolean(Ljava/lang/String;)Z
+
+Returns the value mapped by name if it exists and is a double or can be coerced to a double, or fallback otherwise.
+double optDouble(String name, double fallback)
+invoke-virtual {v0, v1, v2, v3}, Lorg/json/JSONObject;->optDouble(Ljava/lang/String;D)D
+
+Returns the value mapped by name if it exists and is a double or can be coerced to a double, or NaN otherwise.
+double optDouble(String name)
+invoke-virtual {v0, v1}, Lorg/json/JSONObject;->optDouble(Ljava/lang/String;)D
+
+Returns the value mapped by name if it exists and is an int or can be coerced to an int, or fallback otherwise.
+int optInt(String name, int fallback)
+invoke-virtual {v0, v1, v2}, Lorg/json/JSONObject;->optInt(Ljava/lang/String;I)I
+
+Returns the value mapped by name if it exists and is an int or can be coerced to an int, or 0 otherwise.
+int optInt(String name)
+invoke-virtual {v0, v1}, Lorg/json/JSONObject;->optInt(Ljava/lang/String;)I
+
+Returns the value mapped by name if it exists and is a JSONArray, or null otherwise.
+JSONArray optJSONArray(String name)
+invoke-virtual {v0, v1}, Lorg/json/JSONObject;->optJSONArray(Ljava/lang/String;)Lorg/json/JSONArray;
+
+Returns the value mapped by name if it exists and is a JSONObject, or null otherwise.
+JSONObject optJSONObject(String name)
+invoke-virtual {v0, v1}, Lorg/json/JSONObject;->optJSONObject(Ljava/lang/String;)Lorg/json/JSONObject;
+
+Returns the value mapped by name if it exists and is a long or can be coerced to a long, or 0 otherwise.
+long optLong(String name)
+invoke-virtual {v0, v1}, Lorg/json/JSONObject;->optLong(Ljava/lang/String;)J
+
+Returns the value mapped by name if it exists and is a long or can be coerced to a long, or fallback otherwise.
+long optLong(String name, long fallback)
+invoke-virtual {v0, v1, v2, v3}, Lorg/json/JSONObject;->optLong(Ljava/lang/String;J)J
+
+Returns the value mapped by name if it exists, coercing it if necessary, or fallback if no such mapping exists.
+String optString(String name, String fallback)
+invoke-virtual {v0, v1, v2}, Lorg/json/JSONObject;->optString(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+
+Returns the value mapped by name if it exists, coercing it if necessary, or the empty string if no such mapping exists.
+String optString(String name)
+invoke-virtual {v0, v1}, Lorg/json/JSONObject;->optString(Ljava/lang/String;)Ljava/lang/String;
+
+Maps name to value, clobbering any existing name/value mapping with the same name.
+JSONObject put(String name, double value)
+invoke-virtual {v0, v1, v2, v3}, Lorg/json/JSONObject;->put(Ljava/lang/String;D)Lorg/json/JSONObject;
+
+Maps name to value, clobbering any existing name/value mapping with the same name.
+JSONObject put(String name, boolean value)
+invoke-virtual {v0, v1, v2}, Lorg/json/JSONObject;->put(Ljava/lang/String;Z)Lorg/json/JSONObject;
+
+Maps name to value, clobbering any existing name/value mapping with the same name.
+JSONObject put(String name, int value)
+invoke-virtual {v0, v1, v2}, Lorg/json/JSONObject;->put(Ljava/lang/String;I)Lorg/json/JSONObject;
+
+Maps name to value, clobbering any existing name/value mapping with the same name.
+JSONObject put(String name, long value)
+invoke-virtual {v0, v1, v2, v3}, Lorg/json/JSONObject;->put(Ljava/lang/String;J)Lorg/json/JSONObject;
+
+Maps name to value, clobbering any existing name/value mapping with the same name.
+JSONObject put(String name, Object value)
+invoke-virtual {v0, v1, v2}, Lorg/json/JSONObject;->put(Ljava/lang/String;Ljava/lang/Object;)Lorg/json/JSONObject;
+
+Equivalent to put(name, value) when both parameters are non-null; does nothing otherwise.
+JSONObject putOpt(String name, Object value)
+invoke-virtual {v0, v1, v2}, Lorg/json/JSONObject;->putOpt(Ljava/lang/String;Ljava/lang/Object;)Lorg/json/JSONObject;
+
+Encodes data as a JSON string.
+String quote(String data)
+invoke-static {v0}, Lorg/json/JSONObject;->quote(Ljava/lang/String;)Ljava/lang/String;
+
+Removes the named mapping if it exists; does nothing otherwise.
+Object remove(String name)
+invoke-virtual {v0, v1}, Lorg/json/JSONObject;->remove(Ljava/lang/String;)Ljava/lang/Object;
+
+Returns an array with the values corresponding to names.
+JSONArray toJSONArray(JSONArray names)
+invoke-virtual {v0, v1}, Lorg/json/JSONObject;->toJSONArray(Lorg/json/JSONArray;)Lorg/json/JSONArray;
+
+Encodes this object as a compact JSON string, such as:%Return%{"query":"Pizza","locations":[94043,90210]}
+String toString()
+invoke-virtual {v0}, Lorg/json/JSONObject;->toString()Ljava/lang/String;
+
+Encodes this object as a human readable JSON string for debugging, such as:%Return%{%Return%"query": "Pizza",%Return%"locations": [%Return%94043,%Return%90210%Return%]%Return%}
+String toString(int indentSpaces)
+invoke-virtual {v0, v1}, Lorg/json/JSONObject;->toString(I)Ljava/lang/String;
+
+Wraps the given object if necessary.
+Object wrap(Object o)
+invoke-static {v0}, Lorg/json/JSONObject;->wrap(Ljava/lang/Object;)Ljava/lang/Object;

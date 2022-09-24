@@ -1,5 +1,3 @@
-
--- 日常活动开启宝箱触发
 local Items = {
 	{q_id = 1,q_mark = 25,q_drop = 598,},
 	{q_id = 2,q_mark = 50,q_drop = 477,},

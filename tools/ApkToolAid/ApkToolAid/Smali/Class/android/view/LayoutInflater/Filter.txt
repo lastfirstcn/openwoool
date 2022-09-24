@@ -1,0 +1,7 @@
+Hook to allow clients of the LayoutInflater to restrict the set of Views that are allowed to be inflated.
+interface LayoutInflater.Filter
+.class interface Landroid/view/LayoutInflater$Filter;
+
+Hook to allow clients of the LayoutInflater to restrict the set of Views that are allowed to be inflated.
+abstract boolean onLoadClass(Class clazz)
+event onLoadClass(Ljava/lang/Class;)Z

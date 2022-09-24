@@ -1,0 +1,115 @@
+一个线性 collection，支持在两端插入和移除元素。名称 deque 是“double ended queue（双端队列）”的缩写，通常读为“deck”。大多数 Deque 实现对于它们能够包含的元素数没有固定限制，但此接口既支持有容量限制的双端队列，也支持没有固定大小限制的双端队列。
+interface java.util.Deque
+.class interface Ljava/util/Deque;
+
+继承
+inherit java.util.Collection
+.super Ljava/util/Collection;
+
+将指定元素插入此双端队列所表示的队列（换句话说，此双端队列的尾部），如果可以直接这样做而不违反容量限制的话；如果成功，则返回 true，如果当前没有可用空间，则抛出 IllegalStateException。
+boolean add(E e)
+invoke-interface {v0, v1}, Ljava/util/Deque;->add(Ljava/lang/Object;)Z
+
+将指定元素插入此双端队列的开头（如果可以直接这样做而不违反容量限制）。
+void addFirst(E e)
+invoke-interface {v0, v1}, Ljava/util/Deque;->addFirst(Ljava/lang/Object;)V
+
+将指定元素插入此双端队列的末尾（如果可以直接这样做而不违反容量限制）。
+void addLast(E e)
+invoke-interface {v0, v1}, Ljava/util/Deque;->addLast(Ljava/lang/Object;)V
+
+如果此双端队列包含指定元素，则返回 true。
+boolean contains(Object o)
+invoke-interface {v0, v1}, Ljava/util/Deque;->contains(Ljava/lang/Object;)Z
+
+返回以逆向顺序在此双端队列的元素上进行迭代的迭代器。
+Iterator<E> descendingIterator()
+invoke-interface {v0}, Ljava/util/Deque;->descendingIterator()Ljava/util/Iterator;
+
+获取，但不移除此双端队列所表示的队列的头部（换句话说，此双端队列的第一个元素）。
+E element()
+invoke-interface {v0}, Ljava/util/Deque;->element()Ljava/lang/Object;
+
+获取，但不移除此双端队列的第一个元素。
+E getFirst()
+invoke-interface {v0}, Ljava/util/Deque;->getFirst()Ljava/lang/Object;
+
+获取，但不移除此双端队列的最后一个元素。
+E getLast()
+invoke-interface {v0}, Ljava/util/Deque;->getLast()Ljava/lang/Object;
+
+返回以恰当顺序在此双端队列的元素上进行迭代的迭代器。
+Iterator<E> iterator()
+invoke-interface {v0}, Ljava/util/Deque;->iterator()Ljava/util/Iterator;
+
+将指定元素插入此双端队列所表示的队列（换句话说，此双端队列的尾部），如果可以直接这样做而不违反容量限制的话；如果成功，则返回 true，如果当前没有可用的空间，则返回 false。
+boolean offer(E e)
+invoke-interface {v0, v1}, Ljava/util/Deque;->offer(Ljava/lang/Object;)Z
+
+在不违反容量限制的情况下，将指定的元素插入此双端队列的开头。
+boolean offerFirst(E e)
+invoke-interface {v0, v1}, Ljava/util/Deque;->offerFirst(Ljava/lang/Object;)Z
+
+在不违反容量限制的情况下，将指定的元素插入此双端队列的末尾。
+boolean offerLast(E e)
+invoke-interface {v0, v1}, Ljava/util/Deque;->offerLast(Ljava/lang/Object;)Z
+
+获取，但不移除此双端队列所表示的队列的头部（换句话说，此双端队列的第一个元素）；如果此双端队列为空，则返回 null。
+E peek()
+invoke-interface {v0}, Ljava/util/Deque;->peek()Ljava/lang/Object;
+
+获取，但不移除此双端队列的第一个元素；如果此双端队列为空，则返回 null。
+E peekFirst()
+invoke-interface {v0}, Ljava/util/Deque;->peekFirst()Ljava/lang/Object;
+
+获取，但不移除此双端队列的最后一个元素；如果此双端队列为空，则返回 null。
+E peekLast()
+invoke-interface {v0}, Ljava/util/Deque;->peekLast()Ljava/lang/Object;
+
+获取并移除此双端队列所表示的队列的头部（换句话说，此双端队列的第一个元素）；如果此双端队列为空，则返回 null。
+E poll()
+invoke-interface {v0}, Ljava/util/Deque;->poll()Ljava/lang/Object;
+
+获取并移除此双端队列的第一个元素；如果此双端队列为空，则返回 null。
+E pollFirst()
+invoke-interface {v0}, Ljava/util/Deque;->pollFirst()Ljava/lang/Object;
+
+获取并移除此双端队列的最后一个元素；如果此双端队列为空，则返回 null。
+E pollLast()
+invoke-interface {v0}, Ljava/util/Deque;->pollLast()Ljava/lang/Object;
+
+从此双端队列所表示的堆栈中弹出一个元素。
+E pop()
+invoke-interface {v0}, Ljava/util/Deque;->pop()Ljava/lang/Object;
+
+将一个元素推入此双端队列所表示的堆栈（换句话说，此双端队列的头部），如果可以直接这样做而不违反容量限制的话；如果成功，则返回 true，如果当前没有可用空间，则抛出 IllegalStateException。
+void push(E e)
+invoke-interface {v0, v1}, Ljava/util/Deque;->push(Ljava/lang/Object;)V
+
+获取并移除此双端队列所表示的队列的头部（换句话说，此双端队列的第一个元素）。
+E remove()
+invoke-interface {v0}, Ljava/util/Deque;->remove()Ljava/lang/Object;
+
+从此双端队列中移除第一次出现的指定元素。
+boolean remove(Object o)
+invoke-interface {v0, v1}, Ljava/util/Deque;->remove(Ljava/lang/Object;)Z
+
+获取并移除此双端队列第一个元素。
+E removeFirst()
+invoke-interface {v0}, Ljava/util/Deque;->removeFirst()Ljava/lang/Object;
+
+从此双端队列移除第一次出现的指定元素。
+boolean removeFirstOccurrence(Object o)
+invoke-interface {v0, v1}, Ljava/util/Deque;->removeFirstOccurrence(Ljava/lang/Object;)Z
+
+获取并移除此双端队列的最后一个元素。
+E removeLast()
+invoke-interface {v0}, Ljava/util/Deque;->removeLast()Ljava/lang/Object;
+
+从此双端队列移除最后一次出现的指定元素。
+boolean removeLastOccurrence(Object o)
+invoke-interface {v0, v1}, Ljava/util/Deque;->removeLastOccurrence(Ljava/lang/Object;)Z
+
+返回此双端队列的元素数。
+int size()
+invoke-interface {v0}, Ljava/util/Deque;->size()I

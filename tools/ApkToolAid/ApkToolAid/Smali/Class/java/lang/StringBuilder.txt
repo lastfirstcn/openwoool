@@ -1,0 +1,227 @@
+一个可变的字符序列。此类提供一个与 StringBuffer 兼容的 API，但不保证同步。该类被设计用作 StringBuffer 的一个简易替换，用在字符串缓冲区被单个线程使用的时候（这种情况很普遍）。如果可能，建议优先采用该类，因为在大多数实现中，它比 StringBuffer 要快。
+class java.lang.StringBuilder
+.class Ljava/lang/StringBuilder;
+
+继承
+inherit java.lang.CharSequence
+.super Ljava/lang/CharSequence;
+
+继承
+inherit java.lang.Object
+.super Ljava/lang/Object;
+
+构造方法：构造一个不带任何字符的字符串生成器，其初始容量为 16 个字符。
+constructor StringBuilder()
+invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
+
+构造方法：构造一个字符串生成器，它包含与指定的 CharSequence 相同的字符。
+constructor StringBuilder(CharSequence seq)
+invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/CharSequence;)V
+
+构造方法：构造一个不带任何字符的字符串生成器，其初始容量由 capacity 参数指定。
+constructor StringBuilder(int capacity)
+invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(I)V
+
+构造方法：构造一个字符串生成器，并初始化为指定的字符串内容。
+constructor StringBuilder(String str)
+invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+
+将 boolean 参数的字符串表示形式追加到序列。
+StringBuilder append(boolean b)
+invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
+
+将 char 参数的字符串表示形式追加到此序列。
+StringBuilder append(char c)
+invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
+
+将 char 数组参数的字符串表示形式追加到此序列。
+StringBuilder append(char[] str)
+invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append([C)Ljava/lang/StringBuilder;
+
+将 char 数组参数的子数组的字符串表示形式追加到此序列。
+StringBuilder append(char[] str, int offset, int len)
+invoke-virtual {v0, v1, v2, v3}, Ljava/lang/StringBuilder;->append([CII)Ljava/lang/StringBuilder;
+
+向此 Appendable 追加到指定的字符序列。
+StringBuilder append(CharSequence s)
+invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/CharSequence;)Ljava/lang/StringBuilder;
+
+将指定 CharSequence 的子序列追加到此序列。
+StringBuilder append(CharSequence s, int start, int end)
+invoke-virtual {v0, v1, v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/CharSequence;II)Ljava/lang/StringBuilder;
+
+将 double 参数的字符串表示形式追加到此序列。
+StringBuilder append(double d)
+invoke-virtual {v0, v1, v2}, Ljava/lang/StringBuilder;->append(D)Ljava/lang/StringBuilder;
+
+将 float 参数的字符串表示形式追加到此序列。
+StringBuilder append(float f)
+invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(F)Ljava/lang/StringBuilder;
+
+将 int 参数的字符串表示形式追加到此序列。
+StringBuilder append(int i)
+invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+将 long 参数的字符串表示形式追加到此序列。
+StringBuilder append(long lng)
+invoke-virtual {v0, v1, v2}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
+
+追加 Object 参数的字符串表示形式。
+StringBuilder append(Object obj)
+invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+将指定的字符串追加到此字符序列。
+StringBuilder append(String str)
+invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+将指定的 StringBuffer 追加到此序列。
+StringBuilder append(StringBuffer sb)
+invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/StringBuffer;)Ljava/lang/StringBuilder;
+
+将 codePoint 参数的字符串表示形式追加到此序列。
+StringBuilder appendCodePoint(int codePoint)
+invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->appendCodePoint(I)Ljava/lang/StringBuilder;
+
+返回当前容量。
+int capacity()
+invoke-virtual {v0}, Ljava/lang/StringBuilder;->capacity()I
+
+返回此序列中指定索引处的 char 值。
+char charAt(int index)
+invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->charAt(I)C
+
+返回指定索引处的字符（统一代码点）。
+int codePointAt(int index)
+invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->codePointAt(I)I
+
+返回指定索引前的字符（统一代码点）。
+int codePointBefore(int index)
+invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->codePointBefore(I)I
+
+返回此序列指定文本范围内的统一代码点。
+int codePointCount(int beginIndex, int endIndex)
+invoke-virtual {v0, v1, v2}, Ljava/lang/StringBuilder;->codePointCount(II)I
+
+移除此序列的子字符串中的字符。
+StringBuilder delete(int start, int end)
+invoke-virtual {v0, v1, v2}, Ljava/lang/StringBuilder;->delete(II)Ljava/lang/StringBuilder;
+
+移除此序列指定位置上的 char。
+StringBuilder deleteCharAt(int index)
+invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->deleteCharAt(I)Ljava/lang/StringBuilder;
+
+确保容量至少等于指定的最小值。
+void ensureCapacity(int minimumCapacity)
+invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->ensureCapacity(I)V
+
+将字符从此序列复制到目标字符数组 dst。
+void getChars(int srcBegin, int srcEnd, char[] dst, int dstBegin)
+invoke-virtual {v0, v1, v2, v3, v4}, Ljava/lang/StringBuilder;->getChars(II[CI)V
+
+返回第一次出现的指定子字符串在该字符串中的索引。
+int indexOf(String str)
+invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->indexOf(Ljava/lang/String;)I
+
+从指定的索引处开始，返回第一次出现的指定子字符串在该字符串中的索引。
+int indexOf(String str, int fromIndex)
+invoke-virtual {v0, v1, v2}, Ljava/lang/StringBuilder;->indexOf(Ljava/lang/String;I)I
+
+将 boolean 参数的字符串表示形式插入此序列中。
+StringBuilder insert(int offset, boolean b)
+invoke-virtual {v0, v1, v2}, Ljava/lang/StringBuilder;->insert(IZ)Ljava/lang/StringBuilder;
+
+将 char 参数的字符串表示形式插入此序列中。
+StringBuilder insert(int offset, char c)
+invoke-virtual {v0, v1, v2}, Ljava/lang/StringBuilder;->insert(IC)Ljava/lang/StringBuilder;
+
+将 char 数组参数的字符串表示形式插入此序列中。
+StringBuilder insert(int offset, char[] str)
+invoke-virtual {v0, v1, v2}, Ljava/lang/StringBuilder;->insert(I[C)Ljava/lang/StringBuilder;
+
+将数组参数 str 子数组的字符串表示形式插入此序列中。
+StringBuilder insert(int index, char[] str, int offset, int len)
+invoke-virtual {v0, v1, v2, v3, v4}, Ljava/lang/StringBuilder;->insert(I[CII)Ljava/lang/StringBuilder;
+
+将指定 CharSequence 插入此序列中。
+StringBuilder insert(int dstOffset, CharSequence s)
+invoke-virtual {v0, v1, v2}, Ljava/lang/StringBuilder;->insert(ILjava/lang/CharSequence;)Ljava/lang/StringBuilder;
+
+将指定 CharSequence 的子序列插入此序列中。
+StringBuilder insert(int dstOffset, CharSequence s, int start, int end)
+invoke-virtual {v0, v1, v2, v3, v4}, Ljava/lang/StringBuilder;->insert(ILjava/lang/CharSequence;II)Ljava/lang/StringBuilder;
+
+将 double 参数的字符串表示形式插入此序列中。
+StringBuilder insert(int offset, double d)
+invoke-virtual {v0, v1, v2, v3}, Ljava/lang/StringBuilder;->insert(ID)Ljava/lang/StringBuilder;
+
+将 float 参数的字符串表示形式插入此序列中。
+StringBuilder insert(int offset, float f)
+invoke-virtual {v0, v1, v2}, Ljava/lang/StringBuilder;->insert(IF)Ljava/lang/StringBuilder;
+
+将 int 参数的字符串表示形式插入此序列中。
+StringBuilder insert(int offset, int i)
+invoke-virtual {v0, v1, v2}, Ljava/lang/StringBuilder;->insert(II)Ljava/lang/StringBuilder;
+
+将 long 参数的字符串表示形式插入此序列中。
+StringBuilder insert(int offset, long l)
+invoke-virtual {v0, v1, v2, v3}, Ljava/lang/StringBuilder;->insert(IJ)Ljava/lang/StringBuilder;
+
+将 Object 参数的字符串表示形式插入此字符序列中。
+StringBuilder insert(int offset, Object obj)
+invoke-virtual {v0, v1, v2}, Ljava/lang/StringBuilder;->insert(ILjava/lang/Object;)Ljava/lang/StringBuilder;
+
+将字符串插入此字符序列中。
+StringBuilder insert(int offset, String str)
+invoke-virtual {v0, v1, v2}, Ljava/lang/StringBuilder;->insert(ILjava/lang/String;)Ljava/lang/StringBuilder;
+
+返回最右边出现的指定子字符串在此字符串中的索引。
+int lastIndexOf(String str)
+invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->lastIndexOf(Ljava/lang/String;)I
+
+返回最后一次出现的指定子字符串在此字符串中的索引。
+int lastIndexOf(String str, int fromIndex)
+invoke-virtual {v0, v1, v2}, Ljava/lang/StringBuilder;->lastIndexOf(Ljava/lang/String;I)I
+
+返回长度（字符数）。
+int length()
+invoke-virtual {v0}, Ljava/lang/StringBuilder;->length()I
+
+返回此序列中的一个索引，该索引是从给定 index 偏移 codePointOffset 个代码点后得到的。
+int offsetByCodePoints(int index, int codePointOffset)
+invoke-virtual {v0, v1, v2}, Ljava/lang/StringBuilder;->offsetByCodePoints(II)I
+
+使用给定 String 中的字符替换此序列的子字符串中的字符。
+StringBuilder replace(int start, int end, String str)
+invoke-virtual {v0, v1, v2, v3}, Ljava/lang/StringBuilder;->replace(IILjava/lang/String;)Ljava/lang/StringBuilder;
+
+将此字符序列用其反转形式取代。
+StringBuilder reverse()
+invoke-virtual {v0}, Ljava/lang/StringBuilder;->reverse()Ljava/lang/StringBuilder;
+
+将给定索引处的字符设置为 ch。
+void setCharAt(int index, char ch)
+invoke-virtual {v0, v1, v2}, Ljava/lang/StringBuilder;->setCharAt(IC)V
+
+设置字符序列的长度。
+void setLength(int newLength)
+invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->setLength(I)V
+
+返回一个新字符序列，该字符序列是此序列的子序列。
+CharSequence subSequence(int start, int end)
+invoke-virtual {v0, v1, v2}, Ljava/lang/StringBuilder;->subSequence(II)Ljava/lang/CharSequence;
+
+返回一个新的 String，它包含此字符序列当前所包含字符的子序列。
+String substring(int start)
+invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->substring(I)Ljava/lang/String;
+
+返回一个新的 String，它包含此序列当前所包含字符的子序列。
+String substring(int start, int end)
+invoke-virtual {v0, v1, v2}, Ljava/lang/StringBuilder;->substring(II)Ljava/lang/String;
+
+返回此序列中数据的字符串表示形式。
+String toString()
+invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+尝试减少用于字符序列的存储空间。
+void trimToSize()
+invoke-virtual {v0}, Ljava/lang/StringBuilder;->trimToSize()V

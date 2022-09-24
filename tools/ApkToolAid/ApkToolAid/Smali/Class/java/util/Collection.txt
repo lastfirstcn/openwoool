@@ -1,0 +1,63 @@
+Collection 表示一组对象，这些对象也称为 collection 的元素。一些 collection 允许有重复的元素，而另一些则不允许。一些 collection 是有序的，而另一些则是无序的。JDK 不提供此接口的任何直接 实现：它提供更具体的子接口（如 Set 和 List）实现。此接口通常用来传递 collection，并在需要最大普遍性的地方操作这些 collection。
+interface java.util.Collection
+.class interface Ljava/util/Collection;
+
+确保此 collection 包含指定的元素（可选操作）。
+boolean add(E e)
+invoke-interface {v0, v1}, Ljava/util/Collection;->add(Ljava/lang/Object;)Z
+
+将指定 collection 中的所有元素都添加到此 collection 中（可选操作）。
+boolean addAll(Collection<? extends E> c)
+invoke-interface {v0, v1}, Ljava/util/Collection;->addAll(Ljava/util/Collection;)Z
+
+移除此 collection 中的所有元素（可选操作）。
+void clear()
+invoke-interface {v0}, Ljava/util/Collection;->clear()V
+
+如果此 collection 包含指定的元素，则返回 true。
+boolean contains(Object o)
+invoke-interface {v0, v1}, Ljava/util/Collection;->contains(Ljava/lang/Object;)Z
+
+如果此 collection 包含指定 collection 中的所有元素，则返回 true。
+boolean containsAll(Collection<?> c)
+invoke-interface {v0, v1}, Ljava/util/Collection;->containsAll(Ljava/util/Collection;)Z
+
+比较此 collection 与指定对象是否相等。
+boolean equals(Object o)
+invoke-interface {v0, v1}, Ljava/util/Collection;->equals(Ljava/lang/Object;)Z
+
+返回此 collection 的哈希码值。
+int hashCode()
+invoke-interface {v0}, Ljava/util/Collection;->hashCode()I
+
+如果此 collection 不包含元素，则返回 true。
+boolean isEmpty()
+invoke-interface {v0}, Ljava/util/Collection;->isEmpty()Z
+
+返回在此 collection 的元素上进行迭代的迭代器。
+Iterator<E> iterator()
+invoke-interface {v0}, Ljava/util/Collection;->iterator()Ljava/util/Iterator;
+
+从此 collection 中移除指定元素的单个实例，如果存在的话（可选操作）。
+boolean remove(Object o)
+invoke-interface {v0, v1}, Ljava/util/Collection;->remove(Ljava/lang/Object;)Z
+
+移除此 collection 中那些也包含在指定 collection 中的所有元素（可选操作）。
+boolean removeAll(Collection<?> c)
+invoke-interface {v0, v1}, Ljava/util/Collection;->removeAll(Ljava/util/Collection;)Z
+
+仅保留此 collection 中那些也包含在指定 collection 的元素（可选操作）。
+boolean retainAll(Collection<?> c)
+invoke-interface {v0, v1}, Ljava/util/Collection;->retainAll(Ljava/util/Collection;)Z
+
+返回此 collection 中的元素数。
+int size()
+invoke-interface {v0}, Ljava/util/Collection;->size()I
+
+返回包含此 collection 中所有元素的数组。
+Object[] toArray()
+invoke-interface {v0}, Ljava/util/Collection;->toArray()[Ljava/lang/Object;
+
+返回包含此 collection 中所有元素的数组；返回数组的运行时类型与指定数组的运行时类型相同。
+<T> T[] toArray(T[] a)
+invoke-interface {v0, v1}, Ljava/util/Collection;->toArray([Ljava/lang/Object;)[Ljava/lang/Object;

@@ -1,0 +1,27 @@
+Base class for derived classes that want to save and restore their own state in View.onSaveInstanceState().
+class android.view.View.BaseSavedState
+.class Landroid/view/View$BaseSavedState;
+
+继承
+inherit android.view.AbsSavedState
+.super Landroid/view/AbsSavedState;
+
+没有帮助内容
+public static final Creator<View.BaseSavedState> CREATOR
+sget-object v0, Landroid/view/View$BaseSavedState;->CREATOR:Landroid/os/Parcelable$Creator;
+
+构造方法：Constructor used when reading from a parcel.
+constructor View.BaseSavedState(Parcel source)
+invoke-direct {v0, v1}, Landroid/view/View$BaseSavedState;-><init>(Landroid/os/Parcelable;)V
+
+构造方法：Constructor used when reading from a parcel using a given class loader.
+constructor View.BaseSavedState(Parcel source, ClassLoader loader)
+invoke-direct {v0, v1, v2}, Landroid/view/View$BaseSavedState;-><init>(Landroid/os/Parcelable;Ljava/lang/ClassLoader;)V
+
+构造方法：Constructor called by derived classes when creating their SavedState objects
+constructor View.BaseSavedState(Parcelable superState)
+invoke-direct {v0, v1}, Landroid/view/View$BaseSavedState;-><init>(Landroid/os/Parcelable;)V
+
+Flatten this object in to a Parcel.
+void writeToParcel(Parcel out, int flags)
+invoke-virtual {v0, v1, v2}, Landroid/view/View$BaseSavedState;->writeToParcel(Landroid/os/Parcelable;I)V

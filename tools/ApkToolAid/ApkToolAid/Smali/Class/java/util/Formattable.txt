@@ -1,0 +1,7 @@
+Formattable 接口必须通过需要执行自定义格式化（使用 Formatter 的 's' 转换说明符）的任何类来实现。此接口允许对格式化任意对象的基本控制。
+interface java.util.Formattable
+.class interface Ljava/util/Formattable;
+
+使用提供的格式器来格式化对象。
+void formatTo(Formatter formatter, int flags, int width, int precision)
+invoke-interface {v0, v1, v2, v3, v4}, Ljava/util/Formattable;->formatTo(Ljava/util/Formatter;III)V

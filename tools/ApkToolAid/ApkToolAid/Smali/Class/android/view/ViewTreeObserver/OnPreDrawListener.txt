@@ -1,0 +1,7 @@
+Interface definition for a callback to be invoked when the view tree is about to be drawn.
+interface ViewTreeObserver.OnPreDrawListener
+.class interface Landroid/view/ViewTreeObserver$OnPreDrawListener;
+
+Callback method to be invoked when the view tree is about to be drawn.
+abstract boolean onPreDraw()
+event onPreDraw()Z

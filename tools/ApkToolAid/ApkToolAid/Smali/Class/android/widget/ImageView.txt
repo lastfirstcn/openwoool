@@ -1,0 +1,239 @@
+Displays image resources, for example Bitmap or Drawable resources. ImageView is also commonly used to apply tints to an image and handle image scaling.
+class android.widget.ImageView
+.class Landroid/widget/ImageView;
+
+继承
+inherit android.view.View
+.super Landroid/view/View;
+
+构造方法：没有帮助内容
+constructor ImageView(Context context)
+invoke-direct {v0, v1}, Landroid/widget/ImageView;-><init>(Landroid/content/Context;)V
+
+构造方法：没有帮助内容
+constructor ImageView(Context context, AttributeSet attrs)
+invoke-direct {v0, v1, v2}, Landroid/widget/ImageView;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
+
+构造方法：没有帮助内容
+constructor ImageView(Context context, AttributeSet attrs, int defStyleAttr)
+invoke-direct {v0, v1, v2, v3}, Landroid/widget/ImageView;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;I)V
+
+构造方法：没有帮助内容
+constructor ImageView(Context context, AttributeSet attrs, int defStyleAttr, int defStyleRes)
+invoke-direct {v0, v1, v2, v3, v4}, Landroid/widget/ImageView;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;II)V
+
+Removes the image's ColorFilter.
+final void clearColorFilter()
+invoke-virtual {v0}, Landroid/widget/ImageView;->clearColorFilter()V
+
+This function is called whenever the view hotspot changes and needs to be propagated to drawables or child views managed by the view.
+void drawableHotspotChanged(float x, float y)
+invoke-virtual {v0, v1, v2}, Landroid/widget/ImageView;->drawableHotspotChanged(FF)V
+
+Return the class name of this object to be used for accessibility purposes.
+CharSequence getAccessibilityClassName()
+invoke-virtual {v0}, Landroid/widget/ImageView;->getAccessibilityClassName()Ljava/lang/CharSequence;
+
+True when ImageView is adjusting its bounds to preserve the aspect ratio of its drawable
+boolean getAdjustViewBounds()
+invoke-virtual {v0}, Landroid/widget/ImageView;->getAdjustViewBounds()Z
+
+Return the offset of the widget's text baseline from the widget's top boundary.
+int getBaseline()
+invoke-virtual {v0}, Landroid/widget/ImageView;->getBaseline()I
+
+Checks whether this view's baseline is considered the bottom of the view.
+boolean getBaselineAlignBottom()
+invoke-virtual {v0}, Landroid/widget/ImageView;->getBaselineAlignBottom()Z
+
+Returns the active color filter for this ImageView.
+ColorFilter getColorFilter()
+invoke-virtual {v0}, Landroid/widget/ImageView;->getColorFilter()Landroid/graphics/ColorFilter;
+
+Return whether this ImageView crops to padding.
+boolean getCropToPadding()
+invoke-virtual {v0}, Landroid/widget/ImageView;->getCropToPadding()Z
+
+Gets the current Drawable, or null if no Drawable has been assigned.
+Drawable getDrawable()
+invoke-virtual {v0}, Landroid/widget/ImageView;->getDrawable()Landroid/graphics/drawable/Drawable;
+
+Returns the alpha that will be applied to the drawable of this ImageView.
+int getImageAlpha()
+invoke-virtual {v0}, Landroid/widget/ImageView;->getImageAlpha()I
+
+Returns the view's optional matrix.
+Matrix getImageMatrix()
+invoke-virtual {v0}, Landroid/widget/ImageView;->getImageMatrix()Landroid/graphics/Matrix;
+
+Get the current ColorStateList used to tint the image Drawable, or null if no tint is applied.
+ColorStateList getImageTintList()
+invoke-virtual {v0}, Landroid/widget/ImageView;->getImageTintList()Landroid/content/res/ColorStateList;
+
+Gets the blending mode used to apply the tint to the image Drawable
+PorterDuff.Mode getImageTintMode()
+invoke-virtual {v0}, Landroid/widget/ImageView;->getImageTintMode()Landroid/graphics/PorterDuff$Mode;
+
+The maximum height of this view.
+int getMaxHeight()
+invoke-virtual {v0}, Landroid/widget/ImageView;->getMaxHeight()I
+
+The maximum width of this view.
+int getMaxWidth()
+invoke-virtual {v0}, Landroid/widget/ImageView;->getMaxWidth()I
+
+Returns the current ScaleType that is used to scale the bounds of an image to the bounds of the ImageView.
+ImageView.ScaleType getScaleType()
+invoke-virtual {v0}, Landroid/widget/ImageView;->getScaleType()Landroid/widget/ImageView$ScaleType;
+
+Returns whether this View has content which overlaps.
+boolean hasOverlappingRendering()
+invoke-virtual {v0}, Landroid/widget/ImageView;->hasOverlappingRendering()Z
+
+Invalidates the specified Drawable.
+void invalidateDrawable(Drawable dr)
+invoke-virtual {v0, v1}, Landroid/widget/ImageView;->invalidateDrawable(Landroid/graphics/drawable/Drawable;)V
+
+Indicates whether this View is opaque.
+boolean isOpaque()
+invoke-virtual {v0}, Landroid/widget/ImageView;->isOpaque()Z
+
+Call Drawable.jumpToCurrentState() on all Drawable objects associated with this view.
+void jumpDrawablesToCurrentState()
+invoke-virtual {v0}, Landroid/widget/ImageView;->jumpDrawablesToCurrentState()V
+
+Generate the new Drawable state for this view.
+int[] onCreateDrawableState(int extraSpace)
+invoke-virtual {v0, v1}, Landroid/widget/ImageView;->onCreateDrawableState(I)[I
+
+Called when any RTL property (layout direction or text direction or text alignment) has been changed.
+void onRtlPropertiesChanged(int layoutDirection)
+invoke-virtual {v0, v1}, Landroid/widget/ImageView;->onRtlPropertiesChanged(I)V
+
+Called when the user-visibility of this View is potentially affected by a change to this view itself, an ancestor view or the window this view is attached to.
+void onVisibilityAggregated(boolean isVisible)
+invoke-virtual {v0, v1}, Landroid/widget/ImageView;->onVisibilityAggregated(Z)V
+
+Set this to true if you want the ImageView to adjust its bounds to preserve the aspect ratio of its drawable.
+void setAdjustViewBounds(boolean adjustViewBounds)
+invoke-virtual {v0, v1}, Landroid/widget/ImageView;->setAdjustViewBounds(Z)V
+
+This method was deprecated in API level 16. use #setImageAlpha(int) instead
+void setAlpha(int alpha)
+invoke-virtual {v0, v1}, Landroid/widget/ImageView;->setAlpha(I)V
+
+Set the offset of the widget's text baseline from the widget's top boundary.
+void setBaseline(int baseline)
+invoke-virtual {v0, v1}, Landroid/widget/ImageView;->setBaseline(I)V
+
+Sets whether the baseline of this view to the bottom of the view.
+void setBaselineAlignBottom(boolean aligned)
+invoke-virtual {v0, v1}, Landroid/widget/ImageView;->setBaselineAlignBottom(Z)V
+
+Sets a tinting option for the image.
+final void setColorFilter(int color, PorterDuff.Mode mode)
+invoke-virtual {v0, v1, v2}, Landroid/widget/ImageView;->setColorFilter(ILandroid/graphics/PorterDuff$Mode;)V
+
+Apply an arbitrary colorfilter to the image.
+void setColorFilter(ColorFilter cf)
+invoke-virtual {v0, v1}, Landroid/widget/ImageView;->setColorFilter(Landroid/graphics/ColorFilter;)V
+
+Set a tinting option for the image.
+final void setColorFilter(int color)
+invoke-virtual {v0, v1}, Landroid/widget/ImageView;->setColorFilter(I)V
+
+Sets whether this ImageView will crop to padding.
+void setCropToPadding(boolean cropToPadding)
+invoke-virtual {v0, v1}, Landroid/widget/ImageView;->setCropToPadding(Z)V
+
+Sets the alpha value that should be applied to the image.
+void setImageAlpha(int alpha)
+invoke-virtual {v0, v1}, Landroid/widget/ImageView;->setImageAlpha(I)V
+
+Sets a Bitmap as the content of this ImageView.
+void setImageBitmap(Bitmap bm)
+invoke-virtual {v0, v1}, Landroid/widget/ImageView;->setImageBitmap(Landroid/graphics/Bitmap;)V
+
+Sets a drawable as the content of this ImageView.
+void setImageDrawable(Drawable drawable)
+invoke-virtual {v0, v1}, Landroid/widget/ImageView;->setImageDrawable(Landroid/graphics/drawable/Drawable;)V
+
+Sets the content of this ImageView to the specified Icon.
+void setImageIcon(Icon icon)
+invoke-virtual {v0, v1}, Landroid/widget/ImageView;->setImageIcon(Landroid/graphics/drawable/Icon;)V
+
+Sets the image level, when it is constructed from a LevelListDrawable.
+void setImageLevel(int level)
+invoke-virtual {v0, v1}, Landroid/widget/ImageView;->setImageLevel(I)V
+
+Adds a transformation Matrix that is applied to the view's drawable when it is drawn.
+void setImageMatrix(Matrix matrix)
+invoke-virtual {v0, v1}, Landroid/widget/ImageView;->setImageMatrix(Landroid/graphics/Matrix;)V
+
+Sets a drawable as the content of this ImageView.
+void setImageResource(int resId)
+invoke-virtual {v0, v1}, Landroid/widget/ImageView;->setImageResource(I)V
+
+Set the state of the current StateListDrawable.
+void setImageState(int[] state, boolean merge)
+invoke-virtual {v0, v1, v2}, Landroid/widget/ImageView;->setImageState([IZ)V
+
+Applies a tint to the image drawable.
+void setImageTintList(ColorStateList tint)
+invoke-virtual {v0, v1}, Landroid/widget/ImageView;->setImageTintList(Landroid/content/res/ColorStateList;)V
+
+Specifies the blending mode used to apply the tint specified by setImageTintList(ColorStateList)} to the image drawable.
+void setImageTintMode(PorterDuff.Mode tintMode)
+invoke-virtual {v0, v1}, Landroid/widget/ImageView;->setImageTintMode(Landroid/graphics/PorterDuff$Mode;)V
+
+Sets the content of this ImageView to the specified Uri.
+void setImageURI(Uri uri)
+invoke-virtual {v0, v1}, Landroid/widget/ImageView;->setImageURI(Landroid/net/Uri;)V
+
+An optional argument to supply a maximum height for this view.
+void setMaxHeight(int maxHeight)
+invoke-virtual {v0, v1}, Landroid/widget/ImageView;->setMaxHeight(I)V
+
+An optional argument to supply a maximum width for this view.
+void setMaxWidth(int maxWidth)
+invoke-virtual {v0, v1}, Landroid/widget/ImageView;->setMaxWidth(I)V
+
+Controls how the image should be resized or moved to match the size of this ImageView.
+void setScaleType(ImageView.ScaleType scaleType)
+invoke-virtual {v0, v1}, Landroid/widget/ImageView;->setScaleType(Landroid/widget/ImageView$ScaleType;)V
+
+Changes the selection state of this view.
+void setSelected(boolean selected)
+invoke-virtual {v0, v1}, Landroid/widget/ImageView;->setSelected(Z)V
+
+Set the visibility state of this view.
+void setVisibility(int visibility)
+invoke-virtual {v0, v1}, Landroid/widget/ImageView;->setVisibility(I)V
+
+This function is called whenever the state of the view changes in such a way that it impacts the state of drawables being shown.
+protected void drawableStateChanged()
+invoke-virtual {v0}, Landroid/widget/ImageView;->drawableStateChanged()V
+
+This is called when the view is attached to a window.
+protected void onAttachedToWindow()
+invoke-virtual {v0}, Landroid/widget/ImageView;->onAttachedToWindow()V
+
+This is called when the view is detached from a window.
+protected void onDetachedFromWindow()
+invoke-virtual {v0}, Landroid/widget/ImageView;->onDetachedFromWindow()V
+
+Implement this to do your drawing.
+protected void onDraw(Canvas canvas)
+invoke-virtual {v0, v1}, Landroid/widget/ImageView;->onDraw(Landroid/graphics/Canvas;)V
+
+Measure the view and its content to determine the measured width and the measured height.
+protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec)
+invoke-virtual {v0, v1, v2}, Landroid/widget/ImageView;->onMeasure(II)V
+
+没有帮助内容
+protected boolean setFrame(int l, int t, int r, int b)
+invoke-virtual {v0, v1, v2, v3, v4}, Landroid/widget/ImageView;->setFrame(IIII)Z
+
+If your view subclass is displaying its own Drawable objects, it should override this function and return true for any Drawable it is displaying.
+protected boolean verifyDrawable(Drawable dr)
+invoke-virtual {v0, v1}, Landroid/widget/ImageView;->verifyDrawable(Landroid/graphics/drawable/Drawable;)Z

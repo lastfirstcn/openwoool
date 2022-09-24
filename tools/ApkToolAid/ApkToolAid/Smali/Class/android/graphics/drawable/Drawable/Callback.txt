@@ -1,0 +1,15 @@
+Implement this interface if you want to create an animated drawable that extends Drawable. Upon retrieving a drawable, use Drawable.setCallback(android.graphics.drawable.Drawable.Callback) to supply your implementation of the interface to the drawable; it uses this interface to schedule and execute animation changes.
+interface Drawable.Callback
+.class interface Landroid/graphics/drawable/Drawable$Callback;
+
+Called when the drawable needs to be redrawn.
+abstract void invalidateDrawable(Drawable who)
+event invalidateDrawable(Landroid/graphics/drawable/Drawable;)V
+
+A Drawable can call this to schedule the next frame of its animation.
+abstract void scheduleDrawable(Drawable who, Runnable what, long when)
+event scheduleDrawable(Landroid/graphics/drawable/Drawable;Ljava/lang/Runnable;J)V
+
+A Drawable can call this to unschedule an action previously scheduled with scheduleDrawable(Drawable, Runnable, long).
+abstract void unscheduleDrawable(Drawable who, Runnable what)
+event unscheduleDrawable(Landroid/graphics/drawable/Drawable;Ljava/lang/Runnable;)V

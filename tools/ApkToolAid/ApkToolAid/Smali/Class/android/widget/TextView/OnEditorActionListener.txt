@@ -1,0 +1,7 @@
+Interface definition for a callback to be invoked when an action is performed on the editor.
+interface TextView.OnEditorActionListener
+.class interface Landroid/widget/TextView$OnEditorActionListener;
+
+Called when an action is being performed.
+abstract boolean onEditorAction(TextView v, int actionId, KeyEvent event)
+event onEditorAction(Landroid/widget/TextView;ILandroid/view/KeyEvent;)Z

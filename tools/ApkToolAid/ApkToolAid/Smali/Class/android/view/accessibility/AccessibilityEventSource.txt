@@ -1,0 +1,11 @@
+This interface is implemented by classes source of AccessibilityEvents.
+interface AccessibilityEventSource
+.class interface Landroid/view/accessibility/AccessibilityEventSource;
+
+Handles the request for sending an AccessibilityEvent given the event type.
+abstract void sendAccessibilityEvent(int eventType)
+event sendAccessibilityEvent(I)V
+
+Handles the request for sending an AccessibilityEvent.
+abstract void sendAccessibilityEventUnchecked(AccessibilityEvent event)
+event sendAccessibilityEventUnchecked(Landroid/view/accessibility/AccessibilityEvent;)V

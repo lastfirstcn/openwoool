@@ -1,0 +1,11 @@
+Interface definition for android.content.ComponentCallbacks
+interface ComponentCallbacks
+.class interface Landroid/content/ComponentCallbacks;
+
+Called by the system when the device configuration changes while your component is running.
+abstract void onConfigurationChanged(Configuration newConfig)
+event onConfigurationChanged(Landroid/content/res/Configuration;)V
+
+This is called when the overall system is running low on memory, and actively running processes should trim their memory usage.
+abstract void onLowMemory()
+event onLowMemory()V

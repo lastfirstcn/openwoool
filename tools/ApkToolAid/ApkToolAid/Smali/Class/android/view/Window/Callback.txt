@@ -1,0 +1,103 @@
+Interface definition for android.view.Window.Callback
+interface Window.Callback
+.class interface Landroid/view/Window$Callback;
+
+Called to process generic motion events.
+abstract boolean dispatchGenericMotionEvent(MotionEvent event)
+event dispatchGenericMotionEvent(Landroid/view/MotionEvent;)Z
+
+Called to process key events.
+abstract boolean dispatchKeyEvent(KeyEvent event)
+event dispatchKeyEvent(Landroid/view/KeyEvent;)Z
+
+Called to process a key shortcut event.
+abstract boolean dispatchKeyShortcutEvent(KeyEvent event)
+event dispatchKeyShortcutEvent(Landroid/view/KeyEvent;)Z
+
+Called to process population of AccessibilityEvents.
+abstract boolean dispatchPopulateAccessibilityEvent(AccessibilityEvent event)
+event dispatchPopulateAccessibilityEvent(Landroid/view/accessibility/AccessibilityEvent;)Z
+
+Called to process touch screen events.
+abstract boolean dispatchTouchEvent(MotionEvent event)
+event dispatchTouchEvent(Landroid/view/MotionEvent;)Z
+
+Called to process trackball events.
+abstract boolean dispatchTrackballEvent(MotionEvent event)
+event dispatchTrackballEvent(Landroid/view/MotionEvent;)Z
+
+Called when an action mode has been finished.
+abstract void onActionModeFinished(ActionMode mode)
+event onActionModeFinished(Landroid/view/ActionMode;)V
+
+Called when an action mode has been started.
+abstract void onActionModeStarted(ActionMode mode)
+event onActionModeStarted(Landroid/view/ActionMode;)V
+
+Called when the window has been attached to the window manager.
+abstract void onAttachedToWindow()
+event onAttachedToWindow()V
+
+This hook is called whenever the content view of the screen changes (due to a call to Window.setContentView or Window.addContentView).
+abstract void onContentChanged()
+event onContentChanged()V
+
+Initialize the contents of the menu for panel 'featureId'.
+abstract boolean onCreatePanelMenu(int featureId, Menu menu)
+event onCreatePanelMenu(ILandroid/view/Menu;)Z
+
+Instantiate the view to display in the panel for 'featureId'.
+abstract View onCreatePanelView(int featureId)
+event onCreatePanelView(I)Landroid/view/View;
+
+Called when the window has been detached from the window manager.
+abstract void onDetachedFromWindow()
+event onDetachedFromWindow()V
+
+Called when a panel's menu item has been selected by the user.
+abstract boolean onMenuItemSelected(int featureId, MenuItem item)
+event onMenuItemSelected(ILandroid/view/MenuItem;)Z
+
+Called when a panel's menu is opened by the user.
+abstract boolean onMenuOpened(int featureId, Menu menu)
+event onMenuOpened(ILandroid/view/Menu;)Z
+
+Called when a panel is being closed.
+abstract void onPanelClosed(int featureId, Menu menu)
+event onPanelClosed(ILandroid/view/Menu;)V
+
+Called when pointer capture is enabled or disabled for the current window.
+abstract default void onPointerCaptureChanged(boolean hasCapture)
+event onPointerCaptureChanged(Z)V
+
+Prepare a panel to be displayed.
+abstract boolean onPreparePanel(int featureId, View view, Menu menu)
+event onPreparePanel(ILandroid/view/View;Landroid/view/Menu;)Z
+
+Called when Keyboard Shortcuts are requested for the current window.
+abstract default void onProvideKeyboardShortcuts(List<KeyboardShortcutGroup> data, Menu menu, int deviceId)
+event onProvideKeyboardShortcuts(Ljava/util/List;Landroid/view/Menu;I)V
+
+Called when the user signals the desire to start a search.
+abstract boolean onSearchRequested()
+event onSearchRequested()Z
+
+Called when the user signals the desire to start a search.
+abstract boolean onSearchRequested(SearchEvent searchEvent)
+event onSearchRequested(Landroid/view/SearchEvent;)Z
+
+This is called whenever the current window attributes change.
+abstract void onWindowAttributesChanged(WindowManager.LayoutParams attrs)
+event onWindowAttributesChanged(Landroid/view/WindowManager$LayoutParams;)V
+
+This hook is called whenever the window focus changes.
+abstract void onWindowFocusChanged(boolean hasFocus)
+event onWindowFocusChanged(Z)V
+
+Called when an action mode is being started for this window.
+abstract ActionMode onWindowStartingActionMode(ActionMode.Callback callback)
+event onWindowStartingActionMode(Landroid/view/ActionMode$Callback;)Landroid/view/ActionMode;
+
+Called when an action mode is being started for this window.
+abstract ActionMode onWindowStartingActionMode(ActionMode.Callback callback, int type)
+event onWindowStartingActionMode(Landroid/view/ActionMode$Callback;I)Landroid/view/ActionMode;

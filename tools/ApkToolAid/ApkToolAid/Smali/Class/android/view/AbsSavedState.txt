@@ -1,0 +1,39 @@
+A Parcelable implementation that should be used by inheritance hierarchies to ensure the state of all classes along the chain is saved.
+class android.view.AbsSavedState
+.class Landroid/view/AbsSavedState;
+
+继承
+inherit java.lang.Object
+.super Ljava/lang/Object;
+
+没有帮助内容
+public static final Creator<AbsSavedState> CREATOR
+sget-object v0, Landroid/view/AbsSavedState;->CREATOR:Landroid/os/Parcelable$Creator;
+
+没有帮助内容
+public static final AbsSavedState EMPTY_STATE
+sget-object v0, Landroid/view/AbsSavedState;->EMPTY_STATE:Landroid/view/AbsSavedState;
+
+构造方法：Constructor called by derived classes when creating their SavedState objects
+protected constructor AbsSavedState(Parcelable superState)
+invoke-direct {v0, v1}, Landroid/view/AbsSavedState;-><init>(Landroid/os/Parcelable;)V
+
+构造方法：Constructor used when reading from a parcel.
+protected constructor AbsSavedState(Parcel source)
+invoke-direct {v0, v1}, Landroid/view/AbsSavedState;-><init>(Landroid/os/Parcelable;)V
+
+构造方法：Constructor used when reading from a parcel using a given class loader.
+protected constructor AbsSavedState(Parcel source, ClassLoader loader)
+invoke-direct {v0, v1, v2}, Landroid/view/AbsSavedState;-><init>(Landroid/os/Parcelable;Ljava/lang/ClassLoader;)V
+
+Describe the kinds of special objects contained in this Parcelable instance's marshaled representation.
+int describeContents()
+invoke-virtual {v0}, Landroid/view/AbsSavedState;->describeContents()I
+
+没有帮助内容
+final Parcelable getSuperState()
+invoke-virtual {v0}, Landroid/view/AbsSavedState;->getSuperState()Landroid/os/Parcelable;
+
+Flatten this object in to a Parcel.
+void writeToParcel(Parcel dest, int flags)
+invoke-virtual {v0, v1, v2}, Landroid/view/AbsSavedState;->writeToParcel(Landroid/os/Parcelable;I)V

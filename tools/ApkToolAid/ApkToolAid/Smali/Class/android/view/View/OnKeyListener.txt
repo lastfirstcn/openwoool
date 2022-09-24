@@ -1,0 +1,7 @@
+Interface definition for a callback to be invoked when a hardware key event is dispatched to this view.
+interface View.OnKeyListener
+.class interface Landroid/view/View$OnKeyListener;
+
+Called when a hardware key is dispatched to a view.
+abstract boolean onKey(View v, int keyCode, KeyEvent event)
+event onKey(Landroid/view/View;ILandroid/view/KeyEvent;)Z

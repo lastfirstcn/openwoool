@@ -18,7 +18,7 @@ lvLimit = function(self, record)
 end
 
 -- 获得途径的跳转界面
-gotoRecord = function(self, record)
+goto = function(self, record)
 	return record and tostring(record.key) or ""
 end
 -----------------------------------------------------------------------------

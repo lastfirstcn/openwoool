@@ -1,0 +1,15 @@
+The interface that apps use to talk to the window manager.
+interface android.view.WindowManager
+.class interface Landroid/view/WindowManager;
+
+ผฬณะ
+inherit android.view.ViewManager
+.super Landroid/view/ViewManager;
+
+Returns the Display upon which this WindowManager instance will create new windows.
+abstract Display getDefaultDisplay()
+invoke-interface {v0}, Landroid/view/WindowManager;->getDefaultDisplay()Landroid/view/Display;
+
+Special variation of ViewManager.removeView(View) that immediately invokes the given view hierarchy's View#onDetachedFromWindow() methods before returning.
+abstract void removeViewImmediate(View view)
+invoke-interface {v0, v1}, Landroid/view/WindowManager;->removeViewImmediate(Landroid/view/View;)V

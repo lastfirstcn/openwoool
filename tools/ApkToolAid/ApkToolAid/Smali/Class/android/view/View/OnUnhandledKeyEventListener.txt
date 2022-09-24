@@ -1,0 +1,7 @@
+Interface definition for a callback to be invoked when a hardware key event hasn't been handled by the view hierarchy.
+interface View.OnUnhandledKeyEventListener
+.class interface Landroid/view/View$OnUnhandledKeyEventListener;
+
+Called when a hardware key is dispatched to a view after being unhandled during normal KeyEvent dispatch.
+abstract boolean onUnhandledKeyEvent(View v, KeyEvent event)
+event onUnhandledKeyEvent(Landroid/view/View;Landroid/view/KeyEvent;)Z

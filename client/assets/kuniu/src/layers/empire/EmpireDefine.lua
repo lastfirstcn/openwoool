@@ -1,1 +1,0 @@
-EMPIRE_TYPE_BIQI = 1

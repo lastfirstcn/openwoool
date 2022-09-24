@@ -1,0 +1,11 @@
+Interface definition for android.view.LayoutInflater.Factory2
+interface LayoutInflater.Factory2
+.class interface Landroid/view/LayoutInflater$Factory2;
+
+ผฬณะ
+inherit android.view.LayoutInflater.Factory
+.super Landroid/view/LayoutInflater$Factory;
+
+Version of LayoutInflater.Factory.onCreateView(String, Context, AttributeSet) that also supplies the parent that the view created view will be placed in.
+abstract View onCreateView(View parent, String name, Context context, AttributeSet attrs)
+event onCreateView(Landroid/view/View;Ljava/lang/String;Landroid/content/Context;Landroid/util/AttributeSet;)Landroid/view/View;

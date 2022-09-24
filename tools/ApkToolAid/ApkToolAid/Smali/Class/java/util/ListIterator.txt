@@ -1,0 +1,39 @@
+系列表迭代器，允许程序员按任一方向遍历列表、迭代期间修改列表，并获得迭代器在列表中的当前位置。ListIterator 没有当前元素；它的光标位置 始终位于调用 previous() 所返回的元素和调用 next() 所返回的元素之间。长度为 n 的列表的迭代器有 n+1 个可能的指针位置。
+interface java.util.ListIterator
+.class interface Ljava/util/ListIterator;
+
+将指定的元素插入列表（可选操作）。
+void add(E e)
+invoke-interface {v0, v1}, Ljava/util/ListIterator;->add(Ljava/lang/Object;)V
+
+以正向遍历列表时，如果列表迭代器有多个元素，则返回 true（换句话说，如果 next 返回一个元素而不是抛出异常，则返回 true）。
+boolean hasNext()
+invoke-interface {v0}, Ljava/util/ListIterator;->hasNext()Z
+
+如果以逆向遍历列表，列表迭代器有多个元素，则返回 true。
+boolean hasPrevious()
+invoke-interface {v0}, Ljava/util/ListIterator;->hasPrevious()Z
+
+返回列表中的下一个元素。
+E next()
+invoke-interface {v0}, Ljava/util/ListIterator;->next()Ljava/lang/Object;
+
+返回对 next 的后续调用所返回元素的索引。
+int nextIndex()
+invoke-interface {v0}, Ljava/util/ListIterator;->nextIndex()I
+
+返回列表中的前一个元素。
+E previous()
+invoke-interface {v0}, Ljava/util/ListIterator;->previous()Ljava/lang/Object;
+
+返回对 previous 的后续调用所返回元素的索引。
+int previousIndex()
+invoke-interface {v0}, Ljava/util/ListIterator;->previousIndex()I
+
+从列表中移除由 next 或 previous 返回的最后一个元素（可选操作）。
+void remove()
+invoke-interface {v0}, Ljava/util/ListIterator;->remove()V
+
+用指定元素替换 next 或 previous 返回的最后一个元素（可选操作）。
+void set(E e)
+invoke-interface {v0, v1}, Ljava/util/ListIterator;->set(Ljava/lang/Object;)V

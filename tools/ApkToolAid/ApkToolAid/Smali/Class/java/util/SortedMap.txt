@@ -1,0 +1,43 @@
+进一步提供关于键的总体排序 的 Map。该映射是根据其键的自然顺序进行排序的，或者根据通常在创建有序映射时提供的 Comparator 进行排序。对有序映射的 collection 视图（由 entrySet、keySet 和 values 方法返回）进行迭代时，此顺序就会反映出来。要采用此排序方式，还需要提供一些其他操作（此接口是 SortedSet 的对应映射）。
+interface java.util.SortedMap
+.class interface Ljava/util/SortedMap;
+
+继承
+inherit java.util.Map
+.super Ljava/util/Map;
+
+返回对此映射中的键进行排序的比较器；如果此映射使用键的自然顺序，则返回 null。
+Comparator<? super K> comparator()
+invoke-interface {v0}, Ljava/util/SortedMap;->comparator()Ljava/util/Comparator;
+
+返回在此映射中包含的映射关系的 Set 视图。
+Set<Map.Entry<K,V>> entrySet()
+invoke-interface {v0}, Ljava/util/SortedMap;->entrySet()Ljava/util/Set;
+
+返回此映射中当前第一个（最低）键。
+K firstKey()
+invoke-interface {v0}, Ljava/util/SortedMap;->firstKey()Ljava/lang/Object;
+
+返回此映射的部分视图，其键值严格小于 toKey。
+SortedMap<K,V> headMap(K toKey)
+invoke-interface {v0, v1}, Ljava/util/SortedMap;->headMap(Ljava/lang/Object;)Ljava/util/SortedMap;
+
+返回在此映射中所包含键的 Set 视图。
+Set<K> keySet()
+invoke-interface {v0}, Ljava/util/SortedMap;->keySet()Ljava/util/Set;
+
+返回映射中当前最后一个（最高）键。
+K lastKey()
+invoke-interface {v0}, Ljava/util/SortedMap;->lastKey()Ljava/lang/Object;
+
+返回此映射的部分视图，其键值的范围从 fromKey（包括）到 toKey（不包括）。
+SortedMap<K,V> subMap(K fromKey, K toKey)
+invoke-interface {v0, v1, v2}, Ljava/util/SortedMap;->subMap(Ljava/lang/Object;Ljava/lang/Object;)Ljava/util/SortedMap;
+
+返回此映射的部分视图，其键大于等于 fromKey。
+SortedMap<K,V> tailMap(K fromKey)
+invoke-interface {v0, v1}, Ljava/util/SortedMap;->tailMap(Ljava/lang/Object;)Ljava/util/SortedMap;
+
+返回在此映射中所包含值的 Collection 视图。
+Collection<V> values()
+invoke-interface {v0}, Ljava/util/SortedMap;->values()Ljava/util/Collection;
